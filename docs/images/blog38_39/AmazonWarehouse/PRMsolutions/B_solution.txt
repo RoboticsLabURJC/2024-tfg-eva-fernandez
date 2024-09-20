@@ -1,0 +1,14 @@
+Info:    PRM: Starting planning with 2 states already in datastructure
+Info:    PRM: Created 194 states
+Info:    Solution found in 0.252841 seconds
+Info:    SimpleSetup: Path simplification took 0.019760 seconds and changed from 9 to 6 states
+
+Soluction path: Geometric path with 6 states
+RealVectorState [10 10]
+RealVectorState [12.8026 68.7174]
+RealVectorState [16.6385 101.467]
+RealVectorState [132.473 142.14]
+RealVectorState [136.438 191.023]
+RealVectorState [211 233]
+
+

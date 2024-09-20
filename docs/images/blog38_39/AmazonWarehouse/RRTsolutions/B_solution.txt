@@ -1,0 +1,15 @@
+Debug:   RRT: Planner range detected to be 99.735851
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 10 states
+Info:    Solution found in 0.005425 seconds
+Info:    SimpleSetup: Path simplification took 0.029798 seconds and changed from 9 to 6 states
+
+Soluction path: Geometric path with 6 states
+RealVectorState [10 10]
+RealVectorState [13.3645 90.1881]
+RealVectorState [15.3647 95.2637]
+RealVectorState [184.809 138.689]
+RealVectorState [193.372 162.205]
+RealVectorState [211 233]
+
+

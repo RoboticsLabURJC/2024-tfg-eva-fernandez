@@ -1,0 +1,88 @@
+ss.getProblemDefinition().hasOptimizationObjective( )True
+ss.getProblemDefinition().hasOptimizedSolution() False
+Debug:   RRTstar: Planner range detected to be 3.142586
+Info:    RRTstar: Started planning with 1 states. Seeking a solution better than 0.00000.
+Info:    RRTstar: Initial k-nearest value of 45
+Info:    RRTstar: Found an initial solution with a cost of 17.39 in 35 iterations (25 vertices in the graph)
+Info:    RRTstar: Created 15918 new states. Checked 8769511 rewire options. 1 goal states in tree. Final solution cost 14.574
+Info:    Solution found in 30.077629 seconds
+RRTstar found solution of path length 14.5741 with an optimization objective value of 0.1000
+12
+16
+13
+8
+3
+17
+21
+4
+13
+
+Soluction path: Geometric path with 10 states
+Compound state [
+RealVectorState [0 0]
+SO2State [0.785398]
+]
+Compound state [
+RealVectorState [1.38769 0.710116]
+SO2State [0.712748]
+]
+Compound state [
+RealVectorState [3.31573 1.6731]
+SO2State [0.72219]
+]
+Compound state [
+RealVectorState [4.72054 2.79441]
+SO2State [0.72462]
+]
+Compound state [
+RealVectorState [5.39435 3.59206]
+SO2State [0.723267]
+]
+Compound state [
+RealVectorState [5.66388 3.87479]
+SO2State [0.741755]
+]
+Compound state [
+RealVectorState [7.32757 5.60226]
+SO2State [0.737655]
+]
+Compound state [
+RealVectorState [8.93291 8.03933]
+SO2State [0.782388]
+]
+Compound state [
+RealVectorState [9.19385 8.48612]
+SO2State [0.781776]
+]
+Compound state [
+RealVectorState [10 10]
+SO2State [0.785398]
+]
+
+
+ss.getSolutionPath().printAsMatrix() = 0 0 0.785398 
+1.38769 0.710116 0.712748 
+3.31573 1.6731 0.72219 
+4.72054 2.79441 0.72462 
+5.39435 3.59206 0.723267 
+5.66388 3.87479 0.741755 
+7.32757 5.60226 0.737655 
+8.93291 8.03933 0.782388 
+9.19385 8.48612 0.781776 
+10 10 0.785398 
+
+
+ss.haveSolutionPath() = True
+ss.haveExactSolutionPath() = True
+***
+ss.getSolutionPath().length() = 14.574100880192328
+ss.getSolutionPath().check() = True
+ss.getSolutionPath().clearance() = 10.95832429659129
+ss.getSolutionPath().cost(objective).value() = 14.574100880192328
+ss.getSolutionPath().cost(lengthObj).value() = 14.574100880192328
+ss.getSolutionPath().cost(clearObj).value() = 4.991699262420903
+ss.getSolutionPath().cost(minTurnObj).value() = 0.15743403625147234
+ss.getSolutionPath().cost(windObj ).value() = 17.47649473828352
+ss.getSolutionPath().cost(tackingObj ).value() = 21.74307579309989
+ss.getProblemDefinition().hasOptimizedSolution() False
+***

@@ -1,0 +1,10 @@
+Solution Path: Geometric path with 8 states
+RealVectorState [0 0]
+RealVectorState [470.369 211.364]
+RealVectorState [704.249 458.141]
+RealVectorState [701.618 490.472]
+RealVectorState [728.469 975.888]
+RealVectorState [693.098 1094.16]
+RealVectorState [835.329 1131.33]
+RealVectorState [777 1265]
+
