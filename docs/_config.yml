@@ -13,14 +13,14 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: TFG 2022 Lucía Chen (Weblog)
+title: TFG 2024 Eva Fernández de la Cruz (Weblog)
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 #twitter_username: username
-github_username: lu164
+github_username: evafc003
 minimal_mistakes_skin: mint
 search: true
 
@@ -58,13 +58,13 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Lucía Lishan Chen Huang"
+  name   : "Eva FErnández de la Cruz"
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "Estudiante del grado de Ingeniería de Robótica Software en la Universidad Rey Juan Carlos"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/lu164"
+      url: "https://github.com/evafc003"
     #- label: "Website"
     #  icon: "fas fa-fw fa-link"
     #  url: "https://"

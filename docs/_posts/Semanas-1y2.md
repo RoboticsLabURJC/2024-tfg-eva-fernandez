@@ -1,0 +1,14 @@
+---
+title: "Semana 1 y 2. Github pages y Gazebo Harmonic"
+categories:
+  - Weblog
+tags:
+  - Github pages
+  - Gazebo Harmonic
+---
+
+Estas 2 primeras semanas han sido de pura inverstigación y de organización de mi proyecto.
+
+
+Para ello, me instalé gazebo harmonic y probé un poco lo que se  podía hacer con él, encontrando el robot nao, que sería un elemento principal 
+para poder llevar a cabo mi trabajo. Pero, en resumidas cuentas, sólo han sido semanas de prueba y descubrimiento.
