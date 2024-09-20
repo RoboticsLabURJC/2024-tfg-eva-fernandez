@@ -1,0 +1,27 @@
+COMANDO PARA VER LOS TOPICS QUE HAY:
+gz topic -l
+
+COMANDO PARA VER INFORMACIÓN DE UN TOPIC:
+gz topic -it <nombre_topic>
+
+COMANDO PARA PUBLICAR EN UN TOPIC:
+gz topic -t <nombre_topic> -m <tipo_mensaje> -p data:<lo_que_quieres>
+
+COMANDO PARA VER MÁS COMANDOS:
+gz help <comando>
+
+COMANDOS COMO TAL:
+  -help:          Imprimir este texto de ayuda.
+  -fuel:          Administrar recursos de simulación.
+  -gui:           Lanzar interfaces gráficas.
+  -launch:        Ejecutar y gestionar ejecutables y complementos.
+  -log:           Grabar o reproducir temas.
+  -model:         Imprimir información sobre los modelos.
+  -msg:           Imprimir información sobre los mensajes.
+  -param:         Listar, obtener o establecer parámetros.
+  -plugin:        Imprimir información sobre complementos.
+  -sdf:           Utilidades para archivos SDF.
+  -service:       Imprimir información sobre los servicios.
+  -sim:           Ejecutar y gestionar el simulador Gazebo.
+  -topic:         Imprimir información sobre los temas.
+
