@@ -58,7 +58,7 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Eva FErnández de la Cruz"
+  name   : "Eva Fernández de la Cruz"
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "Estudiante del grado de Ingeniería de Robótica Software en la Universidad Rey Juan Carlos"
   links:
