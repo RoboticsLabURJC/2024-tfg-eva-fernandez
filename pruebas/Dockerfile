@@ -23,7 +23,7 @@ RUN curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyri
 # Agregar el repositorio de Gazebo
 RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" > /etc/apt/sources.list.d/gazebo-stable.list
 
-# Actualizar el índice de paquetes e instalar Gazebo Ionic
+# Actualizar el índice de paquetes e instalar Gazebo
 RUN apt-get update && apt-get install -y gz-ionic && rm -rf /var/lib/apt/lists/*
 
 
