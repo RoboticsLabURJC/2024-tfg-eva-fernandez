@@ -10,22 +10,21 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Instalar Gazebo
-# Actualizar y instalar dependencias necesarias
+# Actualiza el sistema y instala las dependencias necesarias
 RUN apt-get update && apt-get install -y \
-    lsb-release \
-    gnupg \
     curl \
-    && rm -rf /var/lib/apt/lists/*
+    lsb-release \
+    gnupg
 
-# Agregar la clave del repositorio de Gazebo
-RUN curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+# Añade la clave GPG del repositorio de Gazebo
+RUN curl -sSL https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
 
-# Agregar el repositorio de Gazebo
-RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" > /etc/apt/sources.list.d/gazebo-stable.list
+# Añade el repositorio de Gazebo a la lista de fuentes
+RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/gazebo-stable.list
 
-# Actualizar el índice de paquetes e instalar Gazebo
-RUN apt-get update && apt-get install -y gz-ionic && rm -rf /var/lib/apt/lists/*
-
+# Actualiza el sistema e instala gz-harmonic
+RUN apt-get update && apt-get install -y \
+    gz-harmonic
 
 # Instalar Visual Studio Code
 RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | apt-key add - \
