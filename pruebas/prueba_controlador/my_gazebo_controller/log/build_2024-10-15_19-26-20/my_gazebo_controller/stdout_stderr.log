@@ -1,0 +1,29 @@
+running egg_info
+creating build/my_gazebo_controller/my_gazebo_controller.egg-info
+writing build/my_gazebo_controller/my_gazebo_controller.egg-info/PKG-INFO
+writing dependency_links to build/my_gazebo_controller/my_gazebo_controller.egg-info/dependency_links.txt
+writing entry points to build/my_gazebo_controller/my_gazebo_controller.egg-info/entry_points.txt
+writing requirements to build/my_gazebo_controller/my_gazebo_controller.egg-info/requires.txt
+writing top-level names to build/my_gazebo_controller/my_gazebo_controller.egg-info/top_level.txt
+writing manifest file 'build/my_gazebo_controller/my_gazebo_controller.egg-info/SOURCES.txt'
+reading manifest file 'build/my_gazebo_controller/my_gazebo_controller.egg-info/SOURCES.txt'
+writing manifest file 'build/my_gazebo_controller/my_gazebo_controller.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/2024-tfg-eva-fernandez/pruebas/prueba_controlador/my_gazebo_controller/build/my_gazebo_controller/build
+creating /home/2024-tfg-eva-fernandez/pruebas/prueba_controlador/my_gazebo_controller/build/my_gazebo_controller/build/lib
+creating /home/2024-tfg-eva-fernandez/pruebas/prueba_controlador/my_gazebo_controller/build/my_gazebo_controller/build/lib/my_gazebo_controller
+copying my_gazebo_controller/__init__.py -> /home/2024-tfg-eva-fernandez/pruebas/prueba_controlador/my_gazebo_controller/build/my_gazebo_controller/build/lib/my_gazebo_controller
+copying my_gazebo_controller/controller.py -> /home/2024-tfg-eva-fernandez/pruebas/prueba_controlador/my_gazebo_controller/build/my_gazebo_controller/build/lib/my_gazebo_controller
+running install
+running install_lib
+creating /home/2024-tfg-eva-fernandez/pruebas/prueba_controlador/my_gazebo_controller/install/my_gazebo_controller/lib/python3.10/site-packages/my_gazebo_controller
+copying /home/2024-tfg-eva-fernandez/pruebas/prueba_controlador/my_gazebo_controller/build/my_gazebo_controller/build/lib/my_gazebo_controller/__init__.py -> /home/2024-tfg-eva-fernandez/pruebas/prueba_controlador/my_gazebo_controller/install/my_gazebo_controller/lib/python3.10/site-packages/my_gazebo_controller
+copying /home/2024-tfg-eva-fernandez/pruebas/prueba_controlador/my_gazebo_controller/build/my_gazebo_controller/build/lib/my_gazebo_controller/controller.py -> /home/2024-tfg-eva-fernandez/pruebas/prueba_controlador/my_gazebo_controller/install/my_gazebo_controller/lib/python3.10/site-packages/my_gazebo_controller
+byte-compiling /home/2024-tfg-eva-fernandez/pruebas/prueba_controlador/my_gazebo_controller/install/my_gazebo_controller/lib/python3.10/site-packages/my_gazebo_controller/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/2024-tfg-eva-fernandez/pruebas/prueba_controlador/my_gazebo_controller/install/my_gazebo_controller/lib/python3.10/site-packages/my_gazebo_controller/controller.py to controller.cpython-310.pyc
+running install_egg_info
+Copying build/my_gazebo_controller/my_gazebo_controller.egg-info to /home/2024-tfg-eva-fernandez/pruebas/prueba_controlador/my_gazebo_controller/install/my_gazebo_controller/lib/python3.10/site-packages/my_gazebo_controller-0.0.1-py3.10.egg-info
+running install_scripts
+Installing gazebo_controller script to /home/2024-tfg-eva-fernandez/pruebas/prueba_controlador/my_gazebo_controller/install/my_gazebo_controller/lib/my_gazebo_controller
+writing list of installed files to '/home/2024-tfg-eva-fernandez/pruebas/prueba_controlador/my_gazebo_controller/build/my_gazebo_controller/install.log'
