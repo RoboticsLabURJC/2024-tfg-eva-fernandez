@@ -1,3 +1,0 @@
-[console_scripts]
-gazebo_controller = my_gazebo_controller.controller:main
-
