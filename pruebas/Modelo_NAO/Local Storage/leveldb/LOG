@@ -1,2 +1,3 @@
-2024/10/15-07:24:41.884 298 Creating DB /home/2024-tfg-eva-fernandez/pruebas/Modelo_NAO/Local Storage/leveldb since it was missing.
-2024/10/15-07:24:41.894 298 Reusing MANIFEST /home/2024-tfg-eva-fernandez/pruebas/Modelo_NAO/Local Storage/leveldb/MANIFEST-000001
+2024/10/22-07:49:35.891 90 Reusing MANIFEST /home/2024-tfg-eva-fernandez/pruebas/Modelo_NAO/Local Storage/leveldb/MANIFEST-000001
+2024/10/22-07:49:35.895 90 Recovering log #3
+2024/10/22-07:49:35.895 90 Reusing old log /home/2024-tfg-eva-fernandez/pruebas/Modelo_NAO/Local Storage/leveldb/000003.log 

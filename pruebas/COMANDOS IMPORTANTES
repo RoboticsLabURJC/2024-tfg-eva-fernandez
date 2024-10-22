@@ -2,7 +2,7 @@ COMANDO PARA VER LOS TOPICS QUE HAY:
 gz topic -l
 
 COMANDO PARA VER INFORMACIÓN DE UN TOPIC:
-gz topic -it <nombre_topic>
+gz topic -t <nombre_topic> -i
 
 COMANDO PARA PUBLICAR EN UN TOPIC:
 gz topic -t <nombre_topic> -m <tipo_mensaje> -p data:<lo_que_quieres>

@@ -17,11 +17,7 @@
                 "folderUri": "file:///home/2024-tfg-eva-fernandez/pruebas/Modelo_NAO"
             }
         ],
-        "emptyWindows": [
-            {
-                "backupFolder": "1728977082285"
-            }
-        ]
+        "emptyWindows": []
     },
     "lastKnownMenubarData": {
         "menus": {
@@ -73,7 +69,8 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor"
+                                    "label": "&&Reopen Closed Editor",
+                                    "enabled": false
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -1702,10 +1699,10 @@
             "backupPath": "/home/2024-tfg-eva-fernandez/pruebas/Modelo_NAO/Backups/5a32c15f47b17c07970533cc45bd4d4b",
             "uiState": {
                 "mode": 0,
-                "x": 0,
-                "y": 0,
+                "x": 66,
+                "y": 106,
                 "width": 1024,
-                "height": 768
+                "height": 694
             }
         },
         "openedWindows": []
