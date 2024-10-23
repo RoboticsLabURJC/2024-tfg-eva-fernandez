@@ -1,0 +1,33 @@
+2024-10-21 08:32:03.787 [info] [main] Log level: Info
+2024-10-21 08:32:03.787 [info] [main] Validating found git in: "git"
+2024-10-21 08:32:03.787 [info] [main] Using git "2.34.1" from "git"
+2024-10-21 08:32:03.787 [info] [Model][doInitialScan] Initial repository scan started
+2024-10-21 08:32:03.787 [info] > git rev-parse --show-toplevel [4ms]
+2024-10-21 08:32:03.787 [info] > git rev-parse --show-toplevel [17ms]
+2024-10-21 08:32:03.805 [info] > git rev-parse --show-toplevel [1ms]
+2024-10-21 08:32:03.809 [info] > git rev-parse --show-toplevel [1ms]
+2024-10-21 08:32:03.813 [info] > git rev-parse --show-toplevel [1ms]
+2024-10-21 08:32:03.817 [info] > git rev-parse --show-toplevel [1ms]
+2024-10-21 08:32:03.822 [info] > git rev-parse --show-toplevel [1ms]
+2024-10-21 08:32:03.831 [info] > git rev-parse --show-toplevel [6ms]
+2024-10-21 08:32:03.836 [info] > git rev-parse --show-toplevel [2ms]
+2024-10-21 08:32:03.840 [info] > git rev-parse --show-toplevel [1ms]
+2024-10-21 08:32:03.844 [info] > git rev-parse --show-toplevel [1ms]
+2024-10-21 08:32:03.848 [info] > git rev-parse --show-toplevel [1ms]
+2024-10-21 08:32:03.852 [info] > git rev-parse --show-toplevel [1ms]
+2024-10-21 08:32:03.855 [info] > git rev-parse --show-toplevel [1ms]
+2024-10-21 08:32:03.859 [info] > git rev-parse --show-toplevel [1ms]
+2024-10-21 08:32:03.864 [info] > git rev-parse --show-toplevel [1ms]
+2024-10-21 08:32:03.869 [info] > git rev-parse --show-toplevel [2ms]
+2024-10-21 08:32:03.876 [info] > git rev-parse --show-toplevel [4ms]
+2024-10-21 08:32:03.880 [info] > git rev-parse --show-toplevel [1ms]
+2024-10-21 08:32:03.888 [info] > git rev-parse --show-toplevel [4ms]
+2024-10-21 08:32:03.892 [info] > git rev-parse --show-toplevel [0ms]
+2024-10-21 08:32:03.896 [info] > git rev-parse --show-toplevel [1ms]
+2024-10-21 08:32:03.901 [info] > git rev-parse --show-toplevel [2ms]
+2024-10-21 08:32:03.906 [info] > git rev-parse --show-toplevel [2ms]
+2024-10-21 08:32:03.908 [info] [Model][doInitialScan] Initial repository scan completed - repositories (0), closed repositories (0), parent repositories (1), unsafe repositories (0)
+2024-10-21 08:32:03.912 [info] > git rev-parse --show-toplevel [1ms]
+2024-10-21 08:32:03.915 [info] > git rev-parse --show-toplevel [0ms]
+2024-10-21 08:32:03.918 [info] > git rev-parse --show-toplevel [0ms]
+2024-10-21 08:32:05.585 [info] > git rev-parse --show-toplevel [1ms]

@@ -1,0 +1,22 @@
+[0.007s] Invoking command in '/home/2024-tfg-eva-fernandez/pruebas/nao_controller/build/nao_controller': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/2024-tfg-eva-fernandez/pruebas/nao_controller -DCMAKE_INSTALL_PREFIX=/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller
+[0.015s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.097s] -- Configuring incomplete, errors occurred!
+[0.097s] See also "/home/2024-tfg-eva-fernandez/pruebas/nao_controller/build/nao_controller/CMakeFiles/CMakeOutput.log".
+[0.097s] [31mCMake Error at CMakeLists.txt:11 (find_package):
+[0.097s]   By not providing "Findgazebo.cmake" in CMAKE_MODULE_PATH this project has
+[0.097s]   asked CMake to find a package configuration file provided by "gazebo", but
+[0.097s]   CMake did not find one.
+[0.097s] 
+[0.097s]   Could not find a package configuration file provided by "gazebo" with any
+[0.098s]   of the following names:
+[0.098s] 
+[0.098s]     gazeboConfig.cmake
+[0.098s]     gazebo-config.cmake
+[0.098s] 
+[0.098s]   Add the installation prefix of "gazebo" to CMAKE_PREFIX_PATH or set
+[0.098s]   "gazebo_DIR" to a directory containing one of the above files.  If "gazebo"
+[0.098s]   provides a separate development package or SDK, be sure it has been
+[0.098s]   installed.
+[0.098s] 
+[0.098s] [0m
+[0.099s] Invoked command in '/home/2024-tfg-eva-fernandez/pruebas/nao_controller/build/nao_controller' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/2024-tfg-eva-fernandez/pruebas/nao_controller -DCMAKE_INSTALL_PREFIX=/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller

@@ -1,0 +1,11 @@
+2024-10-22 07:49:36.777 [info] Extension host with pid 315 started
+2024-10-22 07:49:36.777 [info] Skipping acquiring lock for /home/2024-tfg-eva-fernandez/pruebas/Modelo_NAO/User/workspaceStorage/40f9847ab0cee62150b06b93b7a9c401.
+2024-10-22 07:49:36.906 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2024-10-22 07:49:36.977 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2024-10-22 07:49:37.028 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2024-10-22 07:49:37.073 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-10-22 07:49:37.130 [info] Eager extensions activated
+2024-10-22 07:49:37.141 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-10-22 07:49:37.142 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-10-22 08:47:33.903 [info] Extension host terminating: renderer closed the MessagePort
+2024-10-22 08:47:33.908 [info] Extension host with pid 315 exiting with code 0

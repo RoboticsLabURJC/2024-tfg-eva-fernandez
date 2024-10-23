@@ -1,0 +1,5 @@
+2024-10-22 07:49:35.995 [info] update#setState idle
+2024-10-22 07:50:05.999 [info] update#setState checking for updates
+2024-10-22 07:50:06.048 [info] update#setState idle
+2024-10-22 08:47:33.909 [info] Extension host with pid 315 exited with code: 0, signal: unknown.
+2024-10-22 08:47:33.926 [error] Blocked vscode-file request vscode-file://vscode-app/usr/share/code/resources/app/out/vs/editor/common/services/editorSimpleWorker.esm.js#TextEditorWorker

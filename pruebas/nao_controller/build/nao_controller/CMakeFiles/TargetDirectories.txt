@@ -1,0 +1,9 @@
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/build/nao_controller/CMakeFiles/uninstall.dir
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/build/nao_controller/CMakeFiles/nao_controller_uninstall.dir
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/build/nao_controller/CMakeFiles/test.dir
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/build/nao_controller/CMakeFiles/edit_cache.dir
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/build/nao_controller/CMakeFiles/rebuild_cache.dir
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/build/nao_controller/CMakeFiles/list_install_components.dir
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/build/nao_controller/CMakeFiles/install.dir
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/build/nao_controller/CMakeFiles/install/local.dir
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/build/nao_controller/CMakeFiles/install/strip.dir

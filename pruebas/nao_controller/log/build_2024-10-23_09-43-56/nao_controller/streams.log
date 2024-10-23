@@ -1,0 +1,35 @@
+[0.007s] Invoking command in '/home/2024-tfg-eva-fernandez/pruebas/nao_controller/build/nao_controller': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/2024-tfg-eva-fernandez/pruebas/nao_controller -DCMAKE_INSTALL_PREFIX=/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller
+[0.041s] -- The C compiler identification is GNU 11.4.0
+[0.076s] -- The CXX compiler identification is GNU 11.4.0
+[0.080s] -- Detecting C compiler ABI info
+[0.136s] -- Detecting C compiler ABI info - done
+[0.142s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.142s] -- Detecting C compile features
+[0.142s] -- Detecting C compile features - done
+[0.144s] -- Detecting CXX compiler ABI info
+[0.199s] -- Detecting CXX compiler ABI info - done
+[0.203s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.203s] -- Detecting CXX compile features
+[0.203s] -- Detecting CXX compile features - done
+[0.205s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.307s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.371s] [31mCMake Error at CMakeLists.txt:10 (find_package):
+[0.371s]   By not providing "Findgazebo.cmake" in CMAKE_MODULE_PATH this project has
+[0.371s]   asked CMake to find a package configuration file provided by "gazebo", but
+[0.371s]   CMake did not find one.
+[0.371s] 
+[0.371s]   Could not find a package configuration file provided by "gazebo" with any
+[0.371s]   of the following names:
+[0.371s] 
+[0.372s]     gazeboConfig.cmake
+[0.372s]     gazebo-config.cmake
+[0.372s] 
+[0.372s]   Add the installation prefix of "gazebo" to CMAKE_PREFIX_PATH or set
+[0.372s]   "gazebo_DIR" to a directory containing one of the above files.  If "gazebo"
+[0.372s]   provides a separate development package or SDK, be sure it has been
+[0.372s]   installed.
+[0.372s] 
+[0.372s] [0m
+[0.372s] -- Configuring incomplete, errors occurred!
+[0.372s] See also "/home/2024-tfg-eva-fernandez/pruebas/nao_controller/build/nao_controller/CMakeFiles/CMakeOutput.log".
+[0.374s] Invoked command in '/home/2024-tfg-eva-fernandez/pruebas/nao_controller/build/nao_controller' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/2024-tfg-eva-fernandez/pruebas/nao_controller -DCMAKE_INSTALL_PREFIX=/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller

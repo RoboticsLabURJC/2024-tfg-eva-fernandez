@@ -1,0 +1,22 @@
+-- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/2024-tfg-eva-fernandez/pruebas/nao_controller/build/nao_controller
+-- Install configuration: ""
+-- Up-to-date: /home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/launch
+-- Up-to-date: /home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/launch/launcher.launch.py
+-- Installing: /home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/ament_index/resource_index/package_run_dependencies/nao_controller
+-- Installing: /home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/ament_index/resource_index/parent_prefix_path/nao_controller
+-- Installing: /home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/environment/ament_prefix_path.sh
+-- Installing: /home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/environment/ament_prefix_path.dsv
+-- Installing: /home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/environment/path.sh
+-- Installing: /home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/environment/path.dsv
+-- Installing: /home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/local_setup.bash
+-- Installing: /home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/local_setup.sh
+-- Installing: /home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/local_setup.zsh
+-- Installing: /home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/local_setup.dsv
+-- Installing: /home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/package.dsv
+-- Installing: /home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/ament_index/resource_index/packages/nao_controller
+-- Installing: /home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/cmake/nao_controllerConfig.cmake
+-- Installing: /home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/cmake/nao_controllerConfig-version.cmake
+-- Installing: /home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/package.xml

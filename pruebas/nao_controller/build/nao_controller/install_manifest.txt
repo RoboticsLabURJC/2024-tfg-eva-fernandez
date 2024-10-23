@@ -1,0 +1,16 @@
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/launch/launcher.launch.py
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/ament_index/resource_index/package_run_dependencies/nao_controller
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/ament_index/resource_index/parent_prefix_path/nao_controller
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/environment/ament_prefix_path.sh
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/environment/ament_prefix_path.dsv
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/environment/path.sh
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/environment/path.dsv
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/local_setup.bash
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/local_setup.sh
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/local_setup.zsh
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/local_setup.dsv
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/package.dsv
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/ament_index/resource_index/packages/nao_controller
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/cmake/nao_controllerConfig.cmake
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/cmake/nao_controllerConfig-version.cmake
+/home/2024-tfg-eva-fernandez/pruebas/nao_controller/install/nao_controller/share/nao_controller/package.xml
