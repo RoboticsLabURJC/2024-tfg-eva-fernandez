@@ -50,6 +50,16 @@ def generate_launch_description():
     declare_world_arg = DeclareLaunchArgument(
         "world", default_value=world_file, description="SDF world file"
     )
+    
+    gz_bridge = Node(
+    	package="ros_gz_bridge",
+    	executable="parameter_bridge",
+    	name="gz_bridge",
+    	arguments=[
+    	   "/HeadYaw/cmd_pos" + "@std_msgs/msg/Float64" + "@gz.msgs.Double",
+    	],
+    	output="screen",
+    )
 
     gz_sim = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -93,6 +103,7 @@ def generate_launch_description():
             declare_world_arg,
             SetParameter(name="use_sim_time", value=True),
             gz_sim,
+            gz_bridge,
             gz_spawn_entity,
         ]
     )
