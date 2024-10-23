@@ -26,6 +26,11 @@ RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/p
 RUN apt-get update && apt-get install -y \
     gz-harmonic
 
+# Instalar ROS-Gazebo sim y bridge
+RUN apt-get update && apt-get install -y \
+    ros-humble-ros-gz-sim \
+    ros-humble-ros-gz-bridge
+
 # Instalar Visual Studio Code
 RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | apt-key add - \
     && echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list \
