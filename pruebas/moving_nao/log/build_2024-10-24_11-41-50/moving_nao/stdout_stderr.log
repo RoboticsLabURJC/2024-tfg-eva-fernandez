@@ -1,0 +1,17 @@
+running develop
+/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running egg_info
+writing moving_nao.egg-info/PKG-INFO
+writing dependency_links to moving_nao.egg-info/dependency_links.txt
+writing entry points to moving_nao.egg-info/entry_points.txt
+writing requirements to moving_nao.egg-info/requires.txt
+writing top-level names to moving_nao.egg-info/top_level.txt
+reading manifest file 'moving_nao.egg-info/SOURCES.txt'
+writing manifest file 'moving_nao.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving-nao.egg-link (link to .)
+Installing nao_controller script to /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao
+
+Installed /home/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao
+running symlink_data
