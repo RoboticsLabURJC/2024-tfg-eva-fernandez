@@ -27,14 +27,7 @@ class MinimalPublisher(Node):
 def main(args=None):
     rclpy.init(args=args)
     minimal_publisher = MinimalPublisher()
-
-    try:
-        rclpy.spin(minimal_publisher)  # Mantener el nodo en ejecución
-    except KeyboardInterrupt:
-        pass
-    finally:
-        minimal_publisher.destroy_node()
-        rclpy.shutdown()
+    rclpy.spin(minimal_publisher)
 
 if __name__ == '__main__':
     main()
