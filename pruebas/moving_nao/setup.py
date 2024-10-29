@@ -10,14 +10,15 @@ setup(
     packages=[package_name],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='tu_nombre',
-    maintainer_email='tu_email@example.com',
+    maintainer='evafc003',
+    maintainer_email='evaferdelacruz@gmail.com',
     description='Control de movimiento del robot NAO usando ROS2',
     license='Apache License 2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
             'nao_controller = moving_nao.nao_controller:main',
+            'butterfly_swim = moving_nao.butterfly_swim:main',
         ],
     },
     data_files=[

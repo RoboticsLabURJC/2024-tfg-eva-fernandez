@@ -1,3 +1,4 @@
 [console_scripts]
+butterfly_swim = moving_nao.butterfly_swim:main
 nao_controller = moving_nao.nao_controller:main
 

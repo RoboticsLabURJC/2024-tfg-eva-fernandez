@@ -1,0 +1,20 @@
+2024-10-29 06:10:31.805 [info] update#setState idle
+2024-10-29 06:10:48.654 [info] Extension host with pid 270 exited with code: 0, signal: unknown.
+2024-10-29 06:10:48.672 [error] [UtilityProcessWorker]: terminated unexpectedly with code 1196058480, signal: unknown
+2024-10-29 06:10:49.654 [error] Extension host with pid 270 still exists, forcefully killing it...
+2024-10-29 06:11:01.810 [info] update#setState checking for updates
+2024-10-29 06:12:05.901 [error] [network] #1: https://update.code.visualstudio.com/api/update/linux-x64/stable/384ff7382de624fb94dbaf6da11977bba1ecd427 - error undefined net::ERR_NAME_NOT_RESOLVED
+2024-10-29 06:12:05.902 [error] update#isLatestVersion(): failed to check for updates
+2024-10-29 06:12:05.902 [error] Error: net::ERR_NAME_NOT_RESOLVED
+    at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/browser_init:2:114527)
+    at SimpleURLLoaderWrapper.emit (node:events:519:28)
+2024-10-29 06:12:05.905 [error] [network] #2: https://update.code.visualstudio.com/api/update/linux-x64/stable/384ff7382de624fb94dbaf6da11977bba1ecd427 - error undefined net::ERR_NAME_NOT_RESOLVED
+2024-10-29 06:12:05.906 [error] update#isLatestVersion(): failed to check for updates
+2024-10-29 06:12:05.906 [error] Error: net::ERR_NAME_NOT_RESOLVED
+    at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/browser_init:2:114527)
+    at SimpleURLLoaderWrapper.emit (node:events:519:28)
+2024-10-29 06:12:05.906 [error] [network] #3: https://update.code.visualstudio.com/api/update/linux-x64/stable/384ff7382de624fb94dbaf6da11977bba1ecd427 - error undefined net::ERR_NAME_NOT_RESOLVED
+2024-10-29 06:12:05.906 [error] Error: net::ERR_NAME_NOT_RESOLVED
+    at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/browser_init:2:114527)
+    at SimpleURLLoaderWrapper.emit (node:events:519:28)
+2024-10-29 06:12:05.906 [info] update#setState idle

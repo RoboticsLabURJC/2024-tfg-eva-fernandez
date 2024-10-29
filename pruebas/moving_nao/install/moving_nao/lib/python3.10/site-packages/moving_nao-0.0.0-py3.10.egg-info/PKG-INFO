@@ -3,8 +3,8 @@ Name: moving-nao
 Version: 0.0.0
 Summary: Control de movimiento del robot NAO usando ROS2
 Home-page: UNKNOWN
-Maintainer: tu_nombre
-Maintainer-email: tu_email@example.com
+Maintainer: evafc003
+Maintainer-email: evaferdelacruz@gmail.com
 License: Apache License 2.0
 Platform: UNKNOWN
 License-File: LICENSE
