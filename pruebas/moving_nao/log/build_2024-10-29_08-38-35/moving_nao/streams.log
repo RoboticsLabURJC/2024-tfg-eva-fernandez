@@ -1,0 +1,19 @@
+[0.588s] Invoking command in '/home/2024-tfg-eva-fernandez/pruebas/moving_nao': PYTHONPATH=/home/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/moving_nao build --build-base /home/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/build install --record /home/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/install.log --single-version-externally-managed install_data
+[0.820s] running egg_info
+[0.820s] writing build/moving_nao/moving_nao.egg-info/PKG-INFO
+[0.821s] writing dependency_links to build/moving_nao/moving_nao.egg-info/dependency_links.txt
+[0.821s] writing entry points to build/moving_nao/moving_nao.egg-info/entry_points.txt
+[0.821s] writing requirements to build/moving_nao/moving_nao.egg-info/requires.txt
+[0.821s] writing top-level names to build/moving_nao/moving_nao.egg-info/top_level.txt
+[0.822s] reading manifest file 'build/moving_nao/moving_nao.egg-info/SOURCES.txt'
+[0.823s] writing manifest file 'build/moving_nao/moving_nao.egg-info/SOURCES.txt'
+[0.823s] running build
+[0.824s] running build_py
+[0.824s] copying moving_nao/butterfly_swim.py -> /home/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/build/lib/moving_nao
+[0.824s] running install
+[0.824s] running install_lib
+[0.825s] copying /home/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/build/lib/moving_nao/butterfly_swim.py -> /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao
+[0.826s] byte-compiling /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/butterfly_swim.py to butterfly_swim.cpython-310.pyc
+[0.826s] running install_data
+[0.827s] error: can't copy 'resource/moving_nao': doesn't exist or not a regular file
+[0.845s] Invoked command in '/home/2024-tfg-eva-fernandez/pruebas/moving_nao' returned '1': PYTHONPATH=/home/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/moving_nao build --build-base /home/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/build install --record /home/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/install.log --single-version-externally-managed install_data
