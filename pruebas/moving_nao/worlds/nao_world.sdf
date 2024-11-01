@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="empty_world">
+    <physics name="1ms" type="ignored">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <include>
+    	<name>Modelo_NAO</name>
+    	<uri>file:///home/2024-tfg-eva-fernandez/pruebas/moving_nao/model/Modelo_NAO/model.sdf</uri>
+    </include>
+    <!-- Línea negra en el suelo -->
+    <model name="linea_negra">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="link">
+        <visual name="line_visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 0.1</size> <!-- 100 metros de largo, 0.1 de ancho -->
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Black</name> <!-- Color negro -->
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Marcas amarillas cada 5 metros -->
+    <model name="marcas_amarillas">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="link">
+        <visual name="marcas_visual">
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.01</size> <!-- Tamaño de cada marca -->
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Yellow</name> <!-- Color amarillo -->
+            </script>
+          </material>
+        </visual>
+        <!-- Posiciona cada marca cada 5 metros a lo largo de la línea -->
+        <pose>-5 0 0.01 0 0 0</pose>
+        <pose>0 0 0.01 0 0 0</pose>
+        <pose>5 0 0.01 0 0 0</pose>
+        <!-- Agrega más según sea necesario -->
+      </link>
+    </model>
+  </world>
+</sdf>
+

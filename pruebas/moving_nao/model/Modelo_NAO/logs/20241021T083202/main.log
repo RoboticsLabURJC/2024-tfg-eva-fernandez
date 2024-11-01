@@ -1,0 +1,6 @@
+2024-10-21 08:32:02.424 [info] update#setState idle
+2024-10-21 08:32:32.425 [info] update#setState checking for updates
+2024-10-21 08:32:32.475 [info] update#setState idle
+2024-10-21 08:53:08.357 [info] Extension host with pid 1108 exited with code: 0, signal: unknown.
+2024-10-21 08:53:08.375 [error] Blocked vscode-file request vscode-file://vscode-app/usr/share/code/resources/app/out/vs/editor/common/services/editorSimpleWorker.esm.js#TextEditorWorker
+2024-10-21 08:53:08.385 [error] [UtilityProcessWorker]: terminated unexpectedly with code 308742000, signal: unknown

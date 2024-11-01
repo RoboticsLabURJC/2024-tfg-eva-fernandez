@@ -1,0 +1,18 @@
+2024-10-15 07:24:43.010 [info] Extension host with pid 816 started
+2024-10-15 07:24:43.080 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2024-10-15 07:24:43.140 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2024-10-15 07:24:43.182 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-10-15 07:24:43.236 [info] Eager extensions activated
+2024-10-15 07:24:43.241 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-10-15 07:24:43.242 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-10-15 07:25:03.754 [info] Extension host terminating: renderer closed the MessagePort
+2024-10-15 07:25:03.760 [info] Extension host with pid 816 exiting with code 0
+2024-10-15 07:25:04.272 [info] Extension host with pid 929 started
+2024-10-15 07:25:04.272 [info] Skipping acquiring lock for /home/2024-tfg-eva-fernandez/pruebas/Modelo_NAO/User/workspaceStorage/40f9847ab0cee62150b06b93b7a9c401.
+2024-10-15 07:25:04.307 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*'
+2024-10-15 07:25:04.311 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-10-15 07:25:04.341 [info] Eager extensions activated
+2024-10-15 07:25:04.344 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-10-15 07:25:04.346 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-10-15 07:25:06.207 [info] ExtensionService#_doActivateExtension vscode.git, startup: false, activationEvent: 'api', root cause: vscode.github
+2024-10-15 07:25:13.564 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
