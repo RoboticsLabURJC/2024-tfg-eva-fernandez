@@ -17,7 +17,7 @@ from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
     # Para poder lanzar el mundo
-    world_file = PathJoinSubstitution(['/home/2024-tfg-eva-fernandez/pruebas/nao_controller/worlds', 'nao_world.sdf'])
+    world_file = PathJoinSubstitution(['/home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds', 'nao_world.sdf'])
     world_cfg = LaunchConfiguration("world")
     declare_world_arg = DeclareLaunchArgument(
         "world", default_value=world_file, description="SDF world file"

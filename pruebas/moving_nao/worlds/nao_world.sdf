@@ -5,7 +5,7 @@
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1.0</real_time_factor>
     </physics>
-
+    
     <light type="directional" name="sun">
       <cast_shadows>true</cast_shadows>
       <pose>0 0 10 0 0 0</pose>
@@ -23,8 +23,84 @@
     	<name>Modelo_NAO</name>
     	<uri>file:///home/2024-tfg-eva-fernandez/pruebas/moving_nao/model/Modelo_NAO/model.sdf</uri>
     </include>
-    <!-- Línea negra en el suelo -->
-    <model name="linea_negra">
+    
+    <model name="marcas_amarillas_rectas">
+      <static>true</static>
+      <link name="link">
+        <visual name="marca_1">
+          <pose>-5 0 0.01 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 0 1</ambient>
+            <specular>1 1 0 1</specular>
+            <emissive>1 1 0 1</emissive>
+            <diffuse>1 1 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="marca_2">
+          <pose>0 0 0.01 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 0 1</ambient>
+            <specular>1 1 0 1</specular>
+            <emissive>1 1 0 1</emissive>
+            <diffuse>1 1 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="marca_3">
+          <pose>5 0 0.01 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 0 1</ambient>
+            <specular>1 1 0 1</specular>
+            <emissive>1 1 0 1</emissive>
+            <diffuse>1 1 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="marca_4">
+          <pose>10 0 0.01 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 0 1</ambient>
+            <specular>1 1 0 1</specular>
+            <emissive>1 1 0 1</emissive>
+            <diffuse>1 1 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="marca_5">
+          <pose>-10 0 0.01 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 0 1</ambient>
+            <specular>1 1 0 1</specular>
+            <emissive>1 1 0 1</emissive>
+            <diffuse>1 1 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <model name="linea_negra_recta">
       <static>true</static>
       <pose>0 0 0 0 0 0</pose>
       <link name="link">
@@ -32,42 +108,149 @@
           <geometry>
             <plane>
               <normal>0 0 1</normal>
-              <size>100 0.1</size> <!-- 100 metros de largo, 0.1 de ancho -->
+              <size>20 0.1</size>
             </plane>
           </geometry>
           <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Black</name> <!-- Color negro -->
-            </script>
+              <ambient>0 0 0 1</ambient>
+              <specular>0 0 0 1</specular>
+              <emissive>0 0 0 1</emissive>
+              <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
       </link>
     </model>
-
-    <!-- Marcas amarillas cada 5 metros -->
-    <model name="marcas_amarillas">
+    
+    <model name="marcas_amarillas_lateral">
       <static>true</static>
-      <pose>0 0 0 0 0 0</pose>
       <link name="link">
-        <visual name="marcas_visual">
+        <visual name="marca_1_">
+          <pose>0 -5 0.01 0 0 0</pose>
           <geometry>
             <box>
-              <size>0.1 0.1 0.01</size> <!-- Tamaño de cada marca -->
+              <size>0.1 0.1 0.01</size>
             </box>
           </geometry>
           <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Yellow</name> <!-- Color amarillo -->
-            </script>
+            <ambient>1 1 0 1</ambient>
+            <specular>1 1 0 1</specular>
+            <emissive>1 1 0 1</emissive>
+            <diffuse>1 1 0 1</diffuse>
           </material>
         </visual>
-        <!-- Posiciona cada marca cada 5 metros a lo largo de la línea -->
-        <pose>-5 0 0.01 0 0 0</pose>
-        <pose>0 0 0.01 0 0 0</pose>
-        <pose>5 0 0.01 0 0 0</pose>
-        <!-- Agrega más según sea necesario -->
+        <visual name="marca_2_">
+          <pose>0 0 0.01 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 0 1</ambient>
+            <specular>1 1 0 1</specular>
+            <emissive>1 1 0 1</emissive>
+            <diffuse>1 1 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="marca_3_">
+          <pose>0 5 0.01 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 0 1</ambient>
+            <specular>1 1 0 1</specular>
+            <emissive>1 1 0 1</emissive>
+            <diffuse>1 1 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="marca_4_">
+          <pose>0 10 0.01 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 0 1</ambient>
+            <specular>1 1 0 1</specular>
+            <emissive>1 1 0 1</emissive>
+            <diffuse>1 1 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="marca_5_">
+          <pose>0 -10 0.01 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 0 1</ambient>
+            <specular>1 1 0 1</specular>
+            <emissive>1 1 0 1</emissive>
+            <diffuse>1 1 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <model name="linea_negra_lateral">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="link">
+        <visual name="line_visual_lateral">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.1 20</size>
+            </plane>
+          </geometry>
+          <material>
+              <ambient>0 0 0 1</ambient>
+              <specular>0 0 0 1</specular>
+              <emissive>0 0 0 1</emissive>
+              <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <model name="circulo_negro">
+      <static>true</static>
+      <link name="link">
+        <visual name="circulo_visual">
+          <pose>3.5 3 0.01 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.5</radius>
+              <length>0.01</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <specular>0 0 0 1</specular>
+            <emissive>0 0 0 1</emissive>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="circulo_interior">
+          <pose>3.5 3 0.015 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.4</radius>
+              <length>0.01</length>
+            </cylinder>
+         </geometry>
+         <material>
+            <ambient>1 1 1 1</ambient>
+            <specular>1 1 1 1</specular>
+            <emissive>1 1 1 1</emissive>
+            <diffuse>1 1 1 1</diffuse>
+         </material>
+        </visual>
       </link>
     </model>
   </world>
