@@ -48,6 +48,7 @@ RUN git config --global user.name "evafc003" \
 
 # Instalar pybullet
 RUN pip install pybullet
+RUN pip install numpy==1.26.4
 
 # Limpiar
 RUN apt-get clean
