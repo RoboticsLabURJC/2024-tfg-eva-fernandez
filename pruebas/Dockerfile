@@ -7,6 +7,11 @@ RUN apt-get update && apt-get install -y \
     gedit \
     wget \
     gnupg2 \
+    python3 \
+    python3-distutils \
+    && curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
+    && python3 get-pip.py \
+    && rm get-pip.py \
     && rm -rf /var/lib/apt/lists/*
 
 # Instalar Gazebo
@@ -40,6 +45,9 @@ RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | apt-key add 
 # Configurar Git
 RUN git config --global user.name "evafc003" \
     && git config --global user.email "e.fernandezde.2021@alumnos.urjc.es"
+
+# Instalar pybullet
+RUN pip install pybullet
 
 # Limpiar
 RUN apt-get clean
