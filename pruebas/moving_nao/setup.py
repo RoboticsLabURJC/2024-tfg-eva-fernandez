@@ -19,6 +19,7 @@ setup(
         'console_scripts': [
             'nao_controller = moving_nao.nao_controller:main',
             'butterfly_swim = moving_nao.butterfly_swim:main',
+            'moving_in_pattern = moving_nao.moving_in_pattern:main',
         ],
     },
     data_files=[

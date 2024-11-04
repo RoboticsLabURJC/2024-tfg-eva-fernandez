@@ -1,0 +1,5 @@
+  File "/home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/moving_in_pattern.py", line 15
+    self-publishers = {}
+    ^^^^^^^^^^^^^^^
+SyntaxError: cannot assign to expression here. Maybe you meant '==' instead of '='?
+
