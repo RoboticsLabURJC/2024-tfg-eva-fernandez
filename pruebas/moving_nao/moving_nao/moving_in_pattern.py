@@ -6,7 +6,7 @@ from std_msgs.msg import Float64
 
 class Move(Node):
     def __init__(self):
-        super().__init__('butterfly_swim')
+        super().__init__('move')
         
         with open('/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/movement_pattern.json', 'r') as file:
             self.datos = json.load(file)

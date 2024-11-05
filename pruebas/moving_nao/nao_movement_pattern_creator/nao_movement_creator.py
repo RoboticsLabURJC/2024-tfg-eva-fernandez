@@ -2,6 +2,11 @@ import pybullet as p
 import pybullet_data as pd
 import time
 import json
+import os
+
+# Vaciar el json para que sean todo datos nuevos
+with open("movement_pattern.json", "w") as json_file:
+    json.dump([], json_file, indent=4)
 
 time_to_go = 0
 used_joints = [1,2,13,14,15,16,17,18,26,27,28,29,30,31,39,40,41,42,43,56,57,58,59,60]
@@ -24,7 +29,7 @@ p.createConstraint(model, base_link_index, -1, -1, p.JOINT_FIXED, [0, 0, 0], [0,
 button = p.addUserDebugParameter("DONE", 0, 1, 0)
 button_prev_value = p.readUserDebugParameter(button)
 
-desired_time = p.addUserDebugParameter("Time", 0, 300, 0)
+desired_time = p.addUserDebugParameter("Time", 0, 30, 0)
 
 # Preparar sliders para movimiento
 head_yaw = p.addUserDebugParameter("HeadYaw", -2.09, 2.09, 0)
@@ -129,8 +134,8 @@ while True:
     # Coger segundos a los que se quiere la posicion actual y volcarlo a un fichero JSON
     time_to_go = desired_time_value
 
-    if decided != button_prev_value and decided == 1:
-        movement_data = []
+    if decided != button_prev_value:
+        movement_data = {}
 
         for joint in used_joints:
             joint_info = p.getJointInfo(model, joint)
@@ -138,19 +143,40 @@ while True:
             joint_state = p.getJointState(model, joint)
             joint_position = joint_state[0]
 
-            # Datos para el JSON
-            data = {
+            if time_to_go not in movement_data:
+                movement_data[time_to_go] = []  # Creamos una lista para cada tiempo
+
+            # Agregar los datos de la articulación al tiempo correspondiente
+            movement_data[time_to_go].append({
                 "articulacion": joint_name,
-                "posicion": joint_position,
-                "tiempo": time_to_go
-            }
+                "posicion": joint_position
+            })
 
-            movement_data.append(data)
+        # Convertir el diccionario en una lista de tiempos para sacar fotogramas
+        fotogram = []
+        for tiempo, articulaciones in movement_data.items():
+            fotogram.append({
+                "tiempo": tiempo,
+                "articulaciones": articulaciones
+        })
 
-            # Escribir todos los datos en un archivo JSON
-            with open("movement_pattern.json", "w") as json_file:
-                json.dump(movement_data, json_file, indent=4)
+        # Leer datos existentes del archivo JSON, si existe
+        if os.path.exists("movement_pattern.json"):
+            with open("movement_pattern.json", "r") as json_file:
+                existing_data = json.load(json_file)
+                print(existing_data)
+        else:
+            existing_data = []
 
+        # Agregar nuevos datos a los existentes
+        existing_data.extend(fotogram)
+
+        # Escribir todos los datos en el archivo JSON
+        with open("movement_pattern.json", "w") as json_file:
+            json.dump(existing_data, json_file, indent=4)
+
+        print("SAVING...")
         time.sleep(0.5)
-        break
+        print("SAVED, PLEASE INTRODUCE ANOTHER ONE OR EXIT")
+        button_prev_value = decided
     
