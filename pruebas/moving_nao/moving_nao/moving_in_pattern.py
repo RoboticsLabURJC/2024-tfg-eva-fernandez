@@ -15,27 +15,26 @@ class Move(Node):
         self.art_publishers = {}
         
         # Iterar sobre cada articulación y crear un publicador para cada una
-        for articulacion in self.datos:
-            nombre = articulacion["articulacion"]
-            self.art_publishers[nombre] = self.create_publisher(Float64, f'/{nombre}/cmd_pos', 10)
+        for fotograma in self.datos:
+            for articulacion in fotograma["articulaciones"]:
+                nombre = articulacion["articulacion"]
+                self.art_publishers[nombre] = self.create_publisher(Float64, f'/{nombre}/cmd_pos', 10)
         
         self.publish_message()
         
     def publish_message(self):
         msg = Float64()
        
-        for articulacion in self.datos:
-            nombre = articulacion["articulacion"]
-            msg.data = articulacion["posicion"]
-            self.art_publishers[nombre].publish(msg)
-            self.get_logger().info(f'Publicado en /{nombre}/cmd_pos: {msg.data}')
-
-def main(args=None):    
-    with open('/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/movement_pattern.json', 'r') as file:
-        fichero = json.load(file)
+        for fotograma in self.datos:
+            tiempo = fotograma["tiempo"]
+            time.sleep(tiempo)
+            for articulacion in fotograma["articulaciones"]:
+                nombre = articulacion["articulacion"]
+                msg.data = articulacion["posicion"]
+                self.art_publishers[nombre].publish(msg)
+                self.get_logger().info(f'Publicado en tiempo: {tiempo}')
         
-    tiempo = fichero[0]["tiempo"]
-    time.sleep(tiempo)
+def main(args=None):    
     rclpy.init(args=args)
     node = Move()
     rclpy.spin(node)
