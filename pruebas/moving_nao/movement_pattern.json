@@ -1,0 +1,103 @@
+[
+    {
+        "tiempo": 0,
+        "articulaciones": [
+            {
+                "articulacion": "HeadYaw",
+                "posicion": -1.81419777601943e-08
+            },
+            {
+                "articulacion": "HeadPitch",
+                "posicion": -2.305705679447622e-07
+            },
+            {
+                "articulacion": "LHipYawPitch",
+                "posicion": -2.191348615897498e-07
+            },
+            {
+                "articulacion": "LHipRoll",
+                "posicion": 1.0373086001880097e-07
+            },
+            {
+                "articulacion": "LHipPitch",
+                "posicion": -1.0066040581101769e-06
+            },
+            {
+                "articulacion": "LKneePitch",
+                "posicion": -2.892560507130856e-06
+            },
+            {
+                "articulacion": "LAnklePitch",
+                "posicion": -4.007709236957801e-07
+            },
+            {
+                "articulacion": "LAnkleRoll",
+                "posicion": -4.0000259227465616e-08
+            },
+            {
+                "articulacion": "RHipYawPitch",
+                "posicion": 1.4035746819019664e-06
+            },
+            {
+                "articulacion": "RHipRoll",
+                "posicion": 2.1356986933007662e-07
+            },
+            {
+                "articulacion": "RHipPitch",
+                "posicion": 5.151266174546058e-06
+            },
+            {
+                "articulacion": "RKneePitch",
+                "posicion": 3.152789427044018e-06
+            },
+            {
+                "articulacion": "RAnklePitch",
+                "posicion": 2.8204356954060936e-06
+            },
+            {
+                "articulacion": "RAnkleRoll",
+                "posicion": 4.525739314003183e-09
+            },
+            {
+                "articulacion": "LShoulderPitch",
+                "posicion": -1.2106202268907626e-07
+            },
+            {
+                "articulacion": "LShoulderRoll",
+                "posicion": -3.7675392855212936e-07
+            },
+            {
+                "articulacion": "LElbowYaw",
+                "posicion": -5.543962907555122e-07
+            },
+            {
+                "articulacion": "LElbowRoll",
+                "posicion": -0.03490656509540267
+            },
+            {
+                "articulacion": "LWristYaw",
+                "posicion": 3.450122651890961e-06
+            },
+            {
+                "articulacion": "RShoulderPitch",
+                "posicion": -1.6119080155313332e-07
+            },
+            {
+                "articulacion": "RShoulderRoll",
+                "posicion": 1.5257368588150223e-07
+            },
+            {
+                "articulacion": "RElbowYaw",
+                "posicion": -2.7650907294760644e-06
+            },
+            {
+                "articulacion": "RElbowRoll",
+                "posicion": 0.034906306409781235
+            },
+            {
+                "articulacion": "RWristYaw",
+                "posicion": -1.6754638761950189e-06
+            }
+        ]
+    }
+]

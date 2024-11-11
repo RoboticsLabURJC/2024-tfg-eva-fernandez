@@ -4,8 +4,15 @@ import time
 import json
 import os
 
+file_name = input("Inserta el nombre de tu fichero .json (no olvides la extensión): ")
+
+while not file_name.endswith(".json"):
+    file_name = input("No olvides la extensión .json: ")
+    
+name = "/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/"+file_name
+
 # Vaciar el json para que sean todo datos nuevos
-with open("movement_pattern.json", "w") as json_file:
+with open(name, "w") as json_file:
     json.dump([], json_file, indent=4)
 
 time_to_go = 0
@@ -19,7 +26,7 @@ p.resetDebugVisualizerCamera(1.0, 90.0, -30.0, [0, 0, 0]) # Poner la cámara en 
 euler_angles = [0,0,0]
 startOrientation = p.getQuaternionFromEuler(euler_angles)
 startPosition = [0,0,0.35]
-model = p.loadURDF("Modelo_NAO/nao.urdf", startPosition, startOrientation)
+model = p.loadURDF("/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/Modelo_NAO/nao.urdf", startPosition, startOrientation)
 
 # Anclar a NAO al suelo para que no se mueva
 base_link_index = -1
@@ -161,8 +168,8 @@ while True:
         })
 
         # Leer datos existentes del archivo JSON, si existe
-        if os.path.exists("movement_pattern.json"):
-            with open("movement_pattern.json", "r") as json_file:
+        if os.path.exists(name):
+            with open(name, "r") as json_file:
                 existing_data = json.load(json_file)
                 print(existing_data)
         else:
@@ -172,7 +179,7 @@ while True:
         existing_data.extend(fotogram)
 
         # Escribir todos los datos en el archivo JSON
-        with open("movement_pattern.json", "w") as json_file:
+        with open(name, "w") as json_file:
             json.dump(existing_data, json_file, indent=4)
 
         print("SAVING...")
