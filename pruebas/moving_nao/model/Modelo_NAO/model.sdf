@@ -818,6 +818,9 @@
                     </limit>
                 </ode>
             </physics>
+            <state>
+              <angle>-0.122</angle>
+            </state>
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>LShoulderRoll</joint_name>
@@ -2098,6 +2101,9 @@
                     </limit>
                 </ode>
             </physics>
+            <state>
+              <angle>1.474</angle>
+            </state>
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>RShoulderPitch</joint_name>
@@ -2186,6 +2192,9 @@
                     </limit>
                 </ode>
             </physics>
+            <state>
+              <angle>0.122</angle>
+            </state>
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>RShoulderRoll</joint_name>
