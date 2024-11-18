@@ -329,7 +329,6 @@
             <cmd_max>1000</cmd_max>
             <cmd_min>-1000</cmd_min>
             <topic>/LHipRoll/cmd_pos</topic>
-            <initial_position>0.304</initial_position>
         </plugin>
         <link name="LThigh">
             <pose>0 0.05 -0.085 0 -0 0</pose>
@@ -665,7 +664,6 @@
             <cmd_max>1000</cmd_max>
             <cmd_min>-1000</cmd_min>
             <topic>/LAnkleRoll/cmd_pos</topic>
-            <initial_position>-0.301</initial_position>
         </plugin>
         <link name="LShoulder">
             <pose>0 0.098 0.1 0 -0 0</pose>
@@ -736,7 +734,6 @@
             <cmd_max>1000</cmd_max>
             <cmd_min>-1000</cmd_min>
             <topic>/LShoulderPitch/cmd_pos</topic>
-            <initial_position>1.55</initial_position>
         </plugin>
         <link name="LBicep">
             <pose>0 0.098 0.1 0 -0 0</pose>
@@ -825,7 +822,6 @@
             <cmd_max>1000</cmd_max>
             <cmd_min>-1000</cmd_min>
             <topic>/LShoulderRoll/cmd_pos</topic>
-            <initial_position>0.122</initial_position>
         </plugin>
         <link name="LElbow">
             <pose>0.105 0.113 0.1 0 -0 0</pose>
@@ -1721,7 +1717,6 @@
             <cmd_max>1000</cmd_max>
             <cmd_min>-1000</cmd_min>
             <topic>/RHipRoll/cmd_pos</topic>
-            <initial_position>-0.304</initial_position>
         </plugin>
         <link name="RThigh">
             <pose>0 -0.05 -0.085 0 -0 0</pose>
@@ -2037,7 +2032,6 @@
             <cmd_max>1000</cmd_max>
             <cmd_min>-1000</cmd_min>
             <topic>/RAnkleRoll/cmd_pos</topic>
-            <initial_position>0.301</initial_position>
         </plugin>
         <link name="RShoulder">
             <pose>0 -0.098 0.1 0 -0 0</pose>
@@ -2104,7 +2098,6 @@
             <cmd_max>1000</cmd_max>
             <cmd_min>-1000</cmd_min>
             <topic>/RShoulderPitch/cmd_pos</topic>
-            <initial_position>1.55</initial_position>
         </plugin>
         <link name="RBicep">
             <pose>0 -0.098 0.1 0 -0 0</pose>
@@ -2193,7 +2186,6 @@
             <cmd_max>1000</cmd_max>
             <cmd_min>-1000</cmd_min>
             <topic>/RShoulderRoll/cmd_pos</topic>
-            <initial_position>-0.122</initial_position>
         </plugin>
         <link name="RElbow">
             <pose>0.105 -0.113 0.1 0 -0 0</pose>
