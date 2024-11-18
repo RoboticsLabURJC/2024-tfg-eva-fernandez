@@ -52,8 +52,8 @@ L_knee_pitch = p.addUserDebugParameter("LKneePitch", -0.09, 2.11, 0)
 L_ankle_pitch = p.addUserDebugParameter("LAnklePitch", -1.19, 0.92, 0)
 L_ankle_roll = p.addUserDebugParameter("LAnkleRoll", -0.40, 0.77, 0)
 
-L_shoulder_pitch = p.addUserDebugParameter("LShoulderPitch", -5, 5, 0)
-L_shoulder_roll = p.addUserDebugParameter("LShoulderRoll", -0.31, 1.33, 0)
+L_shoulder_pitch = p.addUserDebugParameter("LShoulderPitch", -5, 5, 1.474)
+L_shoulder_roll = p.addUserDebugParameter("LShoulderRoll", -0.31, 1.33, 0.122)
 
 L_elbow_yaw = p.addUserDebugParameter("LElbowYaw", -2.09, 2.09, 0)
 L_elbow_roll = p.addUserDebugParameter("LElbowRoll", -1.54, -0.03, 0)
@@ -70,8 +70,8 @@ R_knee_pitch = p.addUserDebugParameter("RKneePitch", -0.09, 2.11, 0)
 R_ankle_pitch = p.addUserDebugParameter("RAnklePitch", -1.19, 0.93, 0)
 R_ankle_roll = p.addUserDebugParameter("RAnkleRoll", -0.77, 0.40, 0)
 
-R_shoulder_pitch = p.addUserDebugParameter("RShoulderPitch", -5, 5, 0)
-R_shoulder_roll = p.addUserDebugParameter("RShoulderRoll", -1.33, 0.31, 0)
+R_shoulder_pitch = p.addUserDebugParameter("RShoulderPitch", -5, 5, 1.474)
+R_shoulder_roll = p.addUserDebugParameter("RShoulderRoll", -1.33, 0.31, -0.122)
 
 R_elbow_yaw = p.addUserDebugParameter("RElbowYaw", -2.09, 2.09, 0)
 R_elbow_roll = p.addUserDebugParameter("RElbowRoll", -0.03, 1.54, 0)
