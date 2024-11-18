@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
     <model name="naoH25V40">
-        <pose>0 0 0.35 0 0 0</pose>
+        <pose>0 0 0.33 0 0 0</pose>
         <link name="Torso">
-            <pose>0 0 0 0 -0 0</pose>
+            <pose>0 0 0 0 0 0</pose>
             <inertial>
                 <pose>-0.00413 0 0.04342 0 -0 0</pose>
                 <mass>1.04956</mass>
@@ -44,7 +44,7 @@
                 <mass>0.06442</mass>
                 <inertia>
                     <ixx>7.4993e-05</ixx>
-                    <ixy>1.57e-09</ixy>
+                    <ixy>1e-09</ixy>
                     <ixz>-1.834e-08</ixz>
                     <iyy>7.6e-05</iyy>
                     <iyz>-5.295e-08</iyz>
@@ -120,7 +120,7 @@
                 </inertia>
             </inertial>
             <collision name="Head_collision">
-                <pose>0 0 0.058 1.57 -0 0</pose>
+                <pose>0 0 0.058 1 -0 0</pose>
                 <geometry>
                     <cylinder>
                         <length>0.14</length>
@@ -329,6 +329,7 @@
             <cmd_max>1000</cmd_max>
             <cmd_min>-1000</cmd_min>
             <topic>/LHipRoll/cmd_pos</topic>
+            <initial_position>0.304</initial_position>
         </plugin>
         <link name="LThigh">
             <pose>0 0.05 -0.085 0 -0 0</pose>
@@ -664,6 +665,7 @@
             <cmd_max>1000</cmd_max>
             <cmd_min>-1000</cmd_min>
             <topic>/LAnkleRoll/cmd_pos</topic>
+            <initial_position>-0.301</initial_position>
         </plugin>
         <link name="LShoulder">
             <pose>0 0.098 0.1 0 -0 0</pose>
@@ -734,6 +736,7 @@
             <cmd_max>1000</cmd_max>
             <cmd_min>-1000</cmd_min>
             <topic>/LShoulderPitch/cmd_pos</topic>
+            <initial_position>1.55</initial_position>
         </plugin>
         <link name="LBicep">
             <pose>0 0.098 0.1 0 -0 0</pose>
@@ -750,7 +753,7 @@
                 </inertia>
             </inertial>
             <collision name="LBicep_collision">
-                <pose>0.045 0 0 1.57 -0 1.8</pose>
+                <pose>0.045 0 0 1 -0 1.8</pose>
                 <geometry>
                     <cylinder>
                         <length>0.09</length>
@@ -811,9 +814,6 @@
                     </limit>
                 </ode>
             </physics>
-            <state>
-              <angle>-0.122</angle>
-            </state>
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>LShoulderRoll</joint_name>
@@ -825,6 +825,7 @@
             <cmd_max>1000</cmd_max>
             <cmd_min>-1000</cmd_min>
             <topic>/LShoulderRoll/cmd_pos</topic>
+            <initial_position>0.122</initial_position>
         </plugin>
         <link name="LElbow">
             <pose>0.105 0.113 0.1 0 -0 0</pose>
@@ -900,7 +901,7 @@
                 </inertia>
             </inertial>
             <collision name="LForeArm_collision">
-                <pose>0.025325 0 0 1.57 -0 1.57</pose>
+                <pose>0.025325 0 0 1 -0 1</pose>
                 <geometry>
                     <cylinder>
                         <length>0.05065</length>
@@ -988,7 +989,7 @@
                 </inertia>
             </inertial>
             <collision name="LWrist_collision">
-                <pose>0.039 0 0 1.27 -0 1.57</pose>
+                <pose>0.039 0 0 1.27 -0 1</pose>
                 <geometry>
                     <box>
                         <size>0.06 0.04 0.058</size>
@@ -1720,6 +1721,7 @@
             <cmd_max>1000</cmd_max>
             <cmd_min>-1000</cmd_min>
             <topic>/RHipRoll/cmd_pos</topic>
+            <initial_position>-0.304</initial_position>
         </plugin>
         <link name="RThigh">
             <pose>0 -0.05 -0.085 0 -0 0</pose>
@@ -2035,6 +2037,7 @@
             <cmd_max>1000</cmd_max>
             <cmd_min>-1000</cmd_min>
             <topic>/RAnkleRoll/cmd_pos</topic>
+            <initial_position>0.301</initial_position>
         </plugin>
         <link name="RShoulder">
             <pose>0 -0.098 0.1 0 -0 0</pose>
@@ -2069,10 +2072,6 @@
             <axis>
                 <xyz>0 1 0</xyz>
                 <limit>
-                    <!-- 
-                    <lower>-5.08567</lower>
-                    <upper>5.08567</upper>
-                    -->
                     <effort>40.25</effort>
                     <velocity>8.26797</velocity>
                 </limit>
@@ -2094,9 +2093,6 @@
                     </limit>
                 </ode>
             </physics>
-            <state>
-              <angle>1.474</angle>
-            </state>
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>RShoulderPitch</joint_name>
@@ -2108,6 +2104,7 @@
             <cmd_max>1000</cmd_max>
             <cmd_min>-1000</cmd_min>
             <topic>/RShoulderPitch/cmd_pos</topic>
+            <initial_position>1.55</initial_position>
         </plugin>
         <link name="RBicep">
             <pose>0 -0.098 0.1 0 -0 0</pose>
@@ -2124,7 +2121,7 @@
                 </inertia>
             </inertial>
             <collision name="RBicep_collision">
-                <pose>0.045 0 0 1.57 0 -1.8</pose>
+                <pose>0.045 0 0 1 0 -1.8</pose>
                 <geometry>
                     <cylinder>
                         <length>0.09</length>
@@ -2185,9 +2182,6 @@
                     </limit>
                 </ode>
             </physics>
-            <state>
-              <angle>0.122</angle>
-            </state>
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>RShoulderRoll</joint_name>
@@ -2199,6 +2193,7 @@
             <cmd_max>1000</cmd_max>
             <cmd_min>-1000</cmd_min>
             <topic>/RShoulderRoll/cmd_pos</topic>
+            <initial_position>-0.122</initial_position>
         </plugin>
         <link name="RElbow">
             <pose>0.105 -0.113 0.1 0 -0 0</pose>
@@ -2274,7 +2269,7 @@
                 </inertia>
             </inertial>
             <collision name="RForeArm_collision">
-                <pose>0.025325 0 0 1.57 -0 1.57</pose>
+                <pose>0.025325 0 0 1 -0 1</pose>
                 <geometry>
                     <cylinder>
                         <length>0.05065</length>
@@ -2362,7 +2357,7 @@
                 </inertia>
             </inertial>
             <collision name="RWrist_collision">
-                <pose>0.039 0 0 1.27 -0 1.57</pose>
+                <pose>0.039 0 0 1.27 -0 1</pose>
                 <geometry>
                     <box>
                         <size>0.06 0.04 0.058</size>
