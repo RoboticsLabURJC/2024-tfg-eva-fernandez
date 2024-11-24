@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-    <model name="naoH25V40">
+    <model name="NAO">
         <pose>0 0 0.33 0 0 0</pose>
         <link name="Torso">
             <pose>0 0 0 0 0 0</pose>
@@ -502,9 +502,10 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <cmd_max>1</cmd_max>
+            <cmd_min>-1</cmd_min>
             <topic>/LKneePitch/cmd_pos</topic>
+            <initial_position>0.698132</initial_position>
         </plugin>
         <link name="LAnkle">
             <pose>0 0.05 -0.2879 0 -0 0</pose>
@@ -570,9 +571,10 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <cmd_max>1</cmd_max>
+            <cmd_min>-1</cmd_min>
             <topic>/LAnklePitch/cmd_pos</topic>
+            <initial_position>-0.379</initial_position>
         </plugin>
         <link name="LSole">
             <pose>0 0.05 -0.2879 0 -0 0</pose>
@@ -666,7 +668,7 @@
             <topic>/LAnkleRoll/cmd_pos</topic>
         </plugin>
         <link name="LShoulder">
-            <pose>0 0.098 0.1 0 1.57 0</pose>
+            <pose>0 0.098 0.1 0 -0 0</pose>
             <inertial>
                 <pose>-0.00165 -0.02663 0.00014 0 -0 0</pose>
                 <mass>0.07504</mass>
@@ -731,12 +733,13 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <cmd_max>1</cmd_max>
+            <cmd_min>-1</cmd_min>
             <topic>/LShoulderPitch/cmd_pos</topic>
+            <initial_position>1.39626</initial_position>
         </plugin>
         <link name="LBicep">
-            <pose>0 0.098 0.1 0 1.57 0</pose>
+            <pose>0 0.098 0.1 0 -0 0</pose>
             <inertial>
                 <pose>0.02455 0.00563 0.0033 0 -0 0</pose>
                 <mass>0.15777</mass>
@@ -819,9 +822,10 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <cmd_max>1</cmd_max>
+            <cmd_min>-1</cmd_min>
             <topic>/LShoulderRoll/cmd_pos</topic>
+            <initial_position>0.298132</initial_position>
         </plugin>
         <link name="LElbow">
             <pose>0.105 0.113 0.1 0 -0 0</pose>
@@ -878,12 +882,13 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <cmd_max>1</cmd_max>
+            <cmd_min>-1</cmd_min>
             <topic>/LElbowYaw/cmd_pos</topic>
+            <initial_position>-1.39626</initial_position>
         </plugin>
         <link name="LForeArm">
-            <pose>0 0.113 0 0 1.57 0</pose>
+            <pose>0.105 0.113 0.1 0 -0 0</pose>
             <inertial>
                 <pose>0.02556 0.00281 0.00076 0 -0 0</pose>
                 <mass>0.07761</mass>
@@ -966,12 +971,13 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <cmd_max>1</cmd_max>
+            <cmd_min>-1</cmd_min>
             <topic>/LElbowRoll/cmd_pos</topic>
+            <initial_position>-1.0472</initial_position>
         </plugin>
         <link name="LWrist">
-            <pose>0 0.113 -0.05 0 1.57 0</pose>
+            <pose>0.16095 0.113 0.1 0 -0 0</pose>
             <inertial>
                 <pose>0.03434 -0.00088 0.00308 0 -0 0</pose>
                 <mass>0.18533</mass>
@@ -1053,9 +1059,10 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <cmd_max>1</cmd_max>
+            <cmd_min>-1</cmd_min>
             <topic>/LWristYaw/cmd_pos</topic>
+            <initial_position>-0.192</initial_position>
         </plugin>
         <!-- Fingers make DART crash with "ODE INTERNAL ERROR 1: assertion "d[i] != dReal(0.0)" failed in _dLDLTRemove()" -->
         <!--link name='LFinger11'>
@@ -1870,9 +1877,10 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <cmd_max>1</cmd_max>
+            <cmd_min>-1</cmd_min>
             <topic>/RKneePitch/cmd_pos</topic>
+            <initial_position>0.698132</initial_position>
         </plugin>
         <link name="RAnkle">
             <pose>0 -0.05 -0.2879 0 -0 0</pose>
@@ -1938,9 +1946,10 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <cmd_max>1</cmd_max>
+            <cmd_min>-1</cmd_min>
             <topic>/RAnklePitch/cmd_pos</topic>
+            <initial_position>-0.379</initial_position>
         </plugin>
         <link name="RSole">
             <pose>0 -0.05 -0.2879 0 -0 0</pose>
@@ -2034,7 +2043,7 @@
             <topic>/RAnkleRoll/cmd_pos</topic>
         </plugin>
         <link name="RShoulder">
-            <pose>0 -0.098 0.1 0 1.57 0</pose>
+            <pose>0 -0.098 0.1 0 -0 0</pose>
             <inertial>
                 <pose>-0.00165 0.02663 0.00014 0 -0 0</pose>
                 <mass>0.07504</mass>
@@ -2095,12 +2104,13 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <cmd_max>1</cmd_max>
+            <cmd_min>-1</cmd_min>
             <topic>/RShoulderPitch/cmd_pos</topic>
+            <initial_position>1.39626</initial_position>
         </plugin>
         <link name="RBicep">
-            <pose>0 -0.098 0.1 0 1.57 0</pose>
+            <pose>0 -0.098 0.1 0 0 0</pose>
             <inertial>
                 <pose>0.02455 -0.00563 0.0033 0 -0 0</pose>
                 <mass>0.15777</mass>
@@ -2183,9 +2193,10 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <cmd_max>1</cmd_max>
+            <cmd_min>-1</cmd_min>
             <topic>/RShoulderRoll/cmd_pos</topic>
+            <initial_position>-0.298132</initial_position>
         </plugin>
         <link name="RElbow">
             <pose>0.105 -0.113 0.1 0 -0 0</pose>
@@ -2242,12 +2253,13 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <cmd_max>1</cmd_max>
+            <cmd_min>-1</cmd_min>
             <topic>/RElbowYaw/cmd_pos</topic>
+            <initial_position>1.39626</initial_position>
         </plugin>
         <link name="RForeArm">
-            <pose>0 -0.113 0 0 1.57 0</pose>
+            <pose>0.105 -0.113 0.1 0 -0 0</pose>
             <inertial>
                 <pose>0.02556 -0.00281 0.00076 0 -0 0</pose>
                 <mass>0.07761</mass>
@@ -2330,12 +2342,13 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <cmd_max>1</cmd_max>
+            <cmd_min>-1</cmd_min>
             <topic>/RElbowRoll/cmd_pos</topic>
+            <initial_position>1.0472</initial_position>
         </plugin>
         <link name="RWrist">
-            <pose>0 -0.113 -0.05 0 1.57 0</pose>
+            <pose>0.16095 -0.113 0.1 0 -0 0</pose>
             <inertial>
                 <pose>0.03434 0.00088 0.00308 0 -0 0</pose>
                 <mass>0.18533</mass>
@@ -2417,9 +2430,10 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <cmd_max>1</cmd_max>
+            <cmd_min>-1</cmd_min>
             <topic>/RWristYaw/cmd_pos</topic>
+            <initial_position>0.192</initial_position>
         </plugin>
         <!--link name='RFinger11'>
       <pose>0.23002 -0.10143 0.09696 0 -0 0</pose>
