@@ -53,7 +53,7 @@
     
     <include>
     	<name>Modelo_NAO</name>
-    	<uri>file:///home/2024-tfg-eva-fernandez/pruebas/moving_nao/model/Modelo_NAO/model.sdf</uri>
+    	<uri>file:///home/2024-tfg-eva-fernandez/pruebas/moving_nao/model/Modelo_NAO/modelo_copiado.sdf</uri>
     </include>
     
     <model name="marcas_amarillas_rectas">
