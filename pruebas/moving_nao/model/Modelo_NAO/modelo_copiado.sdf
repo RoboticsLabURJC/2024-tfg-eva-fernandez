@@ -417,6 +417,10 @@
             <cmd_max>1000</cmd_max>
             <cmd_min>-1000</cmd_min>
             <topic>/LHipPitch/cmd_pos</topic>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
+            <initial_position>-0.179</initial_position>
         </plugin>
         <link name="LTibia">
             <pose>0 0.05 -0.185 0 -0 0</pose>
@@ -1813,6 +1817,10 @@
             <cmd_max>1000</cmd_max>
             <cmd_min>-1000</cmd_min>
             <topic>/RHipPitch/cmd_pos</topic>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
+            <initial_position>-0.179</initial_position>
         </plugin>
         <link name="RTibia">
             <pose>0 -0.05 -0.185 0 -0 0</pose>
