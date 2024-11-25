@@ -497,6 +497,9 @@
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>LKneePitch</joint_name>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <p_gain>10</p_gain>
             <i_gain>0.1</i_gain>
             <d_gain>0.01</d_gain>
@@ -566,6 +569,9 @@
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>LAnklePitch</joint_name>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <p_gain>10</p_gain>
             <i_gain>0.1</i_gain>
             <d_gain>0.01</d_gain>
@@ -574,7 +580,7 @@
             <cmd_max>1</cmd_max>
             <cmd_min>-1</cmd_min>
             <topic>/LAnklePitch/cmd_pos</topic>
-            <initial_position>-0.379</initial_position>
+            <initial_position>-0.479</initial_position>
         </plugin>
         <link name="LSole">
             <pose>0 0.05 -0.2879 0 -0 0</pose>
@@ -728,6 +734,9 @@
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>LShoulderPitch</joint_name>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <p_gain>10</p_gain>
             <i_gain>0.1</i_gain>
             <d_gain>0.01</d_gain>
@@ -817,6 +826,9 @@
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>LShoulderRoll</joint_name>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <p_gain>10</p_gain>
             <i_gain>0.1</i_gain>
             <d_gain>0.01</d_gain>
@@ -825,7 +837,7 @@
             <cmd_max>1</cmd_max>
             <cmd_min>-1</cmd_min>
             <topic>/LShoulderRoll/cmd_pos</topic>
-            <initial_position>0.298132</initial_position>
+            <initial_position>0.198132</initial_position>
         </plugin>
         <link name="LElbow">
             <pose>0.105 0.113 0.1 0 -0 0</pose>
@@ -877,6 +889,9 @@
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>LElbowYaw</joint_name>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <p_gain>10</p_gain>
             <i_gain>0.1</i_gain>
             <d_gain>0.01</d_gain>
@@ -966,6 +981,9 @@
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>LElbowRoll</joint_name>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <p_gain>10</p_gain>
             <i_gain>0.1</i_gain>
             <d_gain>0.01</d_gain>
@@ -1054,6 +1072,9 @@
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>LWristYaw</joint_name>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <p_gain>10</p_gain>
             <i_gain>0.1</i_gain>
             <d_gain>0.01</d_gain>
@@ -1872,6 +1893,9 @@
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>RKneePitch</joint_name>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <p_gain>10</p_gain>
             <i_gain>0.1</i_gain>
             <d_gain>0.01</d_gain>
@@ -1941,6 +1965,9 @@
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>RAnklePitch</joint_name>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <p_gain>10</p_gain>
             <i_gain>0.1</i_gain>
             <d_gain>0.01</d_gain>
@@ -1949,7 +1976,7 @@
             <cmd_max>1</cmd_max>
             <cmd_min>-1</cmd_min>
             <topic>/RAnklePitch/cmd_pos</topic>
-            <initial_position>-0.379</initial_position>
+            <initial_position>-0.479</initial_position>
         </plugin>
         <link name="RSole">
             <pose>0 -0.05 -0.2879 0 -0 0</pose>
@@ -2099,6 +2126,9 @@
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>RShoulderPitch</joint_name>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <p_gain>10</p_gain>
             <i_gain>0.1</i_gain>
             <d_gain>0.01</d_gain>
@@ -2188,6 +2218,9 @@
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>RShoulderRoll</joint_name>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <p_gain>10</p_gain>
             <i_gain>0.1</i_gain>
             <d_gain>0.01</d_gain>
@@ -2196,7 +2229,7 @@
             <cmd_max>1</cmd_max>
             <cmd_min>-1</cmd_min>
             <topic>/RShoulderRoll/cmd_pos</topic>
-            <initial_position>-0.298132</initial_position>
+            <initial_position>-0.198132</initial_position>
         </plugin>
         <link name="RElbow">
             <pose>0.105 -0.113 0.1 0 -0 0</pose>
@@ -2248,6 +2281,9 @@
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>RElbowYaw</joint_name>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <p_gain>10</p_gain>
             <i_gain>0.1</i_gain>
             <d_gain>0.01</d_gain>
@@ -2337,6 +2373,9 @@
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>RElbowRoll</joint_name>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <p_gain>10</p_gain>
             <i_gain>0.1</i_gain>
             <d_gain>0.01</d_gain>
@@ -2425,6 +2464,9 @@
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>RWristYaw</joint_name>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <p_gain>10</p_gain>
             <i_gain>0.1</i_gain>
             <d_gain>0.01</d_gain>

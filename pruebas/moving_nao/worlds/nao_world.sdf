@@ -52,6 +52,7 @@
 
     
     <include>
+        <pose>0 0 0.45 0 0 0</pose>
     	<name>Modelo_NAO</name>
     	<uri>file:///home/2024-tfg-eva-fernandez/pruebas/moving_nao/model/Modelo_NAO/modelo_copiado.sdf</uri>
     </include>
