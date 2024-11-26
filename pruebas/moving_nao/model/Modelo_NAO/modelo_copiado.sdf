@@ -101,8 +101,9 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <topic>/HeadYaw/cmd_pos</topic>
         </plugin>
         <link name="Head">
@@ -190,8 +191,9 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <topic>/HeadPitch/cmd_pos</topic>
         </plugin>
         <link name="LPelvis">
@@ -258,8 +260,9 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <topic>/LHipYawPitch/cmd_pos</topic>
         </plugin>
         <link name="LHip">
@@ -326,8 +329,9 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <topic>/LHipRoll/cmd_pos</topic>
         </plugin>
         <link name="LThigh">
@@ -414,8 +418,6 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
             <topic>/LHipPitch/cmd_pos</topic>
             <use_velocity_commands>true</use_velocity_commands>
             <cmd_max>2.0</cmd_max>
@@ -509,8 +511,6 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1</cmd_max>
-            <cmd_min>-1</cmd_min>
             <topic>/LKneePitch/cmd_pos</topic>
             <initial_position>0.698132</initial_position>
         </plugin>
@@ -581,8 +581,6 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1</cmd_max>
-            <cmd_min>-1</cmd_min>
             <topic>/LAnklePitch/cmd_pos</topic>
             <initial_position>-0.479</initial_position>
         </plugin>
@@ -673,8 +671,9 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <topic>/LAnkleRoll/cmd_pos</topic>
         </plugin>
         <link name="LShoulder">
@@ -746,8 +745,6 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1</cmd_max>
-            <cmd_min>-1</cmd_min>
             <topic>/LShoulderPitch/cmd_pos</topic>
             <initial_position>1.39626</initial_position>
         </plugin>
@@ -838,8 +835,6 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1</cmd_max>
-            <cmd_min>-1</cmd_min>
             <topic>/LShoulderRoll/cmd_pos</topic>
             <initial_position>0.198132</initial_position>
         </plugin>
@@ -901,8 +896,6 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1</cmd_max>
-            <cmd_min>-1</cmd_min>
             <topic>/LElbowYaw/cmd_pos</topic>
             <initial_position>-1.39626</initial_position>
         </plugin>
@@ -993,8 +986,6 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1</cmd_max>
-            <cmd_min>-1</cmd_min>
             <topic>/LElbowRoll/cmd_pos</topic>
             <initial_position>-1.0472</initial_position>
         </plugin>
@@ -1084,8 +1075,6 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1</cmd_max>
-            <cmd_min>-1</cmd_min>
             <topic>/LWristYaw/cmd_pos</topic>
             <initial_position>-0.192</initial_position>
         </plugin>
@@ -1678,8 +1667,9 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <topic>/RHipYawPitch/cmd_pos</topic>
         </plugin>
         <link name="RHip">
@@ -1746,8 +1736,9 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <topic>/RHipRoll/cmd_pos</topic>
         </plugin>
         <link name="RThigh">
@@ -1814,8 +1805,6 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
             <topic>/RHipPitch/cmd_pos</topic>
             <use_velocity_commands>true</use_velocity_commands>
             <cmd_max>2.0</cmd_max>
@@ -1909,8 +1898,6 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1</cmd_max>
-            <cmd_min>-1</cmd_min>
             <topic>/RKneePitch/cmd_pos</topic>
             <initial_position>0.698132</initial_position>
         </plugin>
@@ -1981,8 +1968,6 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1</cmd_max>
-            <cmd_min>-1</cmd_min>
             <topic>/RAnklePitch/cmd_pos</topic>
             <initial_position>-0.479</initial_position>
         </plugin>
@@ -2068,13 +2053,14 @@
         </joint>
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>RAnkleRoll</joint_name>
+            <use_velocity_commands>true</use_velocity_commands>
+            <cmd_max>2.0</cmd_max>
+            <cmd_min>-2.0</cmd_min>
             <p_gain>10</p_gain>
             <i_gain>0.1</i_gain>
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1000</cmd_max>
-            <cmd_min>-1000</cmd_min>
             <topic>/RAnkleRoll/cmd_pos</topic>
         </plugin>
         <link name="RShoulder">
@@ -2142,8 +2128,6 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1</cmd_max>
-            <cmd_min>-1</cmd_min>
             <topic>/RShoulderPitch/cmd_pos</topic>
             <initial_position>1.39626</initial_position>
         </plugin>
@@ -2234,8 +2218,6 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1</cmd_max>
-            <cmd_min>-1</cmd_min>
             <topic>/RShoulderRoll/cmd_pos</topic>
             <initial_position>-0.198132</initial_position>
         </plugin>
@@ -2297,8 +2279,6 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1</cmd_max>
-            <cmd_min>-1</cmd_min>
             <topic>/RElbowYaw/cmd_pos</topic>
             <initial_position>1.39626</initial_position>
         </plugin>
@@ -2389,8 +2369,6 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1</cmd_max>
-            <cmd_min>-1</cmd_min>
             <topic>/RElbowRoll/cmd_pos</topic>
             <initial_position>1.0472</initial_position>
         </plugin>
@@ -2480,8 +2458,6 @@
             <d_gain>0.01</d_gain>
             <i_max>1</i_max>
             <i_min>-1</i_min>
-            <cmd_max>1</cmd_max>
-            <cmd_min>-1</cmd_min>
             <topic>/RWristYaw/cmd_pos</topic>
             <initial_position>0.192</initial_position>
         </plugin>
