@@ -25,7 +25,7 @@ planeId = p.loadURDF("plane.urdf")
 p.resetDebugVisualizerCamera(1.0, 90.0, -30.0, [0, 0, 5]) # Poner la cámara en la posición deseada
 euler_angles = [0,0,0]
 startOrientation = p.getQuaternionFromEuler(euler_angles)
-startPosition = [0,0,5]
+startPosition = [0,0,0.35]
 model = p.loadURDF("/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/Modelo_NAO/nao.urdf", startPosition, startOrientation)
 
 # Anclar a NAO al suelo para que no se mueva
@@ -44,39 +44,39 @@ head_pitch = p.addUserDebugParameter("HeadPitch", -0.67, 0.51, 0)
 
 # LADO IZQUIERO
 L_hip_yaw_pitch = p.addUserDebugParameter("LHipYawPitch", -1.15, 0.74, 0)
-L_hip_pitch = p.addUserDebugParameter("LHipPitch", -1.54, 0.48, 0)
+L_hip_pitch = p.addUserDebugParameter("LHipPitch", -1.54, 0.48, -0.179)
 L_hip_roll = p.addUserDebugParameter("LHipRoll", -0.38, 0.79, 0)
 
-L_knee_pitch = p.addUserDebugParameter("LKneePitch", -0.09, 2.11, 0)
+L_knee_pitch = p.addUserDebugParameter("LKneePitch", -0.09, 2.11, 0.698132)
 
-L_ankle_pitch = p.addUserDebugParameter("LAnklePitch", -1.19, 0.92, 0)
+L_ankle_pitch = p.addUserDebugParameter("LAnklePitch", -1.19, 0.92, -0.479)
 L_ankle_roll = p.addUserDebugParameter("LAnkleRoll", -0.40, 0.77, 0)
 
-L_shoulder_pitch = p.addUserDebugParameter("LShoulderPitch", -5, 5, 1.474)
-L_shoulder_roll = p.addUserDebugParameter("LShoulderRoll", -0.31, 1.33, 0.122)
+L_shoulder_pitch = p.addUserDebugParameter("LShoulderPitch", -5, 5, 1.39626)
+L_shoulder_roll = p.addUserDebugParameter("LShoulderRoll", -0.31, 1.33, 0.198132)
 
-L_elbow_yaw = p.addUserDebugParameter("LElbowYaw", -2.09, 2.09, 0)
-L_elbow_roll = p.addUserDebugParameter("LElbowRoll", -1.54, -0.03, 0)
+L_elbow_yaw = p.addUserDebugParameter("LElbowYaw", -2.09, 2.09, -1.39626)
+L_elbow_roll = p.addUserDebugParameter("LElbowRoll", -1.54, -0.03, -1.0472)
 
-L_wrist_yaw = p.addUserDebugParameter("LWristYaw", -1.82, 1.82, 0)
+L_wrist_yaw = p.addUserDebugParameter("LWristYaw", -1.82, 1.82, -0.192)
 
 # LADO DERECHO
 R_hip_yaw_pitch = p.addUserDebugParameter("RHipYawPitch", -1.15, 0.74, 0)
-R_hip_pitch = p.addUserDebugParameter("RHipPitch", -1.54, 0.48, 0)
+R_hip_pitch = p.addUserDebugParameter("RHipPitch", -1.54, 0.48, -0.179)
 R_hip_roll = p.addUserDebugParameter("RHipRoll", -0.79, 0.38, 0)
 
-R_knee_pitch = p.addUserDebugParameter("RKneePitch", -0.09, 2.11, 0)
+R_knee_pitch = p.addUserDebugParameter("RKneePitch", -0.09, 2.11, 0.698132)
 
-R_ankle_pitch = p.addUserDebugParameter("RAnklePitch", -1.19, 0.93, 0)
+R_ankle_pitch = p.addUserDebugParameter("RAnklePitch", -1.19, 0.93, -0.479)
 R_ankle_roll = p.addUserDebugParameter("RAnkleRoll", -0.77, 0.40, 0)
 
-R_shoulder_pitch = p.addUserDebugParameter("RShoulderPitch", -5, 5, 1.474)
-R_shoulder_roll = p.addUserDebugParameter("RShoulderRoll", -1.33, 0.31, -0.122)
+R_shoulder_pitch = p.addUserDebugParameter("RShoulderPitch", -5, 5, 1.39626)
+R_shoulder_roll = p.addUserDebugParameter("RShoulderRoll", -1.33, 0.31, -0.198132)
 
-R_elbow_yaw = p.addUserDebugParameter("RElbowYaw", -2.09, 2.09, 0)
-R_elbow_roll = p.addUserDebugParameter("RElbowRoll", -0.03, 1.54, 0)
+R_elbow_yaw = p.addUserDebugParameter("RElbowYaw", -2.09, 2.09, 1.39626)
+R_elbow_roll = p.addUserDebugParameter("RElbowRoll", -0.03, 1.54, 1.0472)
 
-R_wrist_yaw = p.addUserDebugParameter("RWristYaw", -1.82, 1.82, 0)
+R_wrist_yaw = p.addUserDebugParameter("RWristYaw", -1.82, 1.82, 0.192)
 
 # Preparar simulación
 while True:
