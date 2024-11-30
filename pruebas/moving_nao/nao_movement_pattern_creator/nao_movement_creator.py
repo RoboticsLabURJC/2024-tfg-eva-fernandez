@@ -22,10 +22,10 @@ used_joints = [1,2,13,14,15,16,17,18,26,27,28,29,30,31,39,40,41,42,43,56,57,58,5
 physics_client = p.connect(p.GUI)
 p.setAdditionalSearchPath(pd.getDataPath())
 planeId = p.loadURDF("plane.urdf")
-p.resetDebugVisualizerCamera(1.0, 90.0, -30.0, [0, 0, 5]) # Poner la cámara en la posición deseada
+p.resetDebugVisualizerCamera(1.0, 89.60, -4.40, [0, 0, 2]) # Poner la cámara en la posición deseada
 euler_angles = [0,0,0]
 startOrientation = p.getQuaternionFromEuler(euler_angles)
-startPosition = [0,0,0.35]
+startPosition = [0,0,2]
 model = p.loadURDF("/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/Modelo_NAO/nao.urdf", startPosition, startOrientation)
 
 # Anclar a NAO al suelo para que no se mueva
