@@ -303,7 +303,7 @@
         ]
     },
     {
-        "tiempo": 2.5,
+        "tiempo": 3,
         "articulaciones": [
             {
                 "articulacion": "HeadYaw",
@@ -404,7 +404,7 @@
         ]
     },
     {
-        "tiempo": 3,
+        "tiempo": 4,
         "articulaciones": [
             {
                 "articulacion": "HeadYaw",
@@ -505,7 +505,7 @@
         ]
     },
     {
-        "tiempo": 4,
+        "tiempo": 5,
         "articulaciones": [
             {
                 "articulacion": "HeadYaw",

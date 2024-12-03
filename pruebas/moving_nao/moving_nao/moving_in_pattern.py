@@ -22,9 +22,13 @@ class Move(Node):
         
         # Crear un diccionario para almacenar los publicadores de cada articulación
         self.art_publishers = {}
+        tiempo_anterior = 0
         
         # Iterar sobre cada articulación y crear un publicador para cada una
         for fotograma in self.datos:
+            tiempo_actual = fotograma["tiempo"]
+            fotograma["tiempo_de_espera"] = tiempo_actual - tiempo_anterior
+            tiempo_anterior = tiempo_actual
             for articulacion in fotograma["articulaciones"]:
                 nombre = articulacion["articulacion"]
                 self.art_publishers[nombre] = self.create_publisher(Float64, f'/{nombre}/cmd_pos', 10)
@@ -35,14 +39,14 @@ class Move(Node):
         msg = Float64()
 
         for fotograma in self.datos:
-            tiempo = fotograma["tiempo"]
+            tiempo = fotograma["tiempo_de_espera"]
             time.sleep(tiempo)
 
             for articulacion in fotograma["articulaciones"]:
                 nombre = articulacion["articulacion"]
                 msg.data = articulacion["posicion"]
                 self.art_publishers[nombre].publish(msg)
-                self.get_logger().info(f'Publicado: {nombre} a {msg.data} en tiempo {tiempo:.2f}s')
+                self.get_logger().info(f'Publicado: movimiento en {nombre} en tiempo {tiempo:.2f}s')
 
 def main(args=None):    
     rclpy.init(args=args)
