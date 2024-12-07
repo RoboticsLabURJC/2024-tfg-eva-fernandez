@@ -20,6 +20,7 @@ setup(
             'nao_controller = moving_nao.nao_controller:main',
             'butterfly_swim = moving_nao.butterfly_swim:main',
             'moving_in_pattern = moving_nao.moving_in_pattern:main',
+            'camina = moving_nao.camina:main',            
         ],
     },
     data_files=[
