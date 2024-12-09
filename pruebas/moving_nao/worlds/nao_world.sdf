@@ -32,6 +32,14 @@
           <size>100 100</size>
         </plane>
       </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>0.5</mu>
+            <mu2>0.5</mu2>
+          </ode>
+        </friction>
+      </surface>
     </collision>
     <visual name="visual">
       <pose>0 0 0 0 0 0</pose>

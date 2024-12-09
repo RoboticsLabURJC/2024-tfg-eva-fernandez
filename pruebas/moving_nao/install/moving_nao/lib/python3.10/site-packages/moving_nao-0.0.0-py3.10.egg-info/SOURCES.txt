@@ -11,9 +11,9 @@ build/moving_nao/moving_nao.egg-info/zip-safe
 launch/launcher.launch.py
 moving_nao/__init__.py
 moving_nao/butterfly_swim.py
-moving_nao/camina.py
 moving_nao/moving_in_pattern.py
 moving_nao/nao_controller.py
+moving_nao/walk.py
 resource/moving_nao
 test/test_copyright.py
 test/test_flake8.py

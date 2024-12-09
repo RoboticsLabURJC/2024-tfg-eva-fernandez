@@ -1,0 +1,5 @@
+  File "/home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/walk.py", line 19
+    name = '/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/camina.json
+           ^
+SyntaxError: unterminated string literal (detected at line 19)
+

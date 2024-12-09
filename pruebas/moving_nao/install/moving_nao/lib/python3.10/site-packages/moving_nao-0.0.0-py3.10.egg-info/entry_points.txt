@@ -1,6 +1,6 @@
 [console_scripts]
 butterfly_swim = moving_nao.butterfly_swim:main
-camina = moving_nao.camina:main
 moving_in_pattern = moving_nao.moving_in_pattern:main
 nao_controller = moving_nao.nao_controller:main
+walk = moving_nao.walk:main
 

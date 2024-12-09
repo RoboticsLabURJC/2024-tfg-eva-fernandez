@@ -1,0 +1,27 @@
+[1.341s] Invoking command in '/home/2024-tfg-eva-fernandez/pruebas/moving_nao': PYTHONPATH=/home/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/moving_nao build --build-base /home/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/build install --record /home/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/install.log --single-version-externally-managed install_data
+[1.846s] running egg_info
+[1.848s] writing build/moving_nao/moving_nao.egg-info/PKG-INFO
+[1.848s] writing dependency_links to build/moving_nao/moving_nao.egg-info/dependency_links.txt
+[1.848s] writing entry points to build/moving_nao/moving_nao.egg-info/entry_points.txt
+[1.849s] writing requirements to build/moving_nao/moving_nao.egg-info/requires.txt
+[1.849s] writing top-level names to build/moving_nao/moving_nao.egg-info/top_level.txt
+[1.852s] reading manifest file 'build/moving_nao/moving_nao.egg-info/SOURCES.txt'
+[1.854s] writing manifest file 'build/moving_nao/moving_nao.egg-info/SOURCES.txt'
+[1.854s] running build
+[1.854s] running build_py
+[1.855s] copying moving_nao/walk.py -> /home/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/build/lib/moving_nao
+[1.855s] running install
+[1.856s] running install_lib
+[1.857s] copying /home/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/build/lib/moving_nao/walk.py -> /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao
+[1.859s] byte-compiling /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/walk.py to walk.cpython-310.pyc
+[1.860s] running install_data
+[1.860s] running install_egg_info
+[1.865s] removing '/home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao-0.0.0-py3.10.egg-info' (and everything under it)
+[1.865s] Copying build/moving_nao/moving_nao.egg-info to /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao-0.0.0-py3.10.egg-info
+[1.867s] running install_scripts
+[1.923s] Installing butterfly_swim script to /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao
+[1.924s] Installing moving_in_pattern script to /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao
+[1.924s] Installing nao_controller script to /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao
+[1.925s] Installing walk script to /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao
+[1.925s] writing list of installed files to '/home/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/install.log'
+[1.971s] Invoked command in '/home/2024-tfg-eva-fernandez/pruebas/moving_nao' returned '0': PYTHONPATH=/home/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/moving_nao build --build-base /home/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/build install --record /home/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/install.log --single-version-externally-managed install_data

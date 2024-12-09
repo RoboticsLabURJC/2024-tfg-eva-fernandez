@@ -1,12 +1,12 @@
-/home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/camina.py
 /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/moving_in_pattern.py
 /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/__init__.py
 /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/nao_controller.py
+/home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/walk.py
 /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/butterfly_swim.py
-/home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/__pycache__/camina.cpython-310.pyc
 /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/__pycache__/moving_in_pattern.cpython-310.pyc
 /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/__pycache__/__init__.cpython-310.pyc
 /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/__pycache__/nao_controller.cpython-310.pyc
+/home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/__pycache__/walk.cpython-310.pyc
 /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/__pycache__/butterfly_swim.cpython-310.pyc
 /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/share/moving_nao/package.xml
 /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/share/moving_nao/launch/launcher.launch.py
@@ -19,6 +19,6 @@
 /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao-0.0.0-py3.10.egg-info/top_level.txt
 /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao-0.0.0-py3.10.egg-info/entry_points.txt
 /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao/butterfly_swim
-/home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao/camina
 /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao/moving_in_pattern
 /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao/nao_controller
+/home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao/walk
