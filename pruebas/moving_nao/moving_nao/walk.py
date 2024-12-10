@@ -27,9 +27,6 @@ class Move(Node):
         
         # Iterar sobre cada articulación y crear un publicador para cada una
         for fotograma in self.datos:
-            tiempo_actual = fotograma["tiempo"]
-            fotograma["tiempo_de_espera"] = tiempo_actual - tiempo_anterior
-            tiempo_anterior = tiempo_actual
             for articulacion in fotograma["articulaciones"]:
                 nombre = articulacion["articulacion"]
                 self.art_publishers[nombre] = self.create_publisher(Float64, f'/{nombre}/cmd_pos', 10)
@@ -41,8 +38,7 @@ class Move(Node):
         i=0
         for repetition in range(0,self.reps):
             for fotograma in self.datos:
-                tiempo = fotograma["tiempo_de_espera"]
-                time.sleep(tiempo)
+                time.sleep(0.3)
                 i = i+1
                 for articulacion in fotograma["articulaciones"]:
                     nombre = articulacion["articulacion"]
@@ -50,6 +46,21 @@ class Move(Node):
                     self.art_publishers[nombre].publish(msg)
                 self.get_logger().info(f'Fotograma {i}')
 
+        stop_name = '/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/stand.json'
+        
+        with open(stop_name, 'r') as file:
+            stand = json.load(file)
+        
+        for fotograma in stand:
+            time.sleep(0.3)
+            for articulacion in fotograma["articulaciones"]:
+              nombre = articulacion["articulacion"]
+              msg.data = articulacion["posicion"]
+              self.art_publishers[nombre].publish(msg)
+        
+        self.get_logger().info(f'Finished walk')
+        
+            
 def main(args=None):    
     rclpy.init(args=args)
     node = Move()
