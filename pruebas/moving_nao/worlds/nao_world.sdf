@@ -21,42 +21,50 @@
       <direction>-0.5 0.1 -0.9</direction>
     </light>
     
-<model name="ground_plane">
-  <static>true</static>
-  <link name="link">
-    <collision name="collision">
-      <pose>0 0 0 0 0 0</pose>
-      <geometry>
-        <plane>
-          <normal>0 0 1</normal>
-          <size>100 100</size>
-        </plane>
-      </geometry>
-      <surface>
-        <friction>
-          <ode>
-            <mu>1.0</mu>
-            <mu2>1.0</mu2>
-          </ode>
-        </friction>
-      </surface>
-    </collision>
-    <visual name="visual">
-      <pose>0 0 0 0 0 0</pose>
-      <geometry>
-        <plane>
-          <normal>0 0 1</normal>
-          <size>100 100</size>
-        </plane>
-      </geometry>
-      <material>
-        <ambient>0 0 0 0</ambient>
-        <diffuse>0 0 0 0</diffuse>
-        <specular>0 0 0 0</specular>
-      </material>
-    </visual>
-  </link>
-</model>
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+              </ode>
+            </friction>
+          </surface>          
+          <material>
+            <ambient>0 0 0 0</ambient>
+            <diffuse>0 0 0 0</diffuse>
+            <specular>0 0 0 0</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
 
     
     <include>
@@ -75,6 +83,14 @@
               <size>0.1 0.1 0.01</size>
             </box>
           </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+              </ode>
+            </friction>
+          </surface>          
           <material>
             <ambient>1 1 0 1</ambient>
             <specular>1 1 0 1</specular>
@@ -89,6 +105,14 @@
               <size>0.1 0.1 0.01</size>
             </box>
           </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+              </ode>
+            </friction>
+          </surface>          
           <material>
             <ambient>1 1 0 1</ambient>
             <specular>1 1 0 1</specular>
@@ -103,6 +127,14 @@
               <size>0.1 0.1 0.01</size>
             </box>
           </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+              </ode>
+            </friction>
+          </surface>          
           <material>
             <ambient>1 1 0 1</ambient>
             <specular>1 1 0 1</specular>
@@ -117,6 +149,14 @@
               <size>0.1 0.1 0.01</size>
             </box>
           </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+              </ode>
+            </friction>
+          </surface>          
           <material>
             <ambient>1 1 0 1</ambient>
             <specular>1 1 0 1</specular>
@@ -131,6 +171,14 @@
               <size>0.1 0.1 0.01</size>
             </box>
           </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+              </ode>
+            </friction>
+          </surface>          
           <material>
             <ambient>1 1 0 1</ambient>
             <specular>1 1 0 1</specular>
@@ -152,6 +200,14 @@
               <size>20 0.1</size>
             </plane>
           </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+              </ode>
+            </friction>
+          </surface>
           <material>
               <ambient>0 0 0 1</ambient>
               <specular>0 0 0 1</specular>
@@ -172,6 +228,14 @@
               <size>0.1 0.1 0.01</size>
             </box>
           </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+              </ode>
+            </friction>
+          </surface>          
           <material>
             <ambient>1 1 0 1</ambient>
             <specular>1 1 0 1</specular>
@@ -186,6 +250,14 @@
               <size>0.1 0.1 0.01</size>
             </box>
           </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+              </ode>
+            </friction>
+          </surface>          
           <material>
             <ambient>1 1 0 1</ambient>
             <specular>1 1 0 1</specular>
@@ -200,6 +272,14 @@
               <size>0.1 0.1 0.01</size>
             </box>
           </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+              </ode>
+            </friction>
+          </surface>          
           <material>
             <ambient>1 1 0 1</ambient>
             <specular>1 1 0 1</specular>
@@ -214,6 +294,14 @@
               <size>0.1 0.1 0.01</size>
             </box>
           </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+              </ode>
+            </friction>
+          </surface>          
           <material>
             <ambient>1 1 0 1</ambient>
             <specular>1 1 0 1</specular>
@@ -228,6 +316,14 @@
               <size>0.1 0.1 0.01</size>
             </box>
           </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+              </ode>
+            </friction>
+          </surface>          
           <material>
             <ambient>1 1 0 1</ambient>
             <specular>1 1 0 1</specular>
@@ -249,6 +345,14 @@
               <size>0.1 20</size>
             </plane>
           </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+              </ode>
+            </friction>
+          </surface>          
           <material>
               <ambient>0 0 0 1</ambient>
               <specular>0 0 0 1</specular>
@@ -270,6 +374,14 @@
               <length>0.01</length>
             </cylinder>
           </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+              </ode>
+            </friction>
+          </surface>          
           <material>
             <ambient>0 0 0 1</ambient>
             <specular>0 0 0 1</specular>
@@ -285,6 +397,14 @@
               <length>0.01</length>
             </cylinder>
          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+              </ode>
+            </friction>
+          </surface>         
          <material>
             <ambient>1 1 1 1</ambient>
             <specular>1 1 1 1</specular>
