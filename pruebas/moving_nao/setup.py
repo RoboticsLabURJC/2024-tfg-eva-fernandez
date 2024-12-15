@@ -26,6 +26,7 @@ setup(
     data_files=[
         (os.path.join('share', package_name), ['package.xml']),
         (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name, 'lib'), ['model/Modelo_NAO/libgazebo_ros_camera.so']),
         (os.path.join('share/ament_index/resource_index/packages'), ['resource/' + package_name]),
     ],
 )
