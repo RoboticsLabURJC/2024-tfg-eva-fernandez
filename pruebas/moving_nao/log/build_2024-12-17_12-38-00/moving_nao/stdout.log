@@ -1,0 +1,14 @@
+running egg_info
+writing build/moving_nao/moving_nao.egg-info/PKG-INFO
+writing dependency_links to build/moving_nao/moving_nao.egg-info/dependency_links.txt
+writing entry points to build/moving_nao/moving_nao.egg-info/entry_points.txt
+writing requirements to build/moving_nao/moving_nao.egg-info/requires.txt
+writing top-level names to build/moving_nao/moving_nao.egg-info/top_level.txt
+reading manifest file 'build/moving_nao/moving_nao.egg-info/SOURCES.txt'
+writing manifest file 'build/moving_nao/moving_nao.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+copying launch/launcher.launch.py -> /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/share/moving_nao/launch

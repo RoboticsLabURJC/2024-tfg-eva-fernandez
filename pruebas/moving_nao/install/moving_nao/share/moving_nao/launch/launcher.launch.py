@@ -278,6 +278,25 @@ def generate_launch_description():
     	output="screen",
     )
     
+    
+    gz_bridge_25 = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=[
+    	   "/NAO/camera/camera_info" + "@sensor_msgs/msg/CameraInfo" + "@ignition.msgs.CameraInfo",
+    	],
+        output='screen',
+    )
+    
+    gz_bridge_26 = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=[
+    	   "/NAO/camera/image_raw" + "@sensor_msgs/msg/Image" + "@ignition.msgs.Image",
+    	],
+        output='screen',
+    )
+    
     return LaunchDescription(
         [
             declare_world_arg,
@@ -307,5 +326,7 @@ def generate_launch_description():
             gz_bridge_22,
             gz_bridge_23,
             gz_bridge_24,
+            gz_bridge_25,
+            gz_bridge_26,
         ]
     )

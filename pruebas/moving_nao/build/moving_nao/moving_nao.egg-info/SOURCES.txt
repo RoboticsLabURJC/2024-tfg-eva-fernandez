@@ -9,7 +9,6 @@ build/moving_nao/moving_nao.egg-info/requires.txt
 build/moving_nao/moving_nao.egg-info/top_level.txt
 build/moving_nao/moving_nao.egg-info/zip-safe
 launch/launcher.launch.py
-model/Modelo_NAO/libgazebo_ros_camera.so
 moving_nao/__init__.py
 moving_nao/butterfly_swim.py
 moving_nao/moving_in_pattern.py
