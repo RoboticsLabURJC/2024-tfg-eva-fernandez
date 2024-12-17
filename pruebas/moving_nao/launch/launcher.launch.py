@@ -281,14 +281,14 @@ def generate_launch_description():
     
     gz_bridge_25 = Node(
         package='ros_gz_image',
-        executable='image_bridge',
+        executable='parameter_bridge',
         arguments=['/NAO/camera/camera_info'],
         output='screen',
     )
     
     gz_bridge_25 = Node(
         package='ros_gz_image',
-        executable='image_bridge',
+        executable='parameter_bridge',
         arguments=['/NAO/camera/image_raw'],
         output='screen',
     )
