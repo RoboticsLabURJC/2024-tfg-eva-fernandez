@@ -154,7 +154,7 @@
             <velocity_decay/>
             <self_collide>0</self_collide>
         </link>
-            <link name="camera_rgb_frame">
+    <link name="camera_rgb_frame">
       <inertial>
         <pose>0.069 -0.047 0.107 0 0 0</pose>
         <inertia>
@@ -170,13 +170,14 @@
 
       <pose>0.069 -0.047 0.107 0 0 0</pose>
       <sensor name="camera" type="camera">
+      	
         <always_on>true</always_on>
         <visualize>true</visualize>
         <update_rate>30</update_rate>
-        <topic>turtlebot3/camera/image_raw</topic>
+        <topic>NAO/camera/image_raw</topic>
         <gz_frame_id>camera_rgb_frame</gz_frame_id>
         <camera name="intel_realsense_r200">
-          <camera_info_topic>turtlebot3/camera/camera_info</camera_info_topic>
+          <camera_info_topic>NAO/camera/camera_info</camera_info_topic>
           <horizontal_fov>1.02974</horizontal_fov>
           <image>
             <width>1920</width>
@@ -198,6 +199,9 @@
         </camera> 
       </sensor>
     </link>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+    	<render_engine>ogre2</render_engine>
+    </plugin>
         <joint name="HeadPitch" type="revolute">
             <child>Head</child>
             <parent>Neck</parent>
