@@ -35,8 +35,12 @@
           <surface>
             <friction>
               <ode>
-                <mu>1.05</mu>
-                <mu2>1.05</mu2>
+                <friction>
+              <ode>
+                <mu>0.9</mu>
+                <mu2>0.9</mu2>
+              </ode>
+            </friction>
               </ode>
             </friction>
           </surface>
@@ -52,8 +56,12 @@
           <surface>
             <friction>
               <ode>
-                <mu>1.05</mu>
-                <mu2>1.05</mu2>
+                <friction>
+              <ode>
+                <mu>0.9</mu>
+                <mu2>0.9</mu2>
+              </ode>
+            </friction>
               </ode>
             </friction>
           </surface>          
@@ -77,17 +85,22 @@
       <static>true</static>
       <link name="link">
         <visual name="marca_1">
-          <pose>-5 0 0.01 0 0 0</pose>
+          <pose>-5 0 0 0 0 0</pose>
           <geometry>
-            <box>
-              <size>0.1 0.1 0.01</size>
-            </box>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.1 0.1</size>
+            </plane>
           </geometry>
           <surface>
             <friction>
               <ode>
-                <mu>1.05</mu>
-                <mu2>1.05</mu2>
+                <friction>
+              <ode>
+                <mu>0.9</mu>
+                <mu2>0.9</mu2>
+              </ode>
+            </friction>
               </ode>
             </friction>
           </surface>          
@@ -99,17 +112,22 @@
           </material>
         </visual>
         <visual name="marca_2">
-          <pose>0 0 0.01 0 0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
-            <box>
-              <size>0.1 0.1 0.01</size>
-            </box>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.1 0.1</size>
+            </plane>
           </geometry>
           <surface>
             <friction>
               <ode>
-                <mu>1.05</mu>
-                <mu2>1.05</mu2>
+                <friction>
+              <ode>
+                <mu>0.9</mu>
+                <mu2>0.9</mu2>
+              </ode>
+            </friction>
               </ode>
             </friction>
           </surface>          
@@ -121,17 +139,22 @@
           </material>
         </visual>
         <visual name="marca_3">
-          <pose>5 0 0.01 0 0 0</pose>
+          <pose>5 0 0 0 0 0</pose>
           <geometry>
-            <box>
-              <size>0.1 0.1 0.01</size>
-            </box>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.1 0.1</size>
+            </plane>
           </geometry>
           <surface>
             <friction>
               <ode>
-                <mu>1.05</mu>
-                <mu2>1.05</mu2>
+                <friction>
+              <ode>
+                <mu>0.9</mu>
+                <mu2>0.9</mu2>
+              </ode>
+            </friction>
               </ode>
             </friction>
           </surface>          
@@ -143,17 +166,22 @@
           </material>
         </visual>
         <visual name="marca_4">
-          <pose>10 0 0.01 0 0 0</pose>
+          <pose>10 0 0 0 0 0</pose>
           <geometry>
-            <box>
-              <size>0.1 0.1 0.01</size>
-            </box>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.1 0.1</size>
+            </plane>
           </geometry>
           <surface>
             <friction>
               <ode>
-                <mu>1.05</mu>
-                <mu2>1.05</mu2>
+                <friction>
+              <ode>
+                <mu>0.9</mu>
+                <mu2>0.9</mu2>
+              </ode>
+            </friction>
               </ode>
             </friction>
           </surface>          
@@ -165,17 +193,22 @@
           </material>
         </visual>
         <visual name="marca_5">
-          <pose>-10 0 0.01 0 0 0</pose>
+          <pose>-10 0 0 0 0 0</pose>
           <geometry>
-            <box>
-              <size>0.1 0.1 0.01</size>
-            </box>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.1 0.1</size>
+            </plane>
           </geometry>
           <surface>
             <friction>
               <ode>
-                <mu>1.05</mu>
-                <mu2>1.05</mu2>
+                <friction>
+              <ode>
+                <mu>0.9</mu>
+                <mu2>0.9</mu2>
+              </ode>
+            </friction>
               </ode>
             </friction>
           </surface>          
@@ -203,8 +236,12 @@
           <surface>
             <friction>
               <ode>
-                <mu>1.05</mu>
-                <mu2>1.05</mu2>
+                <friction>
+              <ode>
+                <mu>0.9</mu>
+                <mu2>0.9</mu2>
+              </ode>
+            </friction>
               </ode>
             </friction>
           </surface>
@@ -222,17 +259,22 @@
       <static>true</static>
       <link name="link">
         <visual name="marca_1_">
-          <pose>0 -5 0.01 0 0 0</pose>
+          <pose>0 -5 0 0 0 0</pose>
           <geometry>
-            <box>
-              <size>0.1 0.1 0.01</size>
-            </box>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.1 0.1</size>
+            </plane>
           </geometry>
           <surface>
             <friction>
               <ode>
-                <mu>1.05</mu>
-                <mu2>1.05</mu2>
+                <friction>
+              <ode>
+                <mu>0.9</mu>
+                <mu2>0.9</mu2>
+              </ode>
+            </friction>
               </ode>
             </friction>
           </surface>          
@@ -244,17 +286,22 @@
           </material>
         </visual>
         <visual name="marca_2_">
-          <pose>0 0 0.01 0 0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
-            <box>
-              <size>0.1 0.1 0.01</size>
-            </box>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.1 0.1</size>
+            </plane>
           </geometry>
           <surface>
             <friction>
               <ode>
-                <mu>1.05</mu>
-                <mu2>1.05</mu2>
+                <friction>
+              <ode>
+                <mu>0.9</mu>
+                <mu2>0.9</mu2>
+              </ode>
+            </friction>
               </ode>
             </friction>
           </surface>          
@@ -266,17 +313,22 @@
           </material>
         </visual>
         <visual name="marca_3_">
-          <pose>0 5 0.01 0 0 0</pose>
+          <pose>0 5 0 0 0 0</pose>
           <geometry>
-            <box>
-              <size>0.1 0.1 0.01</size>
-            </box>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.1 0.1</size>
+            </plane>
           </geometry>
           <surface>
             <friction>
               <ode>
-                <mu>1.05</mu>
-                <mu2>1.05</mu2>
+                <friction>
+              <ode>
+                <mu>0.9</mu>
+                <mu2>0.9</mu2>
+              </ode>
+            </friction>
               </ode>
             </friction>
           </surface>          
@@ -288,17 +340,22 @@
           </material>
         </visual>
         <visual name="marca_4_">
-          <pose>0 10 0.01 0 0 0</pose>
+          <pose>0 10 0 0 0 0</pose>
           <geometry>
-            <box>
-              <size>0.1 0.1 0.01</size>
-            </box>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.1 0.1</size>
+            </plane>
           </geometry>
           <surface>
             <friction>
               <ode>
-                <mu>1.05</mu>
-                <mu2>1.05</mu2>
+                <friction>
+              <ode>
+                <mu>0.9</mu>
+                <mu2>0.9</mu2>
+              </ode>
+            </friction>
               </ode>
             </friction>
           </surface>          
@@ -310,17 +367,22 @@
           </material>
         </visual>
         <visual name="marca_5_">
-          <pose>0 -10 0.01 0 0 0</pose>
+          <pose>0 -10 0 0 0 0</pose>
           <geometry>
-            <box>
-              <size>0.1 0.1 0.01</size>
-            </box>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.1 0.1</size>
+            </plane>
           </geometry>
           <surface>
             <friction>
               <ode>
-                <mu>1.05</mu>
-                <mu2>1.05</mu2>
+                <friction>
+              <ode>
+                <mu>0.9</mu>
+                <mu2>0.9</mu2>
+              </ode>
+            </friction>
               </ode>
             </friction>
           </surface>          
@@ -348,8 +410,12 @@
           <surface>
             <friction>
               <ode>
-                <mu>1.05</mu>
-                <mu2>1.05</mu2>
+                <friction>
+              <ode>
+                <mu>0.9</mu>
+                <mu2>0.9</mu2>
+              </ode>
+            </friction>
               </ode>
             </friction>
           </surface>          
@@ -377,8 +443,12 @@
           <surface>
             <friction>
               <ode>
-                <mu>1.05</mu>
-                <mu2>1.05</mu2>
+                <friction>
+              <ode>
+                <mu>0.9</mu>
+                <mu2>0.9</mu2>
+              </ode>
+            </friction>
               </ode>
             </friction>
           </surface>          
@@ -400,8 +470,12 @@
           <surface>
             <friction>
               <ode>
-                <mu>1.05</mu>
-                <mu2>1.05</mu2>
+                <friction>
+              <ode>
+                <mu>0.9</mu>
+                <mu2>0.9</mu2>
+              </ode>
+            </friction>
               </ode>
             </friction>
           </surface>         
