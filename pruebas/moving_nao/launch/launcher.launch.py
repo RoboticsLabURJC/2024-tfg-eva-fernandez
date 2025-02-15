@@ -17,8 +17,7 @@ from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
     # Para poder lanzar el mundo
-    world_file = PathJoinSubstitution(['/home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds', 'invernadero.sdf'])
-    world_cfg = LaunchConfiguration("world")
+    world_file = PathJoinSubstitution(['/home/mundo_invernadero/', 'mundo_invernadero.sdf'])
     declare_world_arg = DeclareLaunchArgument(
         "world", default_value=world_file, description="SDF world file"
     )
@@ -34,7 +33,7 @@ def generate_launch_description():
                 ]
             )
         ),
-        launch_arguments={"gz_args": world_cfg}.items(),
+        launch_arguments={"gz_args": world_file}.items(),
     )
     
     # Ros bridges para controlar articulaciones de NAO
