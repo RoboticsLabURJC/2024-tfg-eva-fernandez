@@ -17,9 +17,9 @@
   <export>
     <build_type>ament_python</build_type>
     <!-- provide models to Gazebo -->
-    <gazebo_ros gazebo_model_path="/home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/mundo_invernadero" />
+    <gazebo_ros gazebo_model_path="/home/greenhouse_world" />
 
     <!-- provide worlds to Gazebo -->
-    <gazebo_ros gazebo_media_path="/home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/mundo_invernadero" />
+    <gazebo_ros gazebo_media_path="/home/greenhouse_world" />
   </export>
 </package>
