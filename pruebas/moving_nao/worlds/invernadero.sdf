@@ -1,15 +1,6 @@
 <?xml version="1.0"?>
 <sdf version="1.4">
     <world name="default">
-        <!-- import the default ground plane -->
-        <include>
-            <uri>model://ground_plane</uri>
-        </include>
-        <!-- import the sun -->
-        <include>
-            <uri>model://sun</uri>
-        </include>
-
         <!-- create a new model for our mesh -->
         <model name="example_scene">
             <!-- centre it in the world -->
