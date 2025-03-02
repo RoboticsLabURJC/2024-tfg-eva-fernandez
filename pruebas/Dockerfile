@@ -50,6 +50,12 @@ RUN git config --global user.name "evafc003" \
 RUN pip install pybullet
 RUN pip install numpy==1.26.4
 
+# Modificar el archivo .bashrc
+RUN echo 'source /opt/ros/humble/setup.bash' >> /root/.bashrc \
+    && echo 'export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/home/gazebo_models_worlds_collection/models' >> /root/.bashrc \
+    && echo 'source /home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/setup.bash' >> /root/.bashrc \
+    && echo 'export GAZEBO_RESOURCE_PATH=$GAZEBO_RESOURCE_PATH:/home/gazebo_models_worlds_collection/worlds' >> /root/.bashrc
+
 # Limpiar
 RUN apt-get clean
 
