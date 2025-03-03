@@ -69,7 +69,7 @@
       <self_collide>false</self_collide>
     </model>
     <include>
-      <uri>file:///home/pc/Escritorio/2024-tfg-eva-fernandez/pruebas/moving_nao/model/Modelo_NAO</uri>
+      <uri>file:///home/pc/Escritorio/2024-tfg-eva-fernandez/pruebas/moving_nao/model/Modelo_NAO/modelo_estable.sdf</uri>
       <name>Modelo_NAO</name>
       <pose>0 0 0.5 0 0.24081889450579794 0</pose>
     </include>
@@ -719,3 +719,4 @@
     </light>
   </world>
 </sdf>
+
