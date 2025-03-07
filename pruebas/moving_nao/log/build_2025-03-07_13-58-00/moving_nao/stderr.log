@@ -1,0 +1,5 @@
+  File "/home/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/walk_with_json.py", line 42
+    for step in range(50)
+                         ^
+SyntaxError: expected ':'
+

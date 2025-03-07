@@ -201,16 +201,13 @@ while True:
                 "posicion": joint_position
             })
 
-        movement_data[time_to_go].append({
-            "amplitud": step_amplitude,
-            "periodo": period
-        })
-
         # Convertir el diccionario en una lista de tiempos para sacar fotogramas
         fotogram = []
         for tiempo, articulaciones in movement_data.items():
             fotogram.append({
                 "tiempo": tiempo,
+                "amplitud": step_amplitude,
+                "periodo": period,
                 "articulaciones": articulaciones
         })
 

@@ -14,6 +14,7 @@ moving_nao/butterfly_swim.py
 moving_nao/moving_in_pattern.py
 moving_nao/nao_controller.py
 moving_nao/walk.py
+moving_nao/walk_with_json.py
 resource/moving_nao
 test/test_copyright.py
 test/test_flake8.py
