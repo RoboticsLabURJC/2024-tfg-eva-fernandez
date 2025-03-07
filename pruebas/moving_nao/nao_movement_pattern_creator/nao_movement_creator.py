@@ -3,13 +3,15 @@ import pybullet_data as pd
 import time
 import json
 import os
+import numpy as np
+import matplotlib.pyplot as plt
 
 file_name = input("Inserta el nombre de tu fichero .json (no olvides la extensión): ")
 
 while not file_name.endswith(".json"):
     file_name = input("No olvides la extensión .json: ")
     
-name = "/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/"+file_name
+name = "/home/pc/Escritorio/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/"+file_name
 
 # Vaciar el json para que sean todo datos nuevos
 with open(name, "w") as json_file:
@@ -26,12 +28,13 @@ p.resetDebugVisualizerCamera(1.0, 89.60, -4.40, [0, 0, 2]) # Poner la cámara en
 euler_angles = [0,0,0]
 startOrientation = p.getQuaternionFromEuler(euler_angles)
 startPosition = [0,0,2]
-model = p.loadURDF("/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/Modelo_NAO/nao.urdf", startPosition, startOrientation)
+model = p.loadURDF("/home/pc/Escritorio/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/Modelo_NAO/nao.urdf", startPosition, startOrientation)
 
 # Anclar a NAO al suelo para que no se mueva
 base_link_index = -1
 p.createConstraint(model, base_link_index, -1, -1, p.JOINT_FIXED, [0, 0, 0], [0, 0, 0], startPosition)
 
+# Sliders 
 # Slider del tiempo y un slider para indicar que esa es la secuencia que quieres guardar
 button = p.addUserDebugParameter("DONE", 0, 1, 0)
 button_prev_value = p.readUserDebugParameter(button)
@@ -77,6 +80,22 @@ R_elbow_yaw = p.addUserDebugParameter("RElbowYaw", -2.09, 2.09, 1.39626)
 R_elbow_roll = p.addUserDebugParameter("RElbowRoll", -0.03, 1.54, 1.0472)
 
 R_wrist_yaw = p.addUserDebugParameter("RWristYaw", -1.82, 1.82, 0.192)
+
+# Preparar sliders para los parámetros de caminata
+slider_amplitude = p.addUserDebugParameter("Amplitud", 0.1, 1.0, 0.5)
+slider_period = p.addUserDebugParameter("Periodo", 0.01, 0.5, 0.1)
+
+# Configurar la gráfica interactiva
+plt.ion()  # Modo interactivo
+fig, ax = plt.subplots()
+line_left, = ax.plot([], [], 'b-', label="Pierna Izquierda")
+line_right, = ax.plot([], [], 'r-', label="Pierna Derecha")
+ax.set_xlabel("Tiempo (s)")
+ax.set_ylabel("Desplazamiento")
+ax.set_title("Periodo")
+ax.axhline(0, color="gray", linestyle="--")
+ax.legend()
+ax.grid()
 
 # Preparar simulación
 while True:
@@ -138,6 +157,29 @@ while True:
     p.setJointMotorControl2(model,59, p.POSITION_CONTROL, targetPosition=R_elbow_roll_value)
     p.setJointMotorControl2(model,60, p.POSITION_CONTROL, targetPosition=R_wrist_yaw_value)
 
+    step_amplitude = p.readUserDebugParameter(slider_amplitude)
+    period = p.readUserDebugParameter(slider_period) * 2 * np.pi
+
+    # Generar datos
+    t = np.linspace(0, 10, 500)  # Tiempo de 0 a 10s con 500 puntos
+    phase_right = 0  # Pierna derecha, sin desfase
+    phase_left = np.pi  # Pierna izquierda, desfase de pi (180°)
+
+    # Señales sinusoidales para las dos piernas con un desfase
+    y_left = step_amplitude * np.sin(t / period + phase_left)  # Pierna izquierda
+    y_right = step_amplitude * np.sin(t / period + phase_right)  # Pierna derecha
+
+    # Actualizar la gráfica
+    line_left.set_xdata(t)
+    line_left.set_ydata(y_left)
+    line_right.set_xdata(t)
+    line_right.set_ydata(y_right)
+    ax.set_xlim(0, max(t))  # Ajustar eje X dinámicamente
+    ax.set_ylim(-1, 1)  # Mantener eje Y constante
+
+    plt.draw()
+    plt.pause(0.1)  # Pausa para refrescar la gráfica
+
     # Coger segundos a los que se quiere la posicion actual y volcarlo a un fichero JSON
     time_to_go = desired_time_value
 
@@ -158,6 +200,11 @@ while True:
                 "articulacion": joint_name,
                 "posicion": joint_position
             })
+
+        movement_data[time_to_go].append({
+            "amplitud": step_amplitude,
+            "periodo": period
+        })
 
         # Convertir el diccionario en una lista de tiempos para sacar fotogramas
         fotogram = []
