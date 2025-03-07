@@ -11,7 +11,7 @@ file_name = input("Inserta el nombre de tu fichero .json (no olvides la extensi�
 while not file_name.endswith(".json"):
     file_name = input("No olvides la extensión .json: ")
     
-name = "/home/pc/Escritorio/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/"+file_name
+name = "/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/"+file_name
 
 # Vaciar el json para que sean todo datos nuevos
 with open(name, "w") as json_file:
@@ -28,7 +28,7 @@ p.resetDebugVisualizerCamera(1.0, 89.60, -4.40, [0, 0, 2]) # Poner la cámara en
 euler_angles = [0,0,0]
 startOrientation = p.getQuaternionFromEuler(euler_angles)
 startPosition = [0,0,2]
-model = p.loadURDF("/home/pc/Escritorio/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/Modelo_NAO/nao.urdf", startPosition, startOrientation)
+model = p.loadURDF("/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/Modelo_NAO/nao.urdf", startPosition, startOrientation)
 
 # Anclar a NAO al suelo para que no se mueva
 base_link_index = -1
