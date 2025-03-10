@@ -507,10 +507,10 @@
             </box>
           </geometry>
           <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/White</name>
-            </script>
+             <ambient>0.3 0.3 0.35 1</ambient>  <!-- Luz ambiental (más azul y claro) -->
+             <diffuse>0.3 0.3 0.4 1</diffuse>  <!-- Color principal (más azul y claro) -->
+             <specular>0.2 0.2 0.2 1</specular> <!-- Brillo especular (reflejo) -->
+             <emissive>0 0 0 1</emissive>  <!-- Emisión de luz propia -->
           </material>
         </visual>
         <collision name='collision'>
@@ -550,10 +550,10 @@
             </box>
           </geometry>
           <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/White</name>
-            </script>
+             <ambient>0.3 0.3 0.35 1</ambient>  <!-- Luz ambiental (más azul y claro) -->
+             <diffuse>0.3 0.3 0.4 1</diffuse>  <!-- Color principal (más azul y claro) -->
+             <specular>0.2 0.2 0.2 1</specular> <!-- Brillo especular (reflejo) -->
+             <emissive>0 0 0 1</emissive>  <!-- Emisión de luz propia -->
           </material>
         </visual>
         <collision name='collision'>
@@ -593,10 +593,10 @@
             </box>
           </geometry>
           <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/White</name>
-            </script>
+             <ambient>0.3 0.3 0.35 1</ambient>  <!-- Luz ambiental (más azul y claro) -->
+             <diffuse>0.3 0.3 0.4 1</diffuse>  <!-- Color principal (más azul y claro) -->
+             <specular>0.2 0.2 0.2 1</specular> <!-- Brillo especular (reflejo) -->
+             <emissive>0 0 0 1</emissive>  <!-- Emisión de luz propia -->
           </material>
         </visual>
         <collision name='collision'>
@@ -636,10 +636,10 @@
             </box>
           </geometry>
           <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/White</name>
-            </script>
+             <ambient>0.3 0.3 0.35 1</ambient>  <!-- Luz ambiental (más azul y claro) -->
+             <diffuse>0.3 0.3 0.4 1</diffuse>  <!-- Color principal (más azul y claro) -->
+             <specular>0.2 0.2 0.2 1</specular> <!-- Brillo especular (reflejo) -->
+             <emissive>0 0 0 1</emissive>  <!-- Emisión de luz propia -->
           </material>
         </visual>
         <collision name='collision'>
