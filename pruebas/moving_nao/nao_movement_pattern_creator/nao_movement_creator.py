@@ -230,4 +230,3 @@ while True:
         time.sleep(0.5)
         print("SAVED, PLEASE INTRODUCE ANOTHER ONE OR EXIT")
         button_prev_value = decided
-    
