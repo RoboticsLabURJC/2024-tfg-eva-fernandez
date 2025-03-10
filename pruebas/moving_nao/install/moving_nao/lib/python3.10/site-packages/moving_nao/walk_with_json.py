@@ -10,7 +10,7 @@ class Move(Node):
     def __init__(self):
         super().__init__('move')
         
-        name = '/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/caminata_falsa.json'
+        name = '/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/camina.json'
         
         with open(name, 'r') as file:
             self.datos = json.load(file)

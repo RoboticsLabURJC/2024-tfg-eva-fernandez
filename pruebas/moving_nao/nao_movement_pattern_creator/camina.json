@@ -1,6 +1,8 @@
 [
     {
         "tiempo": 0,
+        "amplitud": 0.5,
+        "periodo": 1,
         "articulaciones": [
             {
                 "articulacion": "HeadYaw",
@@ -102,6 +104,8 @@
     },
     {
         "tiempo": 0,
+        "amplitud": 0.5,
+        "periodo": 1,
         "articulaciones": [
             {
                 "articulacion": "HeadYaw",
