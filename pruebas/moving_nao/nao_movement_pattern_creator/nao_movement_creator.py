@@ -13,7 +13,7 @@ while not file_name.endswith(".json"):
     
 name = "/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/"+file_name
 
-# Vaciar el json para que sean todo datos nuevos
+# Vaciar el json (o crearlo) para que sean todo datos nuevos
 with open(name, "w") as json_file:
     json.dump([], json_file, indent=4)
 
@@ -86,7 +86,7 @@ slider_amplitude = p.addUserDebugParameter("Amplitud", 0.1, 1.0, 0.5)
 slider_period = p.addUserDebugParameter("Periodo", 0.01, 0.5, 0.1)
 
 # Configurar la gráfica interactiva
-plt.ion()  # Modo interactivo
+plt.ion()
 fig, ax = plt.subplots()
 line_left, = ax.plot([], [], 'b-', label="Pierna Izquierda")
 line_right, = ax.plot([], [], 'r-', label="Pierna Derecha")
@@ -157,29 +157,34 @@ while True:
     p.setJointMotorControl2(model,59, p.POSITION_CONTROL, targetPosition=R_elbow_roll_value)
     p.setJointMotorControl2(model,60, p.POSITION_CONTROL, targetPosition=R_wrist_yaw_value)
 
+    # Definir parámetros de la gráfica y graficar en tiempo real
     step_amplitude = p.readUserDebugParameter(slider_amplitude)
     period = p.readUserDebugParameter(slider_period) * 2 * np.pi
 
     # Generar datos
-    t = np.linspace(0, 10, 500)  # Tiempo de 0 a 10s con 500 puntos
-    phase_right = 0  # Pierna derecha, sin desfase
-    phase_left = np.pi  # Pierna izquierda, desfase de pi (180°)
+    t = np.linspace(0, 10, 500)
+    phase_right = 0
+    phase_left = np.pi
 
-    # Señales sinusoidales para las dos piernas con un desfase
-    y_left = step_amplitude * np.sin(t / period + phase_left)  # Pierna izquierda
-    y_right = step_amplitude * np.sin(t / period + phase_right)  # Pierna derecha
+    # Señales sinusoidales para las piernas
+    y_left = step_amplitude * np.sin(t / period + phase_left)
+    y_right = step_amplitude * np.sin(t / period + phase_right)
 
     # Actualizar la gráfica
     line_left.set_xdata(t)
     line_left.set_ydata(y_left)
     line_right.set_xdata(t)
     line_right.set_ydata(y_right)
-    ax.set_xlim(0, max(t))  # Ajustar eje X dinámicamente
-    ax.set_ylim(-1, 1)  # Mantener eje Y constante
+    
+    # Ajustar eje X dinámicamente y mantener constante el eje y (para mejor visualización)
+    ax.set_xlim(0, max(t))  
+    ax.set_ylim(-1, 1)
 
+    # Dibujar y refrescar gráfica para que funcione bien
     plt.draw()
-    plt.pause(0.1)  # Pausa para refrescar la gráfica
+    plt.pause(0.1)
 
+    # Guardar en el JSON
     # Coger segundos a los que se quiere la posicion actual y volcarlo a un fichero JSON
     time_to_go = desired_time_value
 

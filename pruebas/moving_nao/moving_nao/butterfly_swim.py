@@ -10,13 +10,15 @@ class ButterflySwim(Node):
         
         # Inicializar un temporizador para publicar mensajes cada 0.02 segundos
         self.timer = self.create_timer(0.02, self.publish_message)
-        self.angle = 0.0 # ángulo inicial
-        self.increment = 0.1  # Incremento del ángulo en cada publicación
+        
+        # Ángulo incial e incremento con el tiempo
+        self.angle = 0.0
+        self.increment = 0.1
         
     def publish_message(self):
         msg = Float64()
 
-        # Actualiza el ángulo para crear un giro continuo
+        # Actualizar el ángulo para crear un giro continuo y publicar para que se mueva
         self.angle += self.increment
 
         msg.data = self.angle

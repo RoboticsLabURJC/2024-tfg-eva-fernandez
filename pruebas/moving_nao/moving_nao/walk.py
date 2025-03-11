@@ -10,6 +10,7 @@ class Move(Node):
     def __init__(self):
         super().__init__('move')
         
+        # Leer argumentos y fichero
         if len(sys.argv) != 4:
             print("Por favor, pase exactamente 3 argumentos PASOS AMPLITUD TIEMPO_ENTRE_FOTOGRAMAS.")
             sys.exit(1)
@@ -25,6 +26,7 @@ class Move(Node):
         
         self.art_publishers = {}
         
+        # Crear un publicador para cada articulación
         for fotograma in self.datos:
             for articulacion in fotograma["articulaciones"]:
                 nombre = articulacion["articulacion"]
@@ -34,9 +36,8 @@ class Move(Node):
         
     def publish_message(self):
         msg = Float64()
-        num_steps = len(self.datos)  # Número total de fotogramas en el JSON
-        step_time = self.tiempo  # Tiempo entre fotogramas
-        step_amplitude = self.ampli  # Ajusta la amplitud del paso
+        step_time = self.tiempo 
+        step_amplitude = self.ampli
         step_frequency = 2 * np.pi / (self.reps * 2)  # Frecuencia para una oscilación suave
         i = 0
         for repetition in range(self.reps):
