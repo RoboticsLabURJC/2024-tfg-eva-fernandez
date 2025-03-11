@@ -28,8 +28,8 @@
           <surface>
             <friction>
               <ode>
-                <mu>0.90000000000000002</mu>
-                <mu2>0.90000000000000002</mu2>
+                <mu>1.05</mu>
+                <mu2>1.05</mu2>
               </ode>
             </friction>
             <bounce/>
@@ -720,7 +720,7 @@
       <attenuation>
         <range>1000</range>
         <linear>0.01</linear>
-        <constant>0.90000000000000002</constant>
+        <constant>1.05</constant>
         <quadratic>0.001</quadratic>
       </attenuation>
       <spot>

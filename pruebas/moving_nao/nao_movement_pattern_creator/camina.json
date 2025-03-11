@@ -1,7 +1,7 @@
 [
     {
         "tiempo": 0,
-        "amplitud": 0.5,
+        "amplitud": 1,
         "periodo": 1,
         "articulaciones": [
             {
@@ -104,7 +104,7 @@
     },
     {
         "tiempo": 0,
-        "amplitud": 0.5,
+        "amplitud": 1,
         "periodo": 1,
         "articulaciones": [
             {
