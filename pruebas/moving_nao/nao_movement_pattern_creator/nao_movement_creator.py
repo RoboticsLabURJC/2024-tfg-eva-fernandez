@@ -23,16 +23,17 @@ used_joints = [1,2,13,14,15,16,17,18,26,27,28,29,30,31,39,40,41,42,43,56,57,58,5
 # Preparar mundo y modelo
 physics_client = p.connect(p.GUI)
 p.setAdditionalSearchPath(pd.getDataPath())
+p.setGravity(0,0,-9.8)
 planeId = p.loadURDF("plane.urdf")
-p.resetDebugVisualizerCamera(1.0, 89.60, -4.40, [0, 0, 2]) # Poner la cámara en la posición deseada
-euler_angles = [0,0,0]
+p.resetDebugVisualizerCamera(1.0, 89.60, -4.40, [0, 0, 0.5]) # Poner la cámara en la posición deseada
+euler_angles = [0,0.240819,0]
 startOrientation = p.getQuaternionFromEuler(euler_angles)
-startPosition = [0,0,2]
+startPosition = [0,0,0.5]
 model = p.loadURDF("/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/Modelo_NAO/nao.urdf", startPosition, startOrientation)
 
 # Anclar a NAO al suelo para que no se mueva
-base_link_index = -1
-p.createConstraint(model, base_link_index, -1, -1, p.JOINT_FIXED, [0, 0, 0], [0, 0, 0], startPosition)
+#base_link_index = -1
+#p.createConstraint(model, base_link_index, -1, -1, p.JOINT_FIXED, [0, 0, 0], [0, 0, 0], startPosition)
 
 # Sliders 
 # Slider del tiempo y un slider para indicar que esa es la secuencia que quieres guardar
@@ -99,8 +100,7 @@ ax.grid()
 
 # Preparar simulación
 while True:
-    p.stepSimulation()
-    time.sleep(1./240.)
+    p.setRealTimeSimulation(1) 
 
     # Controlar tiempo
     desired_time_value = int(round(p.readUserDebugParameter(desired_time)))
