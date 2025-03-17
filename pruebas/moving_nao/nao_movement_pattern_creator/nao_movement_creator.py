@@ -48,7 +48,7 @@ head_pitch = p.addUserDebugParameter("HeadPitch", -0.67, 0.51, 0)
 
 # LADO IZQUIERO
 L_hip_yaw_pitch = p.addUserDebugParameter("LHipYawPitch", -1.15, 0.74, 0)
-L_hip_pitch = p.addUserDebugParameter("LHipPitch", -1.54, 0.48, -0.179)
+L_hip_pitch = p.addUserDebugParameter("LHipPitch", -1.54, 3.0, -0.179)
 L_hip_roll = p.addUserDebugParameter("LHipRoll", -0.38, 0.79, 0)
 
 L_knee_pitch = p.addUserDebugParameter("LKneePitch", -0.09, 2.11, 0.698132)
@@ -66,7 +66,7 @@ L_wrist_yaw = p.addUserDebugParameter("LWristYaw", -1.82, 1.82, -0.192)
 
 # LADO DERECHO
 R_hip_yaw_pitch = p.addUserDebugParameter("RHipYawPitch", -1.15, 0.74, 0)
-R_hip_pitch = p.addUserDebugParameter("RHipPitch", -1.54, 0.48, -0.179)
+R_hip_pitch = p.addUserDebugParameter("RHipPitch", -1.54, 3.0, -0.179)
 R_hip_roll = p.addUserDebugParameter("RHipRoll", -0.79, 0.38, 0)
 
 R_knee_pitch = p.addUserDebugParameter("RKneePitch", -0.09, 2.11, 0.698132)
