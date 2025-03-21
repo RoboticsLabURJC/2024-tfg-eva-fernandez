@@ -37,19 +37,22 @@ class Move(Node):
         self.publish_message()
         
     def publish_message(self):
-        msg = Float64()
-        i=0
-        for fotograma in self.datos:
-            tiempo = fotograma["tiempo_de_espera"]
-            time.sleep(tiempo)
-            i = i+1
+        while True:
+            msg = Float64()
+            i=0
+            for fotograma in self.datos:
+                tiempo = fotograma["tiempo_de_espera"]
+                time.sleep(tiempo)
+                i = i+1
             
-            for articulacion in fotograma["articulaciones"]:
-                nombre = articulacion["articulacion"]
-                msg.data = articulacion["posicion"]
-                self.art_publishers[nombre].publish(msg)
+                for articulacion in fotograma["articulaciones"]:
+                    nombre = articulacion["articulacion"]
+                    msg.data = articulacion["posicion"]
+                    self.art_publishers[nombre].publish(msg)
             
-            self.get_logger().info(f'Fotograma {i}')
+                self.get_logger().info(f'Fotograma {i}')
+            
+            time.sleep(1)
 
 def main(args=None):    
     rclpy.init(args=args)
@@ -58,4 +61,3 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-
