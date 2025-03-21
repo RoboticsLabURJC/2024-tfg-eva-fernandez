@@ -52,8 +52,6 @@ class Move(Node):
             
                 self.get_logger().info(f'Fotograma {i}')
             
-            time.sleep(1)
-
 def main(args=None):    
     rclpy.init(args=args)
     node = Move()
