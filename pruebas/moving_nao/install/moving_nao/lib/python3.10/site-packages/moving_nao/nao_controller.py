@@ -13,6 +13,7 @@ class MinimalPublisher(Node):
 
     def publish_message(self):
         msg = Float64()
+        
         # Alternar entre los dos valores
         if self.counter % 2 == 0:
             msg.data = 0.5
@@ -22,7 +23,7 @@ class MinimalPublisher(Node):
         self.publisher_.publish(msg)
         self.get_logger().info('Publishing: "%f" in topic "%s"' % (msg.data, self.publisher_.topic_name))
         
-        self.counter += 1  # Incrementar el contador
+        self.counter += 1
 
 def main(args=None):
     rclpy.init(args=args)

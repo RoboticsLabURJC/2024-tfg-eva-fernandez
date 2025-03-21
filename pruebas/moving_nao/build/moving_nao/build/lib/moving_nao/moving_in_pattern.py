@@ -2,6 +2,7 @@ import sys
 import json
 import rclpy
 import time
+import numpy as np
 from rclpy.node import Node
 from std_msgs.msg import Float64
 
@@ -37,12 +38,9 @@ class Move(Node):
         
     def publish_message(self):
         msg = Float64()
-        phase = np.pi
         i=0
         for fotograma in self.datos:
             tiempo = fotograma["tiempo_de_espera"]
-            amplitud = fotograma["amplitud"]
-            periodo = fotograma["periodo"]
             time.sleep(tiempo)
             i = i+1
             

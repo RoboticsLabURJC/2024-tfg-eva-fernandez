@@ -2,6 +2,7 @@ import sys
 import json
 import rclpy
 import time
+import numpy as np
 from rclpy.node import Node
 from std_msgs.msg import Float64
 

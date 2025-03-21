@@ -10,6 +10,7 @@ class Move(Node):
     def __init__(self):
         super().__init__('move')
         
+        # Leer fichero
         name = '/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/camina.json'
         
         with open(name, 'r') as file:
@@ -17,6 +18,7 @@ class Move(Node):
         
         self.art_publishers = {}
         
+        # Crear un publicador para cada articulación
         for fotograma in self.datos:
             self.reps = 50
             self.ampli = fotograma["amplitud"]
@@ -29,9 +31,9 @@ class Move(Node):
         
     def publish_message(self):
         msg = Float64()
-        num_steps = len(self.datos)  # Número total de fotogramas en el JSON
-        step_time = self.tiempo  # Tiempo entre fotogramas
-        step_amplitude = self.ampli  # Ajusta la amplitud del paso
+        num_steps = len(self.datos)
+        step_time = self.tiempo
+        step_amplitude = self.ampli
         step_frequency = 2 * np.pi / (self.reps * 2)  # Frecuencia para una oscilación suave
         i = 0
         for repetition in range(self.reps):
