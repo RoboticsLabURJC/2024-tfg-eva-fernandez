@@ -97,11 +97,9 @@ ax.set_title("Periodo")
 ax.axhline(0, color="gray", linestyle="--")
 ax.legend()
 ax.grid()
-
+p.setRealTimeSimulation(True)
 # Preparar simulación
 while True:
-    p.setRealTimeSimulation(1) 
-
     # Controlar tiempo
     desired_time_value = int(round(p.readUserDebugParameter(desired_time)))
     decided = int(round(p.readUserDebugParameter(button)))

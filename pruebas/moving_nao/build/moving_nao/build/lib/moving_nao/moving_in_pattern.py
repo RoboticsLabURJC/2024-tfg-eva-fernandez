@@ -37,7 +37,7 @@ class Move(Node):
         self.publish_message()
         
     def publish_message(self):
-        while True:
+        #while True:
             msg = Float64()
             i=0
             for fotograma in self.datos:
@@ -51,6 +51,7 @@ class Move(Node):
                     self.art_publishers[nombre].publish(msg)
             
                 self.get_logger().info(f'Fotograma {i}')
+            #print("HOLA")
             
 def main(args=None):    
     rclpy.init(args=args)

@@ -51,7 +51,7 @@ class Move(Node):
                 
                 # Asegurarnos de que esperamos el tiempo correcto
                 tiempo_trascorrido = time.time() - inicio_tiempo
-                tiempo_deseado = i * tiempo_espera  # Tiempo deseado según el índice
+                tiempo_deseado = i * tiempo_espera 
                 tiempo_diferencia = tiempo_deseado - tiempo_trascorrido
                 
                 if tiempo_diferencia > 0:
@@ -60,7 +60,7 @@ class Move(Node):
                 # Publicar las posiciones de las articulaciones
                 for articulacion in fotograma:
                     if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":  # Excluimos las columnas no necesarias
-                        msg.data = float(fotograma[articulacion])  # Convertimos la posición a float
+                        msg.data = float(fotograma[articulacion])
                         self.art_publishers[articulacion].publish(msg)
 
                 i += 1
@@ -74,4 +74,3 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-
