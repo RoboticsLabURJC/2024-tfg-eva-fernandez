@@ -15,7 +15,7 @@ class Move(Node):
             sys.exit(1)
 
         file_name = sys.argv[1]
-        name = '/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/' + file_name
+        name = '/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/' + file_name
 
         # Leer el archivo CSV
         with open(name, 'r') as file:

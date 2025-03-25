@@ -14,10 +14,17 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node, SetParameter
 from ament_index_python.packages import get_package_share_directory
 
+from launch.actions import SetEnvironmentVariable
+
 
 def generate_launch_description():
+    
+    set_gazebo_version = SetEnvironmentVariable(
+        name="GAZEBO_VERSION", value="8.9"
+    )
+    
     # Para poder lanzar el mundo
-    world_file = PathJoinSubstitution(['/home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world', 'greenhouse_world.sdf'])
+    world_file = PathJoinSubstitution(['/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world', 'greenhouse_world.sdf'])
     declare_world_arg = DeclareLaunchArgument(
         "world", default_value=world_file, description="SDF world file"
     )
@@ -299,6 +306,7 @@ def generate_launch_description():
     return LaunchDescription(
         [
             declare_world_arg,
+            set_gazebo_version,
             SetParameter(name="use_sim_time", value=True),
             gz_sim,
             gz_bridge_1,

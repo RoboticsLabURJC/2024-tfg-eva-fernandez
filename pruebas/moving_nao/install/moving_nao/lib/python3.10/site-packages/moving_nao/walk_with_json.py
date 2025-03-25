@@ -11,7 +11,7 @@ class Move(Node):
         super().__init__('move')
         
         # Leer fichero
-        name = '/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/camina.json'
+        name = '/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/camina.json'
         
         with open(name, 'r') as file:
             self.datos = json.load(file)

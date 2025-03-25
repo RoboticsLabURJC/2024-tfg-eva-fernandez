@@ -19,7 +19,7 @@ class Move(Node):
         self.ampli = float(sys.argv[2])
         self.tiempo = float(sys.argv[3])
         
-        name = '/home/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/camina.json'
+        name = '/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/camina.json'
         
         with open(name, 'r') as file:
             self.datos = json.load(file)

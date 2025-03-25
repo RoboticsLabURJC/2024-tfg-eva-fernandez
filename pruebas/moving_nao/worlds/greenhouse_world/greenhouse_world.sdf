@@ -1,4 +1,4 @@
-<sdf version='1.9'>
+<sdf version='1.5'>
   <world name='empty_world'>
     <physics name='1ms' type='ignored'>
       <max_step_size>0.001</max_step_size>
@@ -69,7 +69,7 @@
       <self_collide>false</self_collide>
     </model>
     <include>
-      <uri>file:///home/2024-tfg-eva-fernandez/pruebas/moving_nao/model/Modelo_NAO/modelo_estable.sdf</uri>
+      <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/model/Modelo_NAO/modelo_estable.sdf</uri>
       <name>Modelo_NAO</name>
       <pose>0 0 0.5 0 0.240819 0</pose>
     </include>
@@ -78,14 +78,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/bambu/bambu.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/bambu/bambu.dae</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/bambu/bambu.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/bambu/bambu.dae</uri>
             </mesh>
           </geometry>
         </collision>
@@ -113,14 +113,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/arbol_enfermo/arbol_enfermo.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/arbol_enfermo/arbol_enfermo.dae</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/arbol_enfermo/arbol_enfermo.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/arbol_enfermo/arbol_enfermo.dae</uri>
             </mesh>
           </geometry>
         </collision>
@@ -148,14 +148,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/arbol_enfermo/arbol_enfermo.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/arbol_enfermo/arbol_enfermo.dae</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/arbol_enfermo/arbol_enfermo.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/arbol_enfermo/arbol_enfermo.dae</uri>
             </mesh>
           </geometry>
         </collision>
@@ -188,14 +188,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/monsteras/monstera_1.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/monsteras/monstera_1.dae</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/monsteras/monstera_1.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/monsteras/monstera_1.dae</uri>
             </mesh>
           </geometry>
         </collision>
@@ -223,14 +223,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/monsteras/monstera_2.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/monsteras/monstera_2.dae</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/monsteras/monstera_2.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/monsteras/monstera_2.dae</uri>
             </mesh>
           </geometry>
         </collision>
@@ -258,14 +258,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/cajas/caja_3.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/cajas/caja_3.dae</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/cajas/caja_3.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/cajas/caja_3.dae</uri>
             </mesh>
           </geometry>
         </collision>
@@ -293,14 +293,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/cajas/caja_vacia.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/cajas/caja_vacia.dae</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/cajas/caja_vacia.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/cajas/caja_vacia.dae</uri>
             </mesh>
           </geometry>
         </collision>
@@ -328,14 +328,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/pineapple_empty/pineapple_empty.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/pineapple_empty/pineapple_empty.dae</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/pineapple_empty/pineapple_empty.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/pineapple_empty/pineapple_empty.dae</uri>
             </mesh>
           </geometry>
         </collision>
@@ -363,14 +363,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/pineapple_small/pineapple_small.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/pineapple_small/pineapple_small.dae</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/pineapple_small/pineapple_small.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/pineapple_small/pineapple_small.dae</uri>
             </mesh>
           </geometry>
         </collision>
@@ -398,14 +398,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/pineapple_big/pineapple_big.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/pineapple_big/pineapple_big.dae</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/pineapple_big/pineapple_big.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/pineapple_big/pineapple_big.dae</uri>
             </mesh>
           </geometry>
         </collision>
@@ -433,14 +433,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/planta_redonda/planta_redonda.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/planta_redonda/planta_redonda.dae</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/planta_redonda/planta_redonda.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/planta_redonda/planta_redonda.dae</uri>
             </mesh>
           </geometry>
         </collision>
@@ -468,14 +468,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/plantitas/plantitas.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/plantitas/plantitas.dae</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/plantitas/plantitas.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/plantitas/plantitas.dae</uri>
             </mesh>
           </geometry>
         </collision>
@@ -680,14 +680,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/bambu/bambu.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/bambu/bambu.dae</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:////home/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/bambu/bambu.dae</uri>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/worlds/greenhouse_world/Atrezzo/bambu/bambu.dae</uri>
             </mesh>
           </geometry>
         </collision>
