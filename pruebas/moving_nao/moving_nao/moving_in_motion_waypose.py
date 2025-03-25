@@ -59,8 +59,6 @@ class Move(Node):
                         msg = Float64()
                         msg.data = interpolated_value
                         self.art_publishers[articulacion].publish(msg)
-                
-                time.sleep(0.1)
         
         self.get_logger().info("Movimientos completados")
 
@@ -68,6 +66,8 @@ def main(args=None):
     rclpy.init(args=args)
     node = Move()
     rclpy.spin(node)
+    node.destroy_node()
+    rclpy.shutdown()
 
 if __name__ == '__main__':
     main()
