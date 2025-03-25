@@ -22,7 +22,8 @@ setup(
             'moving_in_pattern = moving_nao.moving_in_pattern:main',
             'walk = moving_nao.walk:main',   
             'walk_with_json = moving_nao.walk_with_json:main',
-            'moving_in_motion = moving_nao.moving_in_motion:main',         
+            'moving_in_motion = moving_nao.moving_in_motion:main',
+            'moving_in_motion_waypose = moving_nao.moving_in_motion_waypose:main',         
         ],
     },
     data_files=[
