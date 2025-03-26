@@ -303,6 +303,15 @@ def generate_launch_description():
         output='screen',
     )
     
+    gz_bridge_27 = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=[
+    	   "/NAO/imu_sensor" + "@sensor_msgs/msg/Imu" + "@gz.msgs.IMU",
+    	],
+        output='screen',
+    )    
+    
     return LaunchDescription(
         [
             declare_world_arg,
@@ -335,5 +344,6 @@ def generate_launch_description():
             gz_bridge_24,
             gz_bridge_25,
             gz_bridge_26,
+            gz_bridge_27,
         ]
     )
