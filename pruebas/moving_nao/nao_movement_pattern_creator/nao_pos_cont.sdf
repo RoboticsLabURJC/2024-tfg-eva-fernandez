@@ -1261,7 +1261,6 @@
                 </ode>
             </physics>
         </joint>
-        <!-- Link para el dedo meñique -->
         <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
             <joint_name>LWristYaw</joint_name>
             <use_velocity_commands>true</use_velocity_commands>
