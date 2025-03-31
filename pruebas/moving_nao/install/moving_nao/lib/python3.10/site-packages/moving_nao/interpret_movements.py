@@ -61,26 +61,24 @@ class Move(Node):
 
     def publish_message(self):
         if self.file_name.endswith(".csv"):
-            initial_time = time.time()
             num_fotogramas = len(self.datos)
 
             for i in range(num_fotogramas - 1):
                 fotograma_actual = self.datos[i]
                 fotograma_siguiente = self.datos[i + 1]
                 duracion = float(fotograma_siguiente["tiempo_de_duracion"])
+                
+                time.sleep(duracion)
 
-                start_time = time.time()
-                while time.time() - start_time < duracion:
-                    t_actual = time.time() - start_time
-                    for articulacion in fotograma_actual:
-                        if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
-                            pos_actual = float(fotograma_actual[articulacion])
-                            pos_siguiente = float(fotograma_siguiente[articulacion])
-                            interpolated_value = self.interpolate(pos_actual, pos_siguiente, t_actual, duracion)
-
-                            msg = Float64()
-                            msg.data = interpolated_value
-                            self.art_publishers[articulacion].publish(msg)
+                for articulacion in fotograma_actual:
+                    if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
+                        pos_actual = float(fotograma_actual[articulacion])
+                        pos_siguiente = float(fotograma_siguiente[articulacion])
+                        interpolated_value = self.interpolate(pos_actual, pos_siguiente, duracion, duracion)
+                        
+                        msg = Float64()
+                        msg.data = interpolated_value
+                        self.art_publishers[articulacion].publish(msg)
         else:
             msg = Float64()
             i=0

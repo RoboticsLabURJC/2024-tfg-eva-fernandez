@@ -28,8 +28,8 @@
           <surface>
             <friction>
               <ode>
-                <mu>3</mu>
-                <mu2>3</mu2>
+                <mu>500</mu>
+                <mu2>500</mu2>
               </ode>
             </friction>
             <bounce/>
