@@ -5,6 +5,7 @@ moving_in_motion = moving_nao.moving_in_motion:main
 moving_in_pattern = moving_nao.moving_in_pattern:main
 moving_in_pattern_waypose = moving_nao.moving_in_pattern_waypose:main
 nao_controller = moving_nao.nao_controller:main
+nao_movement_pattern_creator = moving_nao.nao_movement_pattern_creator:main
 walk = moving_nao.walk:main
 walk_with_json = moving_nao.walk_with_json:main
 
