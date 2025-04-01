@@ -1,0 +1,16 @@
+/home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/launch/launcher.launch.py
+/home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/ament_index/resource_index/package_run_dependencies/nao_controller
+/home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/ament_index/resource_index/parent_prefix_path/nao_controller
+/home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/environment/ament_prefix_path.sh
+/home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/environment/ament_prefix_path.dsv
+/home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/environment/path.sh
+/home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/environment/path.dsv
+/home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/local_setup.bash
+/home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/local_setup.sh
+/home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/local_setup.zsh
+/home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/local_setup.dsv
+/home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/package.dsv
+/home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/ament_index/resource_index/packages/nao_controller
+/home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/cmake/nao_controllerConfig.cmake
+/home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/cmake/nao_controllerConfig-version.cmake
+/home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/package.xml

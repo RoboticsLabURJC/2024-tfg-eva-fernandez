@@ -1,0 +1,71 @@
+[0.359s] Invoking command in '/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao': PYTHONPATH=/home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/moving_nao build --build-base /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build install --record /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/install.log --single-version-externally-managed install_data
+[0.494s] running egg_info
+[0.494s] creating ../../build/moving_nao/moving_nao.egg-info
+[0.495s] writing ../../build/moving_nao/moving_nao.egg-info/PKG-INFO
+[0.495s] writing dependency_links to ../../build/moving_nao/moving_nao.egg-info/dependency_links.txt
+[0.495s] writing entry points to ../../build/moving_nao/moving_nao.egg-info/entry_points.txt
+[0.495s] writing requirements to ../../build/moving_nao/moving_nao.egg-info/requires.txt
+[0.495s] writing top-level names to ../../build/moving_nao/moving_nao.egg-info/top_level.txt
+[0.495s] writing manifest file '../../build/moving_nao/moving_nao.egg-info/SOURCES.txt'
+[0.496s] reading manifest file '../../build/moving_nao/moving_nao.egg-info/SOURCES.txt'
+[0.496s] writing manifest file '../../build/moving_nao/moving_nao.egg-info/SOURCES.txt'
+[0.496s] running build
+[0.496s] running build_py
+[0.497s] creating /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build
+[0.497s] creating /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib
+[0.497s] creating /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao
+[0.497s] copying moving_nao/nao_movement_pattern_creator.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao
+[0.497s] copying moving_nao/nao_controller.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao
+[0.497s] copying moving_nao/butterfly_swim.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao
+[0.497s] copying moving_nao/moving_in_pattern.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao
+[0.497s] copying moving_nao/interpret_movements.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao
+[0.497s] copying moving_nao/walking_gate.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao
+[0.498s] copying moving_nao/walk_with_json.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao
+[0.498s] copying moving_nao/__init__.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao
+[0.498s] copying moving_nao/moving_in_motion.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao
+[0.498s] copying moving_nao/walk.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao
+[0.498s] running install
+[0.499s] running install_lib
+[0.499s] creating /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao
+[0.499s] copying /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao/nao_movement_pattern_creator.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao
+[0.499s] copying /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao/nao_controller.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao
+[0.499s] copying /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao/butterfly_swim.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao
+[0.499s] copying /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao/moving_in_pattern.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao
+[0.499s] copying /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao/interpret_movements.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao
+[0.500s] copying /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao/walking_gate.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao
+[0.500s] copying /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao/walk_with_json.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao
+[0.500s] copying /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao/__init__.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao
+[0.500s] copying /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao/moving_in_motion.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao
+[0.500s] copying /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build/lib/moving_nao/walk.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao
+[0.500s] byte-compiling /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao/nao_movement_pattern_creator.py to nao_movement_pattern_creator.cpython-310.pyc
+[0.500s] byte-compiling /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao/nao_controller.py to nao_controller.cpython-310.pyc
+[0.501s] byte-compiling /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao/butterfly_swim.py to butterfly_swim.cpython-310.pyc
+[0.501s] byte-compiling /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao/moving_in_pattern.py to moving_in_pattern.cpython-310.pyc
+[0.501s] byte-compiling /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao/interpret_movements.py to interpret_movements.cpython-310.pyc
+[0.502s] byte-compiling /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao/walking_gate.py to walking_gate.cpython-310.pyc
+[0.502s] byte-compiling /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao/walk_with_json.py to walk_with_json.cpython-310.pyc
+[0.503s] byte-compiling /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao/__init__.py to __init__.cpython-310.pyc
+[0.503s] byte-compiling /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao/moving_in_motion.py to moving_in_motion.cpython-310.pyc
+[0.503s] byte-compiling /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao/walk.py to walk.cpython-310.pyc
+[0.503s] running install_data
+[0.503s] copying package.xml -> /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/share/moving_nao
+[0.503s] creating /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/share/moving_nao/launch
+[0.503s] copying launch/launcher.launch.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/share/moving_nao/launch
+[0.504s] creating /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/share/ament_index
+[0.504s] creating /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/share/ament_index/resource_index
+[0.504s] creating /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/share/ament_index/resource_index/packages
+[0.504s] copying resource/moving_nao -> /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/share/ament_index/resource_index/packages
+[0.504s] running install_egg_info
+[0.505s] Copying ../../build/moving_nao/moving_nao.egg-info to /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages/moving_nao-0.0.0-py3.10.egg-info
+[0.505s] running install_scripts
+[0.518s] Installing butterfly_swim script to /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/moving_nao
+[0.519s] Installing interpret_movements script to /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/moving_nao
+[0.519s] Installing moving_in_motion script to /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/moving_nao
+[0.519s] Installing moving_in_pattern script to /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/moving_nao
+[0.519s] Installing moving_in_pattern_waypose script to /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/moving_nao
+[0.519s] Installing nao_controller script to /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/moving_nao
+[0.519s] Installing nao_movement_pattern_creator script to /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/moving_nao
+[0.519s] Installing walk script to /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/moving_nao
+[0.519s] Installing walk_with_json script to /home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/moving_nao
+[0.519s] writing list of installed files to '/home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/install.log'
+[0.533s] Invoked command in '/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao' returned '0': PYTHONPATH=/home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/evichan/Desktop/2024-tfg-eva-fernandez/install/moving_nao/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/moving_nao build --build-base /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/build install --record /home/evichan/Desktop/2024-tfg-eva-fernandez/build/moving_nao/install.log --single-version-externally-managed install_data

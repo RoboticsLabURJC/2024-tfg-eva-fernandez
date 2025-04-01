@@ -1,0 +1,35 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/evichan/Desktop/2024-tfg-eva-fernandez/build/nao_controller
+-- Install configuration: ""
+-- Installing: /home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/launch
+-- Installing: /home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/launch/launcher.launch.py
+-- Installing: /home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/ament_index/resource_index/package_run_dependencies/nao_controller
+-- Installing: /home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/ament_index/resource_index/parent_prefix_path/nao_controller
+-- Installing: /home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/environment/ament_prefix_path.sh
+-- Installing: /home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/environment/ament_prefix_path.dsv
+-- Installing: /home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/environment/path.sh
+-- Installing: /home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/environment/path.dsv
+-- Installing: /home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/local_setup.bash
+-- Installing: /home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/local_setup.sh
+-- Installing: /home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/local_setup.zsh
+-- Installing: /home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/local_setup.dsv
+-- Installing: /home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/package.dsv
+-- Installing: /home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/ament_index/resource_index/packages/nao_controller
+-- Installing: /home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/cmake/nao_controllerConfig.cmake
+-- Installing: /home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/cmake/nao_controllerConfig-version.cmake
+-- Installing: /home/evichan/Desktop/2024-tfg-eva-fernandez/install/nao_controller/share/nao_controller/package.xml

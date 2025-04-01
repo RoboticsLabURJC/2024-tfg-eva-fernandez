@@ -1,0 +1,9 @@
+/home/evichan/Desktop/2024-tfg-eva-fernandez/build/nao_controller/CMakeFiles/uninstall.dir
+/home/evichan/Desktop/2024-tfg-eva-fernandez/build/nao_controller/CMakeFiles/nao_controller_uninstall.dir
+/home/evichan/Desktop/2024-tfg-eva-fernandez/build/nao_controller/CMakeFiles/test.dir
+/home/evichan/Desktop/2024-tfg-eva-fernandez/build/nao_controller/CMakeFiles/edit_cache.dir
+/home/evichan/Desktop/2024-tfg-eva-fernandez/build/nao_controller/CMakeFiles/rebuild_cache.dir
+/home/evichan/Desktop/2024-tfg-eva-fernandez/build/nao_controller/CMakeFiles/list_install_components.dir
+/home/evichan/Desktop/2024-tfg-eva-fernandez/build/nao_controller/CMakeFiles/install.dir
+/home/evichan/Desktop/2024-tfg-eva-fernandez/build/nao_controller/CMakeFiles/install/local.dir
+/home/evichan/Desktop/2024-tfg-eva-fernandez/build/nao_controller/CMakeFiles/install/strip.dir

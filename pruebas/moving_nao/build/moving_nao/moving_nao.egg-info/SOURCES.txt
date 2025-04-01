@@ -9,7 +9,6 @@ build/moving_nao/moving_nao.egg-info/requires.txt
 build/moving_nao/moving_nao.egg-info/top_level.txt
 build/moving_nao/moving_nao.egg-info/zip-safe
 launch/launcher.launch.py
-launch/movement_creator.launch.py
 moving_nao/__init__.py
 moving_nao/butterfly_swim.py
 moving_nao/interpret_movements.py

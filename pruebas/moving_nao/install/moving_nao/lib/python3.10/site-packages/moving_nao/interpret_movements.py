@@ -79,6 +79,7 @@ class Move(Node):
                         msg = Float64()
                         msg.data = interpolated_value
                         self.art_publishers[articulacion].publish(msg)
+                        time.sleep(0.001)
         else:
             msg = Float64()
             i=0
@@ -91,7 +92,8 @@ class Move(Node):
                     nombre = articulacion["articulacion"]
                     msg.data = articulacion["posicion"]
                     self.art_publishers[nombre].publish(msg)
-
+                    time.sleep(0.001)
+                    
         self.get_logger().info("Movimientos completados")
 
 def main(args=None):
