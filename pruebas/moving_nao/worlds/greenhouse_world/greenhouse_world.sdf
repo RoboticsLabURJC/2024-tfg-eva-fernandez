@@ -25,15 +25,17 @@
               <size>100 100</size>
             </plane>
           </geometry>
-          <surface>
+            <surface>
             <friction>
               <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
+                <friction>
+              <ode>
+                <mu>0.9</mu>
+                <mu2>0.9</mu2>
               </ode>
             </friction>
-            <bounce/>
-            <contact/>
+              </ode>
+            </friction>
           </surface>
         </collision>
         <visual name='visual'>

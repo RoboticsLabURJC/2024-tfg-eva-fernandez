@@ -111,7 +111,7 @@
     <child link="LThigh"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <axis xyz="0 1.0 0"/>
-    <limit effort="3.023" lower="-1.53589" upper="0.48398" velocity="6.40239"/>
+    <limit effort="3.023" lower="-1.53589" upper="1.53589" velocity="6.40239"/>
   </joint>
   <link name="LThigh">
     <inertial>
@@ -190,7 +190,7 @@
   </joint>
   <link name="l_ankle">
     <inertial>
-      <mass value="0.17184"/>
+      <mass value="1.16184"/>
       <inertia ixx="8.72911e-05" ixy="8.71925e-06" ixz="-2.10563e-06" iyy="0.000353024" iyz="3.73459e-07" izz="0.000412846"/>
       <origin rpy="0 0 0" xyz="0.02542 0.0033 -0.03239"/>
     </inertial>
@@ -269,7 +269,7 @@
     <child link="RThigh"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <axis xyz="0 1.0 0"/>
-    <limit effort="3.0226" lower="-1.53589" upper="0.48398" velocity="6.40239"/>
+    <limit effort="3.0226" lower="-1.53589" upper="1.53589" velocity="6.40239"/>
   </joint>
   <link name="RThigh">
     <inertial>
@@ -348,7 +348,7 @@
   </joint>
   <link name="r_ankle">
     <inertial>
-      <mass value="0.17184"/>
+      <mass value="1.16184"/>
       <inertia ixx="8.71513e-05" ixy="-8.53992e-06" ixz="-2.35184e-06" iyy="0.000352156" iyz="-4.81708e-07" izz="0.000412125"/>
       <origin rpy="0 0 0" xyz="0.02542 -0.0033 -0.03239"/>
     </inertial>
@@ -401,7 +401,7 @@
     <child link="LShoulder"/>
     <origin rpy="0 0 0" xyz="0 0.098 0.1"/>
     <axis xyz="0 1.0 0"/>
-    <limit effort="1.329" lower="-2.08567" upper="2.08567" velocity="8.26797"/>
+    <limit effort="1.329" lower="-5.08567" upper="5.08567" velocity="8.26797"/>
   </joint>
   <link name="LShoulder">
     <inertial>
@@ -528,7 +528,7 @@
     <child link="RShoulder"/>
     <origin rpy="0 0 0" xyz="0 -0.098 0.1"/>
     <axis xyz="0 1.0 0"/>
-    <limit effort="1.329" lower="-2.08567" upper="2.08567" velocity="8.26797"/>
+    <limit effort="1.329" lower="-5.08567" upper="5.08567" velocity="8.26797"/>
   </joint>
   <link name="RShoulder">
     <inertial>

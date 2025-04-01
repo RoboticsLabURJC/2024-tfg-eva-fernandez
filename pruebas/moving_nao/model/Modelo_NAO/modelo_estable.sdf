@@ -466,6 +466,8 @@
                 <limit>
                     <effort>59.5</effort>
                     <velocity>6.40239</velocity>
+                    <lower>-1.53589</lower>
+                    <upper>1.53589</upper>
                 </limit>
                 <dynamics>
                     <damping>0.1</damping>
@@ -684,13 +686,13 @@
                     <contact>
                         <ode>
                             <max_vel>0.1</max_vel>
-                            <min_depth>0.1</min_depth>
+                            <min_depth>3</min_depth>
                         </ode>
                     </contact>
                    <friction>
                         <ode>
-                            <mu>10</mu>
-                            <mu2>10</mu2>
+                            <mu>100</mu>
+                            <mu2>100</mu2>
                         </ode>
                     </friction>
                 </surface>
@@ -783,10 +785,8 @@
             <axis>
                 <xyz>0 1 0</xyz>
                 <limit>
-                    <!--
                     <lower>-5.08567</lower>
                     <upper>5.08567</upper>
-                    -->
                     <effort>40.25</effort>
                     <velocity>8.26797</velocity>
                 </limit>
@@ -1345,6 +1345,8 @@
                 <limit>
                     <effort>59.5</effort>
                     <velocity>6.40239</velocity>
+                    <lower>-1.53589</lower>
+                    <upper>1.53589</upper>
                 </limit>
                 <dynamics>
                     <damping>0.1</damping>
@@ -1563,13 +1565,13 @@
                     <contact>
                         <ode>
                             <max_vel>0.1</max_vel>
-                            <min_depth>0.1</min_depth>
+                            <min_depth>3</min_depth>
                         </ode>
                     </contact>
                    <friction>
                         <ode>
-                            <mu>10</mu>
-                            <mu2>10</mu2>
+                            <mu>100</mu>
+                            <mu2>100</mu2>
                         </ode>
                     </friction>
                 </surface>
@@ -1664,6 +1666,8 @@
                 <limit>
                     <effort>40.25</effort>
                     <velocity>8.26797</velocity>
+                    <lower>-5.08567</lower>
+                    <upper>5.08567</upper>
                 </limit>
                 <dynamics>
                     <damping>0.1</damping>
