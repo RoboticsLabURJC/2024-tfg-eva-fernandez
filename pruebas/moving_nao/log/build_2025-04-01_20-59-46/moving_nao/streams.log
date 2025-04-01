@@ -1,0 +1,32 @@
+[0.345s] Invoking command in '/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao': PYTHONPATH=/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/moving_nao build --build-base /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/build install --record /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/install.log --single-version-externally-managed install_data
+[0.480s] running egg_info
+[0.481s] writing build/moving_nao/moving_nao.egg-info/PKG-INFO
+[0.481s] writing dependency_links to build/moving_nao/moving_nao.egg-info/dependency_links.txt
+[0.481s] writing entry points to build/moving_nao/moving_nao.egg-info/entry_points.txt
+[0.481s] writing requirements to build/moving_nao/moving_nao.egg-info/requires.txt
+[0.481s] writing top-level names to build/moving_nao/moving_nao.egg-info/top_level.txt
+[0.482s] reading manifest file 'build/moving_nao/moving_nao.egg-info/SOURCES.txt'
+[0.482s] writing manifest file 'build/moving_nao/moving_nao.egg-info/SOURCES.txt'
+[0.482s] running build
+[0.482s] running build_py
+[0.482s] copying moving_nao/interpret_movements.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/build/lib/moving_nao
+[0.483s] running install
+[0.483s] running install_lib
+[0.484s] copying /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/build/lib/moving_nao/interpret_movements.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao
+[0.484s] byte-compiling /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/interpret_movements.py to interpret_movements.cpython-310.pyc
+[0.485s] running install_data
+[0.485s] running install_egg_info
+[0.486s] removing '/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao-0.0.0-py3.10.egg-info' (and everything under it)
+[0.486s] Copying build/moving_nao/moving_nao.egg-info to /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao-0.0.0-py3.10.egg-info
+[0.486s] running install_scripts
+[0.500s] Installing butterfly_swim script to /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao
+[0.500s] Installing interpret_movements script to /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao
+[0.500s] Installing moving_in_motion script to /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao
+[0.500s] Installing moving_in_pattern script to /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao
+[0.500s] Installing moving_in_pattern_waypose script to /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao
+[0.500s] Installing nao_controller script to /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao
+[0.500s] Installing nao_movement_pattern_creator script to /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao
+[0.500s] Installing walk script to /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao
+[0.500s] Installing walk_with_json script to /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao
+[0.500s] writing list of installed files to '/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/install.log'
+[0.514s] Invoked command in '/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao' returned '0': PYTHONPATH=/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/moving_nao build --build-base /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/build install --record /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/build/moving_nao/install.log --single-version-externally-managed install_data

@@ -5,10 +5,19 @@ import time
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float64
+from rclpy.time import Time
+from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy
 
 class Move(Node):
     def __init__(self):
         super().__init__('move')
+        # Definir un QoS con un tamaño de cola mayor
+        
+        qos_profile = QoSProfile(
+            reliability=ReliabilityPolicy.RELIABLE,
+            history=HistoryPolicy.KEEP_ALL,
+            depth=1000
+        )
 
         # Interpretar fichero que se pasa como único argumento obligatorio
         if len(sys.argv) != 2:
@@ -43,7 +52,7 @@ class Move(Node):
 
                 for articulacion in fotograma:
                     if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
-                        self.art_publishers[articulacion] = self.create_publisher(Float64, f'/{articulacion}/cmd_pos', 10)
+                        self.art_publishers[articulacion] = self.create_publisher(Float64, f'/{articulacion}/cmd_pos', qos_profile)
         
         else:
             for fotograma in self.datos:
@@ -52,7 +61,7 @@ class Move(Node):
                 tiempo_anterior = tiempo_actual
                 for articulacion in fotograma["articulaciones"]:
                     nombre = articulacion["articulacion"]
-                    self.art_publishers[nombre] = self.create_publisher(Float64, f'/{nombre}/cmd_pos', 10)
+                    self.art_publishers[nombre] = self.create_publisher(Float64, f'/{nombre}/cmd_pos', qos_profile)
 
         self.publish_message()
 
@@ -82,11 +91,10 @@ class Move(Node):
                         time.sleep(0.001)
         else:
             msg = Float64()
-            i=0
             for fotograma in self.datos:
                 tiempo = fotograma["tiempo_de_espera"]
+
                 time.sleep(tiempo)
-                i = i+1
             
                 for articulacion in fotograma["articulaciones"]:
                     nombre = articulacion["articulacion"]

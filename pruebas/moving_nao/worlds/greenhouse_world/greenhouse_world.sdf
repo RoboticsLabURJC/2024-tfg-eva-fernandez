@@ -1,5 +1,5 @@
 <sdf version='1.5'>
-  <world name='empty_world'>
+  <world name='greenhouse_world'>
     <physics name='1ms' type='ignored'>
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1</real_time_factor>
@@ -30,8 +30,8 @@
               <ode>
                 <friction>
               <ode>
-                <mu>0.9</mu>
-                <mu2>0.9</mu2>
+                <mu>100</mu>
+                <mu2>100</mu2>
               </ode>
             </friction>
               </ode>
