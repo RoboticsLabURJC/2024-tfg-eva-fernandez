@@ -26,17 +26,13 @@
             </plane>
           </geometry>
             <surface>
-            <friction>
-              <ode>
-                <friction>
-              <ode>
-                <mu>160</mu>
-                <mu2>160</mu2>
-              </ode>
-            </friction>
-              </ode>
-            </friction>
-          </surface>
+              <friction>
+                <ode>
+                  <mu>300</mu>   <!-- Fricción en dirección principal -->
+                  <mu2>300</mu2> <!-- Fricción en dirección perpendicular -->
+                </ode>
+              </friction>
+            </surface>
         </collision>
         <visual name='visual'>
           <pose>0 0 0 0 0 0</pose>
