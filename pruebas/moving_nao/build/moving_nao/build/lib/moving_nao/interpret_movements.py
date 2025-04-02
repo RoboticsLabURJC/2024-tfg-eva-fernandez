@@ -11,12 +11,11 @@ from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy
 class Move(Node):
     def __init__(self):
         super().__init__('move')
-        # Definir un QoS con un tamaño de cola mayor
         
         qos_profile = QoSProfile(
             reliability=ReliabilityPolicy.RELIABLE,
             history=HistoryPolicy.KEEP_ALL,
-            depth=1000
+            depth=10
         )
 
         # Interpretar fichero que se pasa como único argumento obligatorio
@@ -42,26 +41,32 @@ class Move(Node):
 
         self.art_publishers = {}
         tiempo_anterior = 0
+        counter = 0
 
         # Crear publicadores para cada articulación, dependiendo del formato del fichero
         if self.file_name.endswith(".csv"):
             for fotograma in self.datos:
+                counter = counter + 1
                 tiempo_actual = float(fotograma["#WEBOTS_MOTION"])
                 fotograma["tiempo_de_duracion"] = tiempo_actual - tiempo_anterior
                 tiempo_anterior = tiempo_actual
-
-                for articulacion in fotograma:
-                    if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
-                        self.art_publishers[articulacion] = self.create_publisher(Float64, f'/{articulacion}/cmd_pos', qos_profile)
+                
+                if counter == 1:
+                    for articulacion in fotograma:
+                        if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
+                            self.art_publishers[articulacion] = self.create_publisher(Float64, f'/{articulacion}/cmd_pos', qos_profile)
         
         else:
             for fotograma in self.datos:
+                counter = counter + 1
                 tiempo_actual = fotograma["tiempo"]
                 fotograma["tiempo_de_espera"] = tiempo_actual - tiempo_anterior
                 tiempo_anterior = tiempo_actual
-                for articulacion in fotograma["articulaciones"]:
-                    nombre = articulacion["articulacion"]
-                    self.art_publishers[nombre] = self.create_publisher(Float64, f'/{nombre}/cmd_pos', qos_profile)
+                
+                if counter == 1:
+                    for articulacion in fotograma["articulaciones"]:
+                        nombre = articulacion["articulacion"]
+                        self.art_publishers[nombre] = self.create_publisher(Float64, f'/{nombre}/cmd_pos', qos_profile)
 
         self.publish_message()
 
@@ -114,3 +119,107 @@ def main(args=None):
 if __name__ == '__main__':
     main()
 
+# import sys
+# import csv
+# import json
+# import rclpy
+# from rclpy.node import Node
+# from std_msgs.msg import Float64
+# from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy
+
+# class Move(Node):
+#     def __init__(self):
+#         super().__init__('move')
+
+#         # Configuración del QoS (ajustado)
+#         qos_profile = QoSProfile(
+#             reliability=ReliabilityPolicy.RELIABLE,  # Más eficiente que RELIABLE si hay muchos mensajes
+#             history=HistoryPolicy.KEEP_LAST,
+#             depth=10  # Evita uso innecesario de memoria
+#         )
+
+#         # Leer argumento del archivo de movimientos
+#         if len(sys.argv) != 2:
+#             self.get_logger().error("Por favor, pase exactamente un argumento (archivo .csv o .json).")
+#             sys.exit(1)
+
+#         self.file_name = sys.argv[1]
+#         path = f'/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/{self.file_name}'
+
+#         with open(path, 'r') as file:
+#             if self.file_name.endswith(".csv"):
+#                 reader = csv.DictReader(file)
+#                 self.datos = list(reader)
+#             elif self.file_name.endswith(".json"):
+#                 self.datos = json.load(file)
+#             else: 
+#                 self.get_logger().error("Formato de archivo no válido, use .json o .csv")
+#                 sys.exit(1)
+
+#         self.art_publishers = {}
+#         self.movement_sequence = []  # Lista de movimientos con tiempo calculado
+#         self.current_frame = 0
+
+#         # Crear publishers solo una vez
+#         if self.file_name.endswith(".csv"):
+#             for key in self.datos[0]:
+#                 if key not in ["#WEBOTS_MOTION", "V1.0"]:
+#                     self.art_publishers[key] = self.create_publisher(Float64, f'/{key}/cmd_pos', qos_profile)
+
+#             # Procesar datos de CSV
+#             prev_time = 0.0
+#             for frame in self.datos:
+#                 current_time = float(frame["#WEBOTS_MOTION"])
+#                 duration = current_time - prev_time
+#                 prev_time = current_time
+#                 self.movement_sequence.append((duration, frame))
+
+#         else:  # Formato JSON
+#             for joint in self.datos[0]["articulaciones"]:
+#                 self.art_publishers[joint["articulacion"]] = self.create_publisher(Float64, f'/{joint["articulacion"]}/cmd_pos', qos_profile)
+
+#             # Procesar datos de JSON
+#             prev_time = 0.0
+#             for frame in self.datos:
+#                 current_time = frame["tiempo"]
+#                 duration = current_time - prev_time
+#                 prev_time = current_time
+#                 self.movement_sequence.append((duration, frame))
+
+#         # Iniciar la publicación con un temporizador
+#         self.timer = self.create_timer(0.01, self.publish_message)  # Ejecuta cada 10ms
+
+#     def publish_message(self):
+#         """Publica las posiciones de las articulaciones en intervalos de tiempo predefinidos"""
+#         if self.current_frame >= len(self.movement_sequence):
+#             self.get_logger().info("Movimientos completados")
+#             self.timer.cancel()  # Detiene el temporizador cuando terminan los movimientos
+#             return
+
+#         duration, frame = self.movement_sequence[self.current_frame]
+
+#         if self.file_name.endswith(".csv"):
+#             for joint, value in frame.items():
+#                 if joint not in ["#WEBOTS_MOTION", "V1.0"]:
+#                     msg = Float64()
+#                     msg.data = float(value)
+#                     self.art_publishers[joint].publish(msg)
+
+#         else:
+#             for joint in frame["articulaciones"]:
+#                 msg = Float64()
+#                 msg.data = joint["posicion"]
+#                 self.art_publishers[joint["articulacion"]].publish(msg)
+
+#         self.current_frame += 1
+#         self.timer.reset()  # Reinicia el temporizador para esperar el siguiente frame
+
+# def main(args=None):
+#     rclpy.init(args=args)
+#     node = Move()
+#     rclpy.spin(node)
+#     node.destroy_node()
+#     rclpy.shutdown()
+
+# if __name__ == '__main__':
+#     main()
