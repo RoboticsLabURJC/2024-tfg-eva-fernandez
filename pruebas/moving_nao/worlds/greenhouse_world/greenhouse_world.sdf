@@ -30,8 +30,8 @@
               <ode>
                 <friction>
               <ode>
-                <mu>100</mu>
-                <mu2>100</mu2>
+                <mu>160</mu>
+                <mu2>160</mu2>
               </ode>
             </friction>
               </ode>
