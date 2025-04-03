@@ -1,10 +1,12 @@
 <sdf version='1.5'>
   <world name='greenhouse_world'>
-    <physics name='1ms' type='ignored'>
-      <max_step_size>0.001</max_step_size>
-      <real_time_factor>1</real_time_factor>
-      <real_time_update_rate>1000</real_time_update_rate>
-      <gravity>0 0 -9.81</gravity>
+    <physics name="ode_500iters" type="ode">
+      <ode>
+        <solver>
+          <type>world</type>
+          <iters>500</iters>
+        </solver>
+      </ode>
     </physics>
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>0.000025 0.000055 0.000040</magnetic_field>
@@ -25,14 +27,14 @@
               <size>100 100</size>
             </plane>
           </geometry>
-            <surface>
-              <friction>
-                <ode>
-                  <mu>300</mu>   <!-- Fricción en dirección principal -->
-                  <mu2>300</mu2> <!-- Fricción en dirección perpendicular -->
-                </ode>
-              </friction>
-            </surface>
+          <surface>
+            <friction>
+              <ode>
+                <mu>10.0</mu> 
+                <mu2>10.0</mu2>
+              </ode>
+            </friction>
+          </surface>
         </collision>
         <visual name='visual'>
           <pose>0 0 0 0 0 0</pose>
@@ -43,9 +45,9 @@
             </plane>
           </geometry>
           <material>
-            <ambient>0 0 0 0</ambient>
-            <diffuse>0 0 0 0</diffuse>
-            <specular>0 0 0 0</specular>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
           </material>
         </visual>
         <pose>0 0 0 0 -0 0</pose>
@@ -632,12 +634,6 @@
               <size>7 0.1 3</size>
             </box>
           </geometry>
-          <material>
-             <ambient>0.3 0.3 0.35 1</ambient>  <!-- Luz ambiental (más azul y claro) -->
-             <diffuse>0.3 0.3 0.4 1</diffuse>  <!-- Color principal (más azul y claro) -->
-             <specular>0.2 0.2 0.2 1</specular> <!-- Brillo especular (reflejo) -->
-             <emissive>0 0 0 1</emissive>  <!-- Emisión de luz propia -->
-          </material>
         </visual>
         <collision name='collision'>
           <geometry>

@@ -667,12 +667,12 @@
                 <pose>0.02542 0.0033 -0.03239 0 -0 0</pose>
                 <mass>1.16184</mass>
                 <inertia>
-                    <ixx>0.000269442</ixx>
-                    <ixy>-5.69572e-06</ixy>
-                    <ixz>0.000139379</ixz>
-                    <iyy>0.000644343</iyy>
-                    <iyz>1.87409e-05</iyz>
-                    <izz>0.000525757</izz>
+                        <ixx>0.0019333</ixx>
+                        <ixy>4.21766e-05</ixy>
+                        <ixz>0.000998828</ixz>
+                        <iyy>0.00461946</iyy>
+                        <iyz>-0.000135317</iyz>
+                        <izz>0.0037692</izz>
                 </inertia>
             </inertial>
             <collision name="LSole_collision">
@@ -685,14 +685,14 @@
                 <surface>
                     <contact>
                         <ode>
-                            <max_vel>0.5</max_vel>
-                            <min_depth>0.005</min_depth>
+                            <max_vel>1</max_vel>
+                            <min_depth>1</min_depth>
                         </ode>
                     </contact>
                    <friction>
                         <ode>
-                            <mu>350</mu>
-                            <mu2>350</mu2>
+                            <mu>1</mu>
+                            <mu2>10</mu2>
                         </ode>
                     </friction>
                 </surface>
@@ -1546,12 +1546,12 @@
                 <pose>0.02542 -0.0033 -0.03239 0 -0 0</pose>
                 <mass>1.16184</mass>
                 <inertia>
-                    <ixx>0.000269302</ixx>
-                    <ixy>5.87505e-06</ixy>
-                    <ixz>0.000139133</ixz>
-                    <iyy>0.000643474</iyy>
-                    <iyz>-1.88492e-05</iyz>
-                    <izz>0.000525035</izz>
+                    <ixx>0.0019333</ixx>
+                    <ixy>4.21766e-05</ixy>
+                    <ixz>0.000998828</ixz>
+                    <iyy>0.00461946</iyy>
+                    <iyz>-0.000135317</iyz>
+                    <izz>0.0037692</izz>
                 </inertia>
             </inertial>
             <collision name="RSole_collision">
@@ -1564,14 +1564,14 @@
                 <surface>
                     <contact>
                         <ode>
-                            <max_vel>0.5</max_vel>
-                            <min_depth>0.005</min_depth>
+                            <max_vel>1</max_vel>
+                            <min_depth>1</min_depth>
                         </ode>
                     </contact>
                    <friction>
                         <ode>
-                            <mu>350</mu>
-                            <mu2>350</mu2>
+                            <mu>1</mu>
+                            <mu2>10</mu2>
                         </ode>
                     </friction>
                 </surface>
