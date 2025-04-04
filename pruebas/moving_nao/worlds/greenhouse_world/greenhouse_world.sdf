@@ -1,6 +1,6 @@
 <sdf version='1.5'>
   <world name='greenhouse_world'>
-    <physics name="ode_500iters" type="ode">
+    <physics name="ode_physics" type="ode">
       <ode>
         <solver>
           <type>world</type>
