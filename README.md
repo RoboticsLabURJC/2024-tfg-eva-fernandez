@@ -68,6 +68,7 @@ Para poder llevar a cabo este proyecto se han visitado los siguientes enlaces:
 * [Otro NAO real caminando](https://youtu.be/bP8bhqcgTDA?si=pMBBCN62_7feawBX) 
 * [Partido de fútbol con NAOS para la RoboCup 2018](https://youtu.be/H8xc6LpiNVs?si=_eXNvRMYu_hxb_oS)
 * [Tutorial para crear un mundo personalizado en gazebo](https://www.youtube.com/watch?v=K4rHglJW7Hg)
+* [Documentación sobre caminatas de Aldebaran](http://doc.aldebaran.com/2-1/naoqi/motion/control-walk.html)
 * [Página oificial de NAO](https://us.softbankrobotics.com/nao)
 * [Enlace de descarga para el simulador Webots](https://cyberbotics.com/)
 * [Ejemplo de publicador y suscriptor para ros2 humble en python](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html)
