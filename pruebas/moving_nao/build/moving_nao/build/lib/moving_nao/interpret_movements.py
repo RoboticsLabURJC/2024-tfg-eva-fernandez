@@ -24,7 +24,7 @@ class Move(Node):
             sys.exit(1)
 
         self.file_name = sys.argv[1]
-        name = '/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/' + self.file_name
+        name = '/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/movements/' + self.file_name
 
         with open(name, 'r') as file:
             # Comprobar formato del fichero
