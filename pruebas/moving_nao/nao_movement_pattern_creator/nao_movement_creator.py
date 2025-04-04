@@ -11,7 +11,7 @@ file_name = input("Inserta el nombre de tu fichero .json (no olvides la extensi√
 while not file_name.endswith(".json"):
     file_name = input("No olvides la extensi√≥n .json: ")
     
-name = "/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/"+file_name
+name = "/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/nao_movement_pattern_creator/movements/"+file_name
 
 # Vaciar el json (o crearlo) para que sean todo datos nuevos
 with open(name, "w") as json_file:
