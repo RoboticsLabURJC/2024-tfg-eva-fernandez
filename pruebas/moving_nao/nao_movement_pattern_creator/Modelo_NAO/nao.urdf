@@ -190,7 +190,7 @@
   </joint>
   <link name="l_ankle">
     <inertial>
-      <mass value="1.16184"/>
+      <mass value="2.16184"/>
       <inertia ixx="8.72911e-05" ixy="8.71925e-06" ixz="-2.10563e-06" iyy="0.000353024" iyz="3.73459e-07" izz="0.000412846"/>
       <origin rpy="0 0 0" xyz="0.02542 0.0033 -0.03239"/>
     </inertial>
@@ -348,7 +348,7 @@
   </joint>
   <link name="r_ankle">
     <inertial>
-      <mass value="1.16184"/>
+      <mass value="2.16184"/>
       <inertia ixx="8.71513e-05" ixy="-8.53992e-06" ixz="-2.35184e-06" iyy="0.000352156" iyz="-4.81708e-07" izz="0.000412125"/>
       <origin rpy="0 0 0" xyz="0.02542 -0.0033 -0.03239"/>
     </inertial>
