@@ -1,7 +1,7 @@
 # Contenidos del repositorio
 * **docs**: Directorio dónde se sostiene el blog del proyecto
 * **pruebas**: Directorio dónde se han hecho pruebas y se ha preparado el proyecto antes de construirlo
-* **GreenNao** (próximamente): Directorio dónde se encuentra todo el desarrollo del proyecto final
+* **GreenNao**: Directorio dónde se encuentra todo el desarrollo del proyecto final
 * **.gitignore**: Fichero que indica a git qué otros ficheros no deben subirse al repositorio
 * **README.md**: ¡Fichero que estás leyendo ahora mismo! Contiene un resumen de lo que trata el proyecto, cómo funciona, etc
 
@@ -58,6 +58,7 @@ Si te interesa saber cómo se ha ido desarrollando este proyecto, puedes visitar
 
 Para poder llevar a cabo este proyecto se han visitado los siguientes enlaces:
 * [Modelo de NAO utilizado](https://app.gazebosim.org/OpenRobotics/fuel/models/NAO%20with%20Ignition%20position%20controller)
+* [Creación de un paquete ros2 python](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package.html)
 * [Urdf de NAO](https://github.com/ros-naoqi/nao_robot/blob/master/nao_description/urdf/naoV40_generazted_urdf/nao.urdf)
 * [Información sobre el plugin de movimiento de joints de gazebo](https://gazebosim.org/api/gazebo/6/classignition_1_1gazebo_1_1systems_1_1JointPositionController.html) 
 * [Correspondencia de mensajes entre gazebo y ros2 humble](https://github.com/gazebosim/ros_gz/blob/ros2/ros_gz_bridge/README.md)
