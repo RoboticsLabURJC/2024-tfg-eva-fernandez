@@ -41,12 +41,10 @@ Para que este TFG funcione correctamente, se necesita:
   * ros-humble-ros-gz-bridge
 
 # Explicación detallada del funcionamiento
-Cómo ya se ha explicado en la introducción de este README.md, este trabajo de fin de grado se compone de 2 pilares, los cuáles se explicarán corta, pero detalladamente a continuación:
+Cómo ya se ha explicado en la introducción de este README.md, este trabajo de fin de grado se compone de 2 pilares, los cuáles se explicarán corta, pero detalladamente a continuación, aunque, si quieres una explicación totalmente detallada de este TFG, puedes leer la memoria asociada a él [aquí]() (próximamente):
 
 ## Movimiento (próximamente)
 ## GrenNao (próximamente)
-
-Si quieres una explicación totalmente detallada de este TFG, puedes leer la memoria asociada a él [aquí]() (próximamente)
 
 # Resultado del proyecto (próximamente)
 
