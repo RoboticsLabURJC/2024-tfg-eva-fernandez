@@ -17,7 +17,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'movement_interpreter = greennao.movement_interpreter:main',         
+            'movement_interpreter = greennao.movement_interpreter:main',
+            'GreenNaoLib = greennao.GreenNaoLib:main',         
         ],
     },
     data_files=[

@@ -1,3 +1,4 @@
 [console_scripts]
+GreenNaoLib = greennao.GreenNaoLib:main
 movement_interpreter = greennao.movement_interpreter:main
 
