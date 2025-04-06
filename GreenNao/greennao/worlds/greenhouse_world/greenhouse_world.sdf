@@ -1,0 +1,726 @@
+<sdf version='1.5'>
+  <world name='greenhouse_world'>
+    <physics name="ode_physics" type="ode">
+      <ode>
+        <solver>
+          <type>world</type>
+          <iters>500</iters>
+        </solver>
+      </ode>
+    </physics>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>0.000025 0.000055 0.000040</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>10.0</mu> 
+                <mu2>10.0</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>0 0 0 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <include>
+      <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/model/Modelo_NAO/GreenNao.sdf</uri>
+      <name>Modelo_NAO</name>
+    </include>
+    <model name='bambu'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/bambu/bambu.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/bambu/bambu.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <pose>0 0 0.01 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+      </link>
+      <pose>-2.27619 1.63839 0.01 0 -0 0</pose>
+      <static>true</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='arbol_enfermo_1'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/arbol_enfermo/arbol_enfermo.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/arbol_enfermo/arbol_enfermo.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <pose>1 0 0.01 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+      </link>
+      <pose>5.05819 -0.648061 0.01 0 -0 0</pose>
+      <static>true</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='arbol_enfermo_2'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/arbol_enfermo/arbol_enfermo.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/arbol_enfermo/arbol_enfermo.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <pose>2 0 0.01 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+      </link>
+      <pose>3.91799 2.71185 0.01 0 -0 0</pose>
+      <static>true</static>
+      <self_collide>false</self_collide>
+    </model>
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/KitchenSink</uri>
+      <name>KitchenSink</name>
+      <pose>-4.33794 -0.903917 0 0 -0 0</pose>
+    </include>
+    <model name='monstera_1'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/monsteras/monstera_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/monsteras/monstera_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <pose>0 1 0.01 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+      </link>
+      <pose>1.015 3.26747 0.01 0 -0 0</pose>
+      <static>true</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='monstera_2'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/monsteras/monstera_2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/monsteras/monstera_2.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <pose>0 1 0.01 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+      </link>
+      <pose>-0.445949 0.385106 0.01 0 -0 0</pose>
+      <static>true</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='caja_3'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/cajas/caja_3.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/cajas/caja_3.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <pose>0 4.5 0.01 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+      </link>
+      <pose>-11.7538 -3.70786 0.01 0 -0 0</pose>
+      <static>true</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='caja_vacia'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/cajas/caja_vacia.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/cajas/caja_vacia.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <pose>0 6.5 0.01 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+      </link>
+      <pose>-11.8033 -5.50149 0.01 0 -0 0</pose>
+      <static>true</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='pineapple_empty'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/pineapple_empty/pineapple_empty.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/pineapple_empty/pineapple_empty.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <pose>0 7.5 0.01 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+      </link>
+      <pose>-3.23342 -6.92599 0.01 0 -0 0</pose>
+      <static>true</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='pineapple_small'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/pineapple_small/pineapple_small.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/pineapple_small/pineapple_small.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <pose>0 8.5 0.01 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+      </link>
+      <pose>-3.37139 -8.07315 0.01 0 -0 0</pose>
+      <static>true</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='pineapple_big'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/pineapple_big/pineapple_big.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/pineapple_big/pineapple_big.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <pose>0 8.5 0.01 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+      </link>
+      <pose>-2.41503 -8.19112 0.01 0 -0 0</pose>
+      <static>true</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='planta_redonda'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/planta_redonda/planta_redonda.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/planta_redonda/planta_redonda.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <pose>0 9 0.01 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+      </link>
+      <pose>-4.7397 -12.3168 0.01 0 -0 0</pose>
+      <static>true</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='plantitas'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/plantitas/plantitas.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/plantitas/plantitas.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <pose>0 8.5 0.01 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+      </link>
+      <pose>-2.30052 -6.99886 0.01 0 -0 0</pose>
+      <static>true</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='estructura_exterior'>
+      <link name='pared1'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>10 0.1 3</size>
+            </box>
+          </geometry>
+          <material>
+             <ambient>0.3 0.3 0.35 1</ambient>  <!-- Luz ambiental (más azul y claro) -->
+             <diffuse>0.3 0.3 0.4 1</diffuse>  <!-- Color principal (más azul y claro) -->
+             <specular>0.2 0.2 0.2 1</specular> <!-- Brillo especular (reflejo) -->
+             <emissive>0 0 0 1</emissive>  <!-- Emisión de luz propia -->
+          </material>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>10 0.1 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <pose>0 3.5 1.5 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='pared2'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>10 0.1 3</size>
+            </box>
+          </geometry>
+          <material>
+             <ambient>0.3 0.3 0.35 1</ambient>  <!-- Luz ambiental (más azul y claro) -->
+             <diffuse>0.3 0.3 0.4 1</diffuse>  <!-- Color principal (más azul y claro) -->
+             <specular>0.2 0.2 0.2 1</specular> <!-- Brillo especular (reflejo) -->
+             <emissive>0 0 0 1</emissive>  <!-- Emisión de luz propia -->
+          </material>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>10 0.1 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <pose>0 -3.5 1.5 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='pared3'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>7 0.1 3</size>
+            </box>
+          </geometry>
+          <material>
+             <ambient>0.3 0.3 0.35 1</ambient>  <!-- Luz ambiental (más azul y claro) -->
+             <diffuse>0.3 0.3 0.4 1</diffuse>  <!-- Color principal (más azul y claro) -->
+             <specular>0.2 0.2 0.2 1</specular> <!-- Brillo especular (reflejo) -->
+             <emissive>0 0 0 1</emissive>  <!-- Emisión de luz propia -->
+          </material>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>7 0.1 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <pose>5 0 1.5 0 -0 1.5708</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='pared4'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>7 0.1 3</size>
+            </box>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>7 0.1 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <pose>-5 0 1.5 0 -0 1.5708</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>0 0 0.01 0 -0 0</pose>
+      <static>true</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='bambu_1'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/bambu/bambu.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/worlds/greenhouse_world/Atrezzo/bambu/bambu.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <pose>0 0 0.01 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+      </link>
+      <pose>-2.18502 -3.43462 0.01 0 -0 0</pose>
+      <static>true</static>
+      <self_collide>false</self_collide>
+    </model>
+    <light name='sun' type='directional'>
+      <pose>0 0 10 0 -0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>-0.5 0.1 -0.9</direction>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <linear>0.01</linear>
+        <constant>1.05</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+  </world>
+</sdf>

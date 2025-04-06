@@ -1,8 +1,8 @@
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/nao_movement_pattern_creator.py
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/nao_controller.py
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/butterfly_swim.py
+/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/interprete_movimientos.py
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/moving_in_pattern.py
-/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/interpret_movements.py
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/walking_gate.py
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/walk_with_json.py
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/__init__.py
@@ -11,8 +11,8 @@
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/__pycache__/nao_movement_pattern_creator.cpython-310.pyc
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/__pycache__/nao_controller.cpython-310.pyc
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/__pycache__/butterfly_swim.cpython-310.pyc
+/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/__pycache__/interprete_movimientos.cpython-310.pyc
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/__pycache__/moving_in_pattern.cpython-310.pyc
-/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/__pycache__/interpret_movements.cpython-310.pyc
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/__pycache__/walking_gate.cpython-310.pyc
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/__pycache__/walk_with_json.cpython-310.pyc
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao/__pycache__/__init__.cpython-310.pyc
@@ -29,7 +29,7 @@
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao-0.0.0-py3.10.egg-info/requires.txt
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/python3.10/site-packages/moving_nao-0.0.0-py3.10.egg-info/top_level.txt
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao/butterfly_swim
-/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao/interpret_movements
+/home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao/interprete_movimientos
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao/moving_in_motion
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao/moving_in_pattern
 /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install/moving_nao/lib/moving_nao/moving_in_pattern_waypose

@@ -1,0 +1,3 @@
+[console_scripts]
+movement_interpreter = greennao.movement_interpreter:main
+
