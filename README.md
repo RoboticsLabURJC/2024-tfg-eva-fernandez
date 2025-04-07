@@ -7,12 +7,13 @@
 
 # Introducción
 
-Este trabajo de fin de grado consiste en construir una aplicación para convertir al robot NAO de Aldebaran Robotics en un robot de servicio. Para ello, ha sido necesario crear patrones de movimiento para que pueda operar correctamente, estos son (aunque aún están en desarrollo):
+Este trabajo de fin de grado consiste en construir una aplicación para convertir al robot NAO de Aldebaran Robotics en un robot de servicio. Para ello, ha sido necesario crear patrones de movimiento para que pueda operar correctamente, estos son:
 * Caminar recto hacia adelante
 * Girar en el sitio ya sea a la derecha o la izquierda
 * Desplazarse lateralmente hacia la izquierda o derecha
 * Levantarse si se cae boca arriba
 * Levantarse si se cae boca abajo
+* Caminar en arco (aún en desarrollo)
 
 Después, para la aplicación de servicios se ha decidido hacer que nuestro pequeño NAO eche una mano en un invernadero, el cual ha sido modelado por mí para funcionar en gazebo, además de un nuevo aspecto para el robot.
 
