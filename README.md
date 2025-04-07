@@ -71,4 +71,5 @@ Para poder llevar a cabo este proyecto se han visitado los siguientes enlaces:
 * [Página oificial de NAO](https://us.softbankrobotics.com/nao)
 * [Enlace de descarga para el simulador Webots](https://cyberbotics.com/)
 * [Ejemplo de publicador y suscriptor para ros2 humble en python](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html)
+* [Tutorial de como usar tus programas como librería para un nodo ros2](https://www.youtube.com/watch?v=4XCRIaVNX6k)
 
