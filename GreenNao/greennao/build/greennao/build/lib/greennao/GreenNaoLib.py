@@ -12,13 +12,14 @@ class GreenNaoLib(Node):
     def __init__(self):
         super().__init__('greennaolib')
         
+        # Crear calidad e de servicio
         qos_profile = QoSProfile(
             reliability=ReliabilityPolicy.RELIABLE,
             history=HistoryPolicy.KEEP_ALL,
             depth=10
         )
         
-        # Interpretar fichero que se pasa como único argumento obligatorio
+        # Definir valor de la velocidad que se pasa como rgumento obliatorio
         if len(sys.argv) != 2:
             print("Por favor, pase exactamente un argumento para especificar velocidad.")
             sys.exit(1)
@@ -35,7 +36,7 @@ class GreenNaoLib(Node):
         tiempo_anterior = 0
         counter = 0
 
-        # Crear publicadores para cada articulación, dependiendo del formato del fichero
+        # Crear publicadores para cada articulación
         for fotograma in self.datos:
             counter = counter + 1
             tiempo_actual = float(fotograma["#WEBOTS_MOTION"]) / self.velocity

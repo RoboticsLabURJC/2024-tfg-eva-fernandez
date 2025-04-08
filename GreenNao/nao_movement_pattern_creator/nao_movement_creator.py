@@ -31,10 +31,6 @@ startOrientation = p.getQuaternionFromEuler(euler_angles)
 startPosition = [0,0,0.5]
 model = p.loadURDF("/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/nao_movement_pattern_creator/Modelo_NAO/nao.urdf", startPosition, startOrientation)
 
-# Anclar a NAO al suelo para que no se mueva
-#base_link_index = -1
-#p.createConstraint(model, base_link_index, -1, -1, p.JOINT_FIXED, [0, 0, 0], [0, 0, 0], startPosition)
-
 # Sliders 
 # Slider del tiempo y un slider para indicar que esa es la secuencia que quieres guardar
 button = p.addUserDebugParameter("DONE", 0, 1, 0)
@@ -82,7 +78,7 @@ R_elbow_roll = p.addUserDebugParameter("RElbowRoll", 0.0349066, 1.54462, 1.0472)
 
 R_wrist_yaw = p.addUserDebugParameter("RWristYaw", -1.82387, 1.82387, 0.192)
 
-# Preparar sliders para los parámetros de caminata
+# Preparar sliders para los parámetros de onda
 slider_amplitude = p.addUserDebugParameter("Amplitud", 0.1, 1.0, 0.5)
 slider_period = p.addUserDebugParameter("Periodo", 0.01, 0.5, 0.1)
 
@@ -97,10 +93,11 @@ ax.set_title("Periodo")
 ax.axhline(0, color="gray", linestyle="--")
 ax.legend()
 ax.grid()
-p.setRealTimeSimulation(True)
+
 # Preparar simulación
+p.setRealTimeSimulation(True)
 while True:
-    # Controlar tiempo
+    # Controlar tiempo y si se quiere guardar el fotograma
     desired_time_value = int(round(p.readUserDebugParameter(desired_time)))
     decided = int(round(p.readUserDebugParameter(button)))
 
@@ -174,7 +171,7 @@ while True:
     line_right.set_xdata(t)
     line_right.set_ydata(y_right)
     
-    # Ajustar eje X dinámicamente y mantener constante el eje y (para mejor visualización)
+    # Ajustar eje X dinámicamente y mantener constante el eje y
     ax.set_xlim(0, max(t))  
     ax.set_ylim(-1, 1)
 

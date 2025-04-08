@@ -11,7 +11,6 @@ build/greennao/greennao.egg-info/zip-safe
 greennao/GreenNaoLib.py
 greennao/__init__.py
 greennao/movement_interpreter.py
-greennao/prueba.py
 launch/launcher.launch.py
 resource/greennao
 test/test_copyright.py
