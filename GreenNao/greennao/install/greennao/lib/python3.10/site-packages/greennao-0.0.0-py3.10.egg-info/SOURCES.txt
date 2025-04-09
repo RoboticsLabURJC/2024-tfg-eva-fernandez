@@ -8,9 +8,9 @@ build/greennao/greennao.egg-info/entry_points.txt
 build/greennao/greennao.egg-info/requires.txt
 build/greennao/greennao.egg-info/top_level.txt
 build/greennao/greennao.egg-info/zip-safe
+greennao/GreenNao.py
 greennao/GreenNaoLib.py
 greennao/__init__.py
-greennao/movement_interpreter.py
 launch/launcher.launch.py
 resource/greennao
 test/test_copyright.py
