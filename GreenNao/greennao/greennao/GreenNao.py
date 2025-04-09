@@ -1,6 +1,8 @@
 import GreenNaoLib
+import rclpy
 
-
-node = GreenNaoLib.SetV(1)
-# GreenNaoLib.Interpreter("walk_arc.csv")
+node = GreenNaoLib.WakeUp()
+rclpy.spin(node)
+node.destroy_node()
+rclpy.shutdown()
 

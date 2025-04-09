@@ -7,6 +7,8 @@ from rclpy.node import Node
 from std_msgs.msg import Float64
 from rclpy.time import Time
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy
+from sensor_msgs.msg import Imu
+from scipy.spatial.transform import Rotation as R
 
 rclpy.init()
 
@@ -203,6 +205,36 @@ class Interpreter(Node):
                     self.art_publishers[nombre].publish(msg)
                     time.sleep(0.001)
                     
-        self.get_logger().info("Fichero completado")
+        self.get_logger().info("Completado")
 
+# CLASE PARA LEVANTARNOS SI CAEMOS --------------------------------------------------------------------------------
+class WakeUp(Node):
+    def __init__(self):
+        super().__init__('wakeup')
+        self.subscription = self.create_subscription(
+            Imu,
+            '/NAO/imu_sensor',
+            self.listener_callback,
+            10)
+
+    def listener_callback(self, msg):
+        # Obtener cuaternión
+        q = [msg.orientation.x, msg.orientation.y, msg.orientation.z, msg.orientation.w]
+
+        # Convertir a euler (roll, pitch, yaw) en radianes
+        euler = R.from_quat(q).as_euler('xyz', degrees=False)
+        roll, pitch, yaw = euler
+
+        # Determinar orientación
+        if abs(yaw) > 2.0:
+            Interpreter("cubito_supino.json")
+            time.sleep(1)
+            Interpreter("cubito_prono.csv")
+            Interpreter("stand.json")
+            sys.exit(0)
+        
+        else:
+            Interpreter("cubito_prono.csv")
+            Interpreter("stand.json")
+            sys.exit(0)
 

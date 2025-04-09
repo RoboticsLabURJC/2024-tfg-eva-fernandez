@@ -1,7 +1,8 @@
 import GreenNaoLib
-import time
+import rclpy
 
-
-#node = GreenNaoLib.SetV(0.35)
-GreenNaoLib.Interpreter("stand.json")
+node = GreenNaoLib.WakeUp()
+rclpy.spin(node)
+node.destroy_node()
+rclpy.shutdown()
 
