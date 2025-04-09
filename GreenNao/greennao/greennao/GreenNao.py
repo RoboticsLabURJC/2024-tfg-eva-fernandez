@@ -1,6 +1,6 @@
 import GreenNaoLib
 
-node = GreenNaoLib.SetV(0.35)
 
-node = GreenNaoLib.Interpreter("say_hi_L.json")
+node = GreenNaoLib.SetV(1)
+# GreenNaoLib.Interpreter("walk_arc.csv")
 

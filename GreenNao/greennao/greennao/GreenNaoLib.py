@@ -25,7 +25,7 @@ class SetV(Node):
         qos_profile = QoSProfile(
             reliability=ReliabilityPolicy.RELIABLE,
             history=HistoryPolicy.KEEP_ALL,
-            depth=10
+            depth=100
         )
         
         self.art_publishers = {}
@@ -116,7 +116,7 @@ class Interpreter(Node):
         qos_profile = QoSProfile(
             reliability=ReliabilityPolicy.RELIABLE,
             history=HistoryPolicy.KEEP_ALL,
-            depth=10
+            depth=100
         )
 
         self.file_name = file_name
@@ -203,6 +203,6 @@ class Interpreter(Node):
                     self.art_publishers[nombre].publish(msg)
                     time.sleep(0.001)
                     
-        self.get_logger().info("Fcihero completado")
+        self.get_logger().info("Fichero completado")
 
 

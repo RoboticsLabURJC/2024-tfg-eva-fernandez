@@ -1,6 +1,7 @@
 import GreenNaoLib
+import time
 
-node = GreenNaoLib.SetV(0.35)
 
-node = GreenNaoLib.Interpreter("say_hi_L.json")
+#node = GreenNaoLib.SetV(0.35)
+GreenNaoLib.Interpreter("stand.json")
 
