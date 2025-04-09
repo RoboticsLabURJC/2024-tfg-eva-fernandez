@@ -78,22 +78,6 @@ R_elbow_roll = p.addUserDebugParameter("RElbowRoll", 0.0349066, 1.54462, 1.0472)
 
 R_wrist_yaw = p.addUserDebugParameter("RWristYaw", -1.82387, 1.82387, 0.192)
 
-# Preparar sliders para los parámetros de onda
-slider_amplitude = p.addUserDebugParameter("Amplitud", 0.1, 1.0, 0.5)
-slider_period = p.addUserDebugParameter("Periodo", 0.01, 0.5, 0.1)
-
-# Configurar la gráfica interactiva
-plt.ion()
-fig, ax = plt.subplots()
-line_left, = ax.plot([], [], 'b-', label="Pierna Izquierda")
-line_right, = ax.plot([], [], 'r-', label="Pierna Derecha")
-ax.set_xlabel("Tiempo (s)")
-ax.set_ylabel("Desplazamiento")
-ax.set_title("Periodo")
-ax.axhline(0, color="gray", linestyle="--")
-ax.legend()
-ax.grid()
-
 # Preparar simulación
 p.setRealTimeSimulation(True)
 while True:
@@ -151,33 +135,6 @@ while True:
     p.setJointMotorControl2(model,58, p.POSITION_CONTROL, targetPosition=R_elbow_yaw_value, maxVelocity=2)
     p.setJointMotorControl2(model,59, p.POSITION_CONTROL, targetPosition=R_elbow_roll_value, maxVelocity=2)
     p.setJointMotorControl2(model,60, p.POSITION_CONTROL, targetPosition=R_wrist_yaw_value, maxVelocity=2)
-
-    # Definir parámetros de la gráfica y graficar en tiempo real
-    step_amplitude = p.readUserDebugParameter(slider_amplitude)
-    period = p.readUserDebugParameter(slider_period) * 2 * np.pi
-
-    # Generar datos
-    t = np.linspace(0, 10, 500)
-    phase_right = 0
-    phase_left = np.pi
-
-    # Señales sinusoidales para las piernas
-    y_left = step_amplitude * np.sin(t / period + phase_left)
-    y_right = step_amplitude * np.sin(t / period + phase_right)
-
-    # Actualizar la gráfica
-    line_left.set_xdata(t)
-    line_left.set_ydata(y_left)
-    line_right.set_xdata(t)
-    line_right.set_ydata(y_right)
-    
-    # Ajustar eje X dinámicamente y mantener constante el eje y
-    ax.set_xlim(0, max(t))  
-    ax.set_ylim(-1, 1)
-
-    # Dibujar y refrescar gráfica para que funcione bien
-    plt.draw()
-    plt.pause(0.1)
 
     # Guardar en el JSON
     # Coger segundos a los que se quiere la posicion actual y volcarlo a un fichero JSON
