@@ -17,7 +17,7 @@ rclpy.init()
 def finish():
     rclpy.shutdown()
 
-# CLASE PARA ANDAR RECTO PASANDO LA VELOCIDAD -----------------------------------------------------------
+# Clase para andar recto pasando la velocidad -----------------------------------------------------------
 class SetV(Node):
     def __init__(self, velocity: float):
         super().__init__('setv')
@@ -115,7 +115,7 @@ class SetV(Node):
 
         self.get_logger().info("Pasos completados")
 
-# CLASE PARA REPLICAR LOS MOVIMIENTOS DE UN FICHERO -----------------------------------------------------
+# Clase para replicar los movimientos de un fichero -----------------------------------------------------
 class Interpreter(Node):
     def __init__(self, file_name: str):
         super().__init__('interpreter')
@@ -212,7 +212,7 @@ class Interpreter(Node):
                     
         self.get_logger().info("Completado")
 
-# CLASE PARA LEER EL IMU --------------------------------------------------------------------------------
+# Clase para leer el IMU --------------------------------------------------------------------------------
 class Read_IMU(Node):
     def __init__(self):
         super().__init__('wakeup')
