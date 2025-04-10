@@ -17,7 +17,9 @@ while orientation != "face normal":
         print("ERROR: Orientación inesperada, tomando posición estándar...")
         GreenNaoLib.stand_still()
 
+    time.sleep(0.05)
     orientation = GreenNaoLib.get_face()
+    
 
-time.sleep(1)
-GreenNaoLib.SetV(2.3)
+time.sleep(1.5)
+GreenNaoLib.SetV(1.5)
