@@ -8,15 +8,15 @@ from std_msgs.msg import Float64
 from rclpy.time import Time
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy
 from sensor_msgs.msg import Imu
-from scipy.spatial.transform import Rotation as R
 
-
+# Iniciar rclpy para poder usar las funciones y clases e esta librería ----------------------------------
 rclpy.init()
 
+# Parar rclpy (llamar al final del programa de NAO) -----------------------------------------------------
 def finish():
     rclpy.shutdown()
 
-# CLASE PARA ANDAR RECTO PASANDO LA VELOCIDAD --------------------------------------------------------------------------------
+# Clase para andar recto pasando la velocidad -----------------------------------------------------------
 class SetV(Node):
     def __init__(self, velocity: float):
         super().__init__('setv')
@@ -114,7 +114,7 @@ class SetV(Node):
 
         self.get_logger().info("Pasos completados")
 
-# CLASE PARA REPLICAR LOS MOVIMIENTOS DE UN FICHERO --------------------------------------------------------------------------------
+# Clase para replicar los movimientos de un fichero -----------------------------------------------------
 class Interpreter(Node):
     def __init__(self, file_name: str):
         super().__init__('interpreter')
@@ -211,7 +211,7 @@ class Interpreter(Node):
                     
         self.get_logger().info("Completado")
 
-# CLASE PARA LEVANTARNOS SI CAEMOS --------------------------------------------------------------------------------
+# Clase para leer el IMU --------------------------------------------------------------------------------
 class Read_IMU(Node):
     def __init__(self):
         super().__init__('wakeup')
@@ -243,7 +243,7 @@ class Read_IMU(Node):
         return self.acc_z
 
 
-# Función para obtener el dato del imu necesario para saber si estamos boca arriba o boca abajo ------------------------------
+# Función para obtener el dato del imu necesario para saber si estamos boca arriba o boca abajo ---------
 def get_face():
     node = Read_IMU()
     rclpy.spin_once(node)
@@ -264,7 +264,7 @@ def get_face():
     
     return side
 
-# Funciones para reproducir patrones fijos de movimiento ------------------------------------------------------------------------
+# Funciones para reproducir patrones fijos de movimiento ------------------------------------------------
 def wakeup_face_down():
     Interpreter("cubito_prono.csv")
     Interpreter("stand.json")

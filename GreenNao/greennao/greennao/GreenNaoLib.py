@@ -8,7 +8,6 @@ from std_msgs.msg import Float64
 from rclpy.time import Time
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy
 from sensor_msgs.msg import Imu
-from scipy.spatial.transform import Rotation as R
 
 # Iniciar rclpy para poder usar las funciones y clases e esta librería ----------------------------------
 rclpy.init()

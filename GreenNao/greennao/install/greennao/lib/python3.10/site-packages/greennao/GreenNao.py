@@ -1,16 +1,19 @@
 import GreenNaoLib
 
-orientation = GreenNaoLib.get_face()
+# orientation = GreenNaoLib.get_face()
 
-if orientation == "face normal":
-    GreenNaoLib.stand_still()
+# if orientation == "face normal":
+#     GreenNaoLib.stand_still()
 
-elif orientation == "face up":
-    GreenNaoLib.wakeup_face_up()
-    
-elif orientation == "face down":
-    GreenNaoLib.wakeup_face_down()
+# elif orientation == "face up":
+#     GreenNaoLib.wakeup_face_up()
 
-else:
-    print("ERROR: Orientación inesperada, tomando posición stand...")
-    GreenNaoLib.stand_still()
+# elif orientation == "face down":
+#     GreenNaoLib.wakeup_face_down()
+
+# else:
+#     print("ERROR: Orientación inesperada, tomando posición estándar...")
+#     GreenNaoLib.stand_still()
+
+while True:
+    GreenNaoLib.SetV(1.5)
