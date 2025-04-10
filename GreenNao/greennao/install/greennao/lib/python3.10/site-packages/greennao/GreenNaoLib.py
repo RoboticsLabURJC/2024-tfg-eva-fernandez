@@ -218,23 +218,43 @@ class WakeUp(Node):
             10)
 
     def listener_callback(self, msg):
-        # Obtener cuaternión
-        q = [msg.orientation.x, msg.orientation.y, msg.orientation.z, msg.orientation.w]
+        # Medición de aceleración en los tres ejes)
+        acc_x = msg.linear_acceleration.x
+        acc_y = msg.linear_acceleration.y
+        acc_z = msg.linear_acceleration.z
 
-        # Convertir a euler (roll, pitch, yaw) en radianes
-        euler = R.from_quat(q).as_euler('xyz', degrees=False)
-        roll, pitch, yaw = euler
+        # Normalizar el vector de aceleración para obtener la dirección de la gravedad
+        acceleration_magnitude = (acc_x**2 + acc_y**2 + acc_z**2) ** 0.5
+        if acceleration_magnitude == 0:
+            return  # No se puede hacer nada si no hay aceleración
 
-        # Determinar orientación
-        if abs(yaw) > 2.0:
+        # Dirección de la gravedad
+        acc_x /= acceleration_magnitude
+        acc_y /= acceleration_magnitude
+        acc_z /= acceleration_magnitude
+
+        # Determinar la orientación según la aceleración en el eje z
+        if acc_z > 0.9:
+            Interpreter("stand.json")
+            sys.exit(0)
+
+        elif acc_z < -0.1:
             Interpreter("cubito_supino.json")
             time.sleep(1)
             Interpreter("cubito_prono.csv")
             Interpreter("stand.json")
             sys.exit(0)
         
-        else:
+        elif acc_z > 0.2:
             Interpreter("cubito_prono.csv")
             Interpreter("stand.json")
             sys.exit(0)
 
+        else:
+            self.get_logger().info(f"ERROR: z={acc_z}")
+            sys.exit(1)
+
+def read(node):
+    rclpy.spin(node)
+    node.destroy_node()
+    rclpy.shutdown()
