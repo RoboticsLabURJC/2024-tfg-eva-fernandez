@@ -10,9 +10,14 @@ from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy
 from sensor_msgs.msg import Imu
 from scipy.spatial.transform import Rotation as R
 
+# Iniciar rclpy para poder usar las funciones y clases e esta librería ----------------------------------
 rclpy.init()
 
-# CLASE PARA ANDAR RECTO PASANDO LA VELOCIDAD --------------------------------------------------------------------------------
+# Parar rclpy (llamar al final del programa de NAO) -----------------------------------------------------
+def finish():
+    rclpy.shutdown()
+
+# CLASE PARA ANDAR RECTO PASANDO LA VELOCIDAD -----------------------------------------------------------
 class SetV(Node):
     def __init__(self, velocity: float):
         super().__init__('setv')
@@ -110,7 +115,7 @@ class SetV(Node):
 
         self.get_logger().info("Pasos completados")
 
-# CLASE PARA REPLICAR LOS MOVIMIENTOS DE UN FICHERO --------------------------------------------------------------------------------
+# CLASE PARA REPLICAR LOS MOVIMIENTOS DE UN FICHERO -----------------------------------------------------
 class Interpreter(Node):
     def __init__(self, file_name: str):
         super().__init__('interpreter')
@@ -207,8 +212,8 @@ class Interpreter(Node):
                     
         self.get_logger().info("Completado")
 
-# CLASE PARA LEVANTARNOS SI CAEMOS --------------------------------------------------------------------------------
-class WakeUp(Node):
+# CLASE PARA LEER EL IMU --------------------------------------------------------------------------------
+class Read_IMU(Node):
     def __init__(self):
         super().__init__('wakeup')
         self.subscription = self.create_subscription(
@@ -232,29 +237,81 @@ class WakeUp(Node):
         acc_x /= acceleration_magnitude
         acc_y /= acceleration_magnitude
         acc_z /= acceleration_magnitude
-
-        # Determinar la orientación según la aceleración en el eje z
-        if acc_z > 0.9:
-            Interpreter("stand.json")
-            sys.exit(0)
-
-        elif acc_z < -0.1:
-            Interpreter("cubito_supino.json")
-            time.sleep(1)
-            Interpreter("cubito_prono.csv")
-            Interpreter("stand.json")
-            sys.exit(0)
         
-        elif acc_z > 0.2:
-            Interpreter("cubito_prono.csv")
-            Interpreter("stand.json")
-            sys.exit(0)
+        self.acc_z = acc_z
+    
+    def get_z(self):
+        return self.acc_z
 
-        else:
-            self.get_logger().info(f"ERROR: z={acc_z}")
-            sys.exit(1)
 
-def read(node):
-    rclpy.spin(node)
+# Función para obtener el dato del imu necesario para saber si estamos boca arriba o boca abajo ---------
+def get_face():
+    node = Read_IMU()
+    rclpy.spin_once(node)
+    z = node.get_z()
+    if z > 0.9:
+        side = "face normal"
+
+    elif z < -0.1:
+        side = "face up"
+        
+    elif z > 0.2:
+        side = "face down"
+
+    else:
+        side = "ERROR"
+    
     node.destroy_node()
-    rclpy.shutdown()
+    
+    return side
+
+# Funciones para reproducir patrones fijos de movimiento ------------------------------------------------
+def wakeup_face_down():
+    Interpreter("cubito_prono.csv")
+    Interpreter("stand.json")
+    
+def wakeup_face_up():
+    Interpreter("cubito_supino.json")
+    time.sleep(1)
+    Interpreter("cubito_prono.csv")
+    Interpreter("stand.json")
+
+def stand_still():
+    Interpreter("stand.json")    
+
+def say_hi(hand):
+    if hand == "L" or hand == "left" or hand == "LEFT":
+        Interpreter("say_hi_L.json")
+    
+    elif hand == "R" or hand == "right" or hand == "RIGHT":
+        Interpreter("say_hi_R.json")
+    
+    else:
+        print(f"ERROR: Indique correctamente la mano.\nNao solo tiene mano izquierda (L,LEFT,left) y derecha (R, RIGHT, right)")
+
+def side_step(side):
+    if side == "L" or side == "left" or side == "LEFT":
+        Interpreter("side_step_left.csv")
+    
+    elif side == "R" or side == "right" or side == "RIGHT":
+        Interpreter("side_step_right.csv")
+    
+    else:
+        print(f"ERROR: Indique correctamente si izquierda (L,LEFT,left) o derecha (R, RIGHT, right)")
+
+def turn(side, degrees):
+    if (side == "L" or side == "left" or side == "LEFT") and (degrees == 40 or degrees == 60 or degrees == 180):
+        deg = str(degrees)
+        file = "turn_left_" + deg + ".csv"
+        Interpreter(file)
+    
+    elif side == "R" or side == "right" or side == "RIGHT" and (degrees == 40 or degrees == 60):
+        deg = str(degrees)
+        file = "turn_right_" + deg + ".csv"
+        Interpreter(file)
+    
+    else:
+         print(f"ERROR: Indique correctamente si izquierda (L,LEFT,left) o derecha (R, RIGHT, right) y los grados (40, 60 y 180(solo izquierda))")
+
+def go_backwards():
+    Interpreter("walk_backwards.csv")
