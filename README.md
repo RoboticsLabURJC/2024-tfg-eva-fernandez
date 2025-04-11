@@ -51,7 +51,7 @@ Cómo ya se ha explicado en la introducción de este README.md, este trabajo de 
 El movimento del NAO se da de manera sencilla publicando posiciones en sus topics, cada uno un grado de libertad del propio robot, con un total de 24:
 
 <p align="center">
-  <img src="image.png" alt="Topics" width="400">
+  <img src="/docs/images_readme/topics_nao.png" alt="Topics" width="400">
 </p>
 
 A continuación dejo un esquema dónde se ve claramente de qué movimeinto se encarga cada topic:
