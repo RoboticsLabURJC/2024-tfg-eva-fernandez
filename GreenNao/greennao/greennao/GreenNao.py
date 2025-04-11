@@ -1,13 +1,11 @@
 import GreenNaoLib
-
+import time
 
 GreenNaoLib.start()
 
-GreenNaoLib.Walk_V_W(-1, 0)
+GreenNaoLib.setV(-1.5)
 
-
-
-
+GreenNaoLib.finish()
 
 
 

@@ -113,7 +113,7 @@ class Interpreter(Node):
                     self.art_publishers[nombre].publish(msg)
                     time.sleep(0.001)
                     
-        self.get_logger().info("Completado")
+        self.get_logger().info("Fichero Completado")
 
 # Clase para leer el IMU --------------------------------------------------------------------------------
 class Read_IMU(Node):
@@ -217,17 +217,17 @@ def turn(side, degrees):
          print(f"ERROR: Indique correctamente si izquierda (L,LEFT,left) o derecha (R, RIGHT, right) y los grados (40, 60 y 180(solo izquierda))")
 
 # Clase para andar recto pasando la velocidad -----------------------------------------------------------
-class Walk_V_W(Node):
-    def __init__(self, linear_velocity: float, angular_velocity: float):
-        super().__init__('walk_v_w')
+class setV(Node):
+    def __init__(self, linear_velocity: float, steps: int = 10):
+        super().__init__('setv')
         
-        if not ((0.35 <= abs(linear_velocity) <= 4.35) or abs(linear_velocity) == 0):
-            print("ERROR: La velocidad lineal debe tomar un valor de entre ±0.35 y ±4.35 (aunque también puede coger 0).")
+        if not ((0.35 <= abs(linear_velocity) <= 4.35) or abs(linear_velocity) == 0) or not (10 <= steps):
+            print("ERROR: La velocidad lineal debe tomar un valor de entre ±0.35 y ±4.35 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 10, si no quiere andar, pase velocidad 0")
             sys.exit(1)
         else:
             self.V = linear_velocity
-            self.W = angular_velocity
-        
+            self.steps = steps
+
         # Crear calidad e de servicio
         qos_profile = QoSProfile(
             reliability=ReliabilityPolicy.RELIABLE,
@@ -270,10 +270,89 @@ class Walk_V_W(Node):
         return start_value + (end_value - start_value) * 0.04
 
     def publish_message(self):
-        reps = 3
+        reps = int(self.steps/10)
         
         if self.V < 0:
-            reps = 15
+            reps = reps*5
+
+        num_fotogramas = len(self.datos)
+
+        for j in range(reps):
+            for i in range(num_fotogramas - 1):
+                fotograma_actual = self.datos[i]
+                fotograma_siguiente = self.datos[i + 1]
+                duracion = float(fotograma_siguiente["tiempo_de_duracion"])
+                
+                time.sleep(duracion)
+
+                for articulacion in fotograma_actual:
+                    if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
+                        pos_actual = float(fotograma_actual[articulacion])
+                        pos_siguiente = float(fotograma_siguiente[articulacion])
+                        interpolated_value = self.interpolate(pos_actual, pos_siguiente, duracion, duracion)
+                        
+                        msg = Float64()
+                        msg.data = interpolated_value
+                        self.art_publishers[articulacion].publish(msg)
+                        time.sleep(0.001)
+
+        self.get_logger().info("Pasos completados")
+
+# Clase para andar en arco pasando la velocidad -----------------------------------------------------------
+class setW(Node):
+    def __init__(self, angular_velocity: float, steps: int = 10):
+        super().__init__('setw')
+        
+        if not ((0.35 <= abs(angular_velocity) <= 4.35) or abs(angular_velocity) == 0) or not (10 <= steps):
+            print("ERROR: La velocidad angular debe tomar un valor de entre ±0.35 y ±1.9 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 10, si no quiere andar, pase velocidad 0")
+            sys.exit(1)
+        else:
+            self.W = angular_velocity
+            self.steps = steps
+        
+        # Crear calidad e de servicio
+        qos_profile = QoSProfile(
+            reliability=ReliabilityPolicy.RELIABLE,
+            history=HistoryPolicy.KEEP_ALL,
+            depth=100
+        )
+        
+        self.art_publishers = {}
+        tiempo_anterior = 0
+        counter = 0
+
+        if self.W != 0:
+            name = '/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/nao_movement_pattern_creator/movements/walk_arc_r.csv'
+            
+            if self.W < 0:
+                name = '/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/nao_movement_pattern_creator/movements/walk_arc_l.csv'
+            
+            with open(name, 'r') as file:
+                reader = csv.DictReader(file)
+                self.datos = list(reader)
+
+            # Crear publicadores para cada articulación
+            for fotograma in self.datos:
+                counter = counter + 1
+                tiempo_actual = float(fotograma["#WEBOTS_MOTION"]) / abs(self.W)
+                fotograma["tiempo_de_duracion"] = tiempo_actual - tiempo_anterior
+                tiempo_anterior = tiempo_actual
+                    
+                if counter == 1:
+                    for articulacion in fotograma:
+                        if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
+                            self.art_publishers[articulacion] = self.create_publisher(Float64, f'/{articulacion}/cmd_pos', qos_profile)
+            
+            self.publish_message()
+
+        else:
+            stand_still()
+        
+    def interpolate(self, start_value, end_value, t, duration):
+        return start_value + (end_value - start_value) * 0.04
+
+    def publish_message(self):
+        reps = int(self.steps/10)
 
         num_fotogramas = len(self.datos)
 
