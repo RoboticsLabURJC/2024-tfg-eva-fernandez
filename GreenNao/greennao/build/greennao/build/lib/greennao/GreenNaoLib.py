@@ -216,16 +216,13 @@ def turn(side, degrees):
     else:
          print(f"ERROR: Indique correctamente si izquierda (L,LEFT,left) o derecha (R, RIGHT, right) y los grados (40, 60 y 180(solo izquierda))")
 
-def go_backwards():
-    Interpreter("walk_backwards.csv")
-
 # Clase para andar recto pasando la velocidad -----------------------------------------------------------
 class Walk(Node):
     def __init__(self, linear_velocity: float, angular_velocity: float):
         super().__init__('walk')
         
-        if not ((0.35 <= linear_velocity <= 4.35) or linear_velocity == 0 or linear_velocity < 0):
-            print("ERROR: La velocidad lineal debe tomar un valor de entre 0.35 y 4.35 (aunque también puede coger 0).")
+        if not ((0.35 <= abs(linear_velocity) <= 4.35) or abs(linear_velocity) == 0):
+            print("ERROR: La velocidad lineal debe tomar un valor de entre ±0.35 y ±4.35 (aunque también puede coger 0).")
             sys.exit(1)
         else:
             self.V = linear_velocity
@@ -263,6 +260,9 @@ class Walk(Node):
                     for articulacion in fotograma:
                         if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
                             self.art_publishers[articulacion] = self.create_publisher(Float64, f'/{articulacion}/cmd_pos', qos_profile)
+            
+            self.publish_message()
+
         else:
             stand_still()
         
@@ -270,38 +270,30 @@ class Walk(Node):
         return start_value + (end_value - start_value) * 0.04
 
     def publish_message(self):
-        if self.velocity != 0:
-            num_fotogramas = len(self.datos)
+        reps = 3
+        
+        if self.V < 0:
+            reps = 15
 
-            for j in range(3):
-                for i in range(num_fotogramas - 1):
-                    fotograma_actual = self.datos[i]
-                    fotograma_siguiente = self.datos[i + 1]
-                    duracion = float(fotograma_siguiente["tiempo_de_duracion"])
-                    
-                    time.sleep(duracion)
+        num_fotogramas = len(self.datos)
 
-                    for articulacion in fotograma_actual:
-                        if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
-                            pos_actual = float(fotograma_actual[articulacion])
-                            pos_siguiente = float(fotograma_siguiente[articulacion])
-                            interpolated_value = self.interpolate(pos_actual, pos_siguiente, duracion, duracion)
-                            
-                            msg = Float64()
-                            msg.data = interpolated_value
-                            self.art_publishers[articulacion].publish(msg)
-                            time.sleep(0.001)
-        else:
-            msg = Float64()
-            for fotograma in self.datos:
-                tiempo = fotograma["tiempo_de_espera"]
+        for j in range(reps):
+            for i in range(num_fotogramas - 1):
+                fotograma_actual = self.datos[i]
+                fotograma_siguiente = self.datos[i + 1]
+                duracion = float(fotograma_siguiente["tiempo_de_duracion"])
+                
+                time.sleep(duracion)
 
-                time.sleep(tiempo)
-            
-                for articulacion in fotograma["articulaciones"]:
-                    nombre = articulacion["articulacion"]
-                    msg.data = articulacion["posicion"]
-                    self.art_publishers[nombre].publish(msg)
-                    time.sleep(0.001)
+                for articulacion in fotograma_actual:
+                    if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
+                        pos_actual = float(fotograma_actual[articulacion])
+                        pos_siguiente = float(fotograma_siguiente[articulacion])
+                        interpolated_value = self.interpolate(pos_actual, pos_siguiente, duracion, duracion)
+                        
+                        msg = Float64()
+                        msg.data = interpolated_value
+                        self.art_publishers[articulacion].publish(msg)
+                        time.sleep(0.001)
 
         self.get_logger().info("Pasos completados")

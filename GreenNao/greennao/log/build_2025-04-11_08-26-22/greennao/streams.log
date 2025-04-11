@@ -1,0 +1,27 @@
+[0.644s] Invoking command in '/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao': PYTHONPATH=/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/build/greennao/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/install/greennao/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/greennao build --build-base /home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/build/greennao/build install --record /home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/build/greennao/install.log --single-version-externally-managed install_data
+[0.895s] running egg_info
+[0.896s] writing build/greennao/greennao.egg-info/PKG-INFO
+[0.896s] writing dependency_links to build/greennao/greennao.egg-info/dependency_links.txt
+[0.896s] writing entry points to build/greennao/greennao.egg-info/entry_points.txt
+[0.896s] writing requirements to build/greennao/greennao.egg-info/requires.txt
+[0.896s] writing top-level names to build/greennao/greennao.egg-info/top_level.txt
+[0.898s] reading manifest file 'build/greennao/greennao.egg-info/SOURCES.txt'
+[0.899s] writing manifest file 'build/greennao/greennao.egg-info/SOURCES.txt'
+[0.899s] running build
+[0.899s] running build_py
+[0.899s] copying greennao/GreenNaoLib.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/build/greennao/build/lib/greennao
+[0.900s] copying greennao/GreenNao.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/build/greennao/build/lib/greennao
+[0.900s] running install
+[0.900s] running install_lib
+[0.901s] copying /home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/build/greennao/build/lib/greennao/GreenNaoLib.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/install/greennao/lib/python3.10/site-packages/greennao
+[0.901s] copying /home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/build/greennao/build/lib/greennao/GreenNao.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/install/greennao/lib/python3.10/site-packages/greennao
+[0.902s] byte-compiling /home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/install/greennao/lib/python3.10/site-packages/greennao/GreenNaoLib.py to GreenNaoLib.cpython-310.pyc
+[0.904s] byte-compiling /home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/install/greennao/lib/python3.10/site-packages/greennao/GreenNao.py to GreenNao.cpython-310.pyc
+[0.904s] running install_data
+[0.904s] running install_egg_info
+[0.906s] removing '/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/install/greennao/lib/python3.10/site-packages/greennao-0.0.0-py3.10.egg-info' (and everything under it)
+[0.906s] Copying build/greennao/greennao.egg-info to /home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/install/greennao/lib/python3.10/site-packages/greennao-0.0.0-py3.10.egg-info
+[0.907s] running install_scripts
+[0.930s] Installing GreenNaoLib script to /home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/install/greennao/lib/greennao
+[0.930s] writing list of installed files to '/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/build/greennao/install.log'
+[0.960s] Invoked command in '/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao' returned '0': PYTHONPATH=/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/build/greennao/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/install/greennao/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/greennao build --build-base /home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/build/greennao/build install --record /home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/build/greennao/install.log --single-version-externally-managed install_data

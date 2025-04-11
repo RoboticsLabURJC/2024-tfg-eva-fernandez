@@ -1,10 +1,56 @@
 import GreenNaoLib
-import time
 
 
 GreenNaoLib.start()
 
-GreenNaoLib.Walk(1, 0)
+GreenNaoLib.Walk(-1, 0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # orientation = GreenNaoLib.get_face()
 
