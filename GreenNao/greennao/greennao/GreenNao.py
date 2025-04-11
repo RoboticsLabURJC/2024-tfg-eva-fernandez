@@ -3,7 +3,7 @@ import GreenNaoLib
 
 GreenNaoLib.start()
 
-GreenNaoLib.Walk(-1, 0)
+GreenNaoLib.Walk_V_W(-1, 0)
 
 
 

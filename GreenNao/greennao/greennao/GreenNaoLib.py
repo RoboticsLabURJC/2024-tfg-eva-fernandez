@@ -217,9 +217,9 @@ def turn(side, degrees):
          print(f"ERROR: Indique correctamente si izquierda (L,LEFT,left) o derecha (R, RIGHT, right) y los grados (40, 60 y 180(solo izquierda))")
 
 # Clase para andar recto pasando la velocidad -----------------------------------------------------------
-class Walk(Node):
+class Walk_V_W(Node):
     def __init__(self, linear_velocity: float, angular_velocity: float):
-        super().__init__('walk')
+        super().__init__('walk_v_w')
         
         if not ((0.35 <= abs(linear_velocity) <= 4.35) or abs(linear_velocity) == 0):
             print("ERROR: La velocidad lineal debe tomar un valor de entre ±0.35 y ±4.35 (aunque también puede coger 0).")
