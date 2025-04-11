@@ -26,9 +26,9 @@ p.setAdditionalSearchPath(pd.getDataPath())
 p.setGravity(0,0,-9.8)
 planeId = p.loadURDF("plane.urdf")
 p.resetDebugVisualizerCamera(1.0, 89.60, -4.40, [0, 0, 0.5]) # Poner la cámara en la posición deseada
-euler_angles = [0,0.240819,0]
+euler_angles = [0,0,0]
 startOrientation = p.getQuaternionFromEuler(euler_angles)
-startPosition = [0,0,0.5]
+startPosition = [0,0,0.35]
 model = p.loadURDF("/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/nao_movement_pattern_creator/Modelo_NAO/nao.urdf", startPosition, startOrientation)
 
 # Sliders 
@@ -163,8 +163,6 @@ while True:
         for tiempo, articulaciones in movement_data.items():
             fotogram.append({
                 "tiempo": tiempo,
-                "amplitud": step_amplitude,
-                "periodo": period,
                 "articulaciones": articulaciones
         })
 

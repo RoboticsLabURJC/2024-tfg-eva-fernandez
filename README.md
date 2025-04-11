@@ -8,12 +8,12 @@
 # Introducción
 
 Este trabajo de fin de grado consiste en construir una aplicación para convertir al robot NAO de Aldebaran Robotics en un robot de servicio. Para ello, ha sido necesario crear patrones de movimiento para que pueda operar correctamente, estos son:
-* Caminar recto hacia adelante
+* Caminar recto hacia adelante y hacia atrás
 * Girar en el sitio ya sea a la derecha o la izquierda
 * Desplazarse lateralmente hacia la izquierda o derecha
 * Levantarse si se cae boca arriba
 * Levantarse si se cae boca abajo
-* Caminar en arco (aún en desarrollo)
+* Caminar en arco hacia la derecha y la izquierda
 
 Después, para la aplicación de servicios se ha decidido hacer que nuestro pequeño NAO eche una mano en un invernadero, el cual ha sido modelado por mí para funcionar en gazebo, además de un nuevo aspecto para el robot.
 
@@ -44,8 +44,127 @@ Para que este TFG funcione correctamente, se necesita:
 # Explicación detallada del funcionamiento
 Cómo ya se ha explicado en la introducción de este README.md, este trabajo de fin de grado se compone de 2 pilares, los cuáles se explicarán corta, pero detalladamente a continuación, aunque, si quieres una explicación totalmente detallada de este TFG, puedes leer la memoria asociada a él [aquí]() (próximamente):
 
-## Movimiento (próximamente)
+## Movimiento
+
+#### Esquema general de movimiento
+
+El movimento del NAO se da de manera sencilla publicando posiciones en sus topics, cada uno un grado de libertad del propio robot, con un total de 24:
+
+<p align="center">
+  <img src="image.png" alt="Topics" width="400">
+</p>
+
+A continuación dejo un esquema dónde se ve claramente de qué movimeinto se encarga cada topic:
+
+<p align="center">
+  <img src="/docs/images/semana-7/esquema_joints_NAO.jpeg" alt="Esquema_Topics" width="400">
+</p>
+
+Como se puede intuir, aunque el movimiento esté tan "controlado", es decir, que tengamos tantos grados de libertas para poder hacer los movimientos que veamos oportunos, no es sencillo publicar números a cada una de las articulaciones por separado y ver qué ocurre, por lo que para este proyecto se desarrolló un editor de movimientos, el cuál está basado en la siguiente demo de gazebo harmonic:
+
+<video width="800" controls>
+  <source src="/docs/images_readme/demo_nao.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+Esta demo simplemente es para que veamos cómo se mueve NAO, pero, como se puede ver, el robot está anclado en el aire, por lo que no podemos ver si los movimientos son efectivos o no. ES por eso que para este proyecto se ha desarrollado el editor de movimientos, nao_movement_pattenr_creator.py, que hace lo mismo que la demo, pero, además de eso, el robot no está anclado al suelo, para que se pueda ver el impacto del movimiento a realizar y, además, da la opción de guardra patrones de movimiento en un fichero .json, diciendo: "quiero esta posicion en este tiempo". Adjunto un vídeo de su funcionamiento para que se entienda mejor, cabe destacar que el NAO cae para dar a entender que hay movimiento:
+
+<video width="800" controls>
+  <source src="/docs/images_readme/editor.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+Pero, ¿qué tiene que ver esto con ROS2 y Gazebo? Nada.
+
+Es por eso que además de este editor de movimentos ha sido necesario crear un nodo ROS2 capaz de interpretar esos ficheros .json, que tienen la secuencia dentro, para luego enviar esa secuencia al robot simulado en gazebo. Dejo aquí otro vídeo para que se vea el funcionamiento de este intérprete:
+
+<video width="800" controls>
+  <source src="/docs/images_readme/interprete.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+Una vez conseguido el intérprete, podíamos pasar a tareas más complejas, cómo la caminata, la cual se divide en varias partes:
+
+1. Caminata recta hacia adelante
+2. Caminata recta hacia atrás
+3. Caminata en arco hacia la derecha
+4. Caminata en arco hacia la izquierda
+5. Caminata lateral hacia la derecha
+6. Caminata lateral hacia la izquierda
+
+Que, por suerte, todas, excepto la 3 y la 4, son proporcionadas por el simulador webots (enlace al final de este README.md), pero, en lugar de en formato json, cómo nosotros trabajamos, están en formato motion, un formato idéntico a csv, exceptuando la extensión, por lo que el editor no es capaz de interpretar ficheros json, también puede interpretar csv.
+
+Además de la caminata, es necesario que NAO esté preparado para posibles caídas, esto significa:
+
+1. Debe ser capaz de levantarse desde cúbito supino (boca arriba)
+2. Debe ser capaz de levantarse desde cúbito prono (boca abajo)
+
+El punto 2 también nos lo da resuelto webots, sin embargo, el punto 1 tuvo que ser desarrollado a mano utilizando el editor de movimientos mencionado anteriormente, para ello, lo que hace es primero darse la vuelta, para poder llamar al patrón de webots, y así aprovechar el fichero para ambos movimientos.
+
+Cabe destacar también que nuestro NAO cuenta con un sensor IMU, para así poder detectar si ha caído, y una cámara.
+
+#### Librería GreenNaoLib
+
+Cómo se ha leído en la sección anterior, nuestro NAO es capaz de hacer muchas cosas, pero, ¿qué es lo que necesita una aplicación robótica útil? Ser fácil de usar, por lo que todo el esquema de movimientos relacionado con ros2 (interpretar los patrones, leer sensores, etc.), es realizable desde un sencillo programa en python como el siguiente:
+
+```python
+import GreenNaoLib
+
+orientation = GreenNaoLib.get_face() # Gracias a lecturas de IMU, sabemos si hemos caído y de que forma
+
+if orientation == "face normal":
+    GreenNaoLib.stand_still()
+
+elif orientation == "face up":
+    GreenNaoLib.wakeup_face_up()
+
+elif orientation == "face down":
+    GreenNaoLib.wakeup_face_down()
+
+else:
+    print("ERROR: No puedo levantarme")
+    sys.exit(1)
+```
+Para hacer esto posible, ha sido necesario desarrollar la librería GreenNaoLib, la cual se encarga de todo lo mencionado anteriormente. Aunque, para poder usarla, es necesario tener todas las dependencias instaladas, y, obviamente, tener lanzada la simulación, además de configurado un paquete de ROS2 que contenga la librería, y respetar las rutas, ya que, al depender de ficheros, son muy importantes.
+
+A continuación, dejo una lista con todas las funciones y clases de esta librería, junto a una breve explicación de cada una de ellas:
+
+**FUNCIONES**
+* ***start()***: Inicia rclpy, necesario para poder llamar a las clases de la librería
+* ***finish()***: Finaliza rclpy
+* ***get_face***: Devuelve si NAO esta boca arriba, boca abajo, de pie normal o error si no está de ninguna de esas formas
+* ***wakeup_face_down()***: Hace que Nao se levante desde cubito prono
+* ***wakeup_face_up()***: Hace que Nao se levante desde cubito supino
+* ***stand_still()***: Hace que Nao se quede en la posición estándar, de estar quieto
+* ***say_hi(hand)***: Hace que Nao salude con la mano que se le pasa como argumento
+* ***side_step(side)***: Hace que Nao ande de lado en la dirección que se le pasa com argumento
+* ***turn(side, degrees)***: Hace que Nao gire en el sentido que se le pasa como primer argumento, los grados que se le pasan como segundo argumento
+
+**CLASES**
+* ***Interpreter(file)***: Llama al intérprete de movimientos mencionado anteriormente
+* ***setV(linear_velocity, steps)***: Hace que NAO ande recto, a la velocidad indicada, los pasos indicados
+* ***setW(angular_velocity, steps)***: Hace que NAO camine en arco, a la velocidad indicada, los pasos indicados
+* ***Read_IMU()***: Devuelve la aceleración en z leyendo las mediciones del IMU
+
+##### Modos de caminar
+
+Además de ofrecer la encapsulación necesaria para poder mover a NAO de forma cómoda, disponemos también de los modos de caminar mencionados anteriormente, pero, cin una particularidad: El movimiento de caminata recto y el de caminata en arco han sido parametrizados. Esto es, disponemos de V (velocidad lineal) y W (velocidad angular).
+
+###### Velocidad lineal (clase setV)
+
+La velocidad lineal puede ser positiva (andar hacia adelante), o negativa (andar hacia atrás) y tiene un valor mínimo (-0.35 ó 0.35) y un valor máximo (4.35 ó -4.35), de este modo, a mayor valor abosoluto, más rápido se moverá nuestro robot, siguiendo este esquema:
+
+<p align="center">
+  <img src="/docs/images/semana-27/velocity_value.jpeg" alt="Esquema_Velocidades" width="400">
+</p>
+
+###### Velocidad angular (clase setW)
+
+De igual modo que con la velocidad lineal, tenemos la angular, que puede ser positiiva (giro a la derecha) o negativa (giro a la izquierda), y sus valores límite son 0.35 y -35 para el mínimo, y 1.9 y -1.9 para el máximo.
+
 ## GrenNao (próximamente)
+
+Utilizando la librería explicada anteriormente, se ha desarrollado una aplicación para NAO que ...... (próximamente)
 
 # Resultado del proyecto (próximamente)
 
