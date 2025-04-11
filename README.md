@@ -51,13 +51,13 @@ Cómo ya se ha explicado en la introducción de este README.md, este trabajo de 
 El movimento del NAO se da de manera sencilla publicando posiciones en sus topics, cada uno un grado de libertad del propio robot, con un total de 24:
 
 <p align="center">
-  <img src="/docs/images_readme/topics_nao.png" alt="Topics" width="400">
+  <img src="/docs/images_readme/topics_nao.png" alt="Topics" width="800">
 </p>
 
 A continuación dejo un esquema dónde se ve claramente de qué movimeinto se encarga cada topic:
 
 <p align="center">
-  <img src="/docs/images/semana-7/esquema_joints_NAO.jpeg" alt="Esquema_Topics" width="400">
+  <img src="/docs/images/semana-7/esquema_joints_NAO.jpeg" alt="Esquema_Topics" width="800">
 </p>
 
 Como se puede intuir, aunque el movimiento esté tan "controlado", es decir, que tengamos tantos grados de libertas para poder hacer los movimientos que veamos oportunos, no es sencillo publicar números a cada una de las articulaciones por separado y ver qué ocurre, por lo que para este proyecto se desarrolló un editor de movimientos, el cuál está basado en la siguiente demo de gazebo harmonic:
@@ -155,7 +155,7 @@ Además de ofrecer la encapsulación necesaria para poder mover a NAO de forma c
 La velocidad lineal puede ser positiva (andar hacia adelante), o negativa (andar hacia atrás) y tiene un valor mínimo (-0.35 ó 0.35) y un valor máximo (4.35 ó -4.35), de este modo, a mayor valor abosoluto, más rápido se moverá nuestro robot, siguiendo este esquema:
 
 <p align="center">
-  <img src="/docs/images/semana-27/velocity_value.jpeg" alt="Esquema_Velocidades" width="400">
+  <img src="/docs/images/semana-27/velocity_value.jpeg" alt="Esquema_Velocidades" width="800">
 </p>
 
 ###### Velocidad angular (clase setW)
