@@ -1,0 +1,5 @@
+  File "/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/install/greennao/lib/python3.10/site-packages/greennao/GreenNaoLib.py", line 14
+    def start()
+               ^
+SyntaxError: expected ':'
+

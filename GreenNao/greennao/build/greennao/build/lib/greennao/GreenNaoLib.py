@@ -10,109 +10,13 @@ from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy
 from sensor_msgs.msg import Imu
 
 # Iniciar rclpy para poder usar las funciones y clases e esta librería ----------------------------------
-rclpy.init()
+
+def start():
+    rclpy.init()
 
 # Parar rclpy (llamar al final del programa de NAO) -----------------------------------------------------
 def finish():
     rclpy.shutdown()
-
-# Clase para andar recto pasando la velocidad -----------------------------------------------------------
-class SetV(Node):
-    def __init__(self, velocity: float):
-        super().__init__('setv')
-        
-        if not ((0.35 <= velocity <= 4.35) or velocity == 0):
-            print("ERROR: La velocidad debe tomar un valor de entre 0.35 y 4.35 (aunque también puede coger 0).")
-            sys.exit(1)
-        else:
-            self.velocity = velocity
-        
-        # Crear calidad e de servicio
-        qos_profile = QoSProfile(
-            reliability=ReliabilityPolicy.RELIABLE,
-            history=HistoryPolicy.KEEP_ALL,
-            depth=100
-        )
-        
-        self.art_publishers = {}
-        tiempo_anterior = 0
-        counter = 0
-
-        if self.velocity != 0:
-            name = '/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/nao_movement_pattern_creator/movements/walk_forwards.csv'
-
-            with open(name, 'r') as file:
-                reader = csv.DictReader(file)
-                self.datos = list(reader)
-
-            # Crear publicadores para cada articulación
-            for fotograma in self.datos:
-                counter = counter + 1
-                tiempo_actual = float(fotograma["#WEBOTS_MOTION"]) / self.velocity
-                fotograma["tiempo_de_duracion"] = tiempo_actual - tiempo_anterior
-                tiempo_anterior = tiempo_actual
-                    
-                if counter == 1:
-                    for articulacion in fotograma:
-                        if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
-                            self.art_publishers[articulacion] = self.create_publisher(Float64, f'/{articulacion}/cmd_pos', qos_profile)
-        else:
-            name = '/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/nao_movement_pattern_creator/movements/stand.json'
-            with open(name, 'r') as file:
-                self.datos = json.load(file)
-            
-            for fotograma in self.datos:
-                counter = counter + 1
-                tiempo_actual = fotograma["tiempo"]
-                fotograma["tiempo_de_espera"] = tiempo_actual - tiempo_anterior
-                tiempo_anterior = tiempo_actual
-                
-                if counter == 1:
-                    for articulacion in fotograma["articulaciones"]:
-                        nombre = articulacion["articulacion"]
-                        self.art_publishers[nombre] = self.create_publisher(Float64, f'/{nombre}/cmd_pos', qos_profile)
-
-        self.publish_message()
-        
-    def interpolate(self, start_value, end_value, t, duration):
-        return start_value + (end_value - start_value) * 0.04
-
-    def publish_message(self):
-        if self.velocity != 0:
-            num_fotogramas = len(self.datos)
-
-            for j in range(3):
-                for i in range(num_fotogramas - 1):
-                    fotograma_actual = self.datos[i]
-                    fotograma_siguiente = self.datos[i + 1]
-                    duracion = float(fotograma_siguiente["tiempo_de_duracion"])
-                    
-                    time.sleep(duracion)
-
-                    for articulacion in fotograma_actual:
-                        if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
-                            pos_actual = float(fotograma_actual[articulacion])
-                            pos_siguiente = float(fotograma_siguiente[articulacion])
-                            interpolated_value = self.interpolate(pos_actual, pos_siguiente, duracion, duracion)
-                            
-                            msg = Float64()
-                            msg.data = interpolated_value
-                            self.art_publishers[articulacion].publish(msg)
-                            time.sleep(0.001)
-        else:
-            msg = Float64()
-            for fotograma in self.datos:
-                tiempo = fotograma["tiempo_de_espera"]
-
-                time.sleep(tiempo)
-            
-                for articulacion in fotograma["articulaciones"]:
-                    nombre = articulacion["articulacion"]
-                    msg.data = articulacion["posicion"]
-                    self.art_publishers[nombre].publish(msg)
-                    time.sleep(0.001)
-
-        self.get_logger().info("Pasos completados")
 
 # Clase para replicar los movimientos de un fichero -----------------------------------------------------
 class Interpreter(Node):
@@ -314,3 +218,90 @@ def turn(side, degrees):
 
 def go_backwards():
     Interpreter("walk_backwards.csv")
+
+# Clase para andar recto pasando la velocidad -----------------------------------------------------------
+class Walk(Node):
+    def __init__(self, linear_velocity: float, angular_velocity: float):
+        super().__init__('walk')
+        
+        if not ((0.35 <= linear_velocity <= 4.35) or linear_velocity == 0 or linear_velocity < 0):
+            print("ERROR: La velocidad lineal debe tomar un valor de entre 0.35 y 4.35 (aunque también puede coger 0).")
+            sys.exit(1)
+        else:
+            self.V = linear_velocity
+            self.W = angular_velocity
+        
+        # Crear calidad e de servicio
+        qos_profile = QoSProfile(
+            reliability=ReliabilityPolicy.RELIABLE,
+            history=HistoryPolicy.KEEP_ALL,
+            depth=100
+        )
+        
+        self.art_publishers = {}
+        tiempo_anterior = 0
+        counter = 0
+
+        if self.V != 0:
+            name = '/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/nao_movement_pattern_creator/movements/walk_forwards.csv'
+            
+            if self.V < 0:
+                name = '/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/nao_movement_pattern_creator/movements/walk_backwards.csv'
+
+            with open(name, 'r') as file:
+                reader = csv.DictReader(file)
+                self.datos = list(reader)
+
+            # Crear publicadores para cada articulación
+            for fotograma in self.datos:
+                counter = counter + 1
+                tiempo_actual = float(fotograma["#WEBOTS_MOTION"]) / abs(self.V)
+                fotograma["tiempo_de_duracion"] = tiempo_actual - tiempo_anterior
+                tiempo_anterior = tiempo_actual
+                    
+                if counter == 1:
+                    for articulacion in fotograma:
+                        if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
+                            self.art_publishers[articulacion] = self.create_publisher(Float64, f'/{articulacion}/cmd_pos', qos_profile)
+        else:
+            stand_still()
+        
+    def interpolate(self, start_value, end_value, t, duration):
+        return start_value + (end_value - start_value) * 0.04
+
+    def publish_message(self):
+        if self.velocity != 0:
+            num_fotogramas = len(self.datos)
+
+            for j in range(3):
+                for i in range(num_fotogramas - 1):
+                    fotograma_actual = self.datos[i]
+                    fotograma_siguiente = self.datos[i + 1]
+                    duracion = float(fotograma_siguiente["tiempo_de_duracion"])
+                    
+                    time.sleep(duracion)
+
+                    for articulacion in fotograma_actual:
+                        if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
+                            pos_actual = float(fotograma_actual[articulacion])
+                            pos_siguiente = float(fotograma_siguiente[articulacion])
+                            interpolated_value = self.interpolate(pos_actual, pos_siguiente, duracion, duracion)
+                            
+                            msg = Float64()
+                            msg.data = interpolated_value
+                            self.art_publishers[articulacion].publish(msg)
+                            time.sleep(0.001)
+        else:
+            msg = Float64()
+            for fotograma in self.datos:
+                tiempo = fotograma["tiempo_de_espera"]
+
+                time.sleep(tiempo)
+            
+                for articulacion in fotograma["articulaciones"]:
+                    nombre = articulacion["articulacion"]
+                    msg.data = articulacion["posicion"]
+                    self.art_publishers[nombre].publish(msg)
+                    time.sleep(0.001)
+
+        self.get_logger().info("Pasos completados")
