@@ -54,7 +54,7 @@ El movimento del NAO se da de manera sencilla publicando posiciones en sus topic
   <img src="/docs/images_readme/topics_nao.png" alt="Topics" width="800">
 </p>
 
-A continuación dejo un esquema dónde se ve claramente de qué movimeinto se encarga cada topic:
+A continuación dejo un esquema dónde se ve claramente de qué movimiento se encarga cada topic:
 
 <p align="center">
   <img src="/docs/images/semana-7/esquema_joints_NAO.jpeg" alt="Esquema_Topics" width="800">
