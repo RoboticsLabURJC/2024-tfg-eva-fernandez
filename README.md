@@ -132,7 +132,7 @@ A continuación, dejo una lista con todas las funciones y clases de esta librer�
 **FUNCIONES**
 * ***start()***: Inicia rclpy, necesario para poder llamar a las clases de la librería
 * ***finish()***: Finaliza rclpy
-* ***get_face***: Devuelve si NAO esta boca arriba, boca abajo, de pie normal o error si no está de ninguna de esas formas
+* ***get_face()***: Devuelve si NAO esta boca arriba, boca abajo, de pie normal o error si no está de ninguna de esas formas
 * ***wakeup_face_down()***: Hace que Nao se levante desde cubito prono
 * ***wakeup_face_up()***: Hace que Nao se levante desde cubito supino
 * ***stand_still()***: Hace que Nao se quede en la posición estándar, de estar quieto
