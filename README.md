@@ -60,14 +60,14 @@ A continuación dejo un esquema dónde se ve claramente de qué movimeinto se en
   <img src="/docs/images/semana-7/esquema_joints_NAO.jpeg" alt="Esquema_Topics" width="800">
 </p>
 
-Como se puede intuir, aunque el movimiento esté tan "controlado", es decir, que tengamos tantos grados de libertas para poder hacer los movimientos que veamos oportunos, no es sencillo publicar números a cada una de las articulaciones por separado y ver qué ocurre, por lo que para este proyecto se desarrolló un editor de movimientos, el cuál está basado en la siguiente demo de gazebo harmonic:
+Como se puede intuir, aunque el movimiento esté tan "controlado", es decir, que tengamos tantos grados de libertad para poder hacer los movimientos que veamos oportunos, no es sencillo publicar números a cada una de las articulaciones por separado y ver qué ocurre, por lo que para este proyecto se desarrolló un editor de movimientos, el cuál está basado en la siguiente demo de gazebo harmonic:
 
 <video width="800" controls>
   <source src="/docs/images_readme/demo_nao.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
-Esta demo simplemente es para que veamos cómo se mueve NAO, pero, como se puede ver, el robot está anclado en el aire, por lo que no podemos ver si los movimientos son efectivos o no. ES por eso que para este proyecto se ha desarrollado el editor de movimientos, nao_movement_pattenr_creator.py, que hace lo mismo que la demo, pero, además de eso, el robot no está anclado al suelo, para que se pueda ver el impacto del movimiento a realizar y, además, da la opción de guardra patrones de movimiento en un fichero .json, diciendo: "quiero esta posicion en este tiempo". Adjunto un vídeo de su funcionamiento para que se entienda mejor, cabe destacar que el NAO cae para dar a entender que hay movimiento:
+Esta demo simplemente es para que veamos cómo se mueve NAO, pero, como se puede ver, el robot está anclado en el aire, por lo que no podemos ver si los movimientos son efectivos o no. Es por eso que para este proyecto se ha desarrollado el editor de movimientos, nao_movement_pattern_creator.py, que hace lo mismo que la demo, pero, además de eso, el robot no está anclado al suelo, para que se pueda ver el impacto del movimiento a realizar y, además, da la opción de guardar patrones de movimiento en un fichero .json, diciendo: "quiero esta posicion en este tiempo". Adjunto un vídeo de su funcionamiento para que se entienda mejor, cabe destacar que el NAO cae para dar a entender que hay movimiento:
 
 <video width="800" controls>
   <source src="/docs/images_readme/editor.webm" type="video/webm">
@@ -92,7 +92,7 @@ Una vez conseguido el intérprete, podíamos pasar a tareas más complejas, cóm
 5. Caminata lateral hacia la derecha
 6. Caminata lateral hacia la izquierda
 
-Que, por suerte, todas, excepto la 3 y la 4, son proporcionadas por el simulador webots (enlace al final de este README.md), pero, en lugar de en formato json, cómo nosotros trabajamos, están en formato motion, un formato idéntico a csv, exceptuando la extensión, por lo que el editor no es capaz de interpretar ficheros json, también puede interpretar csv.
+Que, por suerte, todas, excepto la 3 y la 4 (las cuales fueron desarrolladas combinando distintos patrones), son proporcionadas por el simulador webots (enlace al final de este README.md), pero, en lugar de en formato json, cómo nosotros trabajamos, están en formato motion, un formato idéntico a csv, exceptuando la extensión, así que, una vez cambiados a csv, pueden ser interpretados por el intérprete, ya que no sólo es capaz de interpretar ficheros json, también puede interpretar ficheros csv.
 
 Además de la caminata, es necesario que NAO esté preparado para posibles caídas, esto significa:
 
@@ -148,7 +148,7 @@ A continuación, dejo una lista con todas las funciones y clases de esta librer�
 
 ##### Modos de caminar
 
-Además de ofrecer la encapsulación necesaria para poder mover a NAO de forma cómoda, disponemos también de los modos de caminar mencionados anteriormente, pero, cin una particularidad: El movimiento de caminata recto y el de caminata en arco han sido parametrizados. Esto es, disponemos de V (velocidad lineal) y W (velocidad angular).
+Además de ofrecer la encapsulación necesaria para poder mover a NAO de forma cómoda, disponemos también de los modos de caminar mencionados anteriormente, pero, con una particularidad: El movimiento de caminata recto y el de caminata en arco han sido parametrizados. Esto es, disponemos de V (velocidad lineal) y W (velocidad angular).
 
 ###### Velocidad lineal (clase setV)
 
@@ -160,7 +160,7 @@ La velocidad lineal puede ser positiva (andar hacia adelante), o negativa (andar
 
 ###### Velocidad angular (clase setW)
 
-De igual modo que con la velocidad lineal, tenemos la angular, que puede ser positiiva (giro a la derecha) o negativa (giro a la izquierda), y sus valores límite son 0.35 y -35 para el mínimo, y 1.9 y -1.9 para el máximo.
+De igual modo que con la velocidad lineal, tenemos la angular, que puede ser positiva (giro a la derecha) o negativa (giro a la izquierda), y sus valores límite son 0.35 y -0.35 para el mínimo, y 1.9 y -1.9 para el máximo.
 
 ## GrenNao (próximamente)
 
