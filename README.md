@@ -22,7 +22,7 @@ Después, para la aplicación de servicios se ha decidido hacer que nuestro pequ
 ### Primera versión (actual)
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/aeb67bd5-51ca-4773-9e77-5a92f90f4c88" alt="Mundo Invernadero" width="800">
+  <img src="https://github.com/user-attachments/assets/aeb67bd5-51ca-4773-9e77-5a92f90f4c88" alt="Mundo Invernadero" width="600">
 </p>
 
 ## NAO 

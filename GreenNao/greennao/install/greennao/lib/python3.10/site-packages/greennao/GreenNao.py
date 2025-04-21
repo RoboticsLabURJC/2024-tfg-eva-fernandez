@@ -3,7 +3,7 @@ import time
 
 GreenNaoLib.start()
 
-GreenNaoLib.side_step("L", 1)
+GreenNaoLib.side_step("L", 6)
 
 GreenNaoLib.finish()
 
