@@ -192,15 +192,22 @@ def say_hi(hand):
     else:
         print(f"ERROR: Indique correctamente la mano.\nNao solo tiene mano izquierda (L,LEFT,left) y derecha (R, RIGHT, right)")
 
-def side_step(side):
-    if side == "L" or side == "left" or side == "LEFT":
-        Interpreter("side_step_left.csv")
-    
-    elif side == "R" or side == "right" or side == "RIGHT":
-        Interpreter("side_step_right.csv")
+def side_step(side, steps):
+    if not isinstance(steps, int) or (steps < 2):
+        print("Error: Indique un número de pasos válido, el número mínimo es 2")
     
     else:
-        print(f"ERROR: Indique correctamente si izquierda (L,LEFT,left) o derecha (R, RIGHT, right)")
+        reps = int(steps/2)
+        if side == "L" or side == "left" or side == "LEFT":
+            for i in range(reps):
+                Interpreter("side_step_left.csv")
+        
+        elif side == "R" or side == "right" or side == "RIGHT":
+            for i in range(reps):
+                Interpreter("side_step_right.csv")
+        
+        else:
+            print(f"ERROR: Indique correctamente si izquierda (L,LEFT,left) o derecha (R, RIGHT, right), el número de pasos adecuado")
 
 def turn(side, degrees):
     if (side == "L" or side == "left" or side == "LEFT") and (degrees == 40 or degrees == 60 or degrees == 180):

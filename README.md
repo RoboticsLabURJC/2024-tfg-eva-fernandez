@@ -22,7 +22,7 @@ Después, para la aplicación de servicios se ha decidido hacer que nuestro pequ
 ### Primera versión (actual)
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/e8a3907e-f71d-43bb-86f1-4fca4d75156e" alt="Mundo Invernadero" width="800">
+  <img src="https://github.com/user-attachments/assets/aeb67bd5-51ca-4773-9e77-5a92f90f4c88" alt="Mundo Invernadero" width="800">
 </p>
 
 ## NAO 
@@ -62,26 +62,23 @@ A continuación dejo un esquema dónde se ve claramente de qué movimiento se en
 
 Como se puede intuir, aunque el movimiento esté tan "controlado", es decir, que tengamos tantos grados de libertad para poder hacer los movimientos que veamos oportunos, no es sencillo publicar números a cada una de las articulaciones por separado y ver qué ocurre, por lo que para este proyecto se desarrolló un editor de movimientos, el cuál está basado en la siguiente demo de gazebo harmonic:
 
-<video width="800" controls>
-  <source src="/docs/images_readme/demo_nao.webm" type="video/webm">
-  Your browser does not support the video tag.
-</video>
+<p align="center">
+  <img src="/docs/images_readme/demo_nao.gif" alt="Demo Joints NAO" width="800">
+</p>
 
 Esta demo simplemente es para que veamos cómo se mueve NAO, pero, como se puede ver, el robot está anclado en el aire, por lo que no podemos ver si los movimientos son efectivos o no. Es por eso que para este proyecto se ha desarrollado el editor de movimientos, nao_movement_pattern_creator.py, que hace lo mismo que la demo, pero, además de eso, el robot no está anclado al suelo, para que se pueda ver el impacto del movimiento a realizar y, además, da la opción de guardar patrones de movimiento en un fichero .json, diciendo: "quiero esta posicion en este tiempo". Adjunto un vídeo de su funcionamiento para que se entienda mejor, cabe destacar que el NAO cae para dar a entender que hay movimiento:
 
-<video width="800" controls>
-  <source src="/docs/images_readme/editor.webm" type="video/webm">
-  Your browser does not support the video tag.
-</video>
+<p align="center">
+  <img src="/docs/images_readme/editor.gif" alt="Editor de movimientos" width="800">
+</p>
 
 Pero, ¿qué tiene que ver esto con ROS2 y Gazebo? Nada.
 
 Es por eso que además de este editor de movimentos ha sido necesario crear un nodo ROS2 capaz de interpretar esos ficheros .json, que tienen la secuencia dentro, para luego enviar esa secuencia al robot simulado en gazebo. Dejo aquí otro vídeo para que se vea el funcionamiento de este intérprete:
 
-<video width="800" controls>
-  <source src="/docs/images_readme/interprete.webm" type="video/webm">
-  Your browser does not support the video tag.
-</video>
+<p align="center">
+  <img src="/docs/images_readme/interprete.gif" alt="Interprete de movimientos" width="800">
+</p>
 
 Una vez conseguido el intérprete, podíamos pasar a tareas más complejas, cómo la caminata, la cual se divide en varias partes:
 
