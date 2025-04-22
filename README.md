@@ -134,7 +134,7 @@ A continuación, dejo una lista con todas las funciones y clases de esta librer�
 * ***wakeup_face_up()***: Hace que Nao se levante desde cubito supino
 * ***stand_still()***: Hace que Nao se quede en la posición estándar, de estar quieto
 * ***say_hi(hand)***: Hace que Nao salude con la mano que se le pasa como argumento
-* ***side_step(side)***: Hace que Nao ande de lado en la dirección que se le pasa com argumento
+* ***side_step(side, steps)***: Hace que Nao ande de lado en la dirección que se le pasa com argumento, el número de pasos que se le da como segundo argumento.
 * ***turn(side, degrees)***: Hace que Nao gire en el sentido que se le pasa como primer argumento, los grados que se le pasan como segundo argumento
 
 **CLASES**
