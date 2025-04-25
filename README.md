@@ -189,4 +189,6 @@ Para poder llevar a cabo este proyecto se han visitado los siguientes enlaces:
 * [Enlace de descarga para el simulador Webots](https://cyberbotics.com/)
 * [Ejemplo de publicador y suscriptor para ros2 humble en python](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html)
 * [Tutorial de como usar tus programas como librería para un nodo ros2](https://www.youtube.com/watch?v=4XCRIaVNX6k)
+* [Geogebra (usado para un par de gráficas)](https://www.geogebra.org/calculator)
+* [Parámetros físicos en Gazebo explicados](https://classic.gazebosim.org/tutorials?tut=physics_params)
 
