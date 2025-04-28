@@ -3,7 +3,7 @@ import time
 
 GreenNaoLib.start()
 
-GreenNaoLib.setV(0.5)
+GreenNaoLib.setW(-1.9)
 
 GreenNaoLib.finish()
 

@@ -310,7 +310,7 @@ class setW(Node):
     def __init__(self, angular_velocity: float, steps: int = 10):
         super().__init__('setw')
         
-        if not ((0.35 <= abs(angular_velocity) <= 4.35) or abs(angular_velocity) == 0) or not (10 <= steps) or (steps%10 != 0):
+        if not ((0.35 <= abs(angular_velocity) <= 1.9) or abs(angular_velocity) == 0) or not (10 <= steps) or (steps%10 != 0):
             print("ERROR: La velocidad angular debe tomar un valor de entre ±0.35 y ±1.9 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 10, y debe ser múltiplo de 10, si no quiere andar, pase velocidad 0")
             sys.exit(1)
         else:
