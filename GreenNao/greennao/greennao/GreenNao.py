@@ -1,11 +1,7 @@
 import GreenNaoLib
 import time
 
-GreenNaoLib.start()
-
 GreenNaoLib.setW(-1.9)
-
-GreenNaoLib.finish()
 
 
 

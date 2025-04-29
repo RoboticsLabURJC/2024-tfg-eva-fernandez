@@ -9,18 +9,10 @@ from rclpy.time import Time
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy
 from sensor_msgs.msg import Imu
 
-# Iniciar rclpy para poder usar las funciones y clases e esta librería ----------------------------------
-
-def start():
-    rclpy.init()
-
-# Parar rclpy (llamar al final del programa de NAO) -----------------------------------------------------
-def finish():
-    rclpy.shutdown()
-
 # Clase para replicar los movimientos de un fichero -----------------------------------------------------
 class Interpreter(Node):
     def __init__(self, file_name: str):
+        rclpy.init()
         super().__init__('interpreter')
         
         qos_profile = QoSProfile(
@@ -114,10 +106,13 @@ class Interpreter(Node):
                     time.sleep(0.001)
                     
         self.get_logger().info("Fichero Completado")
+        self.destroy_node()
+        rclpy.shutdown()
 
 # Clase para leer el IMU --------------------------------------------------------------------------------
 class Read_IMU(Node):
     def __init__(self):
+        rclpy.init()
         super().__init__('wakeup')
         self.subscription = self.create_subscription(
             Imu,
@@ -165,7 +160,7 @@ def get_face():
         side = "ERROR"
     
     node.destroy_node()
-    
+    rclpy.shutdown()
     return side
 
 # Funciones para reproducir patrones fijos de movimiento ------------------------------------------------
@@ -227,7 +222,7 @@ def turn(side, degrees):
 class setV(Node):
     def __init__(self, linear_velocity: float, steps: int = 10):
         super().__init__('setv')
-        
+        rclpy.init()
         if not ((0.35 <= abs(linear_velocity) <= 4.35) or abs(linear_velocity) == 0) or not (10 <= steps) or (steps%10 != 0):
             print("ERROR: La velocidad lineal debe tomar un valor de entre ±0.35 y ±4.35 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 10, y debe ser múltiplo de 10, si no quiere andar, pase velocidad 0")
             sys.exit(1)
@@ -304,12 +299,14 @@ class setV(Node):
                         time.sleep(0.001)
 
         self.get_logger().info("Pasos completados")
+        self.destroy_node()
+        rclpy.shutdown()
 
 # Clase para andar en arco pasando la velocidad -----------------------------------------------------------
 class setW(Node):
     def __init__(self, angular_velocity: float, steps: int = 10):
         super().__init__('setw')
-        
+        rclpy.init()
         if not ((0.35 <= abs(angular_velocity) <= 1.9) or abs(angular_velocity) == 0) or not (10 <= steps) or (steps%10 != 0):
             print("ERROR: La velocidad angular debe tomar un valor de entre ±0.35 y ±1.9 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 10, y debe ser múltiplo de 10, si no quiere andar, pase velocidad 0")
             sys.exit(1)
@@ -383,3 +380,5 @@ class setW(Node):
                         time.sleep(0.001)
 
         self.get_logger().info("Pasos completados")
+        self.destroy_node()
+        rclpy.shutdown()

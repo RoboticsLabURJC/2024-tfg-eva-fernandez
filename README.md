@@ -128,8 +128,6 @@ Para hacer esto posible, ha sido necesario desarrollar la librería GreenNaoLib,
 A continuación, dejo una lista con todas las funciones y clases de esta librería, junto a una breve explicación de cada una de ellas:
 
 **FUNCIONES**
-* ***start()***: Inicia rclpy, necesario para poder llamar a las clases de la librería
-* ***finish()***: Finaliza rclpy
 * ***get_face()***: Devuelve si NAO esta boca arriba, boca abajo, de pie normal o error si no está de ninguna de esas formas
 * ***wakeup_face_down()***: Hace que Nao se levante desde cubito prono
 * ***wakeup_face_up()***: Hace que Nao se levante desde cubito supino

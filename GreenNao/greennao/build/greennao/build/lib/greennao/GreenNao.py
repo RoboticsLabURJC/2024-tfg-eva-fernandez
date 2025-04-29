@@ -1,11 +1,19 @@
 import GreenNaoLib
-import time
 
-GreenNaoLib.start()
+orientation = GreenNaoLib.get_face() # Gracias a lecturas de IMU, sabemos si hemos caído y de que forma
 
-GreenNaoLib.setW(-1.9)
+if orientation == "face normal":
+    GreenNaoLib.stand_still()
 
-GreenNaoLib.finish()
+elif orientation == "face up":
+    GreenNaoLib.wakeup_face_up()
+
+elif orientation == "face down":
+    GreenNaoLib.wakeup_face_down()
+
+else:
+    print("ERROR: No puedo levantarme")
+    sys.exit(1)
 
 
 
