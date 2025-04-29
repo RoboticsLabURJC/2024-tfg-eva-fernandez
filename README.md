@@ -1,7 +1,7 @@
 # Contenidos del repositorio
+* **GreenNao**: Directorio dónde se encuentra todo el desarrollo del proyecto final
 * **docs**: Directorio dónde se sostiene el blog del proyecto
 * **pruebas**: Directorio dónde se han hecho pruebas y se ha preparado el proyecto antes de construirlo
-* **GreenNao**: Directorio dónde se encuentra todo el desarrollo del proyecto final
 * **.gitignore**: Fichero que indica a git qué otros ficheros no deben subirse al repositorio
 * **README.md**: ¡Fichero que estás leyendo ahora mismo! Contiene un resumen de lo que trata el proyecto, cómo funciona, etc
 
@@ -40,6 +40,7 @@ Para que este TFG funcione correctamente, se necesita:
 * Todas las dependencias necesarias para comunicar ros y gazebo
   * ros-gz-sim
   * ros-humble-ros-gz-bridge
+* Todas las librerías necesarias para python(próximamente el listado)
 
 # Explicación detallada del funcionamiento
 Cómo ya se ha explicado en la introducción de este README.md, este trabajo de fin de grado se compone de 2 pilares, los cuáles se explicarán corta, pero detalladamente a continuación, aunque, si quieres una explicación totalmente detallada de este TFG, puedes leer la memoria asociada a él [aquí]() (próximamente):
@@ -161,9 +162,13 @@ De igual modo que con la velocidad lineal, tenemos la angular, que puede ser pos
 
 ## GrenNao (próximamente)
 
-Utilizando la librería explicada anteriormente, se ha desarrollado una aplicación para NAO que ...... (próximamente)
+Utilizando la librería explicada anteriormente, se ha desarrollado una aplicación para NAO que consiste en ...... (próximamente)
 
 # Resultado del proyecto (próximamente)
+
+Gracias a la integración de ambas partes anteriormente explicadas, se ha conseguido el siguiente resultado (próximamente):
+
+Que, cómo se puede ver ...... (próximamente)
 
 # Seguimiento del proyecto
 
@@ -191,4 +196,5 @@ Para poder llevar a cabo este proyecto se han visitado los siguientes enlaces:
 * [Tutorial de como usar tus programas como librería para un nodo ros2](https://www.youtube.com/watch?v=4XCRIaVNX6k)
 * [Geogebra (usado para un par de gráficas)](https://www.geogebra.org/calculator)
 * [Parámetros físicos en Gazebo explicados](https://classic.gazebosim.org/tutorials?tut=physics_params)
-
+* [Paper de Georgios Pierris y Michail G. Lagoudakis para el editor de movimientos](https://www.pierris.gr/me/downloads/kme.pdf)
+* [Paper de 2011 IEEE International Conference on Control System, Computing and Engineering para el editor de movimientos](https://www.researchgate.net/publication/254029603_Humanoid_robot_NAO_Review_of_control_and_motion_exploration)
