@@ -133,18 +133,18 @@ A continuación, dejo una lista con todas las funciones y clases de esta librer�
 * ***wakeup_face_up()***: Hace que Nao se levante desde cubito supino
 * ***stand_still()***: Hace que Nao se quede en la posición estándar, de estar quieto
 * ***say_hi(hand)***: Hace que Nao salude con la mano que se le pasa como argumento
-* ***side_step(side, steps)***: Hace que Nao ande de lado en la dirección que se le pasa com argumento, el número de pasos que se le da como segundo argumento.
 * ***turn(side, degrees)***: Hace que Nao gire en el sentido que se le pasa como primer argumento, los grados que se le pasan como segundo argumento
 
 **CLASES**
 * ***Interpreter(file)***: Llama al intérprete de movimientos mencionado anteriormente
 * ***setV(linear_velocity, steps)***: Hace que NAO ande recto, a la velocidad indicada, los pasos indicados
 * ***setW(angular_velocity, steps)***: Hace que NAO camine en arco, a la velocidad indicada, los pasos indicados
+* ***setL(angular_velocity, steps)***: Hace que NAO camine lateralmente, a la velocidad indicada, los pasos indicados
 * ***Read_IMU()***: Devuelve la aceleración en z leyendo las mediciones del IMU
 
 ##### Modos de caminar
 
-Además de ofrecer la encapsulación necesaria para poder mover a NAO de forma cómoda, disponemos también de los modos de caminar mencionados anteriormente, pero, con una particularidad: El movimiento de caminata recto y el de caminata en arco han sido parametrizados. Esto es, disponemos de V (velocidad lineal) y W (velocidad angular).
+Además de ofrecer la encapsulación necesaria para poder mover a NAO de forma cómoda, disponemos también de los modos de caminar mencionados anteriormente, pero, con una particularidad: El movimiento de caminata recto y el de caminata en arco han sido parametrizados. Esto es, disponemos de V (velocidad lineal), W (velocidad angular), L (velocidad lateral) y una combinación de V y W para no tener que llamar a 2 clases por separado. Todas tienen un mínimo de 10 pasos, excepto la lateral, que tiene un mínimo de 2.
 
 ###### Velocidad lineal (clase setV)
 
@@ -157,6 +157,14 @@ La velocidad lineal puede ser positiva (andar hacia adelante), o negativa (andar
 ###### Velocidad angular (clase setW)
 
 De igual modo que con la velocidad lineal, tenemos la angular, que puede ser positiva (giro a la derecha) o negativa (giro a la izquierda), y sus valores límite son 0.35 y -0.35 para el mínimo, y 1.9 y -1.9 para el máximo.
+
+###### Velocidad lateral (clase setL)
+
+De igual modo que con la velocidad lineal y la angular, tenemos la lateral, que puede ser positiva (hacia la derecha) o negativa (hacia la izquierda), y sus valores límite son los mismos que para la velocidad lineal.
+
+###### Velocidad combinada V y W (clase setArc) (próximamente)
+
+Para encapsular las velocidades lineal y angular, está la clase setArc, para que llamar a la caminata sea más sencillo y directo. .... (Próximamente)
 
 ## GrenNao (próximamente)
 

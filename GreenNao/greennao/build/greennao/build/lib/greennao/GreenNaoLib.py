@@ -2,6 +2,7 @@ import sys
 import csv
 import json
 import time
+import atexit
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float64
@@ -9,10 +10,14 @@ from rclpy.time import Time
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy
 from sensor_msgs.msg import Imu
 
+rclpy.init()
+atexit.register(rclpy.shutdown)
+
+
 # Clase para replicar los movimientos de un fichero -----------------------------------------------------
 class Interpreter(Node):
     def __init__(self, file_name: str):
-        rclpy.init()
+        
         super().__init__('interpreter')
         
         qos_profile = QoSProfile(
@@ -107,12 +112,11 @@ class Interpreter(Node):
                     
         self.get_logger().info("Fichero Completado")
         self.destroy_node()
-        rclpy.shutdown()
 
 # Clase para leer el IMU --------------------------------------------------------------------------------
 class Read_IMU(Node):
     def __init__(self):
-        rclpy.init()
+        
         super().__init__('wakeup')
         self.subscription = self.create_subscription(
             Imu,
@@ -187,23 +191,6 @@ def say_hi(hand):
     else:
         print(f"ERROR: Indique correctamente la mano.\nNao solo tiene mano izquierda (L,LEFT,left) y derecha (R, RIGHT, right)")
 
-def side_step(side, steps):
-    if not isinstance(steps, int) or (steps < 2) or (steps%2 != 0):
-        print("Error: Indique un número de pasos válido, el número mínimo es 2, y debe ser múltiplo de 2")
-    
-    else:
-        reps = int(steps/2)
-        if side == "L" or side == "left" or side == "LEFT":
-            for i in range(reps):
-                Interpreter("side_step_left.csv")
-        
-        elif side == "R" or side == "right" or side == "RIGHT":
-            for i in range(reps):
-                Interpreter("side_step_right.csv")
-        
-        else:
-            print(f"ERROR: Indique correctamente si izquierda (L,LEFT,left) o derecha (R, RIGHT, right), el número de pasos adecuado")
-
 def turn(side, degrees):
     if (side == "L" or side == "left" or side == "LEFT") and (degrees == 40 or degrees == 60 or degrees == 180):
         deg = str(degrees)
@@ -219,10 +206,89 @@ def turn(side, degrees):
          print(f"ERROR: Indique correctamente si izquierda (L,LEFT,left) o derecha (R, RIGHT, right) y los grados (40, 60 y 180(solo izquierda))")
 
 # Clase para andar recto pasando la velocidad -----------------------------------------------------------
+class setL(Node):
+    def __init__(self, lateral_velocity: float, steps: int = 2):
+        super().__init__('setL')
+        
+        if not ((0.35 <= abs(lateral_velocity) <= 4.35) or abs(lateral_velocity) == 0) or not (2 <= steps) or (steps%2 != 0):
+            print("ERROR: La velocidad lateral debe tomar un valor de entre ±0.35 y ±4.35 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 2, y debe ser múltiplo de 2, si no quiere andar, pase velocidad 0")
+            sys.exit(1)
+        else:
+            self.L = lateral_velocity
+            self.steps = steps
+
+        # Crear calidad e de servicio
+        qos_profile = QoSProfile(
+            reliability=ReliabilityPolicy.RELIABLE,
+            history=HistoryPolicy.KEEP_ALL,
+            depth=100
+        )
+        
+        self.art_publishers = {}
+        tiempo_anterior = 0
+        counter = 0
+
+        if self.L != 0:
+            name = '/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/nao_movement_pattern_creator/movements/side_step_right.csv'
+            
+            if self.L < 0:
+                name = '/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/nao_movement_pattern_creator/movements/side_step_left.csv'
+
+            with open(name, 'r') as file:
+                reader = csv.DictReader(file)
+                self.datos = list(reader)
+
+            # Crear publicadores para cada articulación
+            for fotograma in self.datos:
+                counter = counter + 1
+                tiempo_actual = float(fotograma["#WEBOTS_MOTION"]) / abs(self.L)
+                fotograma["tiempo_de_duracion"] = tiempo_actual - tiempo_anterior
+                tiempo_anterior = tiempo_actual
+                    
+                if counter == 1:
+                    for articulacion in fotograma:
+                        if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
+                            self.art_publishers[articulacion] = self.create_publisher(Float64, f'/{articulacion}/cmd_pos', qos_profile)
+            
+            self.publish_message()
+
+        else:
+            stand_still()
+        
+    def interpolate(self, start_value, end_value, t, duration):
+        return start_value + (end_value - start_value) * 0.04
+
+    def publish_message(self):
+        reps = int(self.steps/2)
+        
+        num_fotogramas = len(self.datos)
+
+        for j in range(reps):
+            for i in range(num_fotogramas - 1):
+                fotograma_actual = self.datos[i]
+                fotograma_siguiente = self.datos[i + 1]
+                duracion = float(fotograma_siguiente["tiempo_de_duracion"])
+                
+                time.sleep(duracion)
+
+                for articulacion in fotograma_actual:
+                    if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
+                        pos_actual = float(fotograma_actual[articulacion])
+                        pos_siguiente = float(fotograma_siguiente[articulacion])
+                        interpolated_value = self.interpolate(pos_actual, pos_siguiente, duracion, duracion)
+                        
+                        msg = Float64()
+                        msg.data = interpolated_value
+                        self.art_publishers[articulacion].publish(msg)
+                        time.sleep(0.001)
+
+        self.get_logger().info("Pasos completados")
+        self.destroy_node()
+
+# Clase para andar recto pasando la velocidad -----------------------------------------------------------
 class setV(Node):
     def __init__(self, linear_velocity: float, steps: int = 10):
         super().__init__('setv')
-        rclpy.init()
         if not ((0.35 <= abs(linear_velocity) <= 4.35) or abs(linear_velocity) == 0) or not (10 <= steps) or (steps%10 != 0):
             print("ERROR: La velocidad lineal debe tomar un valor de entre ±0.35 y ±4.35 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 10, y debe ser múltiplo de 10, si no quiere andar, pase velocidad 0")
             sys.exit(1)
@@ -300,13 +366,12 @@ class setV(Node):
 
         self.get_logger().info("Pasos completados")
         self.destroy_node()
-        rclpy.shutdown()
 
 # Clase para andar en arco pasando la velocidad -----------------------------------------------------------
 class setW(Node):
     def __init__(self, angular_velocity: float, steps: int = 10):
         super().__init__('setw')
-        rclpy.init()
+        
         if not ((0.35 <= abs(angular_velocity) <= 1.9) or abs(angular_velocity) == 0) or not (10 <= steps) or (steps%10 != 0):
             print("ERROR: La velocidad angular debe tomar un valor de entre ±0.35 y ±1.9 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 10, y debe ser múltiplo de 10, si no quiere andar, pase velocidad 0")
             sys.exit(1)
@@ -381,4 +446,5 @@ class setW(Node):
 
         self.get_logger().info("Pasos completados")
         self.destroy_node()
-        rclpy.shutdown()
+
+# Clase para combinar la caminata en arco y la recta pasando las velocidades correspondientes -------------
