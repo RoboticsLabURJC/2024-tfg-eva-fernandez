@@ -39,7 +39,7 @@ class Interpreter(Node):
                 self.datos = json.load(file)
             
             else: 
-                print("ERROR: Formato de archivo no válido, por favor, utilice .json o .csv")
+                print("[Interpreter] ERROR: Formato de archivo no válido, por favor, utilice .json o .csv")
                 sys.exit(1)
 
         self.art_publishers = {}
@@ -109,8 +109,6 @@ class Interpreter(Node):
                     msg.data = articulacion["posicion"]
                     self.art_publishers[nombre].publish(msg)
                     time.sleep(0.001)
-                    
-        self.get_logger().info("Fichero Completado")
         self.destroy_node()
 
 # Clase para leer el IMU --------------------------------------------------------------------------------
@@ -164,22 +162,26 @@ def get_face():
         side = "ERROR"
     
     node.destroy_node()
-    rclpy.shutdown()
     return side
 
 # Funciones para reproducir patrones fijos de movimiento ------------------------------------------------
 def wakeup_face_down():
     Interpreter("cubito_prono.csv")
     Interpreter("stand.json")
+    print("[wakeup_face_down]: Movimientos completados")
     
 def wakeup_face_up():
     Interpreter("cubito_supino.json")
     time.sleep(1)
     Interpreter("cubito_prono.csv")
     Interpreter("stand.json")
+    print("[wakeup_face_up]: Movimientos completados")
 
-def stand_still():
-    Interpreter("stand.json")    
+def stand_still(printable = True):
+    Interpreter("stand.json")
+    
+    if printable:
+        print("[stand_still]: Movimientos completados")    
 
 def say_hi(hand):
     if hand == "L" or hand == "left" or hand == "LEFT":
@@ -189,9 +191,12 @@ def say_hi(hand):
         Interpreter("say_hi_R.json")
     
     else:
-        print(f"ERROR: Indique correctamente la mano.\nNao solo tiene mano izquierda (L,LEFT,left) y derecha (R, RIGHT, right)")
+        print(f"[say_hi] ERROR: Indique correctamente la mano.\nNao solo tiene mano izquierda (L,LEFT,left) y derecha (R, RIGHT, right)")
+        sys.exit(1)
 
-def turn(side, degrees):
+    print("[say_hi]: Movimientos completados")
+
+def turn(side, degrees, printable = True):
     if (side == "L" or side == "left" or side == "LEFT") and (degrees == 40 or degrees == 60 or degrees == 180):
         deg = str(degrees)
         file = "turn_left_" + deg + ".csv"
@@ -203,7 +208,11 @@ def turn(side, degrees):
         Interpreter(file)
     
     else:
-         print(f"ERROR: Indique correctamente si izquierda (L,LEFT,left) o derecha (R, RIGHT, right) y los grados (40, 60 y 180(solo izquierda))")
+         print(f"[turn] ERROR: Indique correctamente si izquierda (L,LEFT,left) o derecha (R, RIGHT, right) y los grados (40, 60 y 180(solo izquierda))")
+         sys.exit(1)
+    
+    if printable:
+        print("[turn]: Movimientos completados")
 
 # Clase para andar recto pasando la velocidad -----------------------------------------------------------
 class setL(Node):
@@ -211,7 +220,7 @@ class setL(Node):
         super().__init__('setL')
         
         if not ((0.35 <= abs(lateral_velocity) <= 4.35) or abs(lateral_velocity) == 0) or not (2 <= steps) or (steps%2 != 0):
-            print("ERROR: La velocidad lateral debe tomar un valor de entre ±0.35 y ±4.35 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 2, y debe ser múltiplo de 2, si no quiere andar, pase velocidad 0")
+            print("[setL] ERROR: La velocidad lateral debe tomar un valor de entre ±0.35 y ±4.35 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 2, y debe ser múltiplo de 2, si no quiere andar, pase velocidad 0")
             sys.exit(1)
         else:
             self.L = lateral_velocity
@@ -282,19 +291,20 @@ class setL(Node):
                         self.art_publishers[articulacion].publish(msg)
                         time.sleep(0.001)
 
-        self.get_logger().info("Pasos completados")
+        print("[setL]: Movimientos completados")
         self.destroy_node()
 
 # Clase para andar recto pasando la velocidad -----------------------------------------------------------
 class setV(Node):
-    def __init__(self, linear_velocity: float, steps: int = 10):
+    def __init__(self, linear_velocity: float, steps: int = 10, printable = True):
         super().__init__('setv')
         if not ((0.35 <= abs(linear_velocity) <= 4.35) or abs(linear_velocity) == 0) or not (10 <= steps) or (steps%10 != 0):
-            print("ERROR: La velocidad lineal debe tomar un valor de entre ±0.35 y ±4.35 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 10, y debe ser múltiplo de 10, si no quiere andar, pase velocidad 0")
+            print("[setV] ERROR: La velocidad lineal debe tomar un valor de entre ±0.35 y ±4.35 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 10, y debe ser múltiplo de 10, si no quiere andar, pase velocidad 0")
             sys.exit(1)
         else:
             self.V = linear_velocity
             self.steps = steps
+            self.printable = printable
 
         # Crear calidad e de servicio
         qos_profile = QoSProfile(
@@ -363,21 +373,23 @@ class setV(Node):
                         msg.data = interpolated_value
                         self.art_publishers[articulacion].publish(msg)
                         time.sleep(0.001)
+        if self.printable:
+            print("[setV]: Movimientos completados")
 
-        self.get_logger().info("Pasos completados")
         self.destroy_node()
 
 # Clase para andar en arco pasando la velocidad -----------------------------------------------------------
 class setW(Node):
-    def __init__(self, angular_velocity: float, steps: int = 10):
+    def __init__(self, angular_velocity: float, steps: int = 10, printable = True):
         super().__init__('setw')
         
         if not ((0.35 <= abs(angular_velocity) <= 1.9) or abs(angular_velocity) == 0) or not (10 <= steps) or (steps%10 != 0):
-            print("ERROR: La velocidad angular debe tomar un valor de entre ±0.35 y ±1.9 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 10, y debe ser múltiplo de 10, si no quiere andar, pase velocidad 0")
+            print("[setW] ERROR: La velocidad angular debe tomar un valor de entre ±0.35 y ±1.9 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 10, y debe ser múltiplo de 10, si no quiere andar, pase velocidad 0")
             sys.exit(1)
         else:
             self.W = angular_velocity
             self.steps = steps
+            self.printable = printable
         
         # Crear calidad e de servicio
         qos_profile = QoSProfile(
@@ -443,8 +455,33 @@ class setW(Node):
                         msg.data = interpolated_value
                         self.art_publishers[articulacion].publish(msg)
                         time.sleep(0.001)
+        if self.printable:
+            print("[setV]: Movimientos completados")
 
-        self.get_logger().info("Pasos completados")
         self.destroy_node()
 
-# Clase para combinar la caminata en arco y la recta pasando las velocidades correspondientes -------------
+# Función para combinar la caminata en arco y la recta pasando las velocidades correspondientes -------------
+def setArc(v,w,steps = 10):
+    if v != 0 and w == 0:
+        setV(v, steps, False)
+
+    elif v != 0 and  w != 0:
+        setW(w, steps, False)
+
+    elif v == 0 and w != 0:
+        reps = int(steps/10)
+        for i in range(reps):
+            if w < 0:
+                turn("L", 60, False)
+            
+            else:
+                turn("R", 60, False)
+    
+    elif v == 0 and w == 0:
+        stand_still(False)
+
+    else:
+        print("[setArc] ERROR: Patrón de movimiento no válido")
+        sys.exit(1)
+    
+    print("[setArc]: Movimientos completados")

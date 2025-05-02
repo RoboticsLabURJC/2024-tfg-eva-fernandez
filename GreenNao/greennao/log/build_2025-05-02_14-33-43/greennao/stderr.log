@@ -1,0 +1,5 @@
+  File "/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/install/greennao/lib/python3.10/site-packages/greennao/GreenNaoLib.py", line 445
+    if v != 0, w == 0:
+             ^
+SyntaxError: invalid syntax
+
