@@ -1,4 +1,4 @@
 import GreenNaoLib
 import time
 
-GreenNaoLib.setV(1)
+GreenNaoLib.setV(4.35)
