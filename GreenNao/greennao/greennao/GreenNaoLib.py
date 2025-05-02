@@ -215,6 +215,88 @@ def turn(side, degrees, printable = True):
         print("[turn]: Movimientos completados")
 
 # Clase para andar recto pasando la velocidad -----------------------------------------------------------
+class turnVel(Node):
+    def __init__(self, vel: float, steps: int = 2, printable = True):
+        super().__init__('turnvel')
+        
+        if not ((0.35 <= abs(vel) <= 4.35) or abs(vel) == 0) or not (2 <= steps) or (steps%2 != 0):
+            print("[turnVel] ERROR: La velocidad para girar debe tomar un valor de entre ±0.35 y ±4.35 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 2, y debe ser múltiplo de 2, si no quiere andar, pase velocidad 0")
+            sys.exit(1)
+        else:
+            self.vel = vel
+            self.steps = steps
+
+        # Crear calidad e de servicio
+        qos_profile = QoSProfile(
+            reliability=ReliabilityPolicy.RELIABLE,
+            history=HistoryPolicy.KEEP_ALL,
+            depth=100
+        )
+        
+        self.art_publishers = {}
+        tiempo_anterior = 0
+        counter = 0
+
+        if self.vel != 0:
+            name = '/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/nao_movement_pattern_creator/movements/turn_right_60.csv'
+            
+            if self.vel < 0:
+                name = '/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/nao_movement_pattern_creator/movements/turn_left_60.csv'
+
+            with open(name, 'r') as file:
+                reader = csv.DictReader(file)
+                self.datos = list(reader)
+
+            # Crear publicadores para cada articulación
+            for fotograma in self.datos:
+                counter = counter + 1
+                tiempo_actual = float(fotograma["#WEBOTS_MOTION"]) / abs(self.L)
+                fotograma["tiempo_de_duracion"] = tiempo_actual - tiempo_anterior
+                tiempo_anterior = tiempo_actual
+                    
+                if counter == 1:
+                    for articulacion in fotograma:
+                        if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
+                            self.art_publishers[articulacion] = self.create_publisher(Float64, f'/{articulacion}/cmd_pos', qos_profile)
+            
+            self.publish_message()
+
+        else:
+            stand_still()
+        
+    def interpolate(self, start_value, end_value, t, duration):
+        return start_value + (end_value - start_value) * 0.04
+
+    def publish_message(self):
+        reps = int(self.steps/2)
+        
+        num_fotogramas = len(self.datos)
+
+        for j in range(reps):
+            for i in range(num_fotogramas - 1):
+                fotograma_actual = self.datos[i]
+                fotograma_siguiente = self.datos[i + 1]
+                duracion = float(fotograma_siguiente["tiempo_de_duracion"])
+                
+                time.sleep(duracion)
+
+                for articulacion in fotograma_actual:
+                    if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
+                        pos_actual = float(fotograma_actual[articulacion])
+                        pos_siguiente = float(fotograma_siguiente[articulacion])
+                        interpolated_value = self.interpolate(pos_actual, pos_siguiente, duracion, duracion)
+                        
+                        msg = Float64()
+                        msg.data = interpolated_value
+                        self.art_publishers[articulacion].publish(msg)
+                        time.sleep(0.001)
+        
+        if printable:
+            print("[turnVel]: Movimientos completados")
+        
+        self.destroy_node()
+
+# Clase para andar recto pasando la velocidad -----------------------------------------------------------
 class setL(Node):
     def __init__(self, lateral_velocity: float, steps: int = 2):
         super().__init__('setL')
