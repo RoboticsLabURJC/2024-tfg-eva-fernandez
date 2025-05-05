@@ -16,10 +16,10 @@ atexit.register(rclpy.shutdown)
 
 # Clase para replicar los movimientos de un fichero -----------------------------------------------------
 class Interpreter(Node):
-    def __init__(self, file_name: str):
+    def __init__(self, file_name: str, printable=True):
         
         super().__init__('interpreter')
-        
+        self.printable = printable
         qos_profile = QoSProfile(
             reliability=ReliabilityPolicy.RELIABLE,
             history=HistoryPolicy.KEEP_ALL,
@@ -109,6 +109,9 @@ class Interpreter(Node):
                     msg.data = articulacion["posicion"]
                     self.art_publishers[nombre].publish(msg)
                     time.sleep(0.001)
+        if self.printable:
+            print("[Interpreter]: Movimientos completados")
+        
         self.destroy_node()
 
 # Clase para leer el IMU --------------------------------------------------------------------------------
@@ -166,29 +169,29 @@ def get_face():
 
 # Funciones para reproducir patrones fijos de movimiento ------------------------------------------------
 def wakeup_face_down():
-    Interpreter("cubito_prono.csv")
-    Interpreter("stand.json")
+    Interpreter("cubito_prono.csv",False)
+    Interpreter("stand.json",False)
     print("[wakeup_face_down]: Movimientos completados")
     
 def wakeup_face_up():
-    Interpreter("cubito_supino.json")
+    Interpreter("cubito_supino.json",False)
     time.sleep(1)
-    Interpreter("cubito_prono.csv")
-    Interpreter("stand.json")
+    Interpreter("cubito_prono.csv",False)
+    Interpreter("stand.json",False)
     print("[wakeup_face_up]: Movimientos completados")
 
 def stand_still(printable = True):
-    Interpreter("stand.json")
+    Interpreter("stand.json",False)
     
     if printable:
         print("[stand_still]: Movimientos completados")    
 
 def say_hi(hand):
     if hand == "L" or hand == "left" or hand == "LEFT":
-        Interpreter("say_hi_L.json")
+        Interpreter("say_hi_L.json",False)
     
     elif hand == "R" or hand == "right" or hand == "RIGHT":
-        Interpreter("say_hi_R.json")
+        Interpreter("say_hi_R.json",False)
     
     else:
         print(f"[say_hi] ERROR: Indique correctamente la mano.\nNao solo tiene mano izquierda (L,LEFT,left) y derecha (R, RIGHT, right)")
@@ -200,12 +203,12 @@ def turn(side, degrees, printable = True):
     if (side == "L" or side == "left" or side == "LEFT") and (degrees == 40 or degrees == 60 or degrees == 180):
         deg = str(degrees)
         file = "turn_left_" + deg + ".csv"
-        Interpreter(file)
+        Interpreter(file,False)
     
     elif side == "R" or side == "right" or side == "RIGHT" and (degrees == 40 or degrees == 60):
         deg = str(degrees)
         file = "turn_right_" + deg + ".csv"
-        Interpreter(file)
+        Interpreter(file,False)
     
     else:
          print(f"[turn] ERROR: Indique correctamente si izquierda (L,LEFT,left) o derecha (R, RIGHT, right) y los grados (40, 60 y 180(solo izquierda))")

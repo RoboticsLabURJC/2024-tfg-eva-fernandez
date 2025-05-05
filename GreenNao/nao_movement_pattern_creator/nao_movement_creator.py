@@ -30,7 +30,6 @@ euler_angles = [0,0,0]
 startOrientation = p.getQuaternionFromEuler(euler_angles)
 startPosition = [0,0,0.35]
 model = p.loadURDF("/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/nao_movement_pattern_creator/Modelo_NAO/nao.urdf", startPosition, startOrientation)
-
 # Sliders 
 # Slider del tiempo y un slider para indicar que esa es la secuencia que quieres guardar
 button = p.addUserDebugParameter("DONE", 0, 1, 0)
