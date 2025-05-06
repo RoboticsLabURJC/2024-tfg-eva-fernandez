@@ -183,7 +183,7 @@ Utilizando la librería explicada anteriormente, se ha desarrollado una aplicaci
 Para hacerlo, primero se ha diseñado dicha caja, ya que el modelo del NAO utilizado para este proyecto no tiene dedos, y era necesario asegurar la caja de alguna forma, por lo que se ha optado por este diseño:
 
 <p align="center">
-  <img src="/docs/images_readme/caja.png" alt="Caja_NAO" width="800">
+  <img src="/docs/images_readme/caja.png" alt="Caja_NAO" width="400">
 </p>
 
 Por que así, NAO puede cogerla de la siguiente manera: ...... (próximamente)
