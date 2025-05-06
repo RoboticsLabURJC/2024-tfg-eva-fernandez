@@ -171,7 +171,7 @@ De igual modo que con la velocidad lineal y la angular, tenemos la lateral, que 
 Para encapsular las velocidades lineal y angular, está la clase setArc, para que llamar a la caminata sea más sencillo y directo. Se le pasan por argumento la velocidad lineal, la angular, y los pasos que queremos que NAO dé, y NAO seguirá el siguiente esquema dependiendo de qué valores le pasemos, adjunto un esquema para que se entienda mejor:
 
 <p align="center">
-  <img src="/docs/images/semana-31/esquema.jpeg" alt="Esquema_setArc" width="800">
+  <img src="/docs/images/semana-31/esquema.jpeg" alt="Esquema_setArc" width="400">
 </p>
 
 Ésta es la función que se debería usar para abordar todos los modos de caminar posibles de manera compacta.
@@ -183,7 +183,7 @@ Utilizando la librería explicada anteriormente, se ha desarrollado una aplicaci
 Para hacerlo, primero se ha diseñado dicha caja, ya que el modelo del NAO utilizado para este proyecto no tiene dedos, y era necesario asegurar la caja de alguna forma, por lo que se ha optado por este diseño:
 
 <p align="center">
-  <img src="/docs/images_readme/caja.png" alt="Caja_NAO" width="400">
+  <img src="/docs/images_readme/caja.png" alt="Caja_NAO" width="600">
 </p>
 
 Por que así, NAO puede cogerla de la siguiente manera: ...... (próximamente)
