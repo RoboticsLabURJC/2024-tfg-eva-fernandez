@@ -139,7 +139,9 @@ A continuación, dejo una lista con todas las funciones y clases de esta librer�
 * ***Interpreter(file)***: Llama al intérprete de movimientos mencionado anteriormente
 * ***setV(linear_velocity, steps)***: Hace que NAO ande recto, a la velocidad indicada, los pasos indicados
 * ***setW(angular_velocity, steps)***: Hace que NAO camine en arco, a la velocidad indicada, los pasos indicados
+* ***setNW(angular_velocity, steps)***: Hace que NAO camine en arco hacia atrás, a la velocidad indicada, los pasos indicados
 * ***setL(angular_velocity, steps)***: Hace que NAO camine lateralmente, a la velocidad indicada, los pasos indicados
+* ***setArc(linear_velocity, angular_velocity, steps)***: Combina setV y setW, para que no haya que llamarlas por separado y sea más fácil de usar
 * ***Read_IMU()***: Devuelve la aceleración en z leyendo las mediciones del IMU
 
 ##### Modos de caminar
@@ -158,17 +160,33 @@ La velocidad lineal puede ser positiva (andar hacia adelante), o negativa (andar
 
 De igual modo que con la velocidad lineal, tenemos la angular, que puede ser positiva (giro a la derecha) o negativa (giro a la izquierda), y sus valores límite son 0.35 y -0.35 para el mínimo, y 1.9 y -1.9 para el máximo.
 
+También tenemos setNW, que hace lo mismo, pero el arco es hacia atrás.
+
 ###### Velocidad lateral (clase setL)
 
 De igual modo que con la velocidad lineal y la angular, tenemos la lateral, que puede ser positiva (hacia la derecha) o negativa (hacia la izquierda), y sus valores límite son los mismos que para la velocidad lineal.
 
 ###### Velocidad combinada V y W (clase setArc) (próximamente)
 
-Para encapsular las velocidades lineal y angular, está la clase setArc, para que llamar a la caminata sea más sencillo y directo. .... (Próximamente)
+Para encapsular las velocidades lineal y angular, está la clase setArc, para que llamar a la caminata sea más sencillo y directo. Se le pasan por argumento la velocidad lineal, la angular, y los pasos que queremos que NAO dé, y NAO seguirá el siguiente esquema dependiendo de qué valores le pasemos, adjunto un esquema para que se entienda mejor:
+
+<p align="center">
+  <img src="/docs/images/semana-31/esquema.jpeg" alt="Esquema_setArc" width="800">
+</p>
+
+Ésta es la función que se debería usar para abordar todos los modos de caminar posibles de manera compacta.
 
 ## GrenNao (próximamente)
 
-Utilizando la librería explicada anteriormente, se ha desarrollado una aplicación para NAO que consiste en ...... (próximamente)
+Utilizando la librería explicada anteriormente, se ha desarrollado una aplicación para NAO que consiste en llevar una caja adaptada a él de un lugar del invernadero a otro.
+
+Para hacerlo, primero se ha diseñado dicha caja, ya que el modelo del NAO utilizado para este proyecto no tiene dedos, y era necesario asegurar la caja de alguna forma, por lo que se ha optado por este diseño:
+
+<p align="center">
+  <img src="/docs/images_readme/caja.png" alt="Caja_NAO" width="800">
+</p>
+
+Por que así, NAO puede cogerla de la siguiente manera: ...... (próximamente)
 
 # Resultado del proyecto (próximamente)
 

@@ -222,12 +222,13 @@ class turnVel(Node):
     def __init__(self, vel: float, steps: int = 2, printable = True):
         super().__init__('turnvel')
         
-        if not ((0.35 <= abs(vel) <= 4.35) or abs(vel) == 0) or not (2 <= steps) or (steps%2 != 0):
-            print("[turnVel] ERROR: La velocidad para girar debe tomar un valor de entre ±0.35 y ±4.35 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 2, y debe ser múltiplo de 2, si no quiere andar, pase velocidad 0")
+        if not ((0.35 <= abs(vel) <= 1.9) or abs(vel) == 0) or not (2 <= steps) or (steps%2 != 0):
+            print("[turnVel] ERROR: La velocidad para girar debe tomar un valor de entre ±0.35 y ±1.9 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 2, y debe ser múltiplo de 2, si no quiere andar, pase velocidad 0")
             sys.exit(1)
         else:
             self.vel = vel
             self.steps = steps
+            self.printable = printable
 
         # Crear calidad e de servicio
         qos_profile = QoSProfile(
@@ -253,7 +254,7 @@ class turnVel(Node):
             # Crear publicadores para cada articulación
             for fotograma in self.datos:
                 counter = counter + 1
-                tiempo_actual = float(fotograma["#WEBOTS_MOTION"]) / abs(self.L)
+                tiempo_actual = float(fotograma["#WEBOTS_MOTION"]) / abs(self.vel)
                 fotograma["tiempo_de_duracion"] = tiempo_actual - tiempo_anterior
                 tiempo_anterior = tiempo_actual
                     
@@ -294,7 +295,7 @@ class turnVel(Node):
                         self.art_publishers[articulacion].publish(msg)
                         time.sleep(0.001)
         
-        if printable:
+        if self.printable:
             print("[turnVel]: Movimientos completados")
         
         self.destroy_node()
@@ -541,26 +542,110 @@ class setW(Node):
                         self.art_publishers[articulacion].publish(msg)
                         time.sleep(0.001)
         if self.printable:
-            print("[setV]: Movimientos completados")
+            print("[setW]: Movimientos completados")
+
+        self.destroy_node()
+
+# Clase para andar en arco hacia atrás pasando la velocidad -----------------------------------------------------------
+class setNW(Node):
+    def __init__(self, angular_velocity: float, steps: int = 10, printable = True):
+        super().__init__('setnw')
+        
+        if not ((0.35 <= abs(angular_velocity) <= 1.9) or abs(angular_velocity) == 0) or not (10 <= steps) or (steps%10 != 0):
+            print("[setNW] ERROR: La velocidad angular debe tomar un valor de entre ±0.35 y ±1.9 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 10, y debe ser múltiplo de 10, si no quiere andar, pase velocidad 0")
+            sys.exit(1)
+        else:
+            self.W = angular_velocity
+            self.steps = steps
+            self.printable = printable
+        
+        # Crear calidad e de servicio
+        qos_profile = QoSProfile(
+            reliability=ReliabilityPolicy.RELIABLE,
+            history=HistoryPolicy.KEEP_ALL,
+            depth=100
+        )
+        
+        self.art_publishers = {}
+        tiempo_anterior = 0
+        counter = 0
+
+        if self.W != 0:
+            name = '/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/nao_movement_pattern_creator/movements/walk_back_arc_r.csv'
+            
+            if self.W < 0:
+                name = '/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/nao_movement_pattern_creator/movements/walk_back_arc_l.csv'
+            
+            with open(name, 'r') as file:
+                reader = csv.DictReader(file)
+                self.datos = list(reader)
+
+            # Crear publicadores para cada articulación
+            for fotograma in self.datos:
+                counter = counter + 1
+                tiempo_actual = float(fotograma["#WEBOTS_MOTION"]) / abs(self.W)
+                fotograma["tiempo_de_duracion"] = tiempo_actual - tiempo_anterior
+                tiempo_anterior = tiempo_actual
+                    
+                if counter == 1:
+                    for articulacion in fotograma:
+                        if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
+                            self.art_publishers[articulacion] = self.create_publisher(Float64, f'/{articulacion}/cmd_pos', qos_profile)
+            
+            self.publish_message()
+
+        else:
+            stand_still()
+        
+    def interpolate(self, start_value, end_value, t, duration):
+        return start_value + (end_value - start_value) * 0.04
+
+    def publish_message(self):
+        reps = int(self.steps/10)
+        reps = reps*5
+
+        num_fotogramas = len(self.datos)
+
+        for j in range(reps):
+            for i in range(num_fotogramas - 1):
+                fotograma_actual = self.datos[i]
+                fotograma_siguiente = self.datos[i + 1]
+                duracion = float(fotograma_siguiente["tiempo_de_duracion"])
+                
+                time.sleep(duracion)
+
+                for articulacion in fotograma_actual:
+                    if articulacion != "#WEBOTS_MOTION" and articulacion != "V1.0":
+                        pos_actual = float(fotograma_actual[articulacion])
+                        pos_siguiente = float(fotograma_siguiente[articulacion])
+                        interpolated_value = self.interpolate(pos_actual, pos_siguiente, duracion, duracion)
+                        
+                        msg = Float64()
+                        msg.data = interpolated_value
+                        self.art_publishers[articulacion].publish(msg)
+                        time.sleep(0.001)
+        if self.printable:
+            print("[setNW]: Movimientos completados")
 
         self.destroy_node()
 
 # Función para combinar la caminata en arco y la recta pasando las velocidades correspondientes -------------
 def setArc(v,w,steps = 10):
+    if (not ((0.35 <= abs(w) <= 1.9) or abs(w) == 0) or not (2 <= steps) or (steps%2 != 0)) or (not ((0.35 <= abs(v) <= 4.35) or abs(v) == 0) or not (10 <= steps) or (steps%10 != 0)):
+        print("[setArc]: ERROR: La velocidad lineal debe estar entre ±0.35 y ±4.35 y la angular entre ±0.35 y ±1.9, y los pasos deben ser múltiplos de 10")
+        sys.exit(1)
+
     if v != 0 and w == 0:
         setV(v, steps, False)
 
     elif v != 0 and  w != 0:
-        setW(w, steps, False)
-
+        if v > 0: 
+            setW(w, steps, False)
+        else:
+            setNW(w, steps, False)
+    
     elif v == 0 and w != 0:
-        reps = int(steps/10)
-        for i in range(reps):
-            if w < 0:
-                turn("L", 60, False)
-            
-            else:
-                turn("R", 60, False)
+        turnVel(w, steps, False)
     
     elif v == 0 and w == 0:
         stand_still(False)
