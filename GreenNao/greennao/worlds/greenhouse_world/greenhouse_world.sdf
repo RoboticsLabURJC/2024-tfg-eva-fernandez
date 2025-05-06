@@ -111,7 +111,7 @@
           </geometry>
         </collision>
         <inertial>
-        <mass>0.14</mass>
+        <mass>0.04</mass>
         <inertia>
           <ixx>0.0001</ixx>
           <ixy>0</ixy>

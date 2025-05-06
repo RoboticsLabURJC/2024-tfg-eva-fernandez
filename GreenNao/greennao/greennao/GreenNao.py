@@ -1,6 +1,5 @@
 import GreenNaoLib
 import time
 
-GreenNaoLib.setArc(-1, 1)
-time.sleep(1)
+GreenNaoLib.setArc(1,0,20)
 print("He terminado!")
