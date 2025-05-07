@@ -1,5 +1,5 @@
 # Contenidos del repositorio
-* **GreenNao**: Directorio dónde se encuentra todo el desarrollo del proyecto final
+* **CoordMoves**: Directorio dónde se encuentra todo el desarrollo del proyecto final
 * **docs**: Directorio dónde se sostiene el blog del proyecto
 * **pruebas**: Directorio dónde se han hecho pruebas y se ha preparado el proyecto antes de construirlo
 * **.gitignore**: Fichero que indica a git qué otros ficheros no deben subirse al repositorio
@@ -14,12 +14,11 @@ Este trabajo de fin de grado consiste en construir una aplicación para converti
 * Levantarse si se cae boca arriba
 * Levantarse si se cae boca abajo
 * Caminar en arco hacia la derecha y la izquierda
+* Caminar en arco hacia atrás a derecha e izquierda
 
 Después, para la aplicación de servicios se ha decidido hacer que nuestro pequeño NAO eche una mano en un invernadero, el cual ha sido modelado por mí para funcionar en gazebo, además de un nuevo aspecto para el robot.
 
 ## Invernadero
-
-### Primera versión (actual)
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/aeb67bd5-51ca-4773-9e77-5a92f90f4c88" alt="Mundo Invernadero" width="600">
@@ -40,7 +39,15 @@ Para que este TFG funcione correctamente, se necesita:
 * Todas las dependencias necesarias para comunicar ros y gazebo
   * ros-gz-sim
   * ros-humble-ros-gz-bridge
-* Todas las librerías necesarias para python(próximamente el listado)
+* Todas las librerías necesarias para python
+  * sys
+  * csv
+  * json
+  * time
+  * atexit
+  * rclpy
+  * std_msgs
+  * sensor_msgs
 
 # Explicación detallada del funcionamiento
 Cómo ya se ha explicado en la introducción de este README.md, este trabajo de fin de grado se compone de 2 pilares, los cuáles se explicarán corta, pero detalladamente a continuación, aunque, si quieres una explicación totalmente detallada de este TFG, puedes leer la memoria asociada a él [aquí]() (próximamente):
@@ -101,29 +108,29 @@ El punto 2 también nos lo da resuelto webots, sin embargo, el punto 1 tuvo que 
 
 Cabe destacar también que nuestro NAO cuenta con un sensor IMU, para así poder detectar si ha caído, y una cámara.
 
-#### Librería GreenNaoLib
+#### Librería CoordMovesLib
 
 Cómo se ha leído en la sección anterior, nuestro NAO es capaz de hacer muchas cosas, pero, ¿qué es lo que necesita una aplicación robótica útil? Ser fácil de usar, por lo que todo el esquema de movimientos relacionado con ros2 (interpretar los patrones, leer sensores, etc.), es realizable desde un sencillo programa en python como el siguiente:
 
 ```python
-import GreenNaoLib
+import CoordMovesLib
 
-orientation = GreenNaoLib.get_face() # Gracias a lecturas de IMU, sabemos si hemos caído y de que forma
+orientation = CoordMovesLib.get_face() # Gracias a lecturas de IMU, sabemos si hemos caído y de que forma
 
 if orientation == "face normal":
-    GreenNaoLib.stand_still()
+    CoordMovesLib.stand_still()
 
 elif orientation == "face up":
-    GreenNaoLib.wakeup_face_up()
+    CoordMovesLib.wakeup_face_up()
 
 elif orientation == "face down":
-    GreenNaoLib.wakeup_face_down()
+    CoordMovesLib.wakeup_face_down()
 
 else:
     print("ERROR: No puedo levantarme")
     sys.exit(1)
 ```
-Para hacer esto posible, ha sido necesario desarrollar la librería GreenNaoLib, la cual se encarga de todo lo mencionado anteriormente. Aunque, para poder usarla, es necesario tener todas las dependencias instaladas, y, obviamente, tener lanzada la simulación, además de configurado un paquete de ROS2 que contenga la librería, y respetar las rutas, ya que, al depender de ficheros, son muy importantes.
+Para hacer esto posible, ha sido necesario desarrollar la librería CoordMovesLib, la cual se encarga de todo lo mencionado anteriormente. Aunque, para poder usarla, es necesario tener todas las dependencias instaladas, y, obviamente, tener lanzada la simulación, además de configurado un paquete de ROS2 que contenga la librería, y respetar las rutas, ya que, al depender de ficheros, son muy importantes.
 
 A continuación, dejo una lista con todas las funciones y clases de esta librería, junto a una breve explicación de cada una de ellas:
 
@@ -176,7 +183,7 @@ Para encapsular las velocidades lineal y angular, está la clase setArc, para qu
 
 Ésta es la función que se debería usar para abordar todos los modos de caminar posibles de manera compacta.
 
-## GrenNao (próximamente)
+## GreenNao (próximamente)
 
 Utilizando la librería explicada anteriormente, se ha desarrollado una aplicación para NAO que consiste en llevar una caja adaptada a él de un lugar del invernadero a otro.
 
@@ -222,3 +229,4 @@ Para poder llevar a cabo este proyecto se han visitado los siguientes enlaces:
 * [Parámetros físicos en Gazebo explicados](https://classic.gazebosim.org/tutorials?tut=physics_params)
 * [Paper de Georgios Pierris y Michail G. Lagoudakis para el editor de movimientos](https://www.pierris.gr/me/downloads/kme.pdf)
 * [Paper de 2011 IEEE International Conference on Control System, Computing and Engineering para el editor de movimientos](https://www.researchgate.net/publication/254029603_Humanoid_robot_NAO_Review_of_control_and_motion_exploration)
+* [Artículo sobre robots humanoides](https://www.sciencedirect.com/topics/engineering/humanoid-robot)
