@@ -210,7 +210,7 @@ Si te interesa saber cómo se ha ido desarrollando este proyecto, puedes visitar
 Para poder llevar a cabo este proyecto se han visitado los siguientes enlaces:
 * [Modelo de NAO utilizado](https://app.gazebosim.org/OpenRobotics/fuel/models/NAO%20with%20Ignition%20position%20controller)
 * [Creación de un paquete ros2 python](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package.html)
-* [Urdf de NAO](https://github.com/ros-naoqi/nao_robot/blob/master/nao_description/urdf/naoV40_generazted_urdf/nao.urdf)
+* [Urdf de NAO](https://github.com/ros-naoqi/nao_robot/blob/master/nao_description/urdf/naoV40_generated_urdf/nao.urdf)
 * [Información sobre el plugin de movimiento de joints de gazebo](https://gazebosim.org/api/gazebo/6/classignition_1_1gazebo_1_1systems_1_1JointPositionController.html) 
 * [Correspondencia de mensajes entre gazebo y ros2 humble](https://github.com/gazebosim/ros_gz/blob/ros2/ros_gz_bridge/README.md)
 * [Tutorial de ros-gz-bridge](https://www.youtube.com/watch?v=DsjJtC8QTQY)
