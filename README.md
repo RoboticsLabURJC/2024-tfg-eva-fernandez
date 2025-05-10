@@ -40,6 +40,8 @@ Para que este TFG funcione correctamente, se necesita:
   * ros-gz-sim
   * ros-humble-ros-gz-bridge
 * Todas las librerías necesarias para python
+  * Pybullet
+  * numpy
   * sys
   * csv
   * json
