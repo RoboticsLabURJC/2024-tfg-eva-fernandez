@@ -110,7 +110,7 @@ class Interpreter(Node):
                     self.art_publishers[nombre].publish(msg)
                     time.sleep(0.001)
         if self.printable:
-            print("[Interpreter]: Movimientos completados")
+            print(f"[Interpreter]: Movimientos de fichero {file_name} completados")
         
         self.destroy_node()
 
@@ -177,6 +177,7 @@ def wakeup_face_up():
     Interpreter("cubito_supino.json",False)
     time.sleep(1)
     Interpreter("cubito_prono.csv",False)
+    time.sleep(0.3)
     Interpreter("stand.json",False)
     print("[wakeup_face_up]: Movimientos completados")
 
@@ -184,7 +185,7 @@ def stand_still(printable = True):
     Interpreter("stand.json",False)
     
     if printable:
-        print("[stand_still]: Movimientos completados")    
+        print("[stand_still]: NAO en posición stand")    
 
 def say_hi(hand):
     if hand == "L" or hand == "left" or hand == "LEFT":
@@ -197,7 +198,7 @@ def say_hi(hand):
         print(f"[say_hi] ERROR: Indique correctamente la mano.\nNao solo tiene mano izquierda (L,LEFT,left) y derecha (R, RIGHT, right)")
         sys.exit(1)
 
-    print("[say_hi]: Movimientos completados")
+    print("[say_hi]: Saludo completado")
 
 def turn(side, degrees, printable = True):
     if (side == "L" or side == "left" or side == "LEFT") and (degrees == 40 or degrees == 60 or degrees == 180):
@@ -215,7 +216,15 @@ def turn(side, degrees, printable = True):
          sys.exit(1)
     
     if printable:
-        print("[turn]: Movimientos completados")
+        print("[turn]: Giro completo")
+
+def grab_box():
+    Interpreter("grab.json",False)
+    print("[grab_box]: Caja agarrada")
+
+def release_box():
+    Interpreter("release.json",False)
+    print("[release_box]: Caja soltada")
 
 # Clase para andar recto pasando la velocidad -----------------------------------------------------------
 class turnVel(Node):
@@ -296,7 +305,7 @@ class turnVel(Node):
                         time.sleep(0.001)
         
         if self.printable:
-            print("[turnVel]: Movimientos completados")
+            print("[turnVel]: Pasos completados")
         
         self.destroy_node()
 
@@ -377,7 +386,7 @@ class setL(Node):
                         self.art_publishers[articulacion].publish(msg)
                         time.sleep(0.001)
 
-        print("[setL]: Movimientos completados")
+        print("[setL]: Pasos completados")
         self.destroy_node()
 
 # Clase para andar recto pasando la velocidad -----------------------------------------------------------
@@ -458,7 +467,7 @@ class setV(Node):
                         time.sleep(0.001)
                 
         if self.printable:
-            print("[setV]: Movimientos completados")
+            print("[setV]: Pasos completados")
 
         self.destroy_node()
 
@@ -540,7 +549,7 @@ class setW(Node):
                         self.art_publishers[articulacion].publish(msg)
                         time.sleep(0.001)
         if self.printable:
-            print("[setW]: Movimientos completados")
+            print("[setW]: Pasos completados")
 
         self.destroy_node()
 
@@ -623,7 +632,7 @@ class setNW(Node):
                         self.art_publishers[articulacion].publish(msg)
                         time.sleep(0.001)
         if self.printable:
-            print("[setNW]: Movimientos completados")
+            print("[setNW]: Pasos completados")
 
         self.destroy_node()
 
@@ -652,4 +661,4 @@ def setArc(v,w,steps = 2):
         print("[setArc] ERROR: Patrón de movimiento no válido")
         sys.exit(1)
     
-    print("[setArc]: Movimientos completados")
+    print("[setArc]: Pasos completados")

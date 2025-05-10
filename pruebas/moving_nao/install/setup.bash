@@ -22,7 +22,7 @@ _colcon_prefix_chain_bash_source_script() {
 COLCON_CURRENT_PREFIX="/opt/ros/humble"
 _colcon_prefix_chain_bash_source_script "$COLCON_CURRENT_PREFIX/local_setup.bash"
 # setting COLCON_CURRENT_PREFIX avoids determining the prefix in the sourced script
-COLCON_CURRENT_PREFIX="/home/evichan/Desktop/2024-tfg-eva-fernandez/GreenNao/greennao/install"
+COLCON_CURRENT_PREFIX="/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install"
 _colcon_prefix_chain_bash_source_script "$COLCON_CURRENT_PREFIX/local_setup.bash"
 
 # source this prefix

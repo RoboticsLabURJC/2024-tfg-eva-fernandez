@@ -177,6 +177,7 @@ def wakeup_face_up():
     Interpreter("cubito_supino.json",False)
     time.sleep(1)
     Interpreter("cubito_prono.csv",False)
+    time.sleep(0.3)
     Interpreter("stand.json",False)
     print("[wakeup_face_up]: Movimientos completados")
 
