@@ -155,7 +155,7 @@ A continuación, dejo una lista con todas las funciones y clases de esta librer�
 
 ##### Modos de caminar
 
-Además de ofrecer la encapsulación necesaria para poder mover a NAO de forma cómoda, disponemos también de los modos de caminar mencionados anteriormente, pero, con una particularidad: El movimiento de caminata recto y el de caminata en arco han sido parametrizados. Esto es, disponemos de V (velocidad lineal), W (velocidad angular), L (velocidad lateral) y una combinación de V y W para no tener que llamar a 2 clases por separado. Todas tienen un mínimo de 10 pasos, excepto la lateral, que tiene un mínimo de 2.
+Además de ofrecer la encapsulación necesaria para poder mover a NAO de forma cómoda, disponemos también de los modos de caminar mencionados anteriormente, pero, con una particularidad: El movimiento de caminata recto y el de caminata en arco han sido parametrizados. Esto es, disponemos de V (velocidad lineal), W (velocidad angular), L (velocidad lateral) y una combinación de V y W para no tener que llamar a 2 clases por separado. Todas tienen un mínimo de 2 pasos.
 
 ###### Velocidad lineal (clase setV)
 
@@ -171,11 +171,15 @@ De igual modo que con la velocidad lineal, tenemos la angular, que puede ser pos
 
 También tenemos setNW, que hace lo mismo, pero el arco es hacia atrás.
 
+###### Velocidad angular hacia atrás (clase setNW)
+
+Esta clase es igual que la anterior, pero los arcos se describen hacia atrás.
+
 ###### Velocidad lateral (clase setL)
 
 De igual modo que con la velocidad lineal y la angular, tenemos la lateral, que puede ser positiva (hacia la derecha) o negativa (hacia la izquierda), y sus valores límite son los mismos que para la velocidad lineal.
 
-###### Velocidad combinada V y W (clase setArc) (próximamente)
+###### Velocidad combinada V y W (clase setArc)
 
 Para encapsular las velocidades lineal y angular, está la clase setArc, para que llamar a la caminata sea más sencillo y directo. Se le pasan por argumento la velocidad lineal, la angular, y los pasos que queremos que NAO dé, y NAO seguirá el siguiente esquema dependiendo de qué valores le pasemos, adjunto un esquema para que se entienda mejor:
 
@@ -183,7 +187,7 @@ Para encapsular las velocidades lineal y angular, está la clase setArc, para qu
   <img src="/docs/images/semana-31/esquema.jpeg" alt="Esquema_setArc" width="400">
 </p>
 
-Ésta es la función que se debería usar para abordar todos los modos de caminar posibles de manera compacta.
+Ésta es la función que se debería usar para abordar todos los modos de caminar posibles de manera compacta, ya que dependiendo de los parámetros que se le pasan, llama a uno u otro.
 
 ## GreenNao (próximamente)
 
