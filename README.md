@@ -21,7 +21,7 @@ Después, para la aplicación de servicios se ha decidido hacer que nuestro pequ
 ## Invernadero
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/aeb67bd5-51ca-4773-9e77-5a92f90f4c88" alt="Mundo Invernadero" width="600">
+  <img src="/docs/images_readme/mundo_invernadero.png" alt="Mundo Invernadero" width="600">
 </p>
 
 ## NAO 
