@@ -1,7 +1,10 @@
 import CoordMovesLib
 import time
 
-CoordMovesLib.say_hi("L")
+CoordMovesLib.stand_still()
 time.sleep(1)
-CoordMovesLib.say_hi("R")
+CoordMovesLib.setArc(1, 0, 10)
+time.sleep(1)
+CoordMovesLib.stand_still()
+print("HE TERMINADO")
 

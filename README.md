@@ -15,6 +15,8 @@ Este trabajo de fin de grado consiste en construir una aplicación para converti
 * Levantarse si se cae boca abajo
 * Caminar en arco hacia la derecha y la izquierda
 * Caminar en arco hacia atrás a derecha e izquierda
+* Coger una caja
+* Dejar uuna caja
 
 Después, para la aplicación de servicios se ha decidido hacer que nuestro pequeño NAO eche una mano en un invernadero, el cual ha sido modelado por mí para funcionar en gazebo, además de un nuevo aspecto para el robot.
 
@@ -143,6 +145,9 @@ A continuación, dejo una lista con todas las funciones y clases de esta librer�
 * ***stand_still()***: Hace que Nao se quede en la posición estándar, de estar quieto
 * ***say_hi(hand)***: Hace que Nao salude con la mano que se le pasa como argumento
 * ***turn(side, degrees)***: Hace que Nao gire en el sentido que se le pasa como primer argumento, los grados que se le pasan como segundo argumento
+* ***grab_box()***: Hace que NAO recoja la caja
+* ***release_box()***: Hace que NAO suelte la caja
+* ***setArc(linear_velocity, angular_velocity, steps)***: Combina las clases encargadas de las caminatas para que no haya que llamarlas por separado y hacer andar a NAO sea más sencillo.
 
 **CLASES**
 * ***Interpreter(file)***: Llama al intérprete de movimientos mencionado anteriormente
@@ -150,7 +155,6 @@ A continuación, dejo una lista con todas las funciones y clases de esta librer�
 * ***setW(angular_velocity, steps)***: Hace que NAO camine en arco, a la velocidad indicada, los pasos indicados
 * ***setNW(angular_velocity, steps)***: Hace que NAO camine en arco hacia atrás, a la velocidad indicada, los pasos indicados
 * ***setL(angular_velocity, steps)***: Hace que NAO camine lateralmente, a la velocidad indicada, los pasos indicados
-* ***setArc(linear_velocity, angular_velocity, steps)***: Combina setV y setW, para que no haya que llamarlas por separado y sea más fácil de usar
 * ***Read_IMU()***: Devuelve la aceleración en z leyendo las mediciones del IMU
 
 ##### Modos de caminar
@@ -179,7 +183,7 @@ Esta clase es igual que la anterior, pero los arcos se describen hacia atrás.
 
 De igual modo que con la velocidad lineal y la angular, tenemos la lateral, que puede ser positiva (hacia la derecha) o negativa (hacia la izquierda), y sus valores límite son los mismos que para la velocidad lineal.
 
-###### Velocidad combinada V y W (clase setArc)
+###### Velocidad combinada V y W (función setArc)
 
 Para encapsular las velocidades lineal y angular, está la clase setArc, para que llamar a la caminata sea más sencillo y directo. Se le pasan por argumento la velocidad lineal, la angular, y los pasos que queremos que NAO dé, y NAO seguirá el siguiente esquema dependiendo de qué valores le pasemos, adjunto un esquema para que se entienda mejor:
 
@@ -199,7 +203,13 @@ Para hacerlo, primero se ha diseñado dicha caja, ya que el modelo del NAO utili
   <img src="/docs/images_readme/caja.png" alt="Caja_NAO" width="600">
 </p>
 
-Por que así, NAO puede cogerla de la siguiente manera: ...... (próximamente)
+Ya que es un tamaño adecuado para el robot y hace que no precise de dedos, lo que es una ventaja porque el modelo utilizado tiene las manos sin dedos.
+
+También cabe destacar que la misión de NAO es recoger la caja de una mesa azul (también adecuada a su tamaño) y llevarla hasta una mesa naranja (igual que la azul en cuanto a dimensiones) y dejarla allí.
+
+Para cumplir esta tarea, existen en la librería las funciones grab_box y release_box, que son las encargadas de coger y dejar la caja, respectivamente.
+
+Además, .......... (próximamente)
 
 # Resultado del proyecto (próximamente)
 
