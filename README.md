@@ -54,7 +54,7 @@ Para que este TFG funcione correctamente, se necesita:
   * sensor_msgs
 
 # Explicación detallada del funcionamiento
-Cómo ya se ha explicado en la introducción de este README.md, este trabajo de fin de grado se compone de 2 pilares, los cuáles se explicarán corta, pero detalladamente a continuación, aunque, si quieres una explicación totalmente detallada de este TFG, puedes leer la memoria asociada a él [aquí]() (próximamente):
+Cómo ya se ha explicado en la introducción de este README.md, este trabajo de fin de grado se compone de 2 pilares, los cuáles se explicarán corta, pero detalladamente a continuación, aunque, si quieres una explicación totalmente detallada de este TFG, puedes leer la memoria asociada a él [aquí](/CoordMoves/memoria/TFG_Eva_Fernández_de_la_Cruz.pdf):
 
 ## Movimiento
 
@@ -193,7 +193,7 @@ Para encapsular las velocidades lineal y angular, está la clase setArc, para qu
 
 Ésta es la función que se debería usar para abordar todos los modos de caminar posibles de manera compacta, ya que dependiendo de los parámetros que se le pasan, llama a uno u otro.
 
-## GreenNao (próximamente)
+## GreenNao
 
 Utilizando la librería explicada anteriormente, se ha desarrollado una aplicación para NAO que consiste en llevar una caja adaptada a él de un lugar del invernadero a otro.
 
@@ -209,13 +209,39 @@ También cabe destacar que la misión de NAO es recoger la caja de una mesa azul
 
 Para cumplir esta tarea, existen en la librería las funciones grab_box y release_box, que son las encargadas de coger y dejar la caja, respectivamente.
 
-Además, .......... (próximamente)
+Como se puede apreciar en la imagen del mundo, la tarea es sencilla, ya que NAO simplemente debe acercarse a la primera mesa, recoger la caja, darse la vuelta, ir hasta la segunda y dejarla.
 
-# Resultado del proyecto (próximamente)
+Para que se aprecie la potencia de la librería desarrollada, se adjunta a continuación el código de esta aplicación:
 
-Gracias a la integración de ambas partes anteriormente explicadas, se ha conseguido el siguiente resultado (próximamente):
+```python
+import CoordMovesLib
+import time
 
-Que, cómo se puede ver ...... (próximamente)
+CoordMovesLib.stand_still()
+time.sleep(1)
+CoordMovesLib.setArc(1, 0, 10)
+time.sleep(1)
+CoordMovesLib.grab_box()
+time.sleep(1)
+CoordMovesLib.setArc(-1, 0, 4)
+time.sleep(1)
+CoordMovesLib.setArc(0, 1, 10)
+time.sleep(1)
+CoordMovesLib.setArc(1, 0, 20)
+time.sleep(1)
+CoordMovesLib.release_box()
+print("Caja movida con éxito")
+```
+
+# Resultado del proyecto
+
+Gracias a la integración de ambas partes anteriormente explicadas, se ha conseguido el siguiente resultado (PRÓXIMAMENTE):
+
+<p align="center">
+  <img src="/docs/images_readme/greennao.gif" alt="GrenNao app" width="400">
+</p>
+
+Que, cómo se puede ver satisface el objetivo propuesto en la sección anterior.
 
 # Seguimiento del proyecto
 

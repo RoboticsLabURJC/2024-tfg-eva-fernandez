@@ -1,23 +1,23 @@
 <sdf version='1.9'>
   <world name='greenhouse_world'>
-    <physics name='ode_physics' type='ode'>
+    <physics name="ode_physics" type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <real_time_factor>1</real_time_factor>
       <ode>
         <solver>
-          <type>world</type>
+          <type>quick</type>
           <iters>500</iters>
           <sor>1.3</sor>
           <use_dynamic_moi_rescaling>false</use_dynamic_moi_rescaling>
         </solver>
         <constraints>
-          <cfm>0</cfm>
-          <erp>0.20000000000000001</erp>
-          <contact_max_correcting_vel>100</contact_max_correcting_vel>
+          <cfm>1e-5</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>20</contact_max_correcting_vel>
           <contact_surface_layer>0.001</contact_surface_layer>
         </constraints>
       </ode>
-      <max_step_size>0.001</max_step_size>
-      <real_time_factor>1</real_time_factor>
-      <real_time_update_rate>1000</real_time_update_rate>
     </physics>
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>2.5e-05 5.5e-05 4e-05</magnetic_field>
@@ -41,12 +41,25 @@
           <surface>
             <friction>
               <ode>
-                <mu>140.0</mu>
-                <mu2>140.0</mu2>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+                <fdir1>0 0 0</fdir1>
               </ode>
             </friction>
-            <bounce/>
-            <contact/>
+            <bounce>
+              <restitution_coefficient>0.0</restitution_coefficient>
+              <threshold>0.5</threshold>
+            </bounce>
+            <contact>
+              <ode>
+                <soft_cfm>0.0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1000000.0</kp>
+                <kd>1.0</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
           </surface>
         </collision>
         <visual name='visual'>
@@ -88,7 +101,7 @@
     </include>
     
     <model name="initial_table">
-      <pose>3 1.2 0 0 0 0</pose>
+      <pose>0.7 0.0142 0 0 0 0</pose>
       <static>true</static>
       <!-- Tapa de la mesa -->
       <link name="table_top">
@@ -221,7 +234,7 @@
 
     <model name="final_table">
       <static>true</static>
-      <pose>-2 -0.5 0 0 0 0</pose>
+      <pose>-1 0.0142 0 0 0 0</pose>
       <!-- Tapa de la mesa -->
       <link name="table_top">
         <pose>0 0 0.225 0 0 0</pose>
@@ -352,7 +365,7 @@
 
     <model name="caja">
       <static>false</static>
-      <pose>3 1.2 0.5 0 0 0</pose>
+      <pose>0.7 0.0142 0.5 0 0 1.57</pose>
       <!-- Caja principal -->
       <link name="caja">
         <visual name="visual_caja">
@@ -458,6 +471,159 @@
         <parent>caja</parent>
         <child>asa_derecha</child>
         <pose>0.105 0 0.06 0 0 0</pose>
+      </joint>
+      <link name="manzana_1">
+        <pose>-0.035 -0.035 0.07 0 0 0</pose>
+        <visual name="visual_manzana_1">
+          <geometry>
+            <sphere><radius>0.0225</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>0.8 0 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <link name="manzana_2">
+        <pose>0 -0.035 0.07 0 0 0</pose>
+        <visual name="visual_manzana_2">
+          <geometry>
+            <sphere><radius>0.0225</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>0.8 0 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <link name="manzana_3">
+        <pose>0.035 -0.035 0.07 0 0 0</pose>
+        <visual name="visual_manzana_3">
+          <geometry>
+            <sphere><radius>0.0225</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>0.8 0 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <link name="manzana_4">
+        <pose>-0.035 0 0.07 0 0 0</pose>
+        <visual name="visual_manzana_4">
+          <geometry>
+            <sphere><radius>0.0225</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>0.8 0 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <link name="manzana_5">
+        <pose>0 0 0.07 0 0 0</pose>
+        <visual name="visual_manzana_5">
+          <geometry>
+            <sphere><radius>0.0225</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>0.8 0 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <link name="manzana_6">
+        <pose>0.035 0 0.07 0 0 0</pose>
+        <visual name="visual_manzana_6">
+          <geometry>
+            <sphere><radius>0.0225</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>0.8 0 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <link name="manzana_7">
+        <pose>-0.035 0.035 0.07 0 0 0</pose>
+        <visual name="visual_manzana_7">
+          <geometry>
+            <sphere><radius>0.0225</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>0.8 0 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <link name="manzana_8">
+        <pose>0 0.035 0.07 0 0 0</pose>
+        <visual name="visual_manzana_8">
+          <geometry>
+            <sphere><radius>0.0225</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>0.8 0 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <link name="manzana_9">
+        <pose>0.035 0.035 0.07 0 0 0</pose>
+        <visual name="visual_manzana_9">
+          <geometry>
+            <sphere><radius>0.0225</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>0.8 0 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_manzana_1" type="fixed">
+        <parent>caja</parent>
+        <child>manzana_1</child>
+        <pose>-0.035 -0.035 0.07 0 0 0</pose>
+      </joint>
+      <joint name="joint_manzana_2" type="fixed">
+        <parent>caja</parent>
+        <child>manzana_2</child>
+        <pose>0 -0.035 0.07 0 0 0</pose>
+      </joint>
+      <joint name="joint_manzana_3" type="fixed">
+        <parent>caja</parent>
+        <child>manzana_3</child>
+        <pose>0.035 -0.035 0.07 0 0 0</pose>
+      </joint>
+      <joint name="joint_manzana_4" type="fixed">
+        <parent>caja</parent>
+        <child>manzana_4</child>
+        <pose>-0.035 0 0.07 0 0 0</pose>
+      </joint>
+      <joint name="joint_manzana_5" type="fixed">
+        <parent>caja</parent>
+        <child>manzana_5</child>
+        <pose>0 0 0.07 0 0 0</pose>
+      </joint>
+      <joint name="joint_manzana_6" type="fixed">
+        <parent>caja</parent>
+        <child>manzana_6</child>
+        <pose>0.035 0 0.07 0 0 0</pose>
+      </joint>
+      <joint name="joint_manzana_7" type="fixed">
+        <parent>caja</parent>
+        <child>manzana_7</child>
+        <pose>-0.035 0.035 0.07 0 0 0</pose>
+      </joint>
+      <joint name="joint_manzana_8" type="fixed">
+        <parent>caja</parent>
+        <child>manzana_8</child>
+        <pose>0 0.035 0.07 0 0 0</pose>
+      </joint>
+      <joint name="joint_manzana_9" type="fixed">
+        <parent>caja</parent>
+        <child>manzana_9</child>
+        <pose>0.035 0.035 0.07 0 0 0</pose>
       </joint>
     </model>
     <model name='bambu'>

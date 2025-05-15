@@ -1,0 +1,91 @@
+[0.069s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.069s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=20, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7e7da3c2df60>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7e7da3c2da50>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7e7da3c2da50>>, mixin_verb=('build',))
+[0.174s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.174s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.174s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.174s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.174s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.174s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.174s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves'
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.184s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_python' and name 'coordmoves'
+[0.184s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.184s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.184s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.184s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.184s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.203s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.203s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.204s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install
+[0.204s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/evichan/Desktop/2024-tfg-eva-fernandez/pruebas/moving_nao/install
+[0.205s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 277 installed packages in /opt/ros/humble
+[0.206s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.229s] Level 5:colcon.colcon_core.verb:set package 'coordmoves' build argument 'cmake_args' from command line to 'None'
+[0.229s] Level 5:colcon.colcon_core.verb:set package 'coordmoves' build argument 'cmake_target' from command line to 'None'
+[0.229s] Level 5:colcon.colcon_core.verb:set package 'coordmoves' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.229s] Level 5:colcon.colcon_core.verb:set package 'coordmoves' build argument 'cmake_clean_cache' from command line to 'False'
+[0.229s] Level 5:colcon.colcon_core.verb:set package 'coordmoves' build argument 'cmake_clean_first' from command line to 'False'
+[0.229s] Level 5:colcon.colcon_core.verb:set package 'coordmoves' build argument 'cmake_force_configure' from command line to 'False'
+[0.229s] Level 5:colcon.colcon_core.verb:set package 'coordmoves' build argument 'ament_cmake_args' from command line to 'None'
+[0.229s] Level 5:colcon.colcon_core.verb:set package 'coordmoves' build argument 'catkin_cmake_args' from command line to 'None'
+[0.229s] Level 5:colcon.colcon_core.verb:set package 'coordmoves' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.229s] DEBUG:colcon.colcon_core.verb:Building package 'coordmoves' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves', 'merge_install': False, 'path': '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves', 'symlink_install': False, 'test_result_base': None}
+[0.229s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.230s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.230s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves' with build type 'ament_python'
+[0.230s] Level 1:colcon.colcon_core.shell:create_environment_hook('coordmoves', 'ament_prefix_path')
+[0.231s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.232s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/share/coordmoves/hook/ament_prefix_path.ps1'
+[0.232s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/share/coordmoves/hook/ament_prefix_path.dsv'
+[0.232s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/share/coordmoves/hook/ament_prefix_path.sh'
+[0.233s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.233s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.402s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves'
+[0.402s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.402s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.618s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves': PYTHONPATH=/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/coordmoves build --build-base /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/build install --record /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/install.log --single-version-externally-managed install_data
+[0.812s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves' returned '0': PYTHONPATH=/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/coordmoves build --build-base /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/build install --record /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/install.log --single-version-externally-managed install_data
+[0.813s] Level 1:colcon.colcon_core.environment:checking '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves' for CMake module files
+[0.813s] Level 1:colcon.colcon_core.environment:checking '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves' for CMake config files
+[0.813s] Level 1:colcon.colcon_core.environment:checking '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/lib'
+[0.813s] Level 1:colcon.colcon_core.environment:checking '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/bin'
+[0.813s] Level 1:colcon.colcon_core.environment:checking '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/lib/pkgconfig/coordmoves.pc'
+[0.814s] Level 1:colcon.colcon_core.environment:checking '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/lib/python3.10/site-packages'
+[0.814s] Level 1:colcon.colcon_core.shell:create_environment_hook('coordmoves', 'pythonpath')
+[0.814s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/share/coordmoves/hook/pythonpath.ps1'
+[0.814s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/share/coordmoves/hook/pythonpath.dsv'
+[0.814s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/share/coordmoves/hook/pythonpath.sh'
+[0.815s] Level 1:colcon.colcon_core.environment:checking '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/bin'
+[0.815s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(coordmoves)
+[0.815s] INFO:colcon.colcon_core.shell:Creating package script '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/share/coordmoves/package.ps1'
+[0.815s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/share/coordmoves/package.dsv'
+[0.816s] INFO:colcon.colcon_core.shell:Creating package script '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/share/coordmoves/package.sh'
+[0.816s] INFO:colcon.colcon_core.shell:Creating package script '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/share/coordmoves/package.bash'
+[0.816s] INFO:colcon.colcon_core.shell:Creating package script '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/share/coordmoves/package.zsh'
+[0.817s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/share/colcon-core/packages/coordmoves)
+[0.817s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[0.817s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[0.817s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[0.817s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[0.820s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[0.821s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[0.821s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[0.831s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[0.831s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/local_setup.ps1'
+[0.832s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/_local_setup_util_ps1.py'
+[0.833s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/setup.ps1'
+[0.834s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/local_setup.sh'
+[0.835s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/_local_setup_util_sh.py'
+[0.836s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/setup.sh'
+[0.837s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/local_setup.bash'
+[0.837s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/setup.bash'
+[0.838s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/local_setup.zsh'
+[0.838s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/setup.zsh'

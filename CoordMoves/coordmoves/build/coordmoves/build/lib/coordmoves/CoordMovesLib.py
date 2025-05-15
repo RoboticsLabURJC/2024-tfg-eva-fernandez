@@ -23,7 +23,7 @@ class Interpreter(Node):
         qos_profile = QoSProfile(
             reliability=ReliabilityPolicy.RELIABLE,
             history=HistoryPolicy.KEEP_ALL,
-            depth=100
+            depth=1000
         )
 
         self.file_name = file_name
@@ -243,7 +243,7 @@ class turnVel(Node):
         qos_profile = QoSProfile(
             reliability=ReliabilityPolicy.RELIABLE,
             history=HistoryPolicy.KEEP_ALL,
-            depth=100
+            depth=1000
         )
         
         self.art_publishers = {}
@@ -325,7 +325,7 @@ class setL(Node):
         qos_profile = QoSProfile(
             reliability=ReliabilityPolicy.RELIABLE,
             history=HistoryPolicy.KEEP_ALL,
-            depth=100
+            depth=1000
         )
         
         self.art_publishers = {}
@@ -405,7 +405,7 @@ class setV(Node):
         qos_profile = QoSProfile(
             reliability=ReliabilityPolicy.RELIABLE,
             history=HistoryPolicy.KEEP_ALL,
-            depth=100
+            depth=1000
         )
         
         self.art_publishers = {}
@@ -488,7 +488,7 @@ class setW(Node):
         qos_profile = QoSProfile(
             reliability=ReliabilityPolicy.RELIABLE,
             history=HistoryPolicy.KEEP_ALL,
-            depth=100
+            depth=1000
         )
         
         self.art_publishers = {}
@@ -570,7 +570,7 @@ class setNW(Node):
         qos_profile = QoSProfile(
             reliability=ReliabilityPolicy.RELIABLE,
             history=HistoryPolicy.KEEP_ALL,
-            depth=100
+            depth=1000
         )
         
         self.art_publishers = {}
