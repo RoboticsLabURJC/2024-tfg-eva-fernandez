@@ -1,0 +1,25 @@
+running egg_info
+writing build/coordmoves/coordmoves.egg-info/PKG-INFO
+writing dependency_links to build/coordmoves/coordmoves.egg-info/dependency_links.txt
+writing entry points to build/coordmoves/coordmoves.egg-info/entry_points.txt
+writing requirements to build/coordmoves/coordmoves.egg-info/requires.txt
+writing top-level names to build/coordmoves/coordmoves.egg-info/top_level.txt
+reading manifest file 'build/coordmoves/coordmoves.egg-info/SOURCES.txt'
+writing manifest file 'build/coordmoves/coordmoves.egg-info/SOURCES.txt'
+running build
+running build_py
+copying coordmoves/GreenNao.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/build/lib/coordmoves
+copying coordmoves/CoordMovesLib.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/build/lib/coordmoves
+running install
+running install_lib
+copying /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/build/lib/coordmoves/GreenNao.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/lib/python3.10/site-packages/coordmoves
+copying /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/build/lib/coordmoves/CoordMovesLib.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/lib/python3.10/site-packages/coordmoves
+byte-compiling /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/lib/python3.10/site-packages/coordmoves/GreenNao.py to GreenNao.cpython-310.pyc
+byte-compiling /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/lib/python3.10/site-packages/coordmoves/CoordMovesLib.py to CoordMovesLib.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/lib/python3.10/site-packages/coordmoves-0.0.0-py3.10.egg-info' (and everything under it)
+Copying build/coordmoves/coordmoves.egg-info to /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/lib/python3.10/site-packages/coordmoves-0.0.0-py3.10.egg-info
+running install_scripts
+Installing CoordMoves script to /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/lib/coordmoves
+writing list of installed files to '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/install.log'

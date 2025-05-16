@@ -159,9 +159,9 @@ A continuación, dejo una lista con todas las funciones y clases de esta librer�
 
 ##### Modos de caminar
 
-Además de ofrecer la encapsulación necesaria para poder mover a NAO de forma cómoda, disponemos también de los modos de caminar mencionados anteriormente, pero, con una particularidad: El movimiento de caminata recto y el de caminata en arco han sido parametrizados. Esto es, disponemos de V (velocidad lineal), W (velocidad angular), L (velocidad lateral) y una combinación de V y W para no tener que llamar a 2 clases por separado. Todas tienen un mínimo de 2 pasos.
+Además de ofrecer la encapsulación necesaria para poder mover a NAO de forma cómoda, disponemos también de los modos de caminar mencionados anteriormente, pero, con una particularidad: El movimiento de caminata recto y el de caminata en arco han sido parametrizados. Esto es, disponemos de V (velocidad lineal), W (velocidad angular), L (velocidad lateral) y una combinación de V y W para no tener que llamar a 2 clases por separado. Dependiendo de la clase, se tiene un número mínimo de 10 o 2 pasos, esto se indicará en este fichero README.md con un * en su nombre en caso de ser 10, y con un ^ en caso de ser 2.
 
-###### Velocidad lineal (clase setV)
+###### Velocidad lineal (clase setV)*
 
 La velocidad lineal puede ser positiva (andar hacia adelante), o negativa (andar hacia atrás) y tiene un valor mínimo (-0.35 ó 0.35) y un valor máximo (4.35 ó -4.35), de este modo, a mayor valor abosoluto, más rápido se moverá nuestro robot, siguiendo este esquema:
 
@@ -169,19 +169,23 @@ La velocidad lineal puede ser positiva (andar hacia adelante), o negativa (andar
   <img src="/docs/images/semana-27/velocity_value.jpeg" alt="Esquema_Velocidades" width="800">
 </p>
 
-###### Velocidad angular (clase setW)
+###### Velocidad angular (clase setW)*
 
 De igual modo que con la velocidad lineal, tenemos la angular, que puede ser positiva (giro a la derecha) o negativa (giro a la izquierda), y sus valores límite son 0.35 y -0.35 para el mínimo, y 1.9 y -1.9 para el máximo.
 
 También tenemos setNW, que hace lo mismo, pero el arco es hacia atrás.
 
-###### Velocidad angular hacia atrás (clase setNW)
+###### Velocidad angular hacia atrás (clase setNW)*
 
 Esta clase es igual que la anterior, pero los arcos se describen hacia atrás.
 
-###### Velocidad lateral (clase setL)
+###### Velocidad lateral (clase setL)^
 
 De igual modo que con la velocidad lineal y la angular, tenemos la lateral, que puede ser positiva (hacia la derecha) o negativa (hacia la izquierda), y sus valores límite son los mismos que para la velocidad lineal.
+
+###### Velocidad angular en el sitio (clase turnVel)*
+
+Esta clase sirve para que NAO gire en el sitio, a izquierda (velocidad negativa) o derecha (velocidad positiva). Sus valores línme son los mismos que la clase setW.
 
 ###### Velocidad combinada V y W (función setArc)
 
@@ -219,13 +223,13 @@ import time
 
 CoordMovesLib.stand_still()
 time.sleep(1)
-CoordMovesLib.setArc(1, 0, 10)
+CoordMovesLib.setArc(1, 0)
 time.sleep(1)
 CoordMovesLib.grab_box()
 time.sleep(1)
 CoordMovesLib.setArc(-1, 0, 4)
 time.sleep(1)
-CoordMovesLib.setArc(0, 1, 10)
+CoordMovesLib.setArc(0, 1, 6)
 time.sleep(1)
 CoordMovesLib.setArc(1, 0, 20)
 time.sleep(1)
