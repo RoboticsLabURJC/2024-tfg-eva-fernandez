@@ -1,6 +1,7 @@
 <sdf version='1.9'>
   <world name='greenhouse_world'>
     <physics name="ode_physics" type="ode">
+      <seed>12345</seed>
       <max_step_size>0.001</max_step_size>
       <real_time_update_rate>1000</real_time_update_rate>
       <real_time_factor>1</real_time_factor>
@@ -35,15 +36,15 @@
           <geometry>
             <plane>
               <normal>0 0 1</normal>
-              <size>100 100</size>
+              <size>10 7</size>
             </plane>
           </geometry>
           <surface>
             <friction>
               <ode>
-                <mu>1.0</mu>
-                <mu2>1.0</mu2>
-                <fdir1>0 0 0</fdir1>
+                <mu>35.0</mu>
+                <mu2>35.0</mu2>
+                <fdir1>1 1 0</fdir1>
               </ode>
             </friction>
             <bounce>
@@ -67,7 +68,7 @@
           <geometry>
             <plane>
               <normal>0 0 1</normal>
-              <size>100 100</size>
+              <size>10 7</size>
             </plane>
           </geometry>
           <material>
