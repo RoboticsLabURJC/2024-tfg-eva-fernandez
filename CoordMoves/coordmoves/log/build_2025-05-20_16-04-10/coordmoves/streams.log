@@ -1,0 +1,24 @@
+[0.778s] Invoking command in '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves': PYTHONPATH=/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/coordmoves build --build-base /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/build install --record /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/install.log --single-version-externally-managed install_data
+[1.077s] running egg_info
+[1.078s] writing build/coordmoves/coordmoves.egg-info/PKG-INFO
+[1.078s] writing dependency_links to build/coordmoves/coordmoves.egg-info/dependency_links.txt
+[1.079s] writing entry points to build/coordmoves/coordmoves.egg-info/entry_points.txt
+[1.079s] writing requirements to build/coordmoves/coordmoves.egg-info/requires.txt
+[1.079s] writing top-level names to build/coordmoves/coordmoves.egg-info/top_level.txt
+[1.081s] reading manifest file 'build/coordmoves/coordmoves.egg-info/SOURCES.txt'
+[1.082s] writing manifest file 'build/coordmoves/coordmoves.egg-info/SOURCES.txt'
+[1.082s] running build
+[1.082s] running build_py
+[1.082s] copying coordmoves/CoordMovesLib.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/build/lib/coordmoves
+[1.082s] running install
+[1.083s] running install_lib
+[1.084s] copying /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/build/lib/coordmoves/CoordMovesLib.py -> /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/lib/python3.10/site-packages/coordmoves
+[1.085s] byte-compiling /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/lib/python3.10/site-packages/coordmoves/CoordMovesLib.py to CoordMovesLib.cpython-310.pyc
+[1.090s] running install_data
+[1.091s] running install_egg_info
+[1.094s] removing '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/lib/python3.10/site-packages/coordmoves-0.0.0-py3.10.egg-info' (and everything under it)
+[1.094s] Copying build/coordmoves/coordmoves.egg-info to /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/lib/python3.10/site-packages/coordmoves-0.0.0-py3.10.egg-info
+[1.095s] running install_scripts
+[1.123s] Installing CoordMoves script to /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/lib/coordmoves
+[1.124s] writing list of installed files to '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/install.log'
+[1.163s] Invoked command in '/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves' returned '0': PYTHONPATH=/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/install/coordmoves/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/coordmoves build --build-base /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/build install --record /home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/build/coordmoves/install.log --single-version-externally-managed install_data

@@ -10,12 +10,8 @@ from rclpy.time import Time
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy
 from sensor_msgs.msg import Imu
 
-rclpy.init()
-atexit.register(rclpy.shutdown)
-
-
-# Clase para replicar los movimientos de un fichero -----------------------------------------------------
-class Interpreter(Node):
+# Clase para replicar los movimientos de un fichero y su función para llamarla -----------------------------------------------------
+class Interpreter_class(Node):
     def __init__(self, file_name: str, printable=True):
         
         super().__init__('interpreter')
@@ -70,7 +66,7 @@ class Interpreter(Node):
                     for articulacion in fotograma["articulaciones"]:
                         nombre = articulacion["articulacion"]
                         self.art_publishers[nombre] = self.create_publisher(Float64, f'/{nombre}/cmd_pos', qos_profile)
-
+        
         self.publish_message()
 
     def interpolate(self, start_value, end_value, t, duration):
@@ -98,21 +94,27 @@ class Interpreter(Node):
                         self.art_publishers[articulacion].publish(msg)
                         time.sleep(0.001)
         else:
-            msg = Float64()
             for fotograma in self.datos:
                 tiempo = fotograma["tiempo_de_espera"]
 
                 time.sleep(tiempo)
             
                 for articulacion in fotograma["articulaciones"]:
+                    msg = Float64()
                     nombre = articulacion["articulacion"]
                     msg.data = articulacion["posicion"]
                     self.art_publishers[nombre].publish(msg)
                     time.sleep(0.001)
         if self.printable:
-            print(f"[Interpreter]: Movimientos de fichero {file_name} completados")
+            print(f"[Interpreter]: Movimientos de fichero {self.file_name} completados")
         
-        self.destroy_node()
+def Interpreter(file_name: str, printable=True):
+    rclpy.init()
+    node = Interpreter_class(file_name, printable)
+    rclpy.spin_once(node, timeout_sec=0.1)
+    
+    node.destroy_node()
+    rclpy.shutdown()
 
 # Clase para leer el IMU --------------------------------------------------------------------------------
 class Read_IMU(Node):
@@ -170,6 +172,7 @@ def get_face():
 # Funciones para reproducir patrones fijos de movimiento ------------------------------------------------
 def wakeup_face_down():
     Interpreter("cubito_prono.csv",False)
+    time.sleep(0.3)
     Interpreter("stand.json",False)
     print("[wakeup_face_down]: Movimientos completados")
     
@@ -226,8 +229,8 @@ def release_box():
     Interpreter("release.json",False)
     print("[release_box]: Caja soltada")
 
-# Clase para andar recto pasando la velocidad -----------------------------------------------------------
-class turnVel(Node):
+# Clase para andar recto pasando la velocidad  y su función para llamarla -----------------------------------------------------------
+class turnVel_class(Node):
     def __init__(self, vel: float, steps: int = 2, printable = True):
         super().__init__('turnvel')
         
@@ -307,10 +310,18 @@ class turnVel(Node):
         if self.printable:
             print("[turnVel]: Pasos completados")
         
-        self.destroy_node()
+        
 
-# Clase para andar recto pasando la velocidad -----------------------------------------------------------
-class setL(Node):
+def turnVel(vel: float, steps: int = 2, printable = True):
+    rclpy.init()
+    node = turnVel_class(vel, steps, printable)
+    rclpy.spin_once(node, timeout_sec=0.1)
+    
+    node.destroy_node()
+    rclpy.shutdown()
+
+# Clase para andar recto pasando la velocidad y su función para llamarla -----------------------------------------------------------
+class setL_class(Node):
     def __init__(self, lateral_velocity: float, steps: int = 2):
         super().__init__('setL')
         
@@ -387,14 +398,22 @@ class setL(Node):
                         time.sleep(0.001)
 
         print("[setL]: Pasos completados")
-        self.destroy_node()
+        
 
-# Clase para andar recto pasando la velocidad -----------------------------------------------------------
-class setV(Node):
+def setL(vel: float, steps: int = 2):
+    rclpy.init()
+    node = setL_class(vel, steps)
+    rclpy.spin_once(node, timeout_sec=0.1)
+    
+    node.destroy_node()
+    rclpy.shutdown()
+
+# Clase para andar recto pasando la velocidad y su función para llamarla -----------------------------------------------------------
+class setV_class(Node):
     def __init__(self, linear_velocity: float, steps: int = 10, printable = True):
         super().__init__('setv')
         if not ((0.35 <= abs(linear_velocity) <= 4.35) or abs(linear_velocity) == 0) or not (10 <= steps) or (steps%10 != 0):
-            print("[setV] ERROR: La velocidad lineal debe tomar un valor de entre ±0.35 y ±4.35 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 10, y debe ser múltiplo de 10, si no quiere andar, pase velocidad 0")
+            print("[setV] ERROR: La velocidad lineal debe tomar un valor de entre +-0.35 y +-4.35 (aunque tambien puede coger 0).\nTenga en cuenta tambien que el minimo de pasos (parametro opcional) es 10, y debe ser multiplo de 10, si no quiere andar, pase velocidad 0")
             sys.exit(1)
         else:
             self.V = linear_velocity
@@ -422,7 +441,7 @@ class setV(Node):
                 reader = csv.DictReader(file)
                 self.datos = list(reader)
 
-            # Crear publicadores para cada articulación
+            # Crear publicadores para cada articulacion
             for fotograma in self.datos:
                 counter = counter + 1
                 tiempo_actual = float(fotograma["#WEBOTS_MOTION"]) / abs(self.V)
@@ -471,10 +490,17 @@ class setV(Node):
         if self.printable:
             print("[setV]: Pasos completados")
 
-        self.destroy_node()
+def setV(vel: float, steps: int = 10, printable = True):
+    rclpy.init()
+    node = setV_class(vel, steps, printable)
+    rclpy.spin_once(node, timeout_sec=0.1)
+    
+    node.destroy_node()
+    rclpy.shutdown()
 
-# Clase para andar en arco pasando la velocidad -----------------------------------------------------------
-class setW(Node):
+
+# Clase para andar en arco pasando la velocidad y su función para llamarla -----------------------------------------------------------
+class setW_class(Node):
     def __init__(self, angular_velocity: float, steps: int = 10, printable = True):
         super().__init__('setw')
         
@@ -553,10 +579,16 @@ class setW(Node):
         if self.printable:
             print("[setW]: Pasos completados")
 
-        self.destroy_node()
+def setW(vel: float, steps: int = 10, printable = True):
+    rclpy.init()
+    node = setW_class(vel, steps, printable)
+    rclpy.spin_once(node, timeout_sec=0.1)
+    
+    node.destroy_node()
+    rclpy.shutdown() 
 
-# Clase para andar en arco hacia atrás pasando la velocidad -----------------------------------------------------------
-class setNW(Node):
+# Clase para andar en arco hacia atrás pasando la velocidad y su función para llamarla -----------------------------------------------------------
+class setNW_class(Node):
     def __init__(self, angular_velocity: float, steps: int = 10, printable = True):
         super().__init__('setnw')
         
@@ -636,7 +668,13 @@ class setNW(Node):
         if self.printable:
             print("[setNW]: Pasos completados")
 
-        self.destroy_node()
+def setNW(vel: float, steps: int = 10, printable = True):
+    rclpy.init()
+    node = setNW_class(vel, steps, printable)
+    rclpy.spin_once(node, timeout_sec=0.1)
+    
+    node.destroy_node()
+    rclpy.shutdown()       
 
 # Función para combinar la caminata en arco y la recta pasando las velocidades correspondientes -------------
 def setArc(v,w,steps = 10):
