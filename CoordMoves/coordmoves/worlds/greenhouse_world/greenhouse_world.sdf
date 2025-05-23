@@ -2,8 +2,8 @@
   <world name='greenhouse_world'>
     <physics name="ode_physics" type="ode">
       <seed>12345</seed>
-      <max_step_size>0.003</max_step_size>
-      <real_time_update_rate>200</real_time_update_rate>
+      <max_step_size>0.02</max_step_size>
+      <real_time_update_rate>0</real_time_update_rate>
       <real_time_factor>1</real_time_factor>
       <ode>
         <solver>
@@ -69,17 +69,17 @@
         </inertial>
         <enable_wind>false</enable_wind>
       </link>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0.1 0 -0 0</pose>
       <self_collide>false</self_collide>
     </model>
     <include>
       <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/model/Modelo_NAO</uri>
       <name>Modelo_NAO</name>
-      <pose>0 0 0.5 0 0.240819 0</pose>
+      <pose>0 0 0.6 0 0.240819 0</pose>
     </include>
     
     <model name="initial_table">
-      <pose>0.7 0.0142 0 0 0 0</pose>
+      <pose>0.7 0.0 0.1 0 0 0</pose>
       <static>true</static>
       <!-- Tapa de la mesa -->
       <link name="table_top">
@@ -212,7 +212,7 @@
 
     <model name="final_table">
       <static>true</static>
-      <pose>-1 0.0142 0 0 0 0</pose>
+      <pose>-1 0.0 0.1 0 0 0</pose>
       <!-- Tapa de la mesa -->
       <link name="table_top">
         <pose>0 0 0.225 0 0 0</pose>
@@ -342,7 +342,7 @@
     </model>
     <model name="caja">
       <static>false</static>
-      <pose>0.7 0.0142 0.5 0 0 1.57</pose>
+      <pose>0.7 0.0 0.6 0 0 1.57</pose>
       <!-- Caja principal -->
       <link name="caja">
         <visual name="visual_caja">
@@ -506,7 +506,7 @@
           </inertia>
         </inertial>
       </link>
-      <pose>-2.27619 1.63839 0.01 0 -0 0</pose>
+      <pose>-2.27619 1.63839 0.11 0 -0 0</pose>
       <static>true</static>
       <self_collide>false</self_collide>
     </model>
@@ -534,7 +534,7 @@
           </inertia>
         </inertial>
       </link>
-      <pose>5.05819 -0.648061 0.01 0 -0 0</pose>
+      <pose>5.05819 -0.648061 0.11 0 -0 0</pose>
       <static>true</static>
       <self_collide>false</self_collide>
     </model>
@@ -562,7 +562,7 @@
           </inertia>
         </inertial>
       </link>
-      <pose>3.91799 2.71185 0.01 0 -0 0</pose>
+      <pose>3.91799 2.71185 0.11 0 -0 0</pose>
       <static>true</static>
       <self_collide>false</self_collide>
     </model>
@@ -595,7 +595,7 @@
           </inertia>
         </inertial>
       </link>
-      <pose>1.015 3.26747 0.01 0 -0 0</pose>
+      <pose>1.015 3.26747 0.11 0 -0 0</pose>
       <static>true</static>
       <self_collide>false</self_collide>
     </model>
@@ -623,7 +623,7 @@
           </inertia>
         </inertial>
       </link>
-      <pose>-0.445949 0.385106 0.01 0 -0 0</pose>
+      <pose>-0.445949 0.385106 0.11 0 -0 0</pose>
       <static>true</static>
       <self_collide>false</self_collide>
     </model>
@@ -651,7 +651,7 @@
           </inertia>
         </inertial>
       </link>
-      <pose>-11.7538 -3.70786 0.01 0 -0 0</pose>
+      <pose>-11.7538 -3.70786 0.11 0 -0 0</pose>
       <static>true</static>
       <self_collide>false</self_collide>
     </model>
@@ -679,7 +679,7 @@
           </inertia>
         </inertial>
       </link>
-      <pose>-11.8033 -5.50149 0.01 0 -0 0</pose>
+      <pose>-11.8033 -5.50149 0.11 0 -0 0</pose>
       <static>true</static>
       <self_collide>false</self_collide>
     </model>
@@ -707,7 +707,7 @@
           </inertia>
         </inertial>
       </link>
-      <pose>-3.23342 -6.92599 0.01 0 -0 0</pose>
+      <pose>-3.23342 -6.92599 0.11 0 -0 0</pose>
       <static>true</static>
       <self_collide>false</self_collide>
     </model>
@@ -735,7 +735,7 @@
           </inertia>
         </inertial>
       </link>
-      <pose>-3.37139 -8.07315 0.01 0 -0 0</pose>
+      <pose>-3.37139 -8.07315 0.11 0 -0 0</pose>
       <static>true</static>
       <self_collide>false</self_collide>
     </model>
@@ -763,7 +763,7 @@
           </inertia>
         </inertial>
       </link>
-      <pose>-2.41503 -8.19112 0.01 0 -0 0</pose>
+      <pose>-2.41503 -8.19112 0.11 0 -0 0</pose>
       <static>true</static>
       <self_collide>false</self_collide>
     </model>
@@ -791,7 +791,7 @@
           </inertia>
         </inertial>
       </link>
-      <pose>-4.7397 -12.3168 0.01 0 -0 0</pose>
+      <pose>-4.7397 -12.3168 0.11 0 -0 0</pose>
       <static>true</static>
       <self_collide>false</self_collide>
     </model>
@@ -819,7 +819,7 @@
           </inertia>
         </inertial>
       </link>
-      <pose>-2.30052 -6.99886 0.01 0 -0 0</pose>
+      <pose>-2.30052 -6.99886 0.11 0 -0 0</pose>
       <static>true</static>
       <self_collide>false</self_collide>
     </model>
@@ -934,7 +934,7 @@
         </inertial>
         <enable_wind>false</enable_wind>
       </link>
-      <pose>0 0 0.01 0 -0 0</pose>
+      <pose>0 0 0.11 0 -0 0</pose>
       <static>true</static>
       <self_collide>false</self_collide>
     </model>
@@ -962,7 +962,7 @@
           </inertia>
         </inertial>
       </link>
-      <pose>-3.05142 -0.814566 -0.009996 0 -0 1.55304</pose>
+      <pose>-3.05142 -0.814566 -0.109996 0 -0 1.55304</pose>
       <static>true</static>
       <self_collide>false</self_collide>
     </model>
