@@ -215,26 +215,10 @@ Para cumplir esta tarea, existen en la librería las funciones grab_box y releas
 
 Como se puede apreciar en la imagen del mundo, la tarea es sencilla, ya que NAO simplemente debe acercarse a la primera mesa, recoger la caja, darse la vuelta, ir hasta la segunda y dejarla.
 
-Para que se aprecie la potencia de la librería desarrollada, se adjunta a continuación el código de esta aplicación:
+Para que se aprecie la potencia de la librería desarrollada, se adjunta a continuación el código de esta aplicación (PRÓXIMAMENTE):
 
 ```python
-import CoordMovesLib
-import time
 
-CoordMovesLib.stand_still()
-time.sleep(1)
-CoordMovesLib.setArc(1, 0)
-time.sleep(1)
-CoordMovesLib.grab_box()
-time.sleep(1)
-CoordMovesLib.setArc(-1, 0, 4)
-time.sleep(1)
-CoordMovesLib.setArc(0, 1, 6)
-time.sleep(1)
-CoordMovesLib.setArc(1, 0, 20)
-time.sleep(1)
-CoordMovesLib.release_box()
-print("Caja movida con éxito")
 ```
 
 # Resultado del proyecto
