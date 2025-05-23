@@ -1,0 +1,51 @@
+\chapter{Conclusiones}\label{cap:conclusiones}
+
+Una vez visto lo que se ha hecho en este proyecto, se procede a concluir si se han cumplido o no los objetivos, y que posibilidades de mejora tiene para el futuro. Sin olvidar las competencias adquiridas y utilizadas para su desarrollo.
+
+\section{Cumplimiento del objetivo}
+
+Ya visto el desarrollo completo del proyecto, podemos decir que efectivamente se ha cumplido el objetivo final, debido a que se han cumplido cada uno de los subobjetivos.
+
+Se ha alcanzado el subobjetivo 1, mencionado en el Capítulo \ref{cap:objetivos}, ya que se desarrolló un editor basado en secuencias de fotogramas (explicado en el Capítulo \ref{cap:capa_movimiento}). Este editor permite organizar referencias de posición para cada uno de los actuadores que participan en el movimiento coordinado, en la locomoción basado KME, como se describe en el Capítulo \ref{subsec:editor}.
+
+Además, se ha desarrollado un intérprete capaz de comunicarse con los controladores individuales de cada articulación para que las replique, como bien se ha visto en el Capítulo \ref{subsec:interprete}. El resultado de esto es que se puede ver que el robot es capaz de saludar, levantarse, coger la caja, etc.
+
+El subobjetivo 2, también explicado en el  Capítulo \ref{cap:objetivos}, se ha visto cumplido en el Capítulo \ref{cap:capa_movimiento}, mediante las clases de la librería que permiten la entrada de parámetros y modifican los tiempos de ejecución de los movimientos. Esto se ve claramente en las secuencias de caminata recta de 10 pasos, de caminata lateral, la caminata en arco, las funciones de coger y dejar la caja, los saludos, las formas de levantarse, etc. Estas secuencias dotan al robot de una primera capa de locomoción que permite programar sus movimientos(ya sean fijos o parametrizables) en aplicaciones robóticas de modo razonablemente simple, sin que el desarrollador tenga que programar explícitamente la coordinación de todos los actuadores individuales involucrados.Todo esto gracias a la librería desarrollada para ello.
+
+Y, por último, también se ha cumplido el subobjetivo 3, también explicado en el Capítulo \ref{cap:objetivos}, porque, como se ha visto en el Capítulo \ref{sec:aplicacion}, ha quedado resuelta, demostrándonos que NAO cumple con los requisitos requeridos: La manipulación de la caja a la hora de recogerla y dejarla en su lugar de destino y el hecho de ser capaz de caminar con ella en brazos.
+
+\section{Competencias empleadas}
+
+Estos objetivos se han cumplido gracias a los conocimientos adquiridos a la hora de cursar las siguientes asignaturas de mi grado:
+
+\begin{itemize}
+    \item \textit{Modelado y Simulación de robots}: En esta asignatura se trata cómo funciona una simulación robótica, en términos generales, utilizando ROS2 y Gazebo.
+    \item \textit{Arquitecturas Software para robots}: Asignatura dedicada a enseñarnos a utilizar ROS2 y programar con este middleware.
+
+    \item \textit{Laboratorio de sistemas}: En esta asignatura aprendimos a manejar el sistema operativo Ubuntu,  utilizado en este TFG. Además de enseñarnos a utilizar la herramnienta \textit{git} para el manejo de repositorios remotos de Github.
+
+    \item \textit{Robótica de servicios}: En esta asignatura nos enseñaron los fundamentos de los robots de servicio y su forma de programarlos.
+
+    \item \textit{Fundamentos de la programación}: En esta asignatura aprendimos a manejar el lenguaje Python. 
+    
+\end{itemize}
+
+\section{Competencias adquiridas}
+
+Este proyecto ha hecho que adquiera diferentes competencias, útiles para diferentes campos de la robótica en general.
+
+La primera de ellas ha sido la capacidad de encapsular ROS2 mediante una librería, cosa que es útil para desarrollar capas de control de cualquier tipo para cualquier sistema que utilice este middleware. Este conocimiento no entra en ninguna asignatura vista en el grado.
+
+La segunda ha sido la capacidad de desarrollar un mundo completo para Gazebo, ya que, aunque como se mencionó en la sección anterior que se utilizaron los conocimientos aduiridos en la asignatura \textit{Modelado y simuación de robots}, el diseño del mundo no entraba en el itinerario de la asignatura. Así como el uso íntegro de Gazebo Harmonic (los puentes con ROS2, los plugins necesarios para adaptar el modelo, etc), debido a que en esta asignatura se trabajó con una versión anterior.
+
+También se ha adquirido la capacidad de tratar con ficheros de formato JSON, ya que no había tratado con ellos anteriormente.
+
+\section{Trabajos futuros}
+
+Como trabajos futuros, tenemos un abanico bastante amplio de posibilidades.
+
+En primer lugar, llevar este proyecto a un robot real. Cabe destacar que el trabajo en simulación también es válido y potente, sin embargo, no deja de ser algo que no existe del todo en la realidad, por lo que sería muy interesante hacer el paso conocido cómo \textit{sim 2 real}, para que un NAO real disponga de las funcionalidades que la librería de locomoción desarrollada ofrece.
+
+Un segundo trabajo futuro, es hacer los modos de caminar más robustos y estables, ya que, como se ha visto en el Capítulo~\ref{cap:capa_movimiento}, hay algunos movimientos que no están del todo conseguidos (como es el caso de los arcos hacia atrás) o son algo inestables (como los demás modos de caminar). También se podría investigar para reducir el número de pasos mínimo. También sería interesante introducir funciones para la lectura de la cámara, como se mencionó en la sección \ref{subsec:sensores}
+
+Un tercer posible trabajo futuro sería construir más aplicaciones de robótica de servicios con el robot NAO, creando más escenarios y desafíos para el robot. Esto sería interesante en el ámbito educativo, por ejemplo, para proponer prácticas a los estudiantes y que deban resolverlas utilizando la librería, siendo este abanico de posibilidades casi infinito.
