@@ -9,12 +9,14 @@ from std_msgs.msg import Float64
 from rclpy.time import Time
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy
 from sensor_msgs.msg import Imu
+from rclpy.parameter import Parameter
 
 # Clase para replicar los movimientos de un fichero y su función para llamarla -----------------------------------------------------
 class Interpreter_class(Node):
     def __init__(self, file_name: str, printable=True):
         
         super().__init__('interpreter')
+
         self.printable = printable
         qos_profile = QoSProfile(
             reliability=ReliabilityPolicy.RELIABLE,
@@ -105,16 +107,20 @@ class Interpreter_class(Node):
                     msg.data = articulacion["posicion"]
                     self.art_publishers[nombre].publish(msg)
                     time.sleep(0.001)
+        
         if self.printable:
             print(f"[Interpreter]: Movimientos de fichero {self.file_name} completados")
         
 def Interpreter(file_name: str, printable=True):
     rclpy.init()
     node = Interpreter_class(file_name, printable)
-    rclpy.spin_once(node, timeout_sec=0.1)
     
-    node.destroy_node()
-    rclpy.shutdown()
+    try:
+        rclpy.spin_once(node, timeout_sec=2)
+    
+    finally:
+      node.destroy_node()
+      rclpy.shutdown()
 
 # Clase para leer el IMU --------------------------------------------------------------------------------
 class Read_IMU(Node):
@@ -234,6 +240,7 @@ class turnVel_class(Node):
     def __init__(self, vel: float, steps: int = 2, printable = True):
         super().__init__('turnvel')
         
+        
         if not ((0.35 <= abs(vel) <= 1.9) or abs(vel) == 0) or not (2 <= steps) or (steps%2 != 0):
             print("[turnVel] ERROR: La velocidad para girar debe tomar un valor de entre ±0.35 y ±1.9 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 2, y debe ser múltiplo de 2, si no quiere andar, pase velocidad 0")
             sys.exit(1)
@@ -315,15 +322,19 @@ class turnVel_class(Node):
 def turnVel(vel: float, steps: int = 2, printable = True):
     rclpy.init()
     node = turnVel_class(vel, steps, printable)
-    rclpy.spin_once(node, timeout_sec=0.1)
     
-    node.destroy_node()
-    rclpy.shutdown()
+    try:
+        rclpy.spin_once(node, timeout_sec=2)
+    
+    finally:
+      node.destroy_node()
+      rclpy.shutdown()
 
 # Clase para andar recto pasando la velocidad y su función para llamarla -----------------------------------------------------------
 class setL_class(Node):
     def __init__(self, lateral_velocity: float, steps: int = 2):
         super().__init__('setL')
+        
         
         if not ((0.35 <= abs(lateral_velocity) <= 4.35) or abs(lateral_velocity) == 0) or not (2 <= steps) or (steps%2 != 0):
             print("[setL] ERROR: La velocidad lateral debe tomar un valor de entre ±0.35 y ±4.35 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 2, y debe ser múltiplo de 2, si no quiere andar, pase velocidad 0")
@@ -403,15 +414,19 @@ class setL_class(Node):
 def setL(vel: float, steps: int = 2):
     rclpy.init()
     node = setL_class(vel, steps)
-    rclpy.spin_once(node, timeout_sec=0.1)
     
-    node.destroy_node()
-    rclpy.shutdown()
+    try:
+        rclpy.spin_once(node, timeout_sec=2)
+    
+    finally:
+      node.destroy_node()
+      rclpy.shutdown()
 
 # Clase para andar recto pasando la velocidad y su función para llamarla -----------------------------------------------------------
 class setV_class(Node):
     def __init__(self, linear_velocity: float, steps: int = 10, printable = True):
         super().__init__('setv')
+        
         if not ((0.35 <= abs(linear_velocity) <= 4.35) or abs(linear_velocity) == 0) or not (10 <= steps) or (steps%10 != 0):
             print("[setV] ERROR: La velocidad lineal debe tomar un valor de entre +-0.35 y +-4.35 (aunque tambien puede coger 0).\nTenga en cuenta tambien que el minimo de pasos (parametro opcional) es 10, y debe ser multiplo de 10, si no quiere andar, pase velocidad 0")
             sys.exit(1)
@@ -493,16 +508,19 @@ class setV_class(Node):
 def setV(vel: float, steps: int = 10, printable = True):
     rclpy.init()
     node = setV_class(vel, steps, printable)
-    rclpy.spin_once(node, timeout_sec=0.1)
     
-    node.destroy_node()
-    rclpy.shutdown()
-
+    try:
+        rclpy.spin_once(node, timeout_sec=2)
+    
+    finally:
+      node.destroy_node()
+      rclpy.shutdown()
 
 # Clase para andar en arco pasando la velocidad y su función para llamarla -----------------------------------------------------------
 class setW_class(Node):
     def __init__(self, angular_velocity: float, steps: int = 10, printable = True):
         super().__init__('setw')
+        
         
         if not ((0.35 <= abs(angular_velocity) <= 1.9) or abs(angular_velocity) == 0) or not (10 <= steps) or (steps%10 != 0):
             print("[setW] ERROR: La velocidad angular debe tomar un valor de entre ±0.35 y ±1.9 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 10, y debe ser múltiplo de 10, si no quiere andar, pase velocidad 0")
@@ -582,15 +600,19 @@ class setW_class(Node):
 def setW(vel: float, steps: int = 10, printable = True):
     rclpy.init()
     node = setW_class(vel, steps, printable)
-    rclpy.spin_once(node, timeout_sec=0.1)
     
-    node.destroy_node()
-    rclpy.shutdown() 
+    try:
+        rclpy.spin_once(node, timeout_sec=2)
+    
+    finally:
+      node.destroy_node()
+      rclpy.shutdown()
 
 # Clase para andar en arco hacia atrás pasando la velocidad y su función para llamarla -----------------------------------------------------------
 class setNW_class(Node):
     def __init__(self, angular_velocity: float, steps: int = 10, printable = True):
         super().__init__('setnw')
+        
         
         if not ((0.35 <= abs(angular_velocity) <= 1.9) or abs(angular_velocity) == 0) or not (10 <= steps) or (steps%10 != 0):
             print("[setNW] ERROR: La velocidad angular debe tomar un valor de entre ±0.35 y ±1.9 (aunque también puede coger 0).\nTenga en cuenta también que el mínimo de pasos (parámetro opcional) es 10, y debe ser múltiplo de 10, si no quiere andar, pase velocidad 0")
@@ -671,10 +693,13 @@ class setNW_class(Node):
 def setNW(vel: float, steps: int = 10, printable = True):
     rclpy.init()
     node = setNW_class(vel, steps, printable)
-    rclpy.spin_once(node, timeout_sec=0.1)
     
-    node.destroy_node()
-    rclpy.shutdown()       
+    try:
+        rclpy.spin_once(node, timeout_sec=2)
+    
+    finally:
+      node.destroy_node()
+      rclpy.shutdown()  
 
 # Función para combinar la caminata en arco y la recta pasando las velocidades correspondientes -------------
 def setArc(v,w,steps = 10):

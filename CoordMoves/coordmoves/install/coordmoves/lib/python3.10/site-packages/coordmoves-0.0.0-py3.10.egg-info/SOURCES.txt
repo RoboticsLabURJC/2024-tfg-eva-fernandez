@@ -11,6 +11,9 @@ build/coordmoves/coordmoves.egg-info/zip-safe
 coordmoves/CoordMovesLib.py
 coordmoves/GreenNao.py
 coordmoves/__init__.py
+coordmoves/gr.py
+coordmoves/return.py
+coordmoves/stand.py
 launch/launcher.launch.py
 resource/coordmoves
 test/test_copyright.py

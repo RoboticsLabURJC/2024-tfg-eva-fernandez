@@ -1,6 +1,6 @@
 <sdf version='1.9'>
   <world name='greenhouse_world'>
-    <physics name="ode_physics" type="ode">
+   <physics name="ode_physics" type="ode">
       <seed>12345</seed>
       <max_step_size>0.02</max_step_size>
       <real_time_update_rate>0</real_time_update_rate>
@@ -212,7 +212,7 @@
 
     <model name="final_table">
       <static>true</static>
-      <pose>-1 0.0 0.1 0 0 0</pose>
+      <pose>-0.8051 0.0 0.1 0 0 0</pose>
       <!-- Tapa de la mesa -->
       <link name="table_top">
         <pose>0 0 0.225 0 0 0</pose>
@@ -342,7 +342,7 @@
     </model>
     <model name="caja">
       <static>false</static>
-      <pose>0.7 0.0 0.6 0 0 1.57</pose>
+      <pose>0.6 0.-0.022 0.4 0 0 1.3754</pose>
       <!-- Caja principal -->
       <link name="caja">
         <visual name="visual_caja">
@@ -357,6 +357,21 @@
           </material>
         </visual>
         <collision name="collision_caja">
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+              </ode>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0.0</restitution_coefficient>
+              <threshold>1.0</threshold>
+            </bounce>
+          </surface>
           <geometry>
             <box>
               <size>0.15 0.15 0.15</size>
@@ -421,6 +436,21 @@
           </material>
         </visual>
         <collision name="collision_asa_izquierda">
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <friction>
+                <ode>
+                  <mu>1.0</mu>
+                  <mu2>1.0</mu2>
+                </ode>
+              </friction>
+              <bounce>
+                <restitution_coefficient>0.0</restitution_coefficient>
+                <threshold>1.0</threshold>
+              </bounce>
+            </surface>          
           <geometry>
             <box>
               <size>0.06 0.125 0.03</size>
@@ -458,6 +488,21 @@
           </material>
         </visual>
         <collision name="collision_asa_derecha">
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <friction>
+                <ode>
+                  <mu>1.0</mu>
+                  <mu2>1.0</mu2>
+                </ode>
+              </friction>
+              <bounce>
+                <restitution_coefficient>0.0</restitution_coefficient>
+                <threshold>1.0</threshold>
+              </bounce>
+            </surface>          
           <geometry>
             <box>
               <size>0.06 0.125 0.03</size>
