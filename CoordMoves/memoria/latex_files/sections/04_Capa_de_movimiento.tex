@@ -401,10 +401,13 @@ Un ejemplo de cómo han de crearse estas clases para que los nodos funcionen cor
 def Interpreter(file_name: str, printable=True):
     rclpy.init()
     node = Interpreter_class(file_name, printable)
-    rclpy.spin_once(node, timeout_sec=0.1)
     
-    node.destroy_node()
-    rclpy.shutdown()
+    try:
+        rclpy.spin_once(node, timeout_sec=2)
+    
+    finally:
+      node.destroy_node()
+      rclpy.shutdown()
 \end{lstlisting}
 
 Hay 3 tipos de estas funciones, las que sirven para llamar a nodos cuya tarea es replicar patrones fijos creados con el intérprete; las que sirven para invocar a nodos capaces de replicar movimientos parametrizables y las que sirven para leer los sensores.
@@ -433,7 +436,7 @@ También a este tipo de funciones pertenecen las siguientes:
     \item \textit{release\_box}: Esta función no recibe parámetros y es análoga a la anterior, ya que es igual, pero el patrón es para dejar la caja recogida. Patrón también creado con el editor e formato JSON.
 \end{itemize}
 
-Se puede ver en el siguiente enlace\footnote{\url{}} un video demostrativo de todas estas funciones.
+Se pueden ver vídeos demostrativos de todas estas funciones en el siguiente enlace\footnote{\url{https://drive.google.com/drive/folders/1s-uI7KXyk6aZ8lbhQIRRZnR8VsfDIsj6?usp=sharing}}.
 
 \subsection{Segundo tipo de funciones: Patrones parametrizables}
 
@@ -494,7 +497,36 @@ Para facilitar la comprensión de esta función, se incluye un esquema que muest
   \label{fig:setarc_esq}
 \end{figure}
 
-Un video demostrativo que muestra el funcionamiento de todas estas funciones está disponible en el siguiente enlace\footnote{\url{}}.
+El código de esta función tan importante y sencilla al mismo tiempo se encuentra en el \autoref{lst:setarc}
+\begin{lstlisting}[language=Python, caption={Función setArc}, label={lst:setarc}, numbers=left, backgroundcolor=\color{gray!10}]    
+def setArc(v,w,steps = 10):
+    if (not ((0.35 <= abs(w) <= 1.9) or abs(w) == 0) or not (2 <= steps) or (steps%2 != 0)) or (not ((0.35 <= abs(v) <= 4.35) or abs(v) == 0) or not (10 <= steps) or (steps%10 != 0)):
+        print("[setArc]: ERROR: La velocidad lineal debe estar entre +-0.35 y +-4.35 y la angular entre +-0.35 y +-1.9, y los pasos deben ser multiplos de 10")
+        sys.exit(1)
+
+    if v != 0 and w == 0:
+        setV(v, steps, False)
+
+    elif v != 0 and  w != 0:
+        if v > 0: 
+            setW(w, steps, False)
+        else:
+            setNW(w, steps, False)
+    
+    elif v == 0 and w != 0:
+        turnVel(w, steps, False)
+    
+    elif v == 0 and w == 0:
+        stand_still(False)
+
+    else:
+        print("[setArc] ERROR: Patron de movimiento no valido")
+        sys.exit(1)
+    
+    print("[setArc]: Pasos completados")
+\end{lstlisting}
+
+Un video demostrativo que muestra el funcionamiento de las funciones setL, setV y setW está disponible en el siguiente enlace\footnote{\url{https://drive.google.com/drive/folders/15G_RUEmvvaGzpb4Y5p0CmH2KngV0ZB9F?usp=sharing}}, las otras no se adjuntan por ser deriavdas de las demás y funcionar igual o muy parecido.
 
 \subsection{Tercer tipo de funciones: Sensores} \label{subsec:sensores}
 
@@ -508,7 +540,7 @@ Esto nos sirve para saber a qué patrón fijo de levantarse debemos llamar.
 
 En el caso de la cámara, no se ha implementado una función concreta para utlizarla, se hablará de esto en el Capítulo \ref{cap:conclusiones}. 
 
-En el siguiente enlace\footnote{\url{}} se adjunta un video demostrativo de estas funciones.
+En el siguiente enlace\footnote{\url{https://drive.google.com/file/d/1uTMYkpZooMyfbhtdR8esBMLK2addWgBz/view?usp=sharing}} se adjunta un video demostrativo de estas funciones, aunque solo se ve get\_face, porque usa las demás para funcionar.
 
 \section{Aplicación para ofrecer servicio en un invernadero} \label{sec:aplicacion}
 
@@ -529,7 +561,38 @@ Este mundo también esta en formato SDF (\cite{tutorial_mallas},\cite{parametros
 
 Para llevar a cabo esta aplicación, simplemente se ha ido llamando a las funciones necesarias de la librería CoordMovesLib hasta conseguir el resultado esperado.
 
-A continuación, en el \autoref{lst:aplicación} se muestra el código de esta aplicación para demostrar el uso de funciones de la librería y se adjunta un vídeo\footnote{\url{}} demostrativo de la misma.
+A continuación, en el \autoref{lst:aplicación} se muestra el código de esta aplicación para demostrar el uso de funciones de la librería y se adjunta un vídeo\footnote{\url{https://drive.google.com/file/d/149xjkhnO3WAhAMmqFwPOr-CfqX21xO_G/view?usp=sharing}} demostrativo de la misma, además de un par de  fotos para que se parecie mejor en la \autoref{fig:aplicacion_1} y también en la \autoref{fig:aplicacion_2}.
 
-\begin{lstlisting}[language=Python, caption={Aplicación GreenNao}, label={lst:aplicación}, numbers=left, backgroundcolor=\color{gray!10}]    
+\begin{lstlisting}[language=Python, caption={Aplicación GreenNao}, label={lst:aplicación}, numbers=left, backgroundcolor=\color{gray!10}]
+import CoordMovesLib
+import time
+
+time.sleep(5)
+CoordMovesLib.grab_box()
+time.sleep(3)
+
+for i in range(3):
+  CoordMovesLib.turn("L", 60)
+
+CoordMovesLib.turn("L", 40)
+
+CoordMovesLib.setArc(1, 0)
+time.sleep(3)
+
+CoordMovesLib.release_box()
+print("Terminado")
 \end{lstlisting}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/cap_4/app_1.png}
+  \caption{Aplicación GreenNao. Vista lateral}
+  \label{fig:aplicacion_1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/cap_4/app_2.png}
+  \caption{Aplicación GreenNao. Vista frontal}
+  \label{fig:aplicacion_2}
+\end{figure}
