@@ -1,7 +1,6 @@
 <sdf version='1.9'>
   <world name='greenhouse_world'>
-   <physics name="ode_physics" type="ode">
-      <seed>12345</seed>
+    <physics name='ode_physics' type='ode'>
       <max_step_size>0.02</max_step_size>
       <real_time_update_rate>0</real_time_update_rate>
       <real_time_factor>1</real_time_factor>
@@ -13,12 +12,13 @@
           <use_dynamic_moi_rescaling>false</use_dynamic_moi_rescaling>
         </solver>
         <constraints>
-          <cfm>1e-5</cfm>
-          <erp>0.2</erp>
+          <cfm>1.0000000000000001e-05</cfm>
+          <erp>0.20000000000000001</erp>
           <contact_max_correcting_vel>20</contact_max_correcting_vel>
           <contact_surface_layer>0.001</contact_surface_layer>
         </constraints>
       </ode>
+      <seed>12345</seed>
     </physics>
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>2.5e-05 5.5e-05 4e-05</magnetic_field>
@@ -39,6 +39,13 @@
               <size>10 7</size>
             </plane>
           </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
         </collision>
         <visual name='visual'>
           <pose>0 0 0 0 0 0</pose>
@@ -77,14 +84,12 @@
       <name>Modelo_NAO</name>
       <pose>0 0 0.6 0 0.240819 0</pose>
     </include>
-    
-    <model name="initial_table">
-      <pose>0.7 0.0 0.1 0 0 0</pose>
+    <model name='initial_table'>
+      <pose>0.263796 0 0.1 0 -0 0</pose>
       <static>true</static>
-      <!-- Tapa de la mesa -->
-      <link name="table_top">
-        <pose>0 0 0.225 0 0 0</pose>
-        <visual name="table_top_visual">
+      <link name='table_top'>
+        <pose>0 0 0.225 0 -0 0</pose>
+        <visual name='table_top_visual'>
           <geometry>
             <box>
               <size>0.25 0.25 0.025</size>
@@ -95,18 +100,37 @@
             <diffuse>0 0 1 1</diffuse>
           </material>
         </visual>
-        <collision name="table_top_collision">
+        <collision name='table_top_collision'>
           <geometry>
             <box>
               <size>0.25 0.25 0.025</size>
             </box>
           </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
         </collision>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
       </link>
-      <!-- Pata 1 -->
-      <link name="leg_1">
-        <pose>0.1 0.1 0.1125 0 0 0</pose>
-        <visual name="leg_1_visual">
+      <link name='leg_1'>
+        <pose>0.1 0.1 0.1125 0 -0 0</pose>
+        <visual name='leg_1_visual'>
           <geometry>
             <box>
               <size>0.025 0.025 0.225</size>
@@ -117,18 +141,37 @@
             <diffuse>0 0 1 1</diffuse>
           </material>
         </visual>
-        <collision name="leg_1_collision">
+        <collision name='leg_1_collision'>
           <geometry>
             <box>
               <size>0.025 0.025 0.225</size>
             </box>
           </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
         </collision>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
       </link>
-      <!-- Pata 2 -->
-      <link name="leg_2">
-        <pose>-0.1 0.1 0.1125 0 0 0</pose>
-        <visual name="leg_2_visual">
+      <link name='leg_2'>
+        <pose>-0.1 0.1 0.1125 0 -0 0</pose>
+        <visual name='leg_2_visual'>
           <geometry>
             <box>
               <size>0.025 0.025 0.225</size>
@@ -139,18 +182,37 @@
             <diffuse>0 0 1 1</diffuse>
           </material>
         </visual>
-        <collision name="leg_2_collision">
+        <collision name='leg_2_collision'>
           <geometry>
             <box>
               <size>0.025 0.025 0.225</size>
             </box>
           </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
         </collision>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
       </link>
-      <!-- Pata 3 -->
-      <link name="leg_3">
-        <pose>-0.1 -0.1 0.1125 0 0 0</pose>
-        <visual name="leg_3_visual">
+      <link name='leg_3'>
+        <pose>-0.1 -0.1 0.1125 0 -0 0</pose>
+        <visual name='leg_3_visual'>
           <geometry>
             <box>
               <size>0.025 0.025 0.225</size>
@@ -161,18 +223,37 @@
             <diffuse>0 0 1 1</diffuse>
           </material>
         </visual>
-        <collision name="leg_3_collision">
+        <collision name='leg_3_collision'>
           <geometry>
             <box>
               <size>0.025 0.025 0.225</size>
             </box>
           </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
         </collision>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
       </link>
-      <!-- Pata 4 -->
-      <link name="leg_4">
-        <pose>0.1 -0.1 0.1125 0 0 0</pose>
-        <visual name="leg_4_visual">
+      <link name='leg_4'>
+        <pose>0.1 -0.1 0.1125 0 -0 0</pose>
+        <visual name='leg_4_visual'>
           <geometry>
             <box>
               <size>0.025 0.025 0.225</size>
@@ -183,43 +264,65 @@
             <diffuse>0 0 1 1</diffuse>
           </material>
         </visual>
-        <collision name="leg_4_collision">
+        <collision name='leg_4_collision'>
           <geometry>
             <box>
               <size>0.025 0.025 0.225</size>
             </box>
           </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
         </collision>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
       </link>
-      <!-- Uniones fijas -->
-      <joint name="joint_leg_1" type="fixed">
+      <joint name='joint_leg_1' type='fixed'>
         <parent>table_top</parent>
         <child>leg_1</child>
+        <pose>0 0 0 0 -0 0</pose>
       </joint>
-      <joint name="joint_leg_2" type="fixed">
+      <joint name='joint_leg_2' type='fixed'>
         <parent>table_top</parent>
         <child>leg_2</child>
+        <pose>0 0 0 0 -0 0</pose>
       </joint>
-      <joint name="joint_leg_3" type="fixed">
+      <joint name='joint_leg_3' type='fixed'>
         <parent>table_top</parent>
         <child>leg_3</child>
+        <pose>0 0 0 0 -0 0</pose>
       </joint>
-      <joint name="joint_leg_4" type="fixed">
+      <joint name='joint_leg_4' type='fixed'>
         <parent>table_top</parent>
         <child>leg_4</child>
+        <pose>0 0 0 0 -0 0</pose>
       </joint>
+      <self_collide>false</self_collide>
     </model>
-
-    <model name="final_table">
+    <model name='final_table'>
       <static>true</static>
-      <pose>-0.8051 0.0 0.1 0 0 0</pose>
-      <!-- Tapa de la mesa -->
-      <link name="table_top">
-        <pose>0 0 0.225 0 0 0</pose>
-        <visual name="table_top_visual">
+      <pose>-0.8051 0 0.1 0 -0 1.57</pose>
+      <link name='table_top'>
+        <pose>0 0 0.225 0 -0 0</pose>
+        <visual name='table_top_visual'>
           <geometry>
             <box>
-              <size>0.25 0.25 0.025</size>
+              <size>0.75 0.25 0.025</size>
             </box>
           </geometry>
           <material>
@@ -227,62 +330,37 @@
             <diffuse>1 0.5 0 1</diffuse>
           </material>
         </visual>
-        <collision name="table_top_collision">
+        <collision name='table_top_collision'>
           <geometry>
             <box>
-              <size>0.25 0.25 0.025</size>
+              <size>0.75 0.25 0.025</size>
             </box>
           </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
         </collision>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
       </link>
-      <!-- Pata 1 -->
-      <link name="leg_1">
-        <pose>0.1 0.1 0.1125 0 0 0</pose>
-        <visual name="leg_1_visual">
-          <geometry>
-            <box>
-              <size>0.025 0.025 0.225</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>1 0.5 0 1</ambient>
-            <diffuse>1 0.5 0 1</diffuse>
-          </material>
-        </visual>
-        <collision name="leg_1_collision">
-          <geometry>
-            <box>
-              <size>0.025 0.025 0.225</size>
-            </box>
-          </geometry>
-        </collision>
-      </link>
-      <!-- Pata 2 -->
-      <link name="leg_2">
-        <pose>-0.1 0.1 0.1125 0 0 0</pose>
-        <visual name="leg_2_visual">
-          <geometry>
-            <box>
-              <size>0.025 0.025 0.225</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>1 0.5 0 1</ambient>
-            <diffuse>1 0.5 0 1</diffuse>
-          </material>
-        </visual>
-        <collision name="leg_2_collision">
-          <geometry>
-            <box>
-              <size>0.025 0.025 0.225</size>
-            </box>
-          </geometry>
-        </collision>
-      </link>
-      <!-- Pata 3 -->
-      <link name="leg_3">
-        <pose>-0.1 -0.1 0.1125 0 0 0</pose>
-        <visual name="leg_3_visual">
+      <link name='leg_1'>
+        <pose>0.35 0.1 0.1125 0 -0 0</pose>
+        <visual name='leg_1_visual'>
           <geometry>
             <box>
               <size>0.025 0.025 0.225</size>
@@ -293,18 +371,37 @@
             <diffuse>1 0.5 0 1</diffuse>
           </material>
         </visual>
-        <collision name="leg_3_collision">
+        <collision name='leg_1_collision'>
           <geometry>
             <box>
               <size>0.025 0.025 0.225</size>
             </box>
           </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
         </collision>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
       </link>
-      <!-- Pata 4 -->
-      <link name="leg_4">
-        <pose>0.1 -0.1 0.1125 0 0 0</pose>
-        <visual name="leg_4_visual">
+      <link name='leg_2'>
+        <pose>-0.35 0.1 0.1125 0 -0 0</pose>
+        <visual name='leg_2_visual'>
           <geometry>
             <box>
               <size>0.025 0.025 0.225</size>
@@ -315,61 +412,167 @@
             <diffuse>1 0.5 0 1</diffuse>
           </material>
         </visual>
-        <collision name="leg_4_collision">
+        <collision name='leg_2_collision'>
           <geometry>
             <box>
               <size>0.025 0.025 0.225</size>
             </box>
           </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
         </collision>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
       </link>
-      <joint name="joint_leg_1" type="fixed">
+      <link name='leg_3'>
+        <pose>-0.35 -0.1 0.1125 0 -0 0</pose>
+        <visual name='leg_3_visual'>
+          <geometry>
+            <box>
+              <size>0.025 0.025 0.225</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0.5 0 1</ambient>
+            <diffuse>1 0.5 0 1</diffuse>
+          </material>
+        </visual>
+        <collision name='leg_3_collision'>
+          <geometry>
+            <box>
+              <size>0.025 0.025 0.225</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='leg_4'>
+        <pose>0.35 -0.1 0.1125 0 -0 0</pose>
+        <visual name='leg_4_visual'>
+          <geometry>
+            <box>
+              <size>0.025 0.025 0.225</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0.5 0 1</ambient>
+            <diffuse>1 0.5 0 1</diffuse>
+          </material>
+        </visual>
+        <collision name='leg_4_collision'>
+          <geometry>
+            <box>
+              <size>0.025 0.025 0.225</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <joint name='joint_leg_1' type='fixed'>
         <parent>table_top</parent>
         <child>leg_1</child>
+        <pose>0 0 0 0 -0 0</pose>
       </joint>
-      <joint name="joint_leg_2" type="fixed">
+      <joint name='joint_leg_2' type='fixed'>
         <parent>table_top</parent>
         <child>leg_2</child>
+        <pose>0 0 0 0 -0 0</pose>
       </joint>
-      <joint name="joint_leg_3" type="fixed">
+      <joint name='joint_leg_3' type='fixed'>
         <parent>table_top</parent>
         <child>leg_3</child>
+        <pose>0 0 0 0 -0 0</pose>
       </joint>
-      <joint name="joint_leg_4" type="fixed">
+      <joint name='joint_leg_4' type='fixed'>
         <parent>table_top</parent>
         <child>leg_4</child>
+        <pose>0 0 0 0 -0 0</pose>
       </joint>
+      <self_collide>false</self_collide>
     </model>
-    <model name="caja">
+    <model name='caja'>
       <static>false</static>
-      <pose>0.6 0.-0.022 0.4 0 0 1.3754</pose>
-      <!-- Caja principal -->
-      <link name="caja">
-        <visual name="visual_caja">
+      <pose>0.143998 -0.0045 0.412497 -2.9e-05 -0 1.57</pose>
+      <link name='caja'>
+        <visual name='visual_caja'>
           <geometry>
             <box>
               <size>0.15 0.15 0.15</size>
             </box>
           </geometry>
           <material>
-              <ambient>0.55 0.27 0.07 1</ambient>
-              <diffuse>0.75 0.38 0.12 1</diffuse>
+            <ambient>0.55 0.27 0.07 1</ambient>
+            <diffuse>0.75 0.38 0.12 1</diffuse>
           </material>
         </visual>
-        <collision name="collision_caja">
+        <collision name='collision_caja'>
           <surface>
             <contact>
               <ode/>
             </contact>
             <friction>
               <ode>
-                <mu>1.0</mu>
-                <mu2>1.0</mu2>
+                <mu>1</mu>
+                <mu2>1</mu2>
               </ode>
             </friction>
             <bounce>
-              <restitution_coefficient>0.0</restitution_coefficient>
-              <threshold>1.0</threshold>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1</threshold>
             </bounce>
           </surface>
           <geometry>
@@ -379,78 +582,91 @@
           </geometry>
         </collision>
         <inertial>
-        <mass>0.04</mass>
-        <inertia>
-          <ixx>0.0001</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.0001</iyy>
-          <iyz>0</iyz>
-          <izz>0.0001</izz>
-        </inertia>
-      </inertial>
+          <mass>0.040000000000000001</mass>
+          <inertia>
+            <ixx>0.0001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0001</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
       </link>
-      <link name="plano_texturado">
-          <pose>0 0 0.08 0 0 0</pose>
-          <visual name="visual_plano">
-            <geometry>
-              <mesh>
-                <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/worlds/greenhouse_world/Atrezzo/plano/plano.dae</uri>
-              </mesh>
-            </geometry>
-          </visual>
-          <collision name="collision_plano">
-            <geometry>
-              <box>
-                <size>0.15 0.15 0.001</size>
-              </box>
-            </geometry>
-          </collision>
-          <inertial>
-            <mass>0.001</mass>
-            <inertia>
-              <ixx>0.000001</ixx>
-              <iyy>0.000001</iyy>
-              <izz>0.000001</izz>
-              <ixy>0</ixy>
-              <ixz>0</ixz>
-              <iyz>0</iyz>
-            </inertia>
-          </inertial>
+      <link name='plano_texturado'>
+        <pose>0 0 0.08 -0 -0 0</pose>
+        <visual name='visual_plano'>
+          <geometry>
+            <mesh>
+              <uri>file:////home/evichan/Desktop/2024-tfg-eva-fernandez/CoordMoves/coordmoves/worlds/greenhouse_world/Atrezzo/plano/plano.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision_plano'>
+          <geometry>
+            <box>
+              <size>0.15 0.15 0.001</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <inertial>
+          <mass>0.001</mass>
+          <inertia>
+            <ixx>9.9999999999999995e-07</ixx>
+            <iyy>9.9999999999999995e-07</iyy>
+            <izz>9.9999999999999995e-07</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <enable_wind>false</enable_wind>
       </link>
-      <joint name="joint_plano_texturado" type="fixed">
+      <joint name='joint_plano_texturado' type='fixed'>
         <parent>caja</parent>
         <child>plano_texturado</child>
+        <pose>0 0 0 0 -0 0</pose>
       </joint>
-      <link name="asa_izquierda">
-        <pose>-0.105 0 0.06 0 0 0</pose>
-        <visual name="visual_asa_izquierda">
+      <link name='asa_izquierda'>
+        <pose>-0.105 -0 0.06 -0 -0 0</pose>
+        <visual name='visual_asa_izquierda'>
           <geometry>
             <box>
               <size>0.06 0.125 0.03</size>
             </box>
           </geometry>
           <material>
-              <ambient>0.3 0.15 0.05 1</ambient>
-              <diffuse>0.4 0.2 0.1 1</diffuse>
+            <ambient>0.3 0.15 0.05 1</ambient>
+            <diffuse>0.4 0.2 0.1 1</diffuse>
           </material>
         </visual>
-        <collision name="collision_asa_izquierda">
-            <surface>
-              <contact>
-                <ode/>
-              </contact>
-              <friction>
-                <ode>
-                  <mu>1.0</mu>
-                  <mu2>1.0</mu2>
-                </ode>
-              </friction>
-              <bounce>
-                <restitution_coefficient>0.0</restitution_coefficient>
-                <threshold>1.0</threshold>
-              </bounce>
-            </surface>          
+        <collision name='collision_asa_izquierda'>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1</threshold>
+            </bounce>
+          </surface>
           <geometry>
             <box>
               <size>0.06 0.125 0.03</size>
@@ -458,51 +674,53 @@
           </geometry>
         </collision>
         <inertial>
-        <mass>0.03</mass>
-        <inertia>
-          <ixx>0.00001</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.00001</iyy>
-          <iyz>0</iyz>
-          <izz>0.00001</izz>
-        </inertia>
-      </inertial>
+          <mass>0.029999999999999999</mass>
+          <inertia>
+            <ixx>1.0000000000000001e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.0000000000000001e-05</iyy>
+            <iyz>0</iyz>
+            <izz>1.0000000000000001e-05</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <enable_wind>false</enable_wind>
       </link>
-      <joint name="joint_asa_izquierda" type="fixed">
+      <joint name='joint_asa_izquierda' type='fixed'>
         <parent>caja</parent>
         <child>asa_izquierda</child>
-        <pose>-0.105 0 0.06 0 0 0</pose>
+        <pose>-0.105 0 0.06 0 -0 0</pose>
       </joint>
-      <link name="asa_derecha">
-        <pose>0.105 0 0.06 0 0 0</pose>
-        <visual name="visual_asa_derecha">
+      <link name='asa_derecha'>
+        <pose>0.105 0 0.06 -0 -0 0</pose>
+        <visual name='visual_asa_derecha'>
           <geometry>
             <box>
               <size>0.06 0.125 0.03</size>
             </box>
           </geometry>
           <material>
-              <ambient>0.3 0.15 0.05 1</ambient>
-              <diffuse>0.4 0.2 0.1 1</diffuse>
+            <ambient>0.3 0.15 0.05 1</ambient>
+            <diffuse>0.4 0.2 0.1 1</diffuse>
           </material>
         </visual>
-        <collision name="collision_asa_derecha">
-            <surface>
-              <contact>
-                <ode/>
-              </contact>
-              <friction>
-                <ode>
-                  <mu>1.0</mu>
-                  <mu2>1.0</mu2>
-                </ode>
-              </friction>
-              <bounce>
-                <restitution_coefficient>0.0</restitution_coefficient>
-                <threshold>1.0</threshold>
-              </bounce>
-            </surface>          
+        <collision name='collision_asa_derecha'>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1</threshold>
+            </bounce>
+          </surface>
           <geometry>
             <box>
               <size>0.06 0.125 0.03</size>
@@ -510,22 +728,25 @@
           </geometry>
         </collision>
         <inertial>
-        <mass>0.03</mass>
-        <inertia>
-          <ixx>0.00001</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.00001</iyy>
-          <iyz>0</iyz>
-          <izz>0.00001</izz>
-        </inertia>
-      </inertial>
+          <mass>0.029999999999999999</mass>
+          <inertia>
+            <ixx>1.0000000000000001e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.0000000000000001e-05</iyy>
+            <iyz>0</iyz>
+            <izz>1.0000000000000001e-05</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <enable_wind>false</enable_wind>
       </link>
-      <joint name="joint_asa_derecha" type="fixed">
+      <joint name='joint_asa_derecha' type='fixed'>
         <parent>caja</parent>
         <child>asa_derecha</child>
-        <pose>0.105 0 0.06 0 0 0</pose>
+        <pose>0.105 0 0.06 0 -0 0</pose>
       </joint>
+      <self_collide>false</self_collide>
     </model>
     <model name='bambu'>
       <link name='link'>
@@ -614,7 +835,7 @@
     <include>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/KitchenSink</uri>
       <name>KitchenSink</name>
-      <pose>-4.33794 -0.903917 0 0 -0 0</pose>
+      <pose>-4.33794 -0.903917 0.09839 0 -0 0</pose>
     </include>
     <model name='monstera_1'>
       <link name='link'>

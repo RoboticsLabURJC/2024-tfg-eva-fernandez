@@ -138,6 +138,15 @@ Para hacer esto posible, ha sido necesario desarrollar la librería CoordMovesLi
 
 A continuación, dejo una lista con todas las funciones y clases de esta librería, junto a una breve explicación de cada una de ellas:
 
+**CLASES**
+* ***Interpreter_class(file)***: Llama al intérprete de movimientos mencionado anteriormente
+* ***setV_class(linear_velocity, steps)***: Hace que NAO ande recto, a la velocidad indicada, los pasos indicados
+* ***setW_class(angular_velocity, steps)***: Hace que NAO camine en arco, a la velocidad indicada, los pasos indicados
+* ***setNW_class(angular_velocity, steps)***: Hace que NAO camine en arco hacia atrás, a la velocidad indicada, los pasos indicados
+* ***setL_class(angular_velocity, steps)***: Hace que NAO camine lateralmente, a la velocidad indicada, los pasos indicados
+* ***Read_IMU()***: Devuelve la aceleración en z leyendo las mediciones del IMU
+
+
 **FUNCIONES**
 * ***get_face()***: Devuelve si NAO esta boca arriba, boca abajo, de pie normal o error si no está de ninguna de esas formas
 * ***wakeup_face_down()***: Hace que Nao se levante desde cubito prono
@@ -148,14 +157,11 @@ A continuación, dejo una lista con todas las funciones y clases de esta librer�
 * ***grab_box()***: Hace que NAO recoja la caja
 * ***release_box()***: Hace que NAO suelte la caja
 * ***setArc(linear_velocity, angular_velocity, steps)***: Combina las clases encargadas de las caminatas para que no haya que llamarlas por separado y hacer andar a NAO sea más sencillo.
-
-**CLASES**
-* ***Interpreter(file)***: Llama al intérprete de movimientos mencionado anteriormente
-* ***setV(linear_velocity, steps)***: Hace que NAO ande recto, a la velocidad indicada, los pasos indicados
-* ***setW(angular_velocity, steps)***: Hace que NAO camine en arco, a la velocidad indicada, los pasos indicados
-* ***setNW(angular_velocity, steps)***: Hace que NAO camine en arco hacia atrás, a la velocidad indicada, los pasos indicados
-* ***setL(angular_velocity, steps)***: Hace que NAO camine lateralmente, a la velocidad indicada, los pasos indicados
-* ***Read_IMU()***: Devuelve la aceleración en z leyendo las mediciones del IMU
+* ***Interpreter(file)***: Llama a la clase del intérprete, para poder ejecutar correctamente el nodo ROS2
+* ***setV(linear_velocity, steps)***: Llama a la clase de caminar recto, para poder ejecutar correctamente el nodo ROS2
+* ***setW(angular_velocity, steps)***: Llama a la clase de caminar en arco, para poder ejecutar correctamente el nodo ROS2
+* ***setNW(angular_velocity, steps)***: Llama a la clase de camniar en arco hacia atrás, para poder ejecutar correctamente el nodo ROS2
+* ***setL(angular_velocity, steps)***: Llama a la clase de camimar lateralmente, para poder ejecutar correctamente el nodo ROS2
 
 ##### Modos de caminar
 
@@ -213,17 +219,36 @@ También cabe destacar que la misión de NAO es recoger la caja de una mesa azul
 
 Para cumplir esta tarea, existen en la librería las funciones grab_box y release_box, que son las encargadas de coger y dejar la caja, respectivamente.
 
-Como se puede apreciar en la imagen del mundo, la tarea es sencilla, ya que NAO simplemente debe acercarse a la primera mesa, recoger la caja, darse la vuelta, ir hasta la segunda y dejarla.
+Como se puede apreciar en la imagen del mundo, la tarea es sencilla, ya que NAO simplemente debe recoger la caja, darse la vuelta, ir hasta la mesa naranja y dejarla.
 
-Para que se aprecie la potencia de la librería desarrollada, se adjunta a continuación el código de esta aplicación (PRÓXIMAMENTE):
+Para que se aprecie la potencia de la librería desarrollada, se adjunta a continuación el código de esta aplicación:
 
 ```python
+import CoordMovesLib
+import time
 
+time.sleep(5)
+
+CoordMovesLib.grab_box()
+
+time.sleep(3)
+
+for i in range(3):
+  CoordMovesLib.turn("L", 60)
+
+CoordMovesLib.turn("L", 40)
+
+CoordMovesLib.setArc(1, 0)
+
+time.sleep(3)
+
+CoordMovesLib.release_box()
+print("Terminado")
 ```
 
 # Resultado del proyecto
 
-Gracias a la integración de ambas partes anteriormente explicadas, se ha conseguido el siguiente resultado (PRÓXIMAMENTE):
+Gracias a la integración de ambas partes anteriormente explicadas, se ha conseguido el siguiente resultado:
 
 <p align="center">
   <img src="/docs/images_readme/greennao.gif" alt="GrenNao app" width="400">

@@ -2,7 +2,9 @@ import CoordMovesLib
 import time
 
 CoordMovesLib.stand_still()
+
 CoordMovesLib.setArc(1, 0)
+
 CoordMovesLib.grab_box()
 
 for i in range(3):

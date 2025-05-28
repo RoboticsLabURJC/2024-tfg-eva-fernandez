@@ -9,11 +9,11 @@ build/coordmoves/coordmoves.egg-info/requires.txt
 build/coordmoves/coordmoves.egg-info/top_level.txt
 build/coordmoves/coordmoves.egg-info/zip-safe
 coordmoves/CoordMovesLib.py
-coordmoves/GreenNao.py
+coordmoves/GreenNao_approach.py
+coordmoves/GreenNao_grab.py
+coordmoves/GreenNao_release.py
+coordmoves/GreenNao_return.py
 coordmoves/__init__.py
-coordmoves/gr.py
-coordmoves/return.py
-coordmoves/stand.py
 launch/launcher.launch.py
 resource/coordmoves
 test/test_copyright.py
