@@ -251,7 +251,7 @@ print("Terminado")
 Gracias a la integración de ambas partes anteriormente explicadas, se ha conseguido el siguiente resultado:
 
 <p align="center">
-  <img src="/docs/images_readme/greennao.gif" alt="GrenNao app" width="400">
+  <img src="/docs/images_readme/greennao.gif" alt="GrenNao app" width="800">
 </p>
 
 Que, cómo se puede ver satisface el objetivo propuesto en la sección anterior.
